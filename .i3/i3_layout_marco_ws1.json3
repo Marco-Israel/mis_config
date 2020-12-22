@@ -1,0 +1,121 @@
+// vim:ts=4:sw=4:et
+{
+    // splith split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splith",
+    "percent": 1,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 312,
+               "width": 560,
+               "x": 0,
+               "y": 0
+            },
+            "name": "marco@ArchLinux-System-Marco:~",
+            "percent": 0.625,
+            "swallows": [
+               {
+               // "class": "^URxvt$",
+               // "instance": "^urxvt$",
+               // "title": "^marco\\@ArchLinux\\-System\\-Marco\\:\\~$",
+               // "transient_for": "^$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            // splitv split container with 2 children
+            "border": "normal",
+            "floating": "auto_off",
+            "layout": "splitv",
+            "percent": 0.375,
+            "type": "con",
+            "nodes": [
+                {
+                    // stacked split container with 2 children
+                    "border": "normal",
+                    "floating": "auto_off",
+                    "layout": "stacked",
+                    "percent": 0.6,
+                    "type": "con",
+                    "nodes": [
+                        {
+                            "border": "normal",
+                            "current_border_width": 2,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 316,
+                               "width": 484,
+                               "x": 0,
+                               "y": 0
+                            },
+                            "name": "marco@ArchLinux-System-Marco:~",
+                            "percent": 0.5,
+                            "swallows": [
+                               {
+                               // "class": "^XTerm$",
+                               // "instance": "^xterm$",
+                               // "title": "^marco\\@ArchLinux\\-System\\-Marco\\:\\~$",
+                               // "transient_for": "^$"
+                               }
+                            ],
+                            "type": "con"
+                        },
+                        {
+                            "border": "normal",
+                            "current_border_width": 2,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 693,
+                               "width": 679,
+                               "x": 0,
+                               "y": 0
+                            },
+                            "name": "Restore Session - Mozilla min",
+                            "percent": 0.5,
+                            "swallows": [
+                               {
+                               // "class": "^min$",
+                               // "instance": "^Navigator$",
+                               // "title": "^Restore\\ Session\\ \\-\\ Mozilla\\ min$",
+                               // "transient_for": "^$",
+                               // "window_role": "^browser$"
+                               }
+                            ],
+                            "type": "con"
+                        }
+                    ]
+                },
+                {
+                    "border": "normal",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 316,
+                       "width": 484,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "marco@ArchLinux-System-Marco:~",
+                    "percent": 0.4,
+                    "swallows": [
+                       {
+                       // "class": "^XTerm$",
+                       // "instance": "^xterm$",
+                       // "title": "^marco\\@ArchLinux\\-System\\-Marco\\:\\~$",
+                       // "transient_for": "^$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+    ]
+}
+

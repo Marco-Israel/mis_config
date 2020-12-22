@@ -1,0 +1,303 @@
+################################################################################
+# ~/.bashrc_alias
+#
+#@author    Marco Israel (MI)
+#@date      2018-01
+#@authors   Last changed by:  Marco Israel - 2020.
+#
+#
+#@brief     Bash aliases and funcitons
+#@details   More examples:
+#           https://www.tldp.org/LDP/abs/html/sample-bashrc.html
+#
+################################################################################
+
+
+
+### ALIAS ##########
+alias cdmanuals='cd /cygdrive/c/app/Aurix/Documentation/00_Manuels'
+alias cda2lemdd='cd /cygdrive/c/app/Aurix/WKS_Aurix2Lemdd'
+alias vbrc='vim ~/.bashrc'
+alias vrc='vim ~/.vimrc'
+alias vol='pacmd set-sink-volume'
+alias ls='ls  -la --file-type --human-readable --color=always' #colore ls
+alias less='less -iRX'
+alias dir='dir --color=always' #colore dir
+alias vdir='vdir --color=always' #colore vdir
+alias grep='grep --color=always' #colore grep
+alias fgrep='fgrep --color=always' #colore fgrep
+alias egrep='egrep --color=always' #colre egrep
+#alias vlc='~/.i3/wrapper_sumi_vlc.sh' #start vlc at root acc
+alias ff='firefox &' #firefox as new prosess
+alias ts='texstudio &' #Texstudio as new process
+alias vbx='virtualbox &' #vbox as new process
+alias virtualbox='virtualbox &' #vbox as new process
+alias scs='shutter &' #launch shutter as a new process
+alias msda3='mount /dev/ubuntu-vg/root /home/sda3/' #mound internal hdd to  /home/sda3
+alias susp='systemctl suspend' #Schicke den Rechner in Sleep. Einstellungen werden im RAM gespechert --> Bracucht Strom!!!!!
+alias shutdown='shutdown -h now'
+alias shutter='shutter &' #snapshottool mit bildbearbeitung, starten als neuen Prozess.
+alias vlc='vlc &'
+alias vimb='vimb &'
+alias telegram='telegram &'
+
+alias zmanual_aurixXX_v14='zathura  /cygdrive/c/app/Aurix/Documentation/00_Manuels/00_AURIX/UserManuels/tc27x_um_v1.4.pdf &'
+alias zmanual_aurix_instrset='zathura /cygdrive/c/app/Aurix/Documentation/00_Manuels/00_AURIX/UserManuels/TC_Architecture_vol2__INSTRUCTIONSET__TC161_TCS_TC16P_TC16E.pdf &'
+alias zmanual_tasking='zathura /cygdrive/c/app/Aurix/Documentation/00_Manuels/02_TASKING/Tasking_debugger_user_guide.pdf &'
+
+alias conpressfind='find -type f -name *.jpg | xargs -I {} convert -strip -interlace Plane -antialias -adaptive-sharpen 1x0,1 -auto-level -quality 30% {} {}'
+
+
+
+#alias mirage='mirage &' #Image Viewer und Browser, starten als neuen Prozess.
+#alias geeqie='geeqie &' #Small Image Viewer, als neuen Proess starten
+#alias xv='xv &' #Small Image Viewer, als neuen Proess starten
+#alias feh='feh &' #Small Image Viewer, als neuen Proess starten
+#alias eog='eog &' #Small Image Viewer und ordnervorschau, als neuen Proess starten
+#alias mcomix='mcomix &' Image Viewer und Image Browser (like 'mirage' layout)mmage
+#alias gimmage ='gimmage &' #Small Image Viewer, als neuen Proess starten
+#alias fbv ='fbv &' #Output the  image size/resolution
+alias libre='libreoffice &'
+#alias ranger='python /etc/ranger-master/ranger.py' #Vim Like filemanager, als neuen Prozess starten
+alias emelfm2='emelfm2  &' #Commander filemanager, als neuen Prozess starten
+alias pcmanfm='pcmanfm  &' #Dateibrowser, als neuen Prozess starten
+alias hibern='systemctl hibernate' #Schicke den Rechner in Ruhemodus. Einstellungen werden auf der HDD in der SWAP Partion gespechert. Diese muss im Bootloader (z.B. Grup) erst definiert werden. Sonst funktioniert der Befehl nicht.
+alias savea="cp -ruv /home/sda3/home/install/Schreibtisch/abschlussarbeit /home/mi/" #Abschlussarbeit auf externe hdd sichern
+alias synca="rsync -rltuvc /home/sda3/home/install/Schreibtisch/abschlussarbeit /home/mi/" #Sync der Abschlussarbeit auf externe hdd.
+alias peepdf='python2.7 /usr/local/peepdf_0.3/peepdf.py'
+alias dvir='xrandr --output VGA1 --right-of LVDS1 --auto'
+alias dvil='xrandr --output VGA1 --left-of LVDS1 --auto'
+alias dvio='xrandr --output LVDS1 --auto --output VGA1 --above LVDS1 --auto'
+alias dviu='xrandr --output VGA1 --under LVDS1 --auto'
+alias office='libreoffice &'
+alias libreoffice='libreoffice &'
+alias fileroller='file-roller &'
+alias min='min &'
+alias youtube-dl-playlistMP3160K='youtube-dl --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 160K --output "%(title)s.%(ext)s" --yes-playlist'
+alias youtube-dl-playlistMP4='youtube-dl --ignore-errors --output "%(title)s.%(ext)s" --yes-playlist '
+alias vlsongs='nvlc --random --loop  --recursive collaps /home/data/musik/{charts120116,coversongs,CD*} --no-video --recursive expand'
+alias vlnsongs='nvlc --random --loop  --recursive --no-video collaps /home/data/musik/{charts120116,coversongs,CD*} --no-video --recursive expand'
+alias vlcharts='nvlc /home/data/musik/charts120116/* --loop --random --recursive expand'
+alias vlpiano='nvlc /home/data/musik/youtub-piano/ghibli/* --random --no-video --loop  --recursive expand'
+alias vlwebradio='nvlc /musik/webradio.m3u --loop'
+alias mount='sudo mount'
+alias mountb1='sudo mount /dev/sdb1 /mnt/sdb1 && cd /mnt/sdb1'
+alias mountc1='sudo mount /dev/sdc1 /mnt/sdc1 && cd /mnt/sdc1'
+alias mountd1='sudo mount /dev/sdb1 /mnt/sdd1 && cd /mnt/sdd1'
+alias umount='sudo umount'
+alias umountb1='sudo umount /mnt/sdb1'
+alias umountc1='sudo umount /mnt/sdc1'
+alias umountd1='sudo umount /mnt/sdd1'
+alias lpr2sl='lpr -o number-up=2 -o sides=two-sided-long-edge'
+alias lprpr='lpr -o page-ranges'
+alias avr_wf="echo 'avrdude -p m88a -c stk500 -e -U flash:w:diag.hex'"
+alias avr_rf="echo 'avrdude -p m128 -c stk500 -U flash:r:~/avr_downloads/diagflash.bin:r' "
+alias avr_rfu='avrdude -p m128 -u -U '
+alias avr_we='avrdude -c jtag2 -p m128 -P usb:xx -v -U eeprom:w:eeprom.hex -U efuse:w:0xff:m  -U hfuse:w:0x89:m -U lfuse:w:0x2e:m'
+alias make='make -j4'
+alias fn='find -name'
+alias wpasup='sudo wpa_supplicant -D wext -c /etc/wpa_supplicant/wpa_supplicant_7270home.conf -i wlp12s0 -B'
+alias md5sumdir='find somedir -type f -exec md5sum {} \; | sort -k 2 | md5sum'
+alias pixeldiff='compare -compose src'
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
+#### cd ################
+alias cddesk='cd /cygdrive/c/Users/Z651633/Desktop/'
+alias cdwksvectorAppl='cd C:/app/Aurix/WKS_Vector/Appl/Applications/SipAddon/StartApplication/Appl'
+alias cdwksvectorMakeSupport='cd C:/app/Aurix/WKS_Vector/Appl/Applications/MakeSupport'
+alias cdwksvector='cd /cygdrive/c/Users/Z651633/Desktop/marco/linkZF_Vector'
+alias cddownloads='cd /cygdrive/c/Users/Z651633/Downloads'
+alias cdt52='cd /cygdrive/c/UserData/tools/TriCorev5.0r2/ctc/include.lsl'
+alias cdzfbuild='cd /cygdrive/c/app/Aurix/ZF_AURIX_BUILDSYSTEM'
+alias cda2lutest='cd /cygdrive/c/app/Aurix/WKS_Aurix2Lemdd/UTest_Aurix2Simulink_TC27xD'
+alias cdlebuild='cd $PROJECT_HOME'
+alias cdlebuildap='cd $PROJECT_HOME/aurix_app/productive'
+alias cdlebuildat='cd $PROJECT_HOME/aurix_app/unittest'
+alias cdlebuildpp='cd $PROJECT_HOME/pic_app/productive'
+alias cdlebuildpt='cd $PROJECT_HOME/pic_app/unittest'
+
+#### open ##################
+alias open='cygstart .'
+alias opendesk='cygstart /cygdrive/c/Users/MI/Desktop'
+alias openbuild='cygstart $PROJECT_HOME'
+alias openproject='cygstart $PROJECT_HOME'
+
+#### reload ###############
+alias reload='source ~/.bashrc && source ~/.bash_profile'
+alias reloadtmux='tmux source-file ~/.tmux.conf'
+
+#### Ctags ################
+alias ctags_project='ctags -R -f ~/.tags/project $PROJECT_HOME --extra=+fq --c++-kinds=+p --fields=+afikKlmnsSzt --tag-relative=yes --languages=C,C++,Make -I'
+alias ctags_aurix='ctags -R -f ~/.tags/aurix $PROJECT_HOME/aurix_app --extra=+fq --c++-kinds=+p --fields=+afikKlmnsSzt --tag-relative=yes --languages=C,C++,Make -I'
+alias ctags_pic='ctags -R -f ~/.tags/pic $PROJECT_HOME/pic_app --extra=+fq --c++-kinds=+p --fields=+afikKlmnsSzt --tag-relative=yes --languages=C,C++,Make -I'
+alias ctags_pic2='ctags -R -f ~/.tags/pic $PROJECT_HOME/pic_app --extra=+fq --c++-kinds=+p --fields=+iaS --tag-relative=yes --languages=C,C++,Make -I'
+alias ctags_cpputest='ctags -R -f ~/.tags/cpputest $PROJECT_HOME/bin/cpputest --extra=+fq --c++-kinds=+p --fields=+afikKlmnsSzt --tag-relative=yes --languages=C,C++,Make -I'
+alias ctags_tasking='ctags -R -f ~/.tags/tasking $PROJECT_HOME/bin/tasking/ --extra=+fq --c++-kinds=+p --fields=+afikKlmnsSzt --tag-relative=yes --languages=C,C++,Make -I'
+alias ctags_microchip='ctags -R -f ~/.tags/microchip $PROJECT_HOME/bin/microchip/ --extra=+fq --c++-kinds=+p --fields=+afikKlmnsSzt --tag-relative=yes --languages=C,C++,Make -I'
+
+#### Converters ###########
+alias dirconvertqulaity='find -type f -name *.jpg | xargs -I {} convert -strip -interlace Plane -antialias -adaptive-sharpen 1x0,1 -auto-level -quality 80% {} {}'
+
+#### Git ##########
+alias gs='git status '
+alias ga='git add '
+alias gb='git branch '
+alias gc='git commit'
+alias gd='git diff'
+alias gco='git checkout '
+alias gk='gitk --all&'
+alias gx='gitx --all'
+
+alias got='git '
+alias get='git '
+
+mmnt()
+{
+    while [ $# -gt 0 ]
+    do
+        if [ $1 == "[a-z]"? ]
+        then
+            sudo mount /dev/sd$1 /mnt/sd$1
+        else
+            sudo mount /dev/$1 /mnt/$1
+        fi
+        shift
+    done
+}
+
+umnt()
+{
+    while [ $# -gt 0 ]
+    do
+        sudo umount /dev/$1
+        shift
+    done
+}
+
+vimdirdiff()
+{
+    # Shell-escape each path:
+    DIR1=$(printf '%q' "$1"); shift
+    DIR2=$(printf '%q' "$1"); shift
+    vim $@ -c "DirDiff $DIR1 $DIR2"
+}
+
+c() {
+    # GNU bc calculator alias
+    printf "%s\n" "$*" | bc
+}
+
+whb() { #Funktion to turn WLAN on at home inside
+ sudo killall wpa_supplicant
+ sudo killall dhcpcd
+ sudo ip link set wlo1 down
+ sudo ip link set wlo1 up
+ sudo wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant_7270home.conf -i  wlp12s0 -B
+ sudo sleep 3
+ sudo dhcpcd -4
+}
+
+wlanon() {
+ sudo wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant_7270home.conf -i  wlp12s0 -B
+ sudo sleep 3
+ sudo dhcpcd -4
+}
+
+
+cupsstart(){
+sudo systemctl start avahi-daemon.service
+sudo systemctl start org.cups.cupsd.service
+}
+
+cupsstop(){
+sudo systemctl stop avahi-daemon.service
+sudo systemctl stop org.cups.cupsd.service
+}
+
+extr() {
+ if [ -f $1 ] ; then
+     case $1 in
+         *.tar.bz2)   tar xjf $1        ;;
+         *.tar.gz)    tar xzf $1     ;;
+         *.tar.xz)    tar xjf $1     ;;
+         *.bz2)       bunzip2 $1       ;;
+         *.rar)       rar x $1     ;;
+         *.gz)        gunzip $1     ;;
+         *.tar)       tar xf $1        ;;
+         *.tbz2)      tar xjf $1      ;;
+         *.tgz)       tar xzf $1       ;;
+         *.zip)       unzip $1     ;;
+         *.Z)         uncompress $1  ;;
+         *.7z)        7z x $1    ;;
+         *)           echo "'$1' cannot be extracted via extract()" ;;
+     esac
+ else
+     echo "'$1' is not a valid file"
+ fi
+}
+
+
+####  Export ###################################################################
+export EDITOR=vim
+export VISUAL=$EDITOR
+export PAGER='less -iRX'
+
+
+    #Color codesi
+#   For more 256 colors and formats see also:
+#   https://misc.flogisoft.com/bash/tip_colors_and_formatting
+#
+#    Foreground (text)
+#    39	Default foreground color
+#    30	Black
+#    31	Red
+#    32	Green
+#    33	Yellow
+#    34	Blue
+#    35	Magenta
+#    36	Cyan
+#    37	Light gray
+#    90	Dark gray
+#    91	Light red
+#    92	Light green
+#    93	Light yellow
+#    94	Light blue
+#    95	Light magenta
+#    96	Light cyan
+#    97	White
+#
+#    Background
+#    Code	Color	Example	Preview
+#    49	Default background color
+#    40	Black
+#    41	Red
+#    42	Green
+#    43	Yellow
+#    44	Blue
+#    45	Magenta
+#    46	Cyan
+#    47	Light gray
+#    100 Dark gray
+#    101 Light red
+#    102 Light green
+#    103 Light yellow
+#    104 Light blue
+#    105 Light magenta
+#    106 Light cyan
+#    107 White
+#
+    # Man page
+export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
+export LESS_TERMCAP_md=$'\E[1;36m'     # begin blink
+export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
+export LESS_TERMCAP_so=$'\E[01;103' # begin reverse video
+export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
+export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
+export LESS_TERMCAP_ue=$'\E[0m'        # reset underline:
+
+        #Promt yellow
+#export PS1="\[\033[38;5;243m\][\[$(tput sgr0)\]\[\033[38;5;214m\]\!\[$(tput sgr0)\]\[\033[38;5;243m\]][\[$(tput sgr0)\]\[\033[38;5;214m\]\u\[$(tput sgr0)\]\[\033[38;5;243m\]]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;87m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;243m\]\\$:\[$(tput sgr0)\]"
+        #Promt magenta
+export PS1="\[\033[38;5;243m\][\[$(tput sgr0)\]\[\033[38;5;198m\]\!\[$(tput sgr0)\]\[\033[38;5;243m\]][\[$(tput sgr0)\]\[\033[38;5;219m\]\u\[$(tput sgr0)\]\[\033[38;5;243m\]]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;87m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;243m\]\\$:\[$(tput sgr0)\]"
+

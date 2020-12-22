@@ -1,0 +1,81 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 316,
+       "width": 484,
+       "x": 0,
+       "y": 0
+    },
+    "name": "root@marco-arch:~/.i3",
+    "percent": 0.5,
+    "swallows": [
+       {
+       // "class": "^XTerm$",
+       // "instance": "^xterm$",
+       // "title": "^root\\@marco\\-arch\\:\\~\\/\\.i3$",
+       // "transient_for": "^$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // stacked split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "stacked",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 675,
+               "width": 1362,
+               "x": 0,
+               "y": 0
+            },
+            "name": "i3: i3 User’s Guide - Mozilla Firefox",
+            "percent": 0.5,
+            "swallows": [
+               {
+               // "class": "^Firefox$",
+               // "instance": "^Navigator$",
+               // "title": "^i3\\:\\ i3\\ User\\’s\\ Guide\\ \\-\\ Mozilla\\ Firefox$",
+               // "transient_for": "^$",
+               // "window_role": "^browser$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1161,
+               "width": 956,
+               "x": 0,
+               "y": 0
+            },
+            "name": "i3: Layout saving in i3 - Mozilla Firefox",
+            "percent": 0.5,
+            "swallows": [
+               {
+               // "class": "^Firefox$",
+               // "instance": "^Navigator$",
+               // "title": "^i3\\:\\ Layout\\ saving\\ in\\ i3\\ \\-\\ Mozilla\\ Firefox$",
+               // "transient_for": "^$",
+               // "window_role": "^browser$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
