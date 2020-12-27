@@ -1,0 +1,3 @@
+set editor="nvim  \"+set tw=80\"  \"+set fo=aw\" \"+set nonumber\" \"+set spell\" +/^$/ \"+nohl\" +o \ 2
+￼
++startinsert  +"normal o"

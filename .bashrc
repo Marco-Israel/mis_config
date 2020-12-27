@@ -40,11 +40,11 @@ echo -e "\033]12;magenta\007"
 ### EXECUTE ##########
 #~/bin/battery_alert &
 
-  #Start Xorg-XServer
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec startx
-fi
-
+	#  #Start Xorg-XServer
+#if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+#  exec startx
+#fi
+#
 
 
 #'startxwin & -- -listen tcp'

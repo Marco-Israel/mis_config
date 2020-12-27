@@ -33,6 +33,7 @@ set list "listchars anzeigen
 set nocompatible "enter the current millenium
 set colorcolumn=80 "show a line in <n> coloum
 set textwidth=80  "autowrap after 80 char for instance. 0==turn off.
+set splitright " new vertical splits are on the right
 set linebreak  "break a line hard, not only display a linebreak.
 set nolist
 set expandtab "   Tabs durch Leerzeichen ersetzen lassen

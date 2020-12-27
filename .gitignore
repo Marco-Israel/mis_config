@@ -24,7 +24,10 @@ installArch.sh
 .tmux/
 .vim/
 .pki/
-.wget-hsts /
-.Xauthority /
-Musik /
+.wget-hsts
+.Xauthority
+Musik
+.lesshst
+Documents/unversioned
+Documents/
 

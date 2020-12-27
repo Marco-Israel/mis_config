@@ -56,5 +56,7 @@ fi
 #exec xterm -geometry 80x66+0+0 -name login
 
 ##--I3-WM--
-exec i3
+#exec i3
+exec xrandr --output DVI-I-1 --auto --output DP-1 --left-of DVI-I-1
+exec dwm
 

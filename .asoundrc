@@ -1,14 +1,24 @@
-
 pcm.!default {
-        type hw
-        card Intel
+    type plug
+    slave.pcm "duplex"
 }
 
 ctl.!default {
-        type hw
-        card Intel
+    type plug
+    slave.pcm "duplex"
 }
 
+#
+#pcm.!default {
+#        type hw
+#        card Intel
+#}
+#
+#ctl.!default {
+#        type hw
+#        card Intel
+#}
+#
 pcm.snd_card {
         type hw
         card Intel
@@ -76,11 +86,6 @@ cm.duplex {
    capture.pcm "dsnooper"
 }
 
-
-pcm.!default {
-    type plug
-    slave.pcm "duplex"
-}
 
 cm.upmix {
     type route

@@ -6,7 +6,7 @@
 [push]
 	default = simple
 [commit]
-  template = ~/.gitfiles/templates/default.tmpl
+  template = ~/.gitfiles/templates/commit.template
 [alias]
     co = checkout
     ci = commit
