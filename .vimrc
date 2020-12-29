@@ -29,7 +29,7 @@ set linebreak "Bei aautomatiscben Linebreak (set wrap) Wörter nicht trennen
 set list "listchars anzeigen
 set listchars=tab:>-,trail:.,extends:>,precedes:<,nbsp:+,eol:$,precedes:#,extends:* " Tabs und Leerzeichen am Zeilenende anzeigen hjkhj
 set list "listchars anzeigen
-"set relativenumber "Relative Zeilennummern
+set relativenumber "Relative Zeilennummern
 set nocompatible "enter the current millenium
 set colorcolumn=80 "show a line in <n> coloum
 set textwidth=80  "autowrap after 80 char for instance. 0==turn off.
@@ -58,6 +58,8 @@ set cmdheight=2     " Hight of error massage box.
 set shortmess+=aFOo     "Error message format and types
 set shortmess-=S        "Show search / matching results lik [ 11 / 47 ] if <99
 set fo=tcroqnblj   "Activate textwide wrapping.
+set shortmess+=aI  " Short message or turn massage off
+set belloff+=all "If Vim beeps during completion
 "set pumheight=8 "Maximum members of matches shown in poplist. 0 all.
 "set previewpopup=height:10,width:60 "Overwrite use of preview to popup
 "set shortmess+=c " Don't pass messages to |ins-completion-menu|.
@@ -72,12 +74,12 @@ set fo=tcroqnblj   "Activate textwide wrapping.
 "    set signcolumn=yes
 "endif
 ""
-"
+
 """ "Vim (quickfix) completion """""""""""""""""""""""""""""""""""""""""""""""""
 set autowrite
 set autowriteall
 set complete=.,t,w,b,u,U,k,kspell,s "not: d/i=included, k/sfile special file
-set completeopt=menu,menuone,longest,preview
+set completeopt=menu,menuone,longest,preview,noinsert,noselect
 "set previewpopup=height:10,width:60 "Overwrite use of preview to popup
 
 """ Foldable code blocks """"""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -133,8 +135,8 @@ autocmd FileType help  setlocal number
 """ Fill up a line till cursorculumn """""""""""""""""""""""""""""""""""""""""""
 function! FillLine( str )
     " set tw to the desired total length
-    let tw = &textwidth
-    if tw==0 | let tw = 81 | endif
+    let tw = &textwidth + 1
+    if tw==0 | let tw = 81| endif
     " strip trailing spaces first
     .s/[[:space:]]*$//
     " calculate total number of 'str's to insert
@@ -165,9 +167,23 @@ if &diff
 
 
 
+""" Deleate all buffers """"""""""""""""""""""""""""""""""""""""""""""""""""""""
+command Bd :up | %bd | e#
+
+
+
+""" open vertical """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! Newvert( str )
+  :vsp str
+  <CR>h
+  :resize vertical 82
+  <CR>l
+endfunction
+
+
 """ Grep in all open bufffers """"""""""""""""""""""""""""""""""""""""""""""""""
 function! BuffersList()
-  let all = range(0, bufnr('$'))
+  let all = range(0, BUfnr('$'))
   let res = []
   for b in all
     if buflisted(b)
@@ -413,6 +429,37 @@ map <C-F9> :r!date +\%Y-\%m-\%d<CR>
 
 
 map <C-F9> :call StripTrailingWhitespaces()
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"From
+"http://vimcasts.org/episodes/simple-calculations-with-vims-expression-register/
+
+"Use of vims expression register . Past it into cursor place.
+        "Simple on command line on command line press:
+            "<C-r>=
+
+"Calculate the term from the beginning of the line TILL an REQUIRED '='.
+        nnoremap \lcalc 0yt=A<C-r>=<C-r>"<CR><Esc>
+
+
+"From "https://vim.fandom.com/wiki/Using_vim_as_calculator
+"Use Linux bc on line in INSERT or VISUAL selection. REPLACEs the current line.
+        "Pipe the CURRENT LINE to bc and REPLACE with it with the result:
+            "!!bc
+        "Pipe the VISUAL selected inbc and REPLACE with it with the result:
+            "!bc
+
+"Calculate the term from the beginning of the line TILL CURSOR. Adds '=' before
+        inoremap \elcalc <C-O>yiW<End>=<C-R>=<C-R>0<CR>
+
+"Calculate the CURRENT LINE by Linux bc.
+        map \lecalc yypkA =<Esc>jOscale=2<Esc>:.,+1!bc<CR>kJ
+
+"Calculate VISUAL BLOCK of Numbers and insert result IN A NEW LINE.
+        vmap \bclac "y'>p:'[,']-1s/$/+/\|'[,']+1j!<CR>
+            \ '[0"wy$:.s§.*§\=w§<CR>'[yyP:.s/./=/g<CR>_j
+
 
 
 

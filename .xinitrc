@@ -57,6 +57,11 @@ fi
 
 ##--I3-WM--
 #exec i3
-exec xrandr --output DVI-I-1 --auto --output DP-1 --left-of DVI-I-1
-exec dwm
 
+while true; do
+    # Log stderror to a file
+    exec dwm 2> ~/.dwm.log
+    exec xrandr --output DVI-I-1 --auto --output DP-1 --left-of DVI-I-1
+    # No error logging
+    #exec dwm >/dev/null 2>&1
+done

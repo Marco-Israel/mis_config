@@ -15,13 +15,15 @@
 
 
 ### ALIAS ##########
+alias ip='ip -color=auto'
 alias cdmanuals='cd /cygdrive/c/app/Aurix/Documentation/00_Manuels'
 alias cda2lemdd='cd /cygdrive/c/app/Aurix/WKS_Aurix2Lemdd'
 alias vbrc='vim ~/.bashrc'
 alias vrc='vim ~/.vimrc'
 alias vol='pacmd set-sink-volume'
 alias ls='ls  -la --file-type --human-readable --color=always' #colore ls
-alias less='less -iRX'
+#alias less='less -iRX'
+alias less='less -i'
 alias dir='dir --color=always' #colore dir
 alias vdir='vdir --color=always' #colore vdir
 alias grep='grep --color=always' #colore grep
@@ -74,8 +76,8 @@ alias youtube-dl-playlistMP3160K='youtube-dl --ignore-errors --format bestaudio 
 alias youtube-dl-playlistMP4='youtube-dl --ignore-errors --output "%(title)s.%(ext)s" --yes-playlist '
 alias vlsongs='nvlc --random --loop  --recursive collaps /home/data/musik/{charts120116,coversongs,CD*} --no-video --recursive expand'
 alias vlnsongs='nvlc --random --loop  --recursive --no-video collaps /home/data/musik/{charts120116,coversongs,CD*} --no-video --recursive expand'
-alias vlcharts='nvlc /home/data/musik/charts120116/* --loop --random --recursive expand'
-alias vlpiano='nvlc /home/data/musik/youtub-piano/ghibli/* --random --no-video --loop  --recursive expand'
+alias nvlcMP3='nvlc --random --no-video --loop  --recursive expand'
+alias nvlcMP4='nvlc --random --loop  --recursive expand'
 alias vlwebradio='nvlc /musik/webradio.m3u --loop'
 alias mount='sudo mount'
 alias mountb1='sudo mount /dev/sdb1 /mnt/sdb1 && cd /mnt/sdb1'
@@ -243,11 +245,21 @@ dict() {
 	less -FRX
 }
 
+man() {
+export LESS_TERMCAP_md=$'\E[1;36m'         # begin blink
+export LESS_TERMCAP_me=$'\E[0m'            # reset bold/blink
+export LESS_TERMCAP_se=$'\E[0m'            # reset reverse video
+export LESS_TERMCAP_so=$'\E[01;103'        # begin reverse video
+export LESS_TERMCAP_ue=$'\E[0m'            # reset underline:
+export LESS_TERMCAP_us=$'\E[1;32m'         # begin underline
+command man "$@"
+}
+
 
 ####  Export ###################################################################
 export EDITOR=vim
 export VISUAL=$EDITOR
-export PAGER='less -iRX'
+#export PAGER='less -iRX'
 export STARDICT_DATA_DIR=~/.config/stardict
 
 
@@ -294,15 +306,23 @@ export STARDICT_DATA_DIR=~/.config/stardict
 #    106 Light cyan
 #    107 White
 #
-    # Man page
-export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
-export LESS_TERMCAP_md=$'\E[1;36m'     # begin blink
-export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
-export LESS_TERMCAP_so=$'\E[01;103' # begin reverse video
-export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
-export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
-export LESS_TERMCAP_ue=$'\E[0m'        # reset underline:
-
+#    # Man page
+#export LESS=-R
+#export LESS_TERMCAP_mb=$'\E[1;31m'         # begin bold
+#export LESS_TERMCAP_md=$'\E[1;36m'         # begin blink
+#export LESS_TERMCAP_me=$'\E[0m'            # reset bold/blink
+#export LESS_TERMCAP_se=$'\E[0m'            # reset reverse video
+#export LESS_TERMCAP_so=$'\E[01;103'        # begin reverse video
+#export LESS_TERMCAP_ue=$'\E[0m'            # reset underline:
+#export LESS_TERMCAP_us=$'\E[1;32m'         # begin underline
+#
+#
+#if [ -d /usr/share/gtags ]; then
+#    export GTAGSLIBPATH=/usr/include/
+#    export GTAGSCONF=/usr/share/gtags/gtags.conf
+#    export GTAGSLABEL=pygments
+#fi
+#
 
         #Promt yellow
 #export PS1="\[\033[38;5;243m\][\[$(tput sgr0)\]\[\033[38;5;214m\]\!\[$(tput sgr0)\]\[\033[38;5;243m\]][\[$(tput sgr0)\]\[\033[38;5;214m\]\u\[$(tput sgr0)\]\[\033[38;5;243m\]]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;87m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;243m\]\\$:\[$(tput sgr0)\]"
