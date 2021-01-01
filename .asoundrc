@@ -1,13 +1,3 @@
-pcm.!default {
-    type plug
-    slave.pcm "duplex"
-}
-
-ctl.!default {
-    type plug
-    slave.pcm "duplex"
-}
-
 #
 #pcm.!default {
 #        type hw
@@ -86,6 +76,16 @@ cm.duplex {
    capture.pcm "dsnooper"
 }
 
+
+pcm.!default {
+    type plug
+    slave.pcm "duplex"
+}
+
+pcm.!default {
+    type plug
+    slave.pcm "duplex"
+}
 
 cm.upmix {
     type route

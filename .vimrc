@@ -15,7 +15,7 @@ set expandtab "Tabs durch Leerzeichen ersetzen lassen
 set shiftwidth=4 "Anzahl der Leezeichen fuer autoindent
 set softtabstop=4 "Ruecktaste loescht Tab, 4 Leerzeichen
 set ignorecase "Gross-/Kleinschreibung ignorieren
-set smartcase "Gross-/Kleinschreibung nicht ignorieren
+"set smartcase "Gross-/Kleinschreibung NICHT ignorieren wenn CameCase
 set hlsearch "Suchergebnisse hervorheben
 set incsearch "Ergebnisse beim Tippen anzeigen
 set cryptmethod=blowfish "Verschuesselungsmethode definieren
@@ -45,11 +45,11 @@ set clipboard=""
 set laststatus=2 " Statuszeile immer anzeigen.
 set statusline+=%F
 set path+=** "extand the vim path"
-set path+=../**
-set path+=../../**
-set tags+=$PWD/.scopedb/ctags.db
+"set path+=../**
+"set path+=../../**
+"set tags+=$PWD/.scopedb/ctags.db
 set number "Activates real number"
-set scrolloff=3 "show the last X lines. 999 = Center everytime.
+set scrolloff=15 "show the last X lines. 999 = Center everytime.
 set viminfo='100,f1,:20,@20,/20
 set encoding=utf-8
 set fileencodings:=utf-8
@@ -60,6 +60,8 @@ set shortmess-=S        "Show search / matching results lik [ 11 / 47 ] if <99
 set fo=tcroqnblj   "Activate textwide wrapping.
 set shortmess+=aI  " Short message or turn massage off
 set belloff+=all "If Vim beeps during completion
+set matchpairs=(:),{:},[:] "define matching pairs
+
 "set pumheight=8 "Maximum members of matches shown in poplist. 0 all.
 "set previewpopup=height:10,width:60 "Overwrite use of preview to popup
 "set shortmess+=c " Don't pass messages to |ins-completion-menu|.
@@ -79,7 +81,7 @@ set belloff+=all "If Vim beeps during completion
 set autowrite
 set autowriteall
 set complete=.,t,w,b,u,U,k,kspell,s "not: d/i=included, k/sfile special file
-set completeopt=menu,menuone,longest,preview,noinsert,noselect
+set completeopt=menu,menuone,longest,preview,noinsert
 "set previewpopup=height:10,width:60 "Overwrite use of preview to popup
 
 """ Foldable code blocks """"""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -147,7 +149,7 @@ function! FillLine( str )
         .s/$/\=(repeat(a:str, reps))/
     endif
 endfunction
-map <F5>  :call FillLine(matchstr(getline('.')[col('.') - 1 :], '^.'))<CR>
+map <special> <F5>  :call FillLine(matchstr(getline('.')[col('.') - 1 :], '^.'))<CR>
 map <C-F5>  :call FillLine(input(">")) <CR>
 "
 
@@ -174,7 +176,7 @@ command Bd :up | %bd | e#
 
 """ open vertical """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! Newvert( str )
-  :vsp str
+  :vsp a:str
   <CR>h
   :resize vertical 82
   <CR>l
@@ -329,7 +331,7 @@ function! StripTrailingWhitespaces()
 endfunction
 
 
-""" Combining move and scroll """"""""""""""""""""""""""""""""""""""""""""""""""
+""" Combining move and scroll. Scroll a page instead/without cursor movement """
 function! s:Saving_scroll(cmd)
   let save_scroll = &scroll
   execute 'normal! ' . a:cmd
@@ -341,34 +343,27 @@ nnoremap <C-K> :call <SID>Saving_scroll("1<C-V><C-U>")<CR>
 vnoremap <C-K> <Esc>:call <SID>Saving_scroll("gv1<C-V><C-U>")<CR>
 
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Key MAPPINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Toggle auto-linebreak
-noremap <M-F4> :set formatoptions+=a<CR>
-noremap <C-M-F4> :set formatoptions-=a<CR>
+"noremap <M-F4> :set formatoptions+=a<CR>
+"noremap <C-F4> :set formatoptions-=a<CR>
 
 
 "faster moving inside splits
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
+"nnoremap <C-J> <C-W><C-J>
+"nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-L> <C-W><C-L>
+"nnoremap <C-H> <C-W><C-H>
+"
 
 "remap copy past to clipboard buffers
 nnoremap <C-c> "+y
 vnoremap <C-c> "+y
-nnoremap <C-M-p> "+gP
-vnoremap <C-M-p> "+gP
-
-
-" copy (write / read) highlighted text to/from .vimbuffer
-vmap <M-c> y:new ~/.vimbuffer<CR>VGp:x<CR> \|
-            \:!cat ~/.vimbuffer \| clip.exe <CR><CR>
-map <M-v> :r ~/.vimbuffer<CR>
+nnoremap <C-p> "+gP
+vnoremap <C-p> "+gP
 
 
 "toggle between tabs
@@ -380,18 +375,17 @@ nnoremap tt  :tabedit<Space>
 nnoremap tn  :tabnext<Space>
 nnoremap tm  :tabmmove<Space>
 nnoremap td  :tabclose<CR>
+nnoremap ta  :tabnew<CR>
 
 
 "new tab or close tab with shift+[cn]
-map <M-S-n> mz:tabnew<CR>
-map <M-S-c> mz:tabclose<CR>
+"map <M-n> mz:tabnew<CR>
+"map <M-c> mz:tabclose<CR>
 
 
-""move lines up and down with ctrl+alt+[jk]
-nmap <C-M-j> mz:m+<cr>`z
-nmap <C-M-down> mz:m+<cr>`z
-nmap <C-M-k> mz:m-2<cr>`z
-nmap <C-M-up> mz:m-2<cr>`z
+"Swap lineslines
+nmap <C-down> mz:m+<cr>`z
+nmap <C-up> mz:m-2<cr>`z
 
 
 "strg+w mapping
@@ -409,8 +403,8 @@ nmap <C-w>> <C-w>5>
 "moving between breaked lines
 nnoremap k gk
 nnoremap j gj
-inoremap <C-k> <C-o>gk
-inoremap <C-j> <C-o>gj
+"inoremap <C-k> <C-o>gk
+"inoremap <C-j> <C-o>gj
 
 
 "Show taglist instead of jump directly

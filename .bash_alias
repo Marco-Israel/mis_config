@@ -18,12 +18,13 @@
 alias ip='ip -color=auto'
 alias cdmanuals='cd /cygdrive/c/app/Aurix/Documentation/00_Manuels'
 alias cda2lemdd='cd /cygdrive/c/app/Aurix/WKS_Aurix2Lemdd'
-alias vbrc='vim ~/.bashrc'
+alias brc='vim ~/.bashrc'
+alias balias='vim ~/.bash_alias'
 alias vrc='vim ~/.vimrc'
+alias vplug='vim ~/.vimplug.conf'
 alias vol='pacmd set-sink-volume'
 alias ls='ls  -la --file-type --human-readable --color=always' #colore ls
-#alias less='less -iRX'
-alias less='less -i'
+alias less='less -r -I'
 alias dir='dir --color=always' #colore dir
 alias vdir='vdir --color=always' #colore vdir
 alias grep='grep --color=always' #colore grep
@@ -74,11 +75,8 @@ alias fileroller='file-roller &'
 alias min='min &'
 alias youtube-dl-playlistMP3160K='youtube-dl --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 160K --output "%(title)s.%(ext)s" --yes-playlist'
 alias youtube-dl-playlistMP4='youtube-dl --ignore-errors --output "%(title)s.%(ext)s" --yes-playlist '
-alias vlsongs='nvlc --random --loop  --recursive collaps /home/data/musik/{charts120116,coversongs,CD*} --no-video --recursive expand'
-alias vlnsongs='nvlc --random --loop  --recursive --no-video collaps /home/data/musik/{charts120116,coversongs,CD*} --no-video --recursive expand'
-alias nvlcMP3='nvlc --random --no-video --loop  --recursive expand'
-alias nvlcMP4='nvlc --random --loop  --recursive expand'
-alias vlwebradio='nvlc /musik/webradio.m3u --loop'
+alias rvlcMP3='rvlc --random --no-video --loop  --recursive expand'
+alias rvlcMP4='rvlc --random --loop  --recursive expand'
 alias mount='sudo mount'
 alias mountb1='sudo mount /dev/sdb1 /mnt/sdb1 && cd /mnt/sdb1'
 alias mountc1='sudo mount /dev/sdc1 /mnt/sdc1 && cd /mnt/sdc1'
@@ -245,16 +243,7 @@ dict() {
 	less -FRX
 }
 
-man() {
-export LESS_TERMCAP_md=$'\E[1;36m'         # begin blink
-export LESS_TERMCAP_me=$'\E[0m'            # reset bold/blink
-export LESS_TERMCAP_se=$'\E[0m'            # reset reverse video
-export LESS_TERMCAP_so=$'\E[01;103'        # begin reverse video
-export LESS_TERMCAP_ue=$'\E[0m'            # reset underline:
-export LESS_TERMCAP_us=$'\E[1;32m'         # begin underline
-command man "$@"
-}
-
+#
 
 ####  Export ###################################################################
 export EDITOR=vim
@@ -322,7 +311,25 @@ export STARDICT_DATA_DIR=~/.config/stardict
 #    export GTAGSCONF=/usr/share/gtags/gtags.conf
 #    export GTAGSLABEL=pygments
 #fi
-#
+
+#### LESS ######################################################################
+# 1=red, 2=green, 3=yellow, 4=blue, 5=magenta, 6=cyan, 7=withe
+#export LESS="--RAW-CONTROL-CHARS --IGNORE-CASE"
+export LESS_TERMCAP_mb=$(tput bold; tput setaf 7) # withe
+export LESS_TERMCAP_md=$(tput bold; tput setaf 6) # cyan
+export LESS_TERMCAP_me=$(tput sgr0)
+export LESS_TERMCAP_so=$(tput bold; tput setaf 4; tput setab 7) # yellow on blue
+export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
+export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 3) #
+export LESS_TERMCAP_ue=$(tput rmul; tput sgr0)
+export LESS_TERMCAP_mr=$(tput rev)
+export LESS_TERMCAP_mh=$(tput dim)
+export LESS_TERMCAP_ZN=$(tput ssubm)
+export LESS_TERMCAP_ZV=$(tput rsubm)
+export LESS_TERMCAP_ZO=$(tput ssupm)
+export LESS_TERMCAP_ZW=$(tput rsupm)
+export GROFF_NO_SGR=1         # For Konsole and Gnome-terminal
+
 
         #Promt yellow
 #export PS1="\[\033[38;5;243m\][\[$(tput sgr0)\]\[\033[38;5;214m\]\!\[$(tput sgr0)\]\[\033[38;5;243m\]][\[$(tput sgr0)\]\[\033[38;5;214m\]\u\[$(tput sgr0)\]\[\033[38;5;243m\]]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;87m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;243m\]\\$:\[$(tput sgr0)\]"

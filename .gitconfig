@@ -10,7 +10,7 @@
 [alias]
     co = checkout
     ci = commit
-    ci = cm
+    cm = commit
     st = status
     br = branch
 	ac = !git add -A && git commit
