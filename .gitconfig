@@ -18,5 +18,18 @@
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     type = cat-file -t
     dump = cat-file -p
+    listInControl='git ls-tree -r master --name-only --full-tree'
+    #If you want a list of files that ever existed (i.e. including deleted files):
+    everExists="git log --pretty=format: --name-only --diff-filter=A | sort - | sed '/^$/d'"
 [diff]
 	tool = vimdiff
+[core]
+	pager = "less -MRi "
+
+
+################################################################################
+# Hits
+################################################################################
+
+#Find a deleted string
+# git grep <regexp> $(git rev-list --all -- lib/util) -- lib/util

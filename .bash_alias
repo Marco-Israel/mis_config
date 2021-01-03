@@ -24,7 +24,7 @@ alias vrc='vim ~/.vimrc'
 alias vplug='vim ~/.vimplug.conf'
 alias vol='pacmd set-sink-volume'
 alias ls='ls  -la --file-type --human-readable --color=always' #colore ls
-alias less='less -r -I'
+alias less='less -r -I -H'
 alias dir='dir --color=always' #colore dir
 alias vdir='vdir --color=always' #colore vdir
 alias grep='grep --color=always' #colore grep

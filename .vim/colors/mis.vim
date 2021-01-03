@@ -18,7 +18,8 @@ hi Todo guifg=#f00e8b guibg=#262626 guisp=#262626 gui=NONE ctermfg=0 ctermbg=219
 "hi Normal guifg=#ff007b guibg=#151515 guisp=#151515 gui=NONE ctermfg=198 ctermbg=233 cterm=NONE
 "hi Normal guifg=#ff007b guibg=#1c1c1c guisp=#1c1c1c gui=NONE ctermfg=199 ctermbg=235 cterm=NONE
 "hi Normal guifg=#f00e8b guibg=#262626 guisp=#262626 gui=NONE ctermfg=225 ctermbg=236 cterm=BOLD
-hi Normal guifg=#f00e8b guibg=#262626 guisp=#262626 gui=NONE ctermfg=225 ctermbg=236 cterm=BOLD
+"hi Normal guifg=#f00e8b guibg=#262626 guisp=#262626 gui=NONE ctermfg=225 ctermbg=236 cterm=BOLD
+hi Normal guifg=#f00e8b guibg=#262626 guisp=#262626 gui=NONE ctermfg=219 ctermbg=236 cterm=BOLD
 "hi StructType__st guifg=NONE guibg=#f5f5f5 guisp=#f5f5f5 gui=NONE ctermfg=101 ctermbg=NONE cterm=NONE
 hi StructType__st guifg=NONE guibg=#f5f5f5 guisp=#f5f5f5 gui=NONE ctermfg=187 ctermbg=NONE cterm=NONE
 
@@ -99,7 +100,7 @@ hi Operator guifg=#4a4a4a guibg=NONE guisp=NONE gui=NONE ctermfg=213 ctermbg=NON
 hi CursorLine guifg=#080808 guibg=#c6c6c6 guisp=#c6c6c6 gui=underline ctermfg=NONE ctermbg=234 cterm=underline
 hi TabLineFill guifg=NONE guibg=#ededed guisp=#ededed gui=NONE ctermfg=NONE ctermbg=214 cterm=NONE
 hi WarningMsg guifg=NONE guibg=#fff0f0 guisp=#fff0f0 gui=NONE ctermfg=NONE ctermbg=160 cterm=NONE
-hi DiffDelete guifg=#808080 guibg=#e61212 guisp=#e61212 gui=NONE ctermfg=8 ctermbg=160 cterm=NONE
+hi DiffDelete guifg=#808080 guibg=#e61212 guisp=#e61212 gui=NONE ctermfg=8 ctermbg=255 cterm=NONE
 hi CursorColumn guifg=NONE guibg=#f5f5f5 guisp=#f5f5f5 gui=NONE ctermfg=NONE ctermbg=255 cterm=NONE
 hi Define guifg=#ff8700 guibg=NONE guisp=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=BOLD
 hi FoldColumn guifg=#c2c2c2 guibg=NONE guisp=NONE gui=NONE ctermfg=7 ctermbg=NONE cterm=NONE
@@ -116,7 +117,7 @@ hi Exception guifg=#4a4a4a guibg=NONE guisp=NONE gui=NONE ctermfg=239 ctermbg=NO
 hi Keyword guifg=#4a4a4a guibg=NONE guisp=NONE gui=NONE ctermfg=9 ctermbg=NONE cterm=NONE
 "int char double void ...
 hi Type guifg=#00ffff guibg=NONE guisp=NONE gui=NONE ctermfg=198 ctermbg=NONE cterm=BOLD
-hi DiffChange guifg=#000000 guibg=#c754c7 guisp=#c754c7 gui=bold ctermfg=NONE ctermbg=170 cterm=bold
+hi DiffChange guifg=#000000 guibg=#c754c7 guisp=#c754c7 gui=bold ctermfg=NONE ctermbg=255 cterm=bold
 hi SpellLocal guifg=NONE guibg=#f0fff0 guisp=#f0fff0 gui=NONE ctermfg=NONE ctermbg=53 cterm=NONE
 hi Error guifg=NONE guibg=#fff0f0 guisp=#fff0f0 gui=NONE ctermfg=NONE ctermbg=160 cterm=NONE
 hi PMenu guifg=#000000 guibg=#ff7fc5 guisp=#ff7fc5 gui=italic ctermfg=NONE ctermbg=212 cterm=NONE
@@ -130,7 +131,7 @@ hi PMenuThumb guifg=#080808 guibg=#ff005f guisp=#ff005f gui=NONE ctermfg=232 cte
 hi MatchParen guifg=NONE guibg=#e3e3e3 guisp=#e3e3e3 gui=NONE ctermfg=202 ctermbg=254 cterm=NONE
 "Loop
 hi Repeat guifg=#4a4a4a guibg=NONE guisp=NONE gui=NONE ctermfg=85 ctermbg=NONE cterm=NONE
-hi SpellBad guifg=NONE guibg=#fff0f0 guisp=#fff0f0 gui=NONE ctermfg=NONE ctermbg=162 cterm=NONE
+hi SpellBad guifg=NONE guibg=#fff0f0 guisp=#fff0f0 gui=NONE ctermfg=NONE ctermbg=225 cterm=NONE
 hi Directory guifg=#4a4a4a guibg=NONE guisp=NONE gui=NONE ctermfg=249 ctermbg=NONE cterm=NONE
 hi Structure guifg=#ff8800 guibg=NONE guisp=NONE gui=NONE ctermfg=14 ctermbg=NONE cterm=NONE
 hi Return guifg=#ff8800 guibg=NONE guisp=NONE gui=NONE ctermfg=239 ctermbg=NONE cterm=NONE
@@ -145,8 +146,8 @@ hi cursorlinenr guifg=#969696 guibg=NONE guisp=NONE gui=NONE ctermfg=246 ctermbg
 hi Underlined	cterm=underline term=underline
 hi Ignore	guifg=bg ctermfg=bg
 
-hi DiffAdd	guibg=darkblue	ctermbg=darkblue term=none cterm=none
-hi DiffChange	guibg=darkmagenta ctermbg=magenta cterm=none
+hi DiffAdd	guibg=darkblue	ctermbg=darkred term=none cterm=none
+hi DiffChange	guibg=darkmagenta ctermbg=234 cterm=none
 hi DiffDelete	ctermfg=blue ctermbg=cyan gui=bold guifg=Blue guibg=DarkCyan
 hi DiffText	cterm=bold ctermbg=red gui=bold guibg=Red
 hi Folded	guifg=#808080 guibg=#000040			ctermfg=darkgrey ctermbg=black cterm=bold term=bold
@@ -165,14 +166,14 @@ hi FoldColumn	guifg=#808080 guibg=#000040			ctermfg=darkgrey ctermbg=black cterm
 "autocmd BufRead,BufEnter,BufAdd,BufNewFile,ColorScheme  * syn match spezial2 /[{}]/ | hi spezial2 guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE            ctermfg=234 ctermbg=NONE cterm=NONE
 
  "Highlight all function names
- autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme  * syntax match Type /bool_t/
- autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme * syntax match Todo /TODO/
- autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme * syntax match StorageClass /TRUE\|FALSE\|STATIC\|EXTERN\|PROTECTED\|INLINE\|TEST_GROUP\|TEST\|POINTERS_EQUAL\|LONGS_EQUAL\|NULL\|NULLp\|NULLv\|SPY\|MOCK\|FAKE\|STUP/
+ autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme  * syntax match Type /bool_t/
+ autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme * syntax match Todo /TODO/
+ autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme * syntax match StorageClass /TRUE\|FALSE\|STATIC\|EXTERN\|PROTECTED\|INLINE\|TEST_GROUP\|TEST\|POINTERS_EQUAL\|LONGS_EQUAL\|NULL\|NULLp\|NULLv\|SPY\|MOCK\|FAKE\|STUP/
 
-autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme * syn match braces /[(){}\]\[]/ | hi braces guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=198 ctermbg=NONE cterm=BOLD
-autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme * syn match other /[;\,=\-\+]/ | hi other guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=198 ctermbg=NONE cterm=BOLD
-autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme * syn match spezial2 /[{}]/ | hi spezial2 guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
-autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme * syn match spezial3 /[<>|&*~]/ | hi spezial3 guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
+autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme * syn match braces /[(){}\]\[]/ | hi braces guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=198 ctermbg=NONE cterm=BOLD
+autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme * syn match other /[;\,=\-\+]/ | hi other guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=198 ctermbg=NONE cterm=BOLD
+autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme * syn match spezial2 /[{}]/ | hi spezial2 guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
+autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme * syn match spezial3 /[<>|&*~]/ | hi spezial3 guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
 
 "
 "syntax match cCustomFunc /\w\+\s*(/me=e-1,he=e-1
@@ -181,8 +182,8 @@ autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme * syn match s
 " syntax match StructType__st /\w\+\s*__st/
 syntax match StructType__st /\sps__\+\w*/
 
-autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme * syntax match StorageClass /CHECK_EQUAL\|MEMCMP_EQUAL\|FUNCTIONPOINTERS_EQUAL\|DOUBLES_EQUAL\|POINTERS_EQUAL\|BYTES_EQUAL\|UNSIGNED_LONGS_EQUAL\|POINTERS_EQUAL\|BYTES_EQUAL\|UNSIGNED_LONGS_EQUAL/
-autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme * syntax match StorageClass /LONGS_EQUAL\|STRCMP_CONTAINS\|STRCMP_NOCASE_EQUAL\|STRNCMP_EQUAL\|STRNCMP_EQUAL\|CHECK_THROWS\|CHECK_COMPARE\|CHECK_EQUAL\|CHECK_FALSE\|CHECK_FALSE\|CHECK/
-autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme * syntax match StorageClass /IMPORT_TEST_GROUP\|TEST_GROUP_BASE\|TEST_GROUP\|IGNORE_TEST\|TEST/
+autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme * syntax match StorageClass /CHECK_EQUAL\|MEMCMP_EQUAL\|FUNCTIONPOINTERS_EQUAL\|DOUBLES_EQUAL\|POINTERS_EQUAL\|BYTES_EQUAL\|UNSIGNED_LONGS_EQUAL\|POINTERS_EQUAL\|BYTES_EQUAL\|UNSIGNED_LONGS_EQUAL/
+autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme * syntax match StorageClass /LONGS_EQUAL\|STRCMP_CONTAINS\|STRCMP_NOCASE_EQUAL\|STRNCMP_EQUAL\|STRNCMP_EQUAL\|CHECK_THROWS\|CHECK_COMPARE\|CHECK_EQUAL\|CHECK_FALSE\|CHECK_FALSE\|CHECK/
+autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme * syntax match StorageClass /IMPORT_TEST_GROUP\|TEST_GROUP_BASE\|TEST_GROUP\|IGNORE_TEST\|TEST/
 
-autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme * syntax match Function /\w\+\s*(/me=e-1,he=e-1
+autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme * syntax match Function /\w\+\s*(/me=e-1,he=e-1

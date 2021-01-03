@@ -81,7 +81,8 @@ set matchpairs=(:),{:},[:] "define matching pairs
 set autowrite
 set autowriteall
 set complete=.,t,w,b,u,U,k,kspell,s "not: d/i=included, k/sfile special file
-set completeopt=menu,menuone,longest,preview,noinsert
+"set completeopt=menu,menuone,longest,preview,noinsert
+set completeopt=menu,menuone,longest,preview,noselect
 "set previewpopup=height:10,width:60 "Overwrite use of preview to popup
 
 """ Foldable code blocks """"""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -183,7 +184,7 @@ function! Newvert( str )
 endfunction
 
 
-""" Grep in all open bufffers """"""""""""""""""""""""""""""""""""""""""""""""""
+""" Grep in all open buffers """"""""""""""""""""""""""""""""""""""""""""""""""
 function! BuffersList()
   let all = range(0, BUfnr('$'))
   let res = []
@@ -209,11 +210,11 @@ command! -nargs=+ GrepBufs call GrepBuffers(<q-args>)
 
 
 """ Spelling and spellcheck """"""""""""""""""""""""""""""""""""""""""""""""""""
-set spell spelllang=en_us
+set nospell spelllang=en_us
 autocmd VimEnter,BufNewFile,BufReadPost *.uml <buffer> :setlocal nospell
-autocmd BufNewFile,BufRead *.txt           setlocal spelllang=en_us,de_de
-autocmd BufNewFile,BufRead *.tex           setlocal spelllang=en_us,de_de
-autocmd BufNewFile,BufRead *.todo          setlocal spelllang=en_us,de_de
+autocmd BufNewFile,BufRead *.txt           setlocal spell spelllang=en_us,de_de
+autocmd BufNewFile,BufRead *.tex           setlocal spell spelllang=en_us,de_de
+autocmd BufNewFile,BufRead *.todo          setlocal spell spelllang=en_us,de_de
 autocmd BufNewFile,BufRead README          setlocal spelllang=en_us,de_de
 autocmd BufNewFile,BufRead *.c,*.cpp       setlocal spelllang=en_us
 autocmd BufNewFile,BufRead *.h,*.hpp,*.hh  setlocal spelllang=en_us
@@ -384,8 +385,8 @@ nnoremap ta  :tabnew<CR>
 
 
 "Swap lineslines
-nmap <C-down> mz:m+<cr>`z
-nmap <C-up> mz:m-2<cr>`z
+nmap <M-j> mz:m+<cr>`z
+nmap <M-k> mz:m-2<cr>`z
 
 
 "strg+w mapping

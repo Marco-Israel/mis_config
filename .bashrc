@@ -50,6 +50,12 @@ echo -e "\033]12;magenta\007"
 #'startxwin & -- -listen tcp'
 
 
+  #Start Xorg-XServer
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
+fi
+
+
             #Autocompleat if exists
 if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
