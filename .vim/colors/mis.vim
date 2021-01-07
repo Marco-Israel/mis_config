@@ -131,7 +131,7 @@ hi PMenuThumb guifg=#080808 guibg=#ff005f guisp=#ff005f gui=NONE ctermfg=232 cte
 hi MatchParen guifg=NONE guibg=#e3e3e3 guisp=#e3e3e3 gui=NONE ctermfg=202 ctermbg=254 cterm=NONE
 "Loop
 hi Repeat guifg=#4a4a4a guibg=NONE guisp=NONE gui=NONE ctermfg=85 ctermbg=NONE cterm=NONE
-hi SpellBad guifg=NONE guibg=#fff0f0 guisp=#fff0f0 gui=NONE ctermfg=NONE ctermbg=225 cterm=NONE
+hi SpellBad guifg=NONE guibg=#fff0f0 guisp=#fff0f0 gui=NONE ctermfg=NONE ctermbg=238 cterm=NONE
 hi Directory guifg=#4a4a4a guibg=NONE guisp=NONE gui=NONE ctermfg=249 ctermbg=NONE cterm=NONE
 hi Structure guifg=#ff8800 guibg=NONE guisp=NONE gui=NONE ctermfg=14 ctermbg=NONE cterm=NONE
 hi Return guifg=#ff8800 guibg=NONE guisp=NONE gui=NONE ctermfg=239 ctermbg=NONE cterm=NONE
@@ -164,26 +164,26 @@ hi FoldColumn	guifg=#808080 guibg=#000040			ctermfg=darkgrey ctermbg=black cterm
 "autocmd BufRead,BufEnter,BufAdd,BufNewFile,ColorScheme * syn match math /[><%&*\/]/ | hi math guifg=#ff1998 guibg=#303030 guisp=#303030 gui=BOLD ctermfg=198 ctermbg=NONE cterm=NONE
 "autocmd BufRead,BufEnter,BufAdd,BufNewFile,ColorScheme * syn match math /[<%&*\/]/ | hi math guifg=#ff1998 guibg=#303030 guisp=#303030 gui=BOLD ctermfg=198 ctermbg=NONE cterm=NONE
 "autocmd BufRead,BufEnter,BufAdd,BufNewFile,ColorScheme  * syn match spezial2 /[{}]/ | hi spezial2 guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE            ctermfg=234 ctermbg=NONE cterm=NONE
-
- "Highlight all function names
- autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme  * syntax match Type /bool_t/
- autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme * syntax match Todo /TODO/
- autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme * syntax match StorageClass /TRUE\|FALSE\|STATIC\|EXTERN\|PROTECTED\|INLINE\|TEST_GROUP\|TEST\|POINTERS_EQUAL\|LONGS_EQUAL\|NULL\|NULLp\|NULLv\|SPY\|MOCK\|FAKE\|STUP/
-
-autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme * syn match braces /[(){}\]\[]/ | hi braces guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=198 ctermbg=NONE cterm=BOLD
-autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme * syn match other /[;\,=\-\+]/ | hi other guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=198 ctermbg=NONE cterm=BOLD
-autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme * syn match spezial2 /[{}]/ | hi spezial2 guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
-autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme * syn match spezial3 /[<>|&*~]/ | hi spezial3 guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
-
 "
-"syntax match cCustomFunc /\w\+\s*(/me=e-1,he=e-1
-"highlight def link cCustomFunc Function
-
-" syntax match StructType__st /\w\+\s*__st/
-syntax match StructType__st /\sps__\+\w*/
-
-autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme * syntax match StorageClass /CHECK_EQUAL\|MEMCMP_EQUAL\|FUNCTIONPOINTERS_EQUAL\|DOUBLES_EQUAL\|POINTERS_EQUAL\|BYTES_EQUAL\|UNSIGNED_LONGS_EQUAL\|POINTERS_EQUAL\|BYTES_EQUAL\|UNSIGNED_LONGS_EQUAL/
-autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme * syntax match StorageClass /LONGS_EQUAL\|STRCMP_CONTAINS\|STRCMP_NOCASE_EQUAL\|STRNCMP_EQUAL\|STRNCMP_EQUAL\|CHECK_THROWS\|CHECK_COMPARE\|CHECK_EQUAL\|CHECK_FALSE\|CHECK_FALSE\|CHECK/
-autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme * syntax match StorageClass /IMPORT_TEST_GROUP\|TEST_GROUP_BASE\|TEST_GROUP\|IGNORE_TEST\|TEST/
-
-autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWrite,BufWinEnter,ColorScheme * syntax match Function /\w\+\s*(/me=e-1,he=e-1
+" "Highlight all function names
+" autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme  * syntax match Type /bool_t/
+" autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syntax match Todo /TODO/
+" autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syntax match StorageClass /TRUE\|FALSE\|STATIC\|EXTERN\|PROTECTED\|INLINE\|TEST_GROUP\|TEST\|POINTERS_EQUAL\|LONGS_EQUAL\|NULL\|NULLp\|NULLv\|SPY\|MOCK\|FAKE\|STUP/
+"
+"autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syn match braces /[(){}\]\[]/ | hi braces guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=198 ctermbg=NONE cterm=BOLD
+"autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syn match other /[;\,=\-\+]/ | hi other guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=198 ctermbg=NONE cterm=BOLD
+"autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syn match spezial2 /[{}]/ | hi spezial2 guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
+"autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syn match spezial3 /[<>|&*~]/ | hi spezial3 guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
+"
+""
+""syntax match cCustomFunc /\w\+\s*(/me=e-1,he=e-1
+""highlight def link cCustomFunc Function
+"
+"" syntax match StructType__st /\w\+\s*__st/
+"syntax match StructType__st /\sps__\+\w*/
+"
+"autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syntax match StorageClass /CHECK_EQUAL\|MEMCMP_EQUAL\|FUNCTIONPOINTERS_EQUAL\|DOUBLES_EQUAL\|POINTERS_EQUAL\|BYTES_EQUAL\|UNSIGNED_LONGS_EQUAL\|POINTERS_EQUAL\|BYTES_EQUAL\|UNSIGNED_LONGS_EQUAL/
+"autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syntax match StorageClass /LONGS_EQUAL\|STRCMP_CONTAINS\|STRCMP_NOCASE_EQUAL\|STRNCMP_EQUAL\|STRNCMP_EQUAL\|CHECK_THROWS\|CHECK_COMPARE\|CHECK_EQUAL\|CHECK_FALSE\|CHECK_FALSE\|CHECK/
+"autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syntax match StorageClass /IMPORT_TEST_GROUP\|TEST_GROUP_BASE\|TEST_GROUP\|IGNORE_TEST\|TEST/
+"
+autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syntax match Function /\w\+\s*(/me=e-1,he=e-1

@@ -81,8 +81,8 @@ set matchpairs=(:),{:},[:] "define matching pairs
 set autowrite
 set autowriteall
 set complete=.,t,w,b,u,U,k,kspell,s "not: d/i=included, k/sfile special file
-"set completeopt=menu,menuone,longest,preview,noinsert
-set completeopt=menu,menuone,longest,preview,noselect
+set completeopt=menu,menuone,longest,preview,noinsert
+"set completeopt=menu,menuone,longest,preview,noselect
 "set previewpopup=height:10,width:60 "Overwrite use of preview to popup
 
 """ Foldable code blocks """"""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -100,10 +100,6 @@ autocmd BufNewFile,BufRead *.make,mk            setlocal noexpandtab
 
 """ Open Quickfix entry in Vertical split """""""""""""""""""""""""""""""""""""
 autocmd FileType qf nnoremap <buffer> <leader><Enter> <C-w><Enter><C-w>L
-
-
-""" Removing trailing white spaces when write """"""""""""""""""""""""""""""""""
-autocmd BufWritePost * :%s /\s\+$//e
 
 
 """ Set flode """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
