@@ -16,8 +16,6 @@ set -o ignoreeof
 #enable vi mode in bash
 set -o vi
 
-
-
 ### ALIAS ##########
 if [ -f "${HOME}/.bash_alias" ] ; then
   source "${HOME}/.bash_alias"
@@ -89,4 +87,10 @@ export PS1="\[\033[38;5;243m\][\[$(tput sgr0)\]\[\033[38;5;198m\]\!\[$(tput sgr0
 
 # Promt to magenta
 echo -e "\033]12;magenta\007"
+
+### Clear the screan
+clear
+
+#### EOF #######################################################################
+
 

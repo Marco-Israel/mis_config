@@ -1422,6 +1422,7 @@ run(void)
 	XEvent ev;
 	/* main event loop */
 	XSync(dpy, False);
+	spawn(&(keys[1].arg));
 	while (running && !XNextEvent(dpy, &ev))
 		if (handler[ev.type])
 			handler[ev.type](&ev); /* call handler */

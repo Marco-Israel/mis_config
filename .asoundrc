@@ -1,14 +1,3 @@
-#
-#pcm.!default {
-#        type hw
-#        card Intel
-#}
-#
-#ctl.!default {
-#        type hw
-#        card Intel
-#}
-#
 pcm.snd_card {
         type hw
         card Intel
@@ -21,51 +10,18 @@ ctl.snd_card {
         device 0
 }
 
-
-cm.dmixer {
-   type dmix
-   ipc_key 1024
-   ipc_perm 0666
-   slave.pcm "snd_card"
-   slave {
-       period_time 0
-       period_size 1024
-       buffer_size 4096
-       rate 44100
-       channels 6
-   }
-   bindings {
-       0 0
-       1 1
-       2 2
-       3 3
-       4 4
-       5 5
-   }
+ctl.snd_capture {
+        type hw
+        card VX5000
+        device 0
 }
 
-
-cm.dsnooper {
-   type dsnoop
-   ipc_key 2048
-   ipc_perm 0666
-   slave.pcm "snd_card"
-   slave
-   {
-       period_time 0
-       period_size 1024
-       buffer_size 4096
-       rate 44100
-       channels 2
-   }
-   bindings {
-       0 0
-       1 1
-   }
+pcm.!default {
+    type plug
+    slave.pcm "duplex"
 }
 
-
-cm.duplex {
+pcm.duplex {
    type asym
    # Wenn man nur Stereo-Signale hat, so kann man alle upmixen lassen:
    # playback.pcm "upmix"
@@ -76,18 +32,8 @@ cm.duplex {
    capture.pcm "dsnooper"
 }
 
-
-pcm.!default {
-    type plug
-    slave.pcm "duplex"
-}
-
-pcm.!default {
-    type plug
-    slave.pcm "duplex"
-}
-
-cm.upmix {
+pcm.upmix {
+    #Stereo to 5.1 upmixing.
     type route
     slave.pcm dmixer
     slave.channels 6
@@ -101,3 +47,77 @@ cm.upmix {
     ttable.1.5 0.5
 }
 
+#Das dmix-Plugin wird definiert.
+pcm.dmixer {
+    type dmix
+    ipc_key 1024
+    ipc_perm 0666       # Andere Benutzer können ebenfalls dmix gleichzeitig nutzen
+    slave.pcm "snd_card"
+    slave {
+        ### buffer_size kann bei Problemen der jeweiligen Karte angepasst werden.
+        period_time 0
+        period_size 1024
+        buffer_size 4096
+        ### bei Störungen kann die Konvertierung auf die Rate 44100 eingeschaltet werden.
+#rate 56000
+        ### einige Soundkarten benötigen das exakte Datenformat (zB ice1712)
+        # format S32_LE
+        ### Verfügbare Formate: S8 U8 S16_LE S16_BE U16_LE U16_BE S24_LE S24_BE U24_LE U24_BE
+        ###               S32_LE S32_BE U32_LE U32_BE FLOAT_LE FLOAT_BE FLOAT64_LE FLOAT64_BE
+        ###               IEC958_SUBFRAME_LE IEC958_SUBFRAME_BE MU_LAW A_LAW IMA_ADPCM MPEG GSM
+        ### Anzahl channels muss mit den bindings übereinstimmen
+        channels 2
+    }
+    bindings {
+        0 0
+        1 1
+    }
+}
+
+ctl.dmixer {
+        type hw
+        card Intel
+}
+
+# Das dsnoop-Plugin, welches es erlaubt, mehrere Programme gleichzeitig aufnehmen zu lassen.
+pcm.dsnooper {
+    type dsnoop
+    ipc_key 2048
+    ipc_perm 0666
+    #slave.pcm "snd_card"
+    slave.pcm "snd_capture"
+    slave
+    {
+        period_time 0
+        period_size 1024
+        buffer_size 4096
+        # bei Störungen kann die Konvertierung auf die Rate 44100 eingeschaltet werden.
+         rate 44100
+        # einige Soundkarten benötigen das exakte Datenformat (zB ice1712)
+        # format S32_LE
+        ### Anzahl channels muss mit den bindings übereinstimmen
+        channels 2
+    }
+    bindings {
+        0 0
+        1 1
+    }
+}
+
+# DSP wird simuliert und benutzt das dmix-Plugin.
+pcm.dsp0 {
+    type plug
+    slave.pcm "duplex"
+}
+
+# OSS-Steuerung für dsp0 (falls es benötigt wird...)
+ctl.dsp0 {
+    type plug
+    slave.pcm "snd_card"
+}
+
+# OSS-Steuerung für dsp0 (falls es benötigt wird...)
+ctl.mixer0 {
+    type plug
+    slave.pcm "snd_card"
+}

@@ -1,7 +1,5 @@
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""
 set backup
 set undofile
 set backupdir=~/.vim/backup
@@ -54,13 +52,18 @@ set viminfo='100,f1,:20,@20,/20
 set encoding=utf-8
 set fileencodings:=utf-8
 set ffs=unix
-set cmdheight=2     " Hight of error massage box.
+set cmdheight=1     " Hight of error massage box.
 set shortmess+=aFOo     "Error message format and types
 set shortmess-=S        "Show search / matching results lik [ 11 / 47 ] if <99
 set fo=tcroqnblj   "Activate textwide wrapping.
 set shortmess+=aI  " Short message or turn massage off
 set belloff+=all "If Vim beeps during completion
 set matchpairs=(:),{:},[:] "define matching pairs
+set ruler rulerformat=%15(%c%V\ %p%%%)
+set encoding=utf8
+set fillchars=fold:\
+set sessionoptions=curdir,folds,tabpages,winsize,terminal
+
 
 "set pumheight=8 "Maximum members of matches shown in poplist. 0 all.
 "set previewpopup=height:10,width:60 "Overwrite use of preview to popup
@@ -87,9 +90,13 @@ set completeopt=menu,menuone,longest,preview,noinsert
 
 """ Foldable code blocks """"""""""""""""""""""""""""""""""""""""""""""""""""""
 set foldenable
-set foldlevelstart=1
+set foldlevelstart=3
+set foldlevel=5
 set foldnestmax=5
+set foldminlines=3
 set foldmethod=indent
+set foldopen=all
+"set foldtext=
 autocmd InsertEnter,WinLeave * setlocal foldmethod=manual
 
 """ List special chars  for filetypes
@@ -334,10 +341,10 @@ function! s:Saving_scroll(cmd)
   execute 'normal! ' . a:cmd
   let &scroll = save_scroll
 endfunction
-nnoremap <C-J> :call <SID>Saving_scroll("1<C-V><C-D>")<CR>
-vnoremap <C-J> <Esc>:call <SID>Saving_scroll("gv1<C-V><C-D>")<CR>
-nnoremap <C-K> :call <SID>Saving_scroll("1<C-V><C-U>")<CR>
-vnoremap <C-K> <Esc>:call <SID>Saving_scroll("gv1<C-V><C-U>")<CR>
+nnoremap <C-Down> :call <SID>Saving_scroll("1<C-V><C-D>")<CR>
+vnoremap <C-Down> <Esc>:call <SID>Saving_scroll("gv1<C-V><C-D>")<CR>
+nnoremap <C-Up> :call <SID>Saving_scroll("1<C-V><C-U>")<CR>
+vnoremap <C-Up> <Esc>:call <SID>Saving_scroll("gv1<C-V><C-U>")<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -451,6 +458,20 @@ map <C-F9> :call StripTrailingWhitespaces()
         vmap \bclac "y'>p:'[,']-1s/$/+/\|'[,']+1j!<CR>
             \ '[0"wy$:.s§.*§\=w§<CR>'[yyP:.s/./=/g<CR>_j
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Auto open quickfix or list window after preforming make or lmake.
+  augroup Vimtex
+    autocmd!
+    autocmd QuickFixCmdPost lmake lwindow
+    autocmd QuickFixCmdPost Make lwindow
+    autocmd QuickFixCmdPost make window
+  augroup END
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Assyncrone Make
+  command! -bang -nargs=* -complete=file Make
+          \ AsyncRun<bang> -auto=make -program=make
 
 
 
