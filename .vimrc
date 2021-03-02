@@ -63,6 +63,7 @@ set ruler rulerformat=%15(%c%V\ %p%%%)
 set encoding=utf8
 set fillchars=fold:\
 set sessionoptions=curdir,folds,tabpages,winsize,terminal
+"set isfname-=:  "split a filename:linenumber to filename when press key gf
 
 
 "set pumheight=8 "Maximum members of matches shown in poplist. 0 all.
@@ -465,8 +466,8 @@ map <C-F9> :call StripTrailingWhitespaces()
     autocmd!
     autocmd QuickFixCmdPost lmake lwindow
     autocmd QuickFixCmdPost Make lwindow
-    autocmd QuickFixCmdPost make window
-  augroup END
+    autocmd QuickFixCmdPost make cwindow
+  augroup end
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Assyncrone Make
@@ -495,7 +496,8 @@ source  ~/.vimplug.conf
 "TODO: Ore configure compleation by using FZF. eg like calling FZF with a path
 "predifined via command or hotkey like map autocmd <key> FZF "path/to/templates.
 "nnoremap ,html :-1read $PROJECT_HOME/bin/templates/cpputestcpp.txt<CR>3jwf>a
-nnoremap ,utest :-1read $PROJECT_HOME/TOOLS/templates/cpputest/cpputest.txt<CR>/____TODO____<CR>
+nnoremap ,ccc :-1read ~/templates/cpputest/template.c<CR>/__TODO__<CR>
+nnoremap ,utest :-1read ~/templates/cpputest/test_template.cpp<CR>/____TODO____<CR>
 nnoremap ,mockapp :-1read $PROJECT_HOME/TOOLS/templates/cpputest/mockCppHpp.txt<CR>/____TODO____<CR>
 nnoremap ,mockcpp :-1read $PROJECT_HOME/TOOLS/templates/cpputest/mockCpp.txt<CR>/____TODO____<CR>
 nnoremap ,mockhpp :-1read $PROJECT_HOME/TOOLS/templates/cpputest/mockHpp.txt<CR>/____TODO____<CR>

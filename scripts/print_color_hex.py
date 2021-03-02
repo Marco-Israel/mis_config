@@ -54,7 +54,7 @@ pattern = (
 
 base_context = dict(reset=reset, padding='', width=get_width())
 
-for i, (r, g, b) in enumerate(colored_palette + grayscale_palette, 16):
+for i, (r, g, b) in enumerate(colored_palette + grayscale_palette, 0):
     context = dict(i=i, r=r, g=g, b=b, color=r + g + b, **base_context)
     context.update(bold=bold.format(**context))
     context.update(background=background.format(**context))

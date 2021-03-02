@@ -33,3 +33,5 @@ Documents/
 .npm/
 .1/
 .dwm.log
+.autojump/
+.pylint.d/

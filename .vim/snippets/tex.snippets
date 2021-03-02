@@ -2,4 +2,11 @@
 snippet ver
 	\\begin{verbatim}
 		${0:${VISUAL}}
-	\\end{listing}
+	\\end{verbatim}
+
+
+snippet tabx tabular (or arbitrary) environment
+	\\begin{${5:tabularx}}{${0:|c|c|c|} }
+	\hline ${1:${VISUAL}} && 	${2:${VISUAL}} && 	${3:${VISUAL}} \\\
+	\hline
+	\\end{${5}}

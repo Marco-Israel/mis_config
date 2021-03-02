@@ -11,12 +11,6 @@ endif
 set t_Co=256
 let g:colors_name = "marco_pi"
 
-"autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme * syn match braces /[{}\]\[]/ | hi braces guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=198 ctermbg=NONE cterm=BOLD
-"autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme * syn match other /[;\,=\-\+]/ | hi other guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=198 ctermbg=NONE cterm=BOLD
-"autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme * syn match spezial2 /[{}]/ | hi spezial2 guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
-"autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme *  syn match spezial3 /[<>|&*~]/ | hi spezial3 guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
-"autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme * syntax match Function /\w\+\s*(/me=e-1,he=e-1
-"
 "cterm: bold, underline, reverse, italic, none
 "Highlight makefile variables, strings ...
 "
@@ -37,7 +31,7 @@ hi Todo       guifg=#f00e8b   guibg=#262626 guisp=#262626 gui=NONE ctermfg=0    
 """ CONSTANT """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi String    guifg=#ffffff guibg=NONE guisp=NONE gui=NONE ctermfg=15  ctermbg=NONE cterm=NONE
 hi Character guifg=#707070 guibg=NONE guisp=NONE gui=NONE ctermfg=242 ctermbg=NONE cterm=NONE
-hi Number    guifg=#ffd700 guibg=NONE guisp=NONE gui=NONE ctermfg=86  ctermbg=NONE cterm=NONE
+hi Number    guifg=#ffd700 guibg=NONE guisp=NONE gui=NONE ctermfg=208  ctermbg=NONE cterm=NONE
 hi Boolean   guifg=#707070 guibg=NONE guisp=NONE gui=NONE ctermfg=195 ctermbg=NONE cterm=NONE
 hi Float     guifg=#707070 guibg=NONE guisp=NONE gui=NONE ctermfg=242 ctermbg=NONE cterm=NONE
 
@@ -45,7 +39,7 @@ hi Float     guifg=#707070 guibg=NONE guisp=NONE gui=NONE ctermfg=242 ctermbg=NO
 hi Function     guifg=#00ffff guibg=NONE guisp=NONE gui=NONE ctermfg=187 ctermbg=NONE cterm=NONE
 
 """ STATEMENT """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi Conditional guifg=#ff5f00 guibg=NONE guisp=NONE gui=NONE ctermfg=14  ctermbg=NONE cterm=NONE
+hi Conditional guifg=#ff5f00 guibg=NONE guisp=NONE gui=NONE ctermfg=30  ctermbg=NONE cterm=NONE
 hi Repeat      guifg=#4a4a4a guibg=NONE guisp=NONE gui=NONE ctermfg=85  ctermbg=NONE cterm=NONE
 hi Label       guifg=#4a4a4a guibg=NONE guisp=NONE gui=NONE ctermfg=13  ctermbg=NONE cterm=NONE
 hi Operator    guifg=#4a4a4a guibg=NONE guisp=NONE gui=NONE ctermfg=199 ctermbg=NONE cterm=NONE
@@ -61,11 +55,11 @@ hi PreCondit guifg=#ff8700 guibg=NONE guisp=NONE gui=NONE ctermfg=214 ctermbg=NO
 """ TYPE """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi StorageClass guifg=#4a4a4a guibg=NONE guisp=NONE gui=NONE ctermfg=14 ctermbg=NONE cterm=NONE
 hi Structure    guifg=#ff8800 guibg=NONE guisp=NONE gui=NONE ctermfg=14 ctermbg=NONE cterm=NONE
-hi Typedef      guifg=#4a4a4a guibg=NONE guisp=NONE gui=NONE ctermfg=9  ctermbg=NONE cterm=NONE
+hi Typedef      guifg=#4a4a4a guibg=NONE guisp=NONE gui=NONE ctermfg=30  ctermbg=NONE cterm=NONE
 
 """ SPECIAL """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi SpecialChar    guifg=#707070 guibg=NONE guisp=NONE gui=NONE ctermfg=242 ctermbg=NONE cterm=NONE
-hi Tag            guifg=#707070 guibg=NONE guisp=NONE gui=NONE ctermfg=9   ctermbg=NONE cterm=NONE
+hi Tag            guifg=#707070 guibg=NONE guisp=NONE gui=NONE ctermfg=30   ctermbg=NONE cterm=NONE
 hi Delimiter      guifg=#707070 guibg=NONE guisp=NONE gui=NONE ctermfg=198 ctermbg=NONE cterm=NONE
 hi SpecialComment guifg=#707070 guibg=NONE guisp=NONE gui=NONE ctermfg=242 ctermbg=NONE cterm=NONE
 hi Debug          guifg=#707071 guibg=NONE guisp=NONE gui=NONE ctermfg=242 ctermbg=NONE cterm=NONE
@@ -97,16 +91,16 @@ hi Folded           guifg=#808080 guibg=#000040 ctermfg=darkgrey ctermbg=black c
 hi FoldColumn       guifg=#808080 guibg=#000040 ctermfg=darkgrey ctermbg=black cterm=bold   term=bold
 hi SignColumn       guifg=#c2c2c2 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=7    ctermbg=NONE    cterm=NONE
 hi IncSearch        guifg=#700253 guibg=#ffd7d7 guisp=#ffd7d7    gui=bold      ctermfg=53   ctermbg=214     cterm=bold
-hi LineNr           guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=220  ctermbg=NONE    cterm=NONE
-hi CursorLineNr     guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=220  ctermbg=NONE    cterm=NONE
-hi LineNrAbove      guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=220  ctermbg=NONE    cterm=NONE
-hi LineNrBelow      guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=220  ctermbg=NONE    cterm=NONE
+hi LineNr           guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=214  ctermbg=NONE    cterm=NONE
+hi CursorLineNr     guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=214  ctermbg=NONE    cterm=NONE
+hi LineNrAbove      guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=220 ctermbg=NONE    cterm=NONE
+hi LineNrBelow      guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=226  ctermbg=NONE    cterm=NONE
 hi MatchParen       guifg=NONE    guibg=#e3e3e3 guisp=#e3e3e3    gui=NONE      ctermfg=202  ctermbg=254     cterm=NONE
 hi ModeMsg          guifg=#00ff00 guibg=#262626 guisp=#262626    gui=NONE      ctermfg=172  ctermbg=193     cterm=NONE
 hi MoreMsg          guifg=#00ff00 guibg=#262626 guisp=#262626    gui=NONE      ctermfg=172  ctermbg=193     cterm=NONE
 hi NonText          guifg=#c2c2c2 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=21   ctermbg=NONE    cterm=NONE
 hi Normal           guifg=#f00e8b guibg=#262626 guisp=#262626    gui=NONE      ctermfg=219  ctermbg=236     cterm=BOLD
-hi PMenu            guifg=#000000 guibg=#ff7fc5 guisp=#ff7fc5    gui=italic    ctermfg=NONE ctermbg=212     cterm=NONE
+hi PMenu            guifg=#000000 guibg=#ff7fc5 guisp=#ff7fc5    gui=italic    ctermfg=232  ctermbg=212     cterm=NONE
 hi PMenuSel         guifg=#5f005f guibg=#69ffff guisp=#69ffff    gui=bold      ctermfg=53   ctermbg=85      cterm=bold
 hi PMenuSbar        guifg=#000000 guibg=#ffffff guisp=#ffffff    gui=NONE      ctermfg=NONE ctermbg=15      cterm=NONE
 hi PMenuThumb       guifg=#080808 guibg=#ff005f guisp=#ff005f    gui=NONE      ctermfg=232  ctermbg=197     cterm=NONE
@@ -205,13 +199,20 @@ hi Union               guifg=#00ffff guibg=NONE    guisp=NONE    gui=NONE ctermf
 
 
 
-"autocmd BufRead,BufEnter,BufAdd,BufNewFile,ColorScheme * syn match math /[><%&*\/]/ | hi math guifg=#ff1998 guibg=#303030 guisp=#303030 gui=BOLD ctermfg=198 ctermbg=NONE cterm=NONE
-"autocmd BufRead,BufEnter,BufAdd,BufNewFile,ColorScheme * syn match math /[<%&*\/]/ | hi math guifg=#ff1998 guibg=#303030 guisp=#303030 gui=BOLD ctermfg=198 ctermbg=NONE cterm=NONE
-"autocmd BufRead,BufEnter,BufAdd,BufNewFile,ColorScheme  * syn match spezial2 /[{}]/ | hi spezial2 guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE            ctermfg=234 ctermbg=NONE cterm=NONE
+"autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syn match math /[><%&*\/]/ | hi math guifg=#ff1998 guibg=#303030 guisp=#303030 gui=BOLD ctermfg=198 ctermbg=NONE cterm=NONE
+autocmd Syntax,BufReadPost,BufNew,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syn match math /[><%;!?=&*]/ | hi math guifg=#ff1998 guibg=#303030 guisp=#303030 gui=BOLD ctermfg=199 ctermbg=NONE cterm=NONE
+autocmd Syntax,BufReadPost,BufNew,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme  * syn match parents /[()\]\[{}]/ | hi parents guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=198  ctermbg=NONE cterm=NONE
+autocmd Syntax,BufReadPost,BufNew,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme  * syn match parents2 /[()]/ | hi parents2 guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=14  ctermbg=NONE cterm=NONE
+autocmd Syntax,BufReadPost,BufNew,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme  * syn match other /[,]/ | hi other guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=30 ctermbg=NONE cterm=NONE
+autocmd Syntax,BufReadPost,BufNew,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme  * syn match StructureType /\w.*__st/ | hi StructureType guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=14  ctermbg=NONE cterm=NONE
+"autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme  * syn match variable /\<\S\+_S\>/ | hi variable guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+"
 "
 " "Highlight all function names
-" autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme  * syntax match Type /bool_t/
-" autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syntax match StorageClass /TRUE\|FALSE\|STATIC\|EXTERN\|PROTECTED\|INLINE\|TEST_GROUP\|TEST\|POINTERS_EQUAL\|LONGS_EQUAL\|NULL\|NULLp\|NULLv\|SPY\|MOCK\|FAKE\|STUP/
+autocmd Syntax,BufReadPost,BufNew,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme  * syntax match Type /bool_t/
+"autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syntax match StorageClass /TRUE\|FALSE\|STATIC\|EXTERN\|PROTECTED\|INLINE\|TEST_GROUP\|TEST\|POINTERS_EQUAL\|LONGS_EQUAL\|NULL\|NULLPTR\|PTR\|SPY\|MOCK\|FAKE\|STUP/
+"autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syntax match MacroUse "\v<[A-Z]+>"| hi MacroUse guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=208  ctermbg=NONE cterm=NONE
+autocmd Syntax,BufReadPost,BufNew,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme * syntax match MacroUse "\v<[A-Z]+>"| hi link MacroUse Macro
 
 "
 ""

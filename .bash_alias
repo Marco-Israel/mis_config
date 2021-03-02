@@ -27,7 +27,7 @@ alias ls='ls  -la --file-type --human-readable --color=always' #colore ls
 alias less='less -r -I -H'
 alias dir='dir --color=always' #colore dir
 alias vdir='vdir --color=always' #colore vdir
-alias grep='grep --color=always' #colore grep
+alias cgrep='grep --color=always' #colore grep
 alias fgrep='fgrep --color=always' #colore fgrep
 alias egrep='egrep --color=always' #colre egrep
 #alias vlc='~/.i3/wrapper_sumi_vlc.sh' #start vlc at root acc
@@ -99,6 +99,7 @@ alias pixeldiff='compare -compose src'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias off='shutdown -h now'
+alias dhcpcd='sudo dhcpcd -4'
 
 #### cd ################
 alias cddesk='cd /cygdrive/c/Users/Z651633/Desktop/'
@@ -205,13 +206,11 @@ wlanon() {
 
 
 cupsstart(){
-sudo systemctl start avahi-daemon.service
-sudo systemctl start org.cups.cupsd.service
+    sudo systemctl start cups-lpd.socket
 }
 
 cupsstop(){
-sudo systemctl stop avahi-daemon.service
-sudo systemctl stop org.cups.cupsd.service
+    sudo systemctl stop cups-lpd.socket
 }
 
 extr() {
@@ -249,7 +248,11 @@ dict() {
 export EDITOR=vim
 export VISUAL=$EDITOR
 #export PAGER='less -iRX'
+#
 export STARDICT_DATA_DIR=~/.config/stardict
+export CURRENT_PROJECT='~/project/rohde_und_schwarz/'
+export CPPUTEST_HOME=$CURRENT_PROJECT'/mi_ooc/tools/cpputest'
+
 
 
     #Color codesi
@@ -329,6 +332,7 @@ export LESS_TERMCAP_ZV=$(tput rsubm)
 export LESS_TERMCAP_ZO=$(tput ssupm)
 export LESS_TERMCAP_ZW=$(tput rsupm)
 export GROFF_NO_SGR=1         # For Konsole and Gnome-terminal
+
 
 
 ### EOF ########################################################################
