@@ -250,8 +250,8 @@ export VISUAL=$EDITOR
 #export PAGER='less -iRX'
 #
 export STARDICT_DATA_DIR=~/.config/stardict
-export CURRENT_PROJECT='~/project/rohde_und_schwarz/'
-export CPPUTEST_HOME=$CURRENT_PROJECT'/mi_ooc/tools/cpputest'
+export CURRENT_PROJECT='~/project/rohde_und_schwarz'
+export CPPUTEST_HOME=$CURRENT_PROJECT'/mis_ooc/tool/cpputest'
 
 
 

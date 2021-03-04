@@ -204,27 +204,21 @@ autocmd Syntax,BufReadPost,BufNew,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWin
 autocmd Syntax,BufReadPost,BufNew,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme  * syn match parents /[()\]\[{}]/ | hi parents guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=198  ctermbg=NONE cterm=NONE
 autocmd Syntax,BufReadPost,BufNew,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme  * syn match parents2 /[()]/ | hi parents2 guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=14  ctermbg=NONE cterm=NONE
 autocmd Syntax,BufReadPost,BufNew,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme  * syn match other /[,]/ | hi other guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=30 ctermbg=NONE cterm=NONE
-autocmd Syntax,BufReadPost,BufNew,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme  * syn match StructureType /\w.*__st/ | hi StructureType guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=14  ctermbg=NONE cterm=NONE
+"autocmd Syntax,BufReadPost,BufNew,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme  * syn match structure /\w.*__st/
+autocmd Syntax,ColorScheme  * syn match structure /\<\S\+_st\>/
 "autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme  * syn match variable /\<\S\+_S\>/ | hi variable guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "
 "
 " "Highlight all function names
 autocmd Syntax,BufReadPost,BufNew,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme  * syntax match Type /bool_t/
+"autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syntax match testmacros /TRUE\|FALSE\|STATIC\|EXTERN\|PROTECTED\|INLINE\|TEST_GROUP\|TEST\|POINTERS_EQUAL\|LONGS_EQUAL\|NULL\|NULLPTR\|PTR\|SPY\|MOCK\|FAKE\|STUP/
 "autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syntax match StorageClass /TRUE\|FALSE\|STATIC\|EXTERN\|PROTECTED\|INLINE\|TEST_GROUP\|TEST\|POINTERS_EQUAL\|LONGS_EQUAL\|NULL\|NULLPTR\|PTR\|SPY\|MOCK\|FAKE\|STUP/
 "autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syntax match MacroUse "\v<[A-Z]+>"| hi MacroUse guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=208  ctermbg=NONE cterm=NONE
-autocmd Syntax,BufReadPost,BufNew,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme * syntax match MacroUse "\v<[A-Z]+>"| hi link MacroUse Macro
-
-"
-""
-""syntax match cCustomFunc /\w\+\s*(/me=e-1,he=e-1
-""highlight def link cCustomFunc Function
-"
-"hi StructType__st guifg=NONE guibg=#f5f5f5 guisp=#f5f5f5 gui=NONE ctermfg=187 ctermbg=NONE cterm=NONE
-"" syntax match StructType__st /\w\+\s*__st/
-"syntax match StructType__st /\sps__\+\w*/
-"
+"autocmd Syntax,BufReadPost,BufNew,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme * syntax match MacroUse "\v<[A-Z_0-9]+>"| hi link MacroUse Macro
+autocmd Syntax,ColorScheme * syntax match Macro "\v<[A-Z_0-9]+>"
+"""
 "autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syntax match StorageClass /CHECK_EQUAL\|MEMCMP_EQUAL\|FUNCTIONPOINTERS_EQUAL\|DOUBLES_EQUAL\|POINTERS_EQUAL\|BYTES_EQUAL\|UNSIGNED_LONGS_EQUAL\|POINTERS_EQUAL\|BYTES_EQUAL\|UNSIGNED_LONGS_EQUAL/
 "autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syntax match StorageClass /LONGS_EQUAL\|STRCMP_CONTAINS\|STRCMP_NOCASE_EQUAL\|STRNCMP_EQUAL\|STRNCMP_EQUAL\|CHECK_THROWS\|CHECK_COMPARE\|CHECK_EQUAL\|CHECK_FALSE\|CHECK_FALSE\|CHECK/
-"autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syntax match StorageClass /IMPORT_TEST_GROUP\|TEST_GROUP_BASE\|TEST_GROUP\|IGNORE_TEST\|TEST/
-"
+"autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syntax match StorageClass /IMPORT_TEST_GROUP\|TEST_GROUP_BASE\|TEST_GROUP\|IGNORE_TEST\|\<TEST\>/
+"autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syntax match StorageClass /\<TG_.*\>/
 

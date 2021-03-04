@@ -214,7 +214,7 @@ command! -nargs=+ GrepBufs call GrepBuffers(<q-args>)
 
 
 """ Spelling and spellcheck """"""""""""""""""""""""""""""""""""""""""""""""""""
-set nospell spelllang=en_us
+set spell spelllang=en_us
 autocmd VimEnter,BufNewFile,BufReadPost *.uml <buffer> :setlocal nospell
 autocmd BufNewFile,BufRead *.txt           setlocal spell spelllang=en_us,de_de
 autocmd BufNewFile,BufRead *.tex           setlocal spell spelllang=en_us,de_de
