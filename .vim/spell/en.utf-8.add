@@ -87,3 +87,6 @@ APDU_transmit
 APDU_transmit
 APDU_transmit
 errors
+SmartCard
+PCSC
+MIS_SMARTCARD__ERRO_HANDLER__PCSCLITE

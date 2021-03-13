@@ -496,7 +496,7 @@ source  ~/.vimplug.conf
 "TODO: Ore configure compleation by using FZF. eg like calling FZF with a path
 "predifined via command or hotkey like map autocmd <key> FZF "path/to/templates.
 "nnoremap ,html :-1read $PROJECT_HOME/bin/templates/cpputestcpp.txt<CR>3jwf>a
-nnoremap ,ccc :-1read ~/templates/cpputest/template.c<CR>/__TODO__<CR>
+nnoremap ,ccc :-1read ~/templates/template.c<CR>/__TODO__<CR>
 nnoremap ,utest :-1read ~/templates/cpputest/test_template.cpp<CR>/____TODO____<CR>
 nnoremap ,mockapp :-1read $PROJECT_HOME/TOOLS/templates/cpputest/mockCppHpp.txt<CR>/____TODO____<CR>
 nnoremap ,mockcpp :-1read $PROJECT_HOME/TOOLS/templates/cpputest/mockCpp.txt<CR>/____TODO____<CR>

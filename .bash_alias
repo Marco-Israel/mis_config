@@ -110,11 +110,17 @@ alias cddownloads='cd /cygdrive/c/Users/Z651633/Downloads'
 alias cdt52='cd /cygdrive/c/UserData/tools/TriCorev5.0r2/ctc/include.lsl'
 alias cdzfbuild='cd /cygdrive/c/app/Aurix/ZF_AURIX_BUILDSYSTEM'
 alias cda2lutest='cd /cygdrive/c/app/Aurix/WKS_Aurix2Lemdd/UTest_Aurix2Simulink_TC27xD'
-alias cdlebuild='cd $PROJECT_HOME'
-alias cdlebuildap='cd $PROJECT_HOME/aurix_app/productive'
-alias cdlebuildat='cd $PROJECT_HOME/aurix_app/unittest'
-alias cdlebuildpp='cd $PROJECT_HOME/pic_app/productive'
-alias cdlebuildpt='cd $PROJECT_HOME/pic_app/unittest'
+alias cdpro='cd $PROJECT_HOME'
+
+#### Musik ################
+alias rawellen='rvlcMP3 /data/150_Musik/alphawellen/*'
+alias rpianoKlassisch='rvlcMP3 /data/150_Musik/piano/klasisch/*'
+alias rpianoMixed='rvlcMP3 /data/150_Musik/piano/mixed/*'
+alias rcoversongs='rvlcMP3 /data/150_Musik/coversongs/'
+alias ratmung4='rvlcMP4 /data/150_Musik/atmung/5-0-5-0.mp4'
+alias ratmung3='rvlcMP3 /data/150_Musik/atmung/5-0-5-0.mp3'
+alias rpcover='rvlcMP3 /data/150_Musik/piano/covers/*'
+
 
 #### open ##################
 alias open='cygstart .'
@@ -127,13 +133,8 @@ alias reload='source ~/.bashrc && source ~/.bash_profile'
 alias reloadtmux='tmux source-file ~/.tmux.conf'
 
 #### Ctags ################
-alias ctags_project='ctags -R -f ~/.tags/project $PROJECT_HOME --extra=+fq --c++-kinds=+p --fields=+afikKlmnsSzt --tag-relative=yes --languages=C,C++,Make -I'
-alias ctags_aurix='ctags -R -f ~/.tags/aurix $PROJECT_HOME/aurix_app --extra=+fq --c++-kinds=+p --fields=+afikKlmnsSzt --tag-relative=yes --languages=C,C++,Make -I'
-alias ctags_pic='ctags -R -f ~/.tags/pic $PROJECT_HOME/pic_app --extra=+fq --c++-kinds=+p --fields=+afikKlmnsSzt --tag-relative=yes --languages=C,C++,Make -I'
-alias ctags_pic2='ctags -R -f ~/.tags/pic $PROJECT_HOME/pic_app --extra=+fq --c++-kinds=+p --fields=+iaS --tag-relative=yes --languages=C,C++,Make -I'
-alias ctags_cpputest='ctags -R -f ~/.tags/cpputest $PROJECT_HOME/bin/cpputest --extra=+fq --c++-kinds=+p --fields=+afikKlmnsSzt --tag-relative=yes --languages=C,C++,Make -I'
-alias ctags_tasking='ctags -R -f ~/.tags/tasking $PROJECT_HOME/bin/tasking/ --extra=+fq --c++-kinds=+p --fields=+afikKlmnsSzt --tag-relative=yes --languages=C,C++,Make -I'
-alias ctags_microchip='ctags -R -f ~/.tags/microchip $PROJECT_HOME/bin/microchip/ --extra=+fq --c++-kinds=+p --fields=+afikKlmnsSzt --tag-relative=yes --languages=C,C++,Make -I'
+#alias ctags_project='ctags -R -f ~/.tags/project $PROJECT_HOME --extra=+fq --c++-kinds=+p --fields=+afikKlmnsSzt --tag-relative=yes --languages=C,C++,Make -I'
+#alias ctags_cpputest='ctags -R -f ~/.tags/cpputest $PROJECT_HOME/bin/cpputest --extra=+fq --c++-kinds=+p --fields=+afikKlmnsSzt --tag-relative=yes --languages=C,C++,Make -I'
 
 #### Converters ###########
 
@@ -250,8 +251,8 @@ export VISUAL=$EDITOR
 #export PAGER='less -iRX'
 #
 export STARDICT_DATA_DIR=~/.config/stardict
-export CURRENT_PROJECT='~/project/rohde_und_schwarz'
-export CPPUTEST_HOME=$CURRENT_PROJECT'/mis_ooc/tool/cpputest'
+export PROJECT_HOME='~/project/rohde_und_schwarz'
+export CPPUTEST_HOME=$PROJECT_HOME'/mis_ooc/tool/cpputest'
 
 
 

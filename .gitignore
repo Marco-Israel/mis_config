@@ -35,3 +35,8 @@ Documents/
 .dwm.log
 .autojump/
 .pylint.d/
+*.tmp
+*.tags
+tags
+tmp
+project/

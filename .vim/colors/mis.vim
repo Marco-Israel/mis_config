@@ -91,9 +91,9 @@ hi Folded           guifg=#808080 guibg=#000040 ctermfg=darkgrey ctermbg=black c
 hi FoldColumn       guifg=#808080 guibg=#000040 ctermfg=darkgrey ctermbg=black cterm=bold   term=bold
 hi SignColumn       guifg=#c2c2c2 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=7    ctermbg=NONE    cterm=NONE
 hi IncSearch        guifg=#700253 guibg=#ffd7d7 guisp=#ffd7d7    gui=bold      ctermfg=53   ctermbg=214     cterm=bold
-hi LineNr           guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=214  ctermbg=NONE    cterm=NONE
-hi CursorLineNr     guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=214  ctermbg=NONE    cterm=NONE
-hi LineNrAbove      guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=220 ctermbg=NONE    cterm=NONE
+hi LineNr           guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=14  ctermbg=NONE    cterm=NONE
+hi CursorLineNr     guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=14  ctermbg=NONE    cterm=NONE
+hi LineNrAbove      guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=214 ctermbg=NONE    cterm=NONE
 hi LineNrBelow      guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=226  ctermbg=NONE    cterm=NONE
 hi MatchParen       guifg=NONE    guibg=#e3e3e3 guisp=#e3e3e3    gui=NONE      ctermfg=202  ctermbg=254     cterm=NONE
 hi ModeMsg          guifg=#00ff00 guibg=#262626 guisp=#262626    gui=NONE      ctermfg=172  ctermbg=193     cterm=NONE
@@ -206,11 +206,12 @@ autocmd Syntax,BufReadPost,BufNew,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWin
 autocmd Syntax,BufReadPost,BufNew,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme  * syn match other /[,]/ | hi other guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=30 ctermbg=NONE cterm=NONE
 "autocmd Syntax,BufReadPost,BufNew,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme  * syn match structure /\w.*__st/
 autocmd Syntax,ColorScheme  * syn match structure /\<\S\+_st\>/
+autocmd Syntax,ColorScheme  * syn match structure /\<\S\+_et\>/
 "autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme  * syn match variable /\<\S\+_S\>/ | hi variable guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "
 "
 " "Highlight all function names
-autocmd Syntax,BufReadPost,BufNew,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme  * syntax match Type /bool_t/
+autocmd Syntax,BufReadPost,BufNew,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme  * syntax match Type /bool_t\|char_t/
 "autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syntax match testmacros /TRUE\|FALSE\|STATIC\|EXTERN\|PROTECTED\|INLINE\|TEST_GROUP\|TEST\|POINTERS_EQUAL\|LONGS_EQUAL\|NULL\|NULLPTR\|PTR\|SPY\|MOCK\|FAKE\|STUP/
 "autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syntax match StorageClass /TRUE\|FALSE\|STATIC\|EXTERN\|PROTECTED\|INLINE\|TEST_GROUP\|TEST\|POINTERS_EQUAL\|LONGS_EQUAL\|NULL\|NULLPTR\|PTR\|SPY\|MOCK\|FAKE\|STUP/
 "autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWritePost,BufWinEnter,ColorScheme * syntax match MacroUse "\v<[A-Z]+>"| hi MacroUse guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=208  ctermbg=NONE cterm=NONE
