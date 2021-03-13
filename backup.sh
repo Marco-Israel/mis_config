@@ -63,7 +63,7 @@ _git(){
     git push
 }
 
-_git_project{
+_git_project(){
     cd $PROJECT_HOME/mis_ooc
     git add .
     git commit -m "WIP DAYLY"
@@ -75,13 +75,9 @@ _git_project{
 
 ##### MAIN #####################################################################
 
-if [ "$#" -gt 1 ]
-then
-
-    _getopts "$@"
-
-else
-   _usage
+_git
+_git_project
+_backup_home
 
 #    echo "#####################################################################"
 #    echo ""
@@ -89,6 +85,5 @@ else
 #    echo "${0##*/} [<serach-engin>] \"<search string>\""
 #    echo ""
 #    echo "#####################################################################"
-fi
 
 ##### EOF ######################################################################
