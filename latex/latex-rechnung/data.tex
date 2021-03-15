@@ -1,0 +1,53 @@
+\KOMAoptions{foldmarks=true,
+foldmarks=true,
+fromurl=true,
+fromemail=true,
+fromphone=true,
+fromfax=false,
+fromrule=true,
+footsepline=true,
+fromlogo=true,
+headsepline = true,
+footsepline = true
+%fromrule=afteraddress%  % Trennlinie unter dem Briefkopf
+}
+% ################## invoice DATA ##################
+\newcommand{\invoiceDate}{\today} % Datum der rechnungsstellung
+\newcommand{\payDate}{\today} % Datum der Zahlungsfrist
+\newcommand{\invoiceReference}{ \DTMtoday-\currenttime} % Rechnungsnummer
+\newcommand{\invoiceSalutation}{Sehr geehrte Damen und Herren.} % die Anrede
+\newcommand{\invoiceText}{Nachfolgende Dienstleistungen möchte ich Sie bitten,
+                          innerhalb von 14 Tagen, zu begleichen.\newline}
+\newcommand{\invoiceEnclosures}{Rechnung(n) extern laut aufstellung} % \encl{}
+\newcommand{\invoiceClosingSigned}{
+  \setplength[2]{sigbeforevskip}{\useplength{other-pseudo-length}}\raggedright
+  Mit freundlichen Grüßen \newline \includegraphics[scale=0.7]{signature.png}}
+
+\newcommand{\invoiceClosing}{\raggedright Mit freundlichen Grüßen}
+
+% ################## invoice DATA ##################
+
+
+% ################## Personal DATA ##################
+% START INVOICE DATA
+\newcommand{\taxID}{331/5042/1581}
+% END INVOICE DATA
+% START SENDERS DATA
+\newcommand{\senderName}{Marco Israel}
+\newcommand{\senderStreet}{Am Wickenkamp 38}
+\newcommand{\senderZIP}{32351}
+\newcommand{\senderCity}{Stemwede}
+\newcommand{\senderTelephone}{+49 5773 6729 877}
+\newcommand{\senderMobilephone}{}
+\newcommand{\senderEmail}{Marco-Is@gmx.de}
+\newcommand{\senderWeb}{\url{www.MarcoIs.eu}}
+% END SENDERES DATA
+% START ACCOUNT DATA
+\newcommand{\accountRCPT}{\senderName}
+\newcommand{\accountNumber}{3378505}
+\newcommand{\accountBLZ}{49092650}
+\newcommand{\accountBankName}{Volksbank Lübbecker Land eG}
+\newcommand{\accountIBAN}{DE53 4909 2650 0003 3785 05}
+\newcommand{\accountBIC}{GEN0DEM1LUB}
+% END ACCOUNT DATA
+% ################## Personal DATA ##################

@@ -1,0 +1,189 @@
+\documentclass[
+    version=last,           % use last release of scrlttr2 package
+    paper=a4,               % paper size
+    fontsize=11pt,          % fontsize
+    firsthead=on,           % display header on first page
+    firstfoot=on,           % display footer on first page
+    pagenumber=on,          % position of the page number
+    parskip=half,           % Use indent instead of skip, half, false
+    enlargefirstpage=,      % more space on first page
+    firsthead=on,           % Display the adress
+    fromrule=afteraddress,  % separate the address with a line in letter he
+    priority=off,           % print a priority onto the document
+    backaddress=true,       % Adress to send back
+    refline=dateright,      % location of the date
+	fromalign=right,	    % Aligns the from address to the right
+    fromemail=on,          % turn on email of sender
+    fromurl=on,             % print URL of sender
+    frombank=on,
+    fromphone=on,           % turn on phone of sender
+    frommobilephone=on      % Mobile Phone number
+    fromlogo=on,            % turn on logo of sender
+    addrfield=on,           % address field for envelope with window, on or true
+    subject=untitled,  % placement of subject, beforeopening or titled
+    foldmarks=off,          % print foldmarks
+    numericaldate=off,      % display date in numbers only
+	pagenumber=right,	        % Set page numbers from page 2 onwards
+	parskip=half,	        % Separates paragraphs with some whitespace,
+    headsep=false,          % Seperatorline in the header
+    footsepline=true,       % Seperatorline in the footer
+			%use parskip=full for more space or comment out to return to default
+    foldmarks=on,		    % Prints small fold marks on the left of the page
+	]{scrlttr2}
+
+\usepackage{datetime2}
+\usepackage{datetime}
+\renewcommand{\timeseparator}{}
+\renewcommand{\dateseparator}{}
+\usepackage[top=2cm, bottom=1cm, left=2cm, right=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage[11pt]{moresize}
+
+%\usepackage[german]{invoice}
+\usepackage{rechnung}
+\renewcommand*\textPreis{Stundensatz}
+\renewcommand*\textAnzahl{Stunden}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% include meta datd
+\include{data}
+\include{customer/ferchauGMBH.tex}
+
+%\setkomavar{fromlogo}{\parbox[b]{8cm}{\usekomafont{fromaddress}%
+%        {\mbox{\LARGE \bfseries Embedded System Design GmbH}}
+%        \smallskip}
+%}
+%\setkomavar{fromlogo}{\includegraphics[scale=0.7]{logo.png}}
+
+\setkomavar{fromname}{\senderName}
+\setkomavar{fromaddress}{\senderStreet \\ \senderZIP \ \senderCity}
+\setkomavar{place}{\senderCity}
+\setkomavar{date}{\invoiceDate}
+\setkomavar{fromphone}{\senderTelephone}
+\setkomavar{frommobilephone}{\senderMobilephone}
+\setkomavar{fromemail}{\href{mailto:\senderEmail}{\nolinkurl{\senderEmail}}}
+\setkomavar{subject}{Rechnung}
+\setkomavar{location}{
+  \\[\baselineskip] \\[\baselineskip]
+  \flushright \small {\vspace{1cm}Rechnungsnummer:
+  \invoiceReference}
+}
+
+\setkomavar{firsthead}{\hfill
+   \parbox[t][\headheight][t]{6cm}{%
+   \footnotesize
+   \raggedright
+   \flushright
+	\begin{tabular}{rl}
+		 Anschrift: & \senderName\\
+		 & \senderStreet\\
+		 & \senderZIP  \space \senderCity \\
+		 \\
+	     Telefon: &  \senderTelephone \\
+		 %Mobil: & \usekomavar{frommobilephone} \\
+		 E-Mail:  & \senderEmail \\
+		 Internet: &  \senderWeb \\
+		 \\
+		 Steuernummer: & \taxID \\
+	\end{tabular}
+   }%
+}
+
+\setkomavar{firstfoot}{%
+  \centering
+  \ssmall
+  \parbox[t]{\useplength{firstfootwidth}}{%
+    {\color{black}\hrulefill}\\[1ex]
+    \qquad
+    \parbox[t]{.2\linewidth}{\raggedright
+        \begin{tabular}{l}
+         \textbf{Anschrift:}\\
+         \senderName \\
+		 \senderStreet\\
+		 \senderZIP \space \senderCity \\
+        \end{tabular}
+    } \qquad
+    \parbox[t]{.2\linewidth}{\raggedright
+      \bgroup
+      \setlength{\tabcolsep}{0.5em}
+      \begin{tabular}{rl}
+      &\textbf{Kontakt:} \\
+      Telefon: & \senderTelephone \\
+      %Mobil: & \senderMobilephone \\
+      E-Mail:  &  \senderEmail \\
+      Internet: & \senderWeb
+      \end{tabular}
+      \egroup
+    }\qquad
+    \parbox[t]{.2\linewidth}{\raggedright
+      \qquad
+    %  Geschäftsführung:\\
+    %  Hans Mustermann\\
+    %  Erna Mustermann
+    }\qquad
+    \parbox[t]{.2\linewidth}{\raggedright
+    %  Amtsgericht:\\
+    %  Musterhausen HRB 123456\\
+    %  Ust-ID DE999999999\\
+    }\qquad
+    \parbox[t]{.2\linewidth}{\raggedright
+      \bgroup
+      \setlength{\tabcolsep}{0.5em}
+      \begin{tabular}{rl}
+         & \textbf{Bankverbindung:}\\
+		 Institut & \accountBankName  \\
+		 IBAN & \accountIBAN \\
+		 BIC & \accountBIC
+
+      \end{tabular}
+      \egroup
+    }%
+  }%
+}
+
+\usepackage{scrlayer-scrpage}% <- setzt den Seitenstil scrheadings automatisch
+\DeclareNewLayer[
+  foreground,
+  textarea,
+  voffset=\useplength{firstfootvpos},
+  hoffset=\dimexpr.5\paperwidth-.5\useplength{firstfootwidth}\relax,
+  width=\useplength{firstfootwidth},
+  mode=picture,
+  contents=\putUL{\raisebox{\dimexpr-\height\relax}{\usekomavar{firstfoot}}}
+]{likefirstpage.foot}
+
+\AddLayersToPageStyle{scrheadings}{likefirstpage.foot}
+\clearmainofpairofpagestyles
+\chead{\pagemark}
+\cfoot[\pagemark]{}
+\pagestyle{plain}% <- Seitenstil plain statt scrheadings
+
+
+\begin{document}
+  \begin{letter}{\customerCompany \\ \customerName \\ \customerStreet \\
+  \customerZIP \space \customerCity}
+    \opening{\invoiceSalutation}
+    \invoiceText
+      \newline
+	  \begin{invoice}{19}
+
+          \Fee{Dienstleistung Entwicklung Normal}{100.00}{2}
+          \Fee{Dienstleistung Entwicklung Zusatz}{110.00}{4}
+
+  	  \end{invoice}
+      \newline
+
+   % \closing{\invoiceClosingSigned}
+    \closing{\invoiceClosing}
+
+		%\encl{\invoiceEnclosures
+  \end{letter}
+\end{document}

@@ -1,0 +1,335 @@
+%-------------------------------------------------------------------------------
+% @author    Marco Israel (MI)
+% @date      2020-12
+% @authors   Last changed by:  Marco Israel - 2020.
+%
+%
+% @brief     German DinBrief template
+% @details   German DinBrief template
+%
+%
+%  @example
+%  "mkpdf -f letter_template.tex"
+%
+%  @copyright     Available under the MIT License.
+%
+%			Copyright (C) 2020 Marco Israel (MI).			All rights reserved.
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in
+% the Software without restriction, including without limitation the rights to
+% use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+% of the Software, and to permit persons to whom the Software is furnished to
+% do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall and MUST BE
+% included in all copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+% THE SOFTWARE.
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+%	DOCUMENT CONFIGURATIONS
+%-------------------------------------------------------------------------------
+
+\documentclass[
+    version=last,           % use last release of scrlttr2 package
+    DIV=13,                 % ?
+    BCOR=0mm,               % ?
+    paper=a4,               % paper size
+    fontsize=12pt,          % fontsize
+    firsthead=on,           % display header on first page
+    firstfoot=on,           % display footer on first page
+    pagenumber=on,i         % position of the page number
+    parskip=half,           % Use indent instead of skip, half, false
+    enlargefirstpage=,      % more space on first page
+    firsthead=on,           % Display the adress
+    fromrule=afteraddress,  % separate the address with a line in letter he
+    priority=off,           % print a priority onto the document
+    backaddress=true,       % Adress to send back
+    refline=dateright,      % location of the date
+	fromalign=right,	    % Aligns the from address to the right
+    fromemail=on,i          % turn on email of sender
+    fromurl=on,             % print URL of sender
+    frombank=on,
+    fromphone=on,           % turn on phone of sender
+    frommobilephone=on      % Mobile Phone number
+    fromlogo=on,            % turn on logo of sender
+    addrfield=on,           % address field for envelope with window, on or true
+    subject=untitled,  % placement of subject, beforeopening or titled
+    foldmarks=off,          % print foldmarks
+    numericaldate=off,      % display date in numbers only
+	pagenumber=right,	        % Set page numbers from page 2 onwards
+	parskip=half,	        % Separates paragraphs with some whitespace,
+    headsep=false,          % Seperatorline in the header
+    footsepline=true,       % Seperatorline in the footer
+			%use parskip=full for more space or comment out to return to default
+    foldmarks=off,		    % Prints small fold marks on the left of the page
+	]{scrlttr2}
+
+% Set Font: sans serif Latin Modern
+\usepackage{lmodern}
+\usepackage[T1]{fontenc} % For extra glyphs (accents, etc)
+\usepackage{stix} % Use the Stix font by default
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+%\usepackage[english]{babel}
+\usepackage[ngerman,english]{babel}
+\usepackage{url}
+\usepackage{csquotes}
+\usepackage{listings}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\renewcommand*{\raggedsignature}{\raggedright} %Signatur rechtsbündig
+
+% Set Page layout:
+\usepackage{changepage}
+    %\changepage{text height}{text width}{even-side margin}
+    %{odd-side margin}{column sep.}
+    %{topmargin}{headheight}{headsep}{footskip}
+\changepage{}{}{}{}{}{}{}{}{}
+
+%-------------------------------------------------------------------------------
+%	YOUR INFORMATION AND LETTER DATE
+%-------------------------------------------------------------------------------
+
+\KOMAoptions{foldmarks=true,
+foldmarks=false,
+fromurl=false,
+fromemail=true,
+fromphone=false,
+fromfax=false,
+fromalign=right,
+fromrule=off,
+footsepline=on,
+fromlogo=true,
+headsepline = true,
+footsepline = true
+%fromrule=afteraddress%  % Trennlinie unter dem Briefkopf
+}
+
+%\setkomavar{fromlogo}{\parbox[b]{8cm}{\usekomafont{fromaddress}%
+%        {\mbox{\LARGE \bfseries Embedded System Design GmbH}}
+%        \smallskip}
+%}
+%
+
+\setkomavar*{urlseparator}{}
+\setkomavar{urlseparator}{}
+\setkomavar{frombank}{Eine Bank\\BLZ~123\,45\,678\\Kto~123456789}
+\setkomavar{fromname}{Marco Israel} % Your name used in the from address
+\setkomavar{fromurl}{www.marcois.eu}
+\setkomavar{fromaddress}{Am Wickenkamp 38\\ 32351 Stemwede}
+\setkomavar{fromemail}{Marco-Israel@online.de}
+\setkomavar{signature}{Marco Israel}
+\setkomavar{fromphone}{05773 00000000}
+\setkomavar{frommobilephone}{0175 00000}
+%\setkomavar{place}{Stemwede}
+%\includegraphics[⟨options⟩]{⟨file⟩}
+\firstfoot{}
+\nextfoot{}
+
+
+%-------------------------------------------------------------------------------
+%  HEADER SECTION
+%-------------------------------------------------------------------------------
+%\firsthead{\centering
+%        {\mbox{\LARGE \bfseries Embedded System Design GmbH}}
+%}
+%
+
+%-------------------------------------------------------------------------------
+%  FOOTER SECTION
+%-------------------------------------------------------------------------------
+%\firstfoot{%
+%\centering
+%{\renewcommand{\\}{\ {\large\textperiodcentered}\ }
+%\small\usekomavar{frombank}
+%}%
+%}
+%
+
+
+
+
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+%-------------------------------------------------------------------------------
+%	ADDRESSEE
+%-------------------------------------------------------------------------------
+
+% Addressee name and address
+\begin{letter} {Wilhelm Büchner Hochschule \\
+Hilpertstr. 31\\
+64295 Darmstad}
+
+\setkomavar*{yourref}{AufgabenCode}
+\setkomavar{yourref}{FINA-H-XX1-K10}		% Ihr Zeichen
+\setkomavar*{yourmail}{HeftKürzel} 	% Ihr Schreiben vom
+\setkomavar{yourmail}{FINA-HXX} 	% Ihr Schreiben vom
+\setkomavar*{myref}{Auflage}       	% Unser Zeichen
+\setkomavar{myref}{0114K10}       	% Unser Zeichen
+\setkomavar*{customer}{Matrikel-Nr}
+\setkomavar{customer}{580201} 	% Kundennummer
+\setkomavar*{invoice}{StudiengangsNr.}   	% Rechnungsnummer
+\setkomavar{invoice}{1640}   	% Rechnungsnummer
+\setkomavar{place}{Stemwede}		% Ort
+\setkomavar{date}{\today}			% Datum
+
+\setkomavar{subject}{Einsendeaufgaben Typ A }
+
+\opening{Sehr geehrte(r) Herr / Frau}
+
+Guten Tag,
+
+im Anhang die Lösungen für o.g. Einsendeaufgabe Typ A,
+\\
+
+\begin{itemize}
+\item \textbf{Vorab Definition:}
+    \begin{itemize}
+    \item
+        Monatlicher Gewinn nach Fix = Erlöse - Fixkosten
+        150.000 - 80.000 - 6.000 =   64.000
+    \item Es \textit{soll} = kann = könnte = muss aber nicht eine Spende
+        gezahlt werden. Sie ist nicht verpflichtend.
+    \item Absetzbarkeit von Spende für Unternehmen ( § 10b Abs. 1 S. 1 EStG):
+        \begin{itemize}
+        \item 20 Prozent des Gesamtbetrags der Einkünfte oder
+        \item 4 Promille der Summe der gesamten Umsätze und der im
+            Kalenderjahr aufgewendeten Löhne und Gehälter. Die Zahlung
+            kann im Vorfeld dem Finanzamt bekannt gemacht werden um eine
+            schnelle Steuererstattung zu sicher zu stellen (Spenden sind
+            wohl überlegt und geplant und nicht grundlos).
+        \end{itemize}
+    \item  Es wird \textit{ angestrebt } = \textbf{grob} geplant/kalkuliert =
+        gewünscht; ist aber nicht fixiert - soweit sinnvoll - eine  Liquidität
+        zurückzuhalten, wenn möglich.. Dennoch dient die Liquidität um
+        Zahlungsspitzen auszugleichen und dient nicht dazu bei null Prozent
+        Verzinsung auf dem
+        Bankkonto zu ruhen.
+    \end{itemize}
+\end{itemize}
+
+\begin{itemize}
+\item  \textbf{1. Finanzplan Vorab}
+\end{itemize}
+
+        \begin{verbatim}
+| Monat | Zahlungsfällig nach Fixkosten   | Rest Lequidität                    |
++=======+=================================+====================================+
+| 1     | 23.000  +19.000 -8.000 + 4500   | 14.000(- 9500 )  = 0               |
++-------+---------------------------------+------------------------------------+
+| 2     | 37.000                          | 27.000 (-500 ) = 26.500            |
++-------+---------------------------------+------------------------------------+
+| 3     | 43.000 + 100.000 + 4.500        | -57000 + 10.000 = -47.000          |
++-------+---------------------------------+------------------------------------+
+| 4     | 28.000 + 8.000 + 23.000         | -42.000 + 30.000 Steuererstattung  |
+|       |                                 | Spenden etwa (30 Prozent) = 12.000 |
++-------+---------------------------------+------------------------------------+
+| 5     | 32.000 + 45.000                 | 15.500 ( -10.000 ) = 5.500         |
++-------+---------------------------------+------------------------------------+
+| 6     | 56.000                          | = 23.500                           |
++-------+---------------------------------+------------------------------------+
+| 7     | 19.000 + 4.500 + 23.000 + 8.000 | = 33.000 (+10.000)                 |
++-------+---------------------------------+------------------------------------+
+        \end{verbatim}
+
+Alle Angaben in € (Euro).
+
+\begin{itemize}
+    \item \textbf{2. Finanzplan mit Spende und Darlehn}
+\end{itemize}
+
+\begin{verbatim}
+| Monat | Rest Lequidität    | Aufnahme Darlehn | Zusatz-Zinsen | Neue Mittel |
++=======+====================+==================+===============+=============+
+| 1     | = 0                | 0                |               |             |
++-------+--------------------+------------------+---------------+-------------+
+| 2     | = 26.500           | 0                |               |             |
++-------+--------------------+------------------+---------------+-------------+
+| 3     | = -47.000          | 50.000 (s.o.     | 500           | 2500        |
+|       |                    | zur Lequidit#.   |               |             |
++-------+--------------------+------------------+---------------+-------------+
+| 4     | = 12.000           | 0                | 500           | 61.500      |
++-------+--------------------+------------------+---------------+-------------+
+| 5     | = 5.500            | 0                | 500           | 66500       |
++-------+--------------------+------------------+---------------+-------------+
+| 6     | = 23.500           | 0                | 500           | 73.000      |
++-------+--------------------+------------------+---------------+-------------+
+| 7     | = 33.000 (+10.000) | 0                | 500           | 82500       |
++-------+--------------------+------------------+---------------+-------------+
+\end{verbatim}
+
+Alle Angaben in € (Euro).
+
+\begin{itemize}
+    \item \textbf{3. Verhinderung Neukreditaufnahme.}
+
+    \begin{itemize}
+        \item S.o Vorab Definition.
+        \item Das Darlehn sollte aufgeteilt werden in z.B. zwei Hälften. Die
+            empfangene Organisation wird wohl auch in diesem Falle dankbar sein
+            und die Steuerliche anrechenbar ist weiterhin im (Geschäfts)Jahr
+            gegeben.
+        \item Wie in 2 bereits geschehen, sollte dar Liquiditätsbestand in
+            Spitzen (März) genutzt werden. Die Darlehenskosten (Zinszahlungen)
+            stehen nicht im Verhältnis zu den null Prozent Zinsen auf dem
+            Bankkonto (Zinszahlungseingänge gleich null).
+    \item Wie definiert ist, soll eine Liquidität vorhanden sein.Gleichzeitig
+        ist zwischen den Zeilen, indirekt laut Aufgabenstellung definiert, das
+        solche Liquidität nicht auf dem Bankkonto liegen soll, insofern
+        anderweitig benötigt (null Prozent Zinsen).
+    \end{itemize}
+\end{itemize}
+
+\closing{Mit freundlichen Grüßen}
+    \includegraphics[scale=0.70]{../unterschrift.png}
+
+
+
+%\encl{Myattachments} % Attached documents
+
+%-------------------------------------------------------------------------------
+%   Postskriptum
+%
+%\ps\ PS:\ someText
+%-------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------
+%  Anlagen
+%\setkomavar*{enclseparator}{Anlage}
+%\encl{%
+%  Anlage 1\\
+%  Anlage 2%
+%}
+%-------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------
+%   Verteiler
+%\setkomavar*{ccseparator}{Kopie an}
+%\cc{%
+%  Verteiler 1\\
+%  Verteiler 2%
+%}
+%-------------------------------------------------------------------------------
+
+\end{letter}
+
+\end{document}
+
+%--- EOF -----------------------------------------------------------------------
+%
+%

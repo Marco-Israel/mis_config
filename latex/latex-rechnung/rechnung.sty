@@ -1,0 +1,52 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{rechnung}
+
+\RequirePackage{fp}
+\RequirePackage{calc}
+\RequirePackage{array}
+\RequirePackage{booktabs}
+
+% Commas instead of dot in mathmode
+\mathchardef\period=\mathcode`.
+\DeclareMathSymbol{.}{\mathord}{letters}{"3B}
+
+\newcounter{invoice@cost}
+\newcounter{invoice@vat}
+
+\newcommand*{\format@float}[1]{\FPround{\invoice@t}{#1}{2}$\invoice@t$}
+\newcommand*{\format@int}[1]{$#1$}
+\newcommand*{\total}[1]{\FPdiv{\invoice@t}{\arabic{#1}}{1000}\format@float{\invoice@t}}
+\newcommand*\textPosten{\bfseries Posten}
+\newcommand*\textPreis{St\"uckpreis}
+\newcommand*\textAnzahl{Anzahl}
+\newcommand*\textBetrag{Betrag}
+
+\newenvironment*{invoice}[1]{
+  \setcounter{invoice@cost}{0}
+  \setcounter{invoice@vat}{0}
+  \def\invoice@VATval{#1}%
+  %
+  \newcommand*{\Fee}[3]{%
+    \addtocounter{invoice@cost}{1000 * \real{##2} * \real{##3}}%
+    \addtocounter{invoice@vat}{10 * \real{#1} * \real{##2} * \real{##3}}%
+    {##1} & \format@float{##2} & \format@int{##3} & \FPmul{\invoice@cost}{##2}{##3}\format@float{\invoice@cost} \cr%
+  }%
+  %
+  ~\par\noindent
+  \begin{tabular}{p{\dimexpr0.49\linewidth-2\tabcolsep}*{3}{>{\hfill}p{\dimexpr0.17\linewidth-2\tabcolsep}}}%
+    \toprule%
+    {\textPosten} & {\textPreis} & {\textAnzahl} & {\textBetrag} \cr%
+    \midrule%
+  }{%
+    \if\invoice@VATval0\else%
+    \midrule%
+    {Zwischensumme} & & & {\total{invoice@cost}} \cr%
+    {MWSt. (\invoice@VATval\,\%)} & & & {\total{invoice@vat}} \cr%
+    \fi%
+    \midrule%
+    \setcounter{invoice@cost}{\theinvoice@cost + \theinvoice@vat}%
+    {\bfseries Summe} & & & {\boldmath \total{invoice@cost}} \cr%
+    \bottomrule%
+  \end{tabular}%
+  \par~%
+}

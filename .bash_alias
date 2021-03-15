@@ -71,7 +71,6 @@ alias dvio='xrandr --output LVDS1 --auto --output VGA1 --above LVDS1 --auto'
 alias dviu='xrandr --output VGA1 --under LVDS1 --auto'
 alias office='libreoffice &'
 alias libreoffice='libreoffice &'
-alias fileroller='file-roller &'
 alias min='min &'
 alias youtube-dl-playlistMP3160K='youtube-dl --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 160K --output "%(title)s.%(ext)s" --yes-playlist'
 alias youtube-dl-playlistMP4='youtube-dl --ignore-errors --output "%(title)s.%(ext)s" --yes-playlist '
@@ -207,11 +206,11 @@ wlanon() {
 
 
 cupsstart(){
-    sudo systemctl start cups-lpd.socket
+    sudo systemctl start cups
 }
 
 cupsstop(){
-    sudo systemctl stop cups-lpd.socket
+    sudo systemctl stop cups
 }
 
 extr() {
