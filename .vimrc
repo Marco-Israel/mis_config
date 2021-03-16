@@ -45,7 +45,7 @@ set statusline+=%F
 set path+=** "extand the vim path"
 "set path+=../**
 "set path+=../../**
-"set tags+=$PWD/.scopedb/ctags.db
+"set tags+=$PWD/.tags/tags
 set number "Activates real number"
 set scrolloff=15 "show the last X lines. 999 = Center everytime.
 set viminfo='100,f1,:20,@20,/20
@@ -215,7 +215,7 @@ command! -nargs=+ GrepBufs call GrepBuffers(<q-args>)
 
 """ Spelling and spellcheck """"""""""""""""""""""""""""""""""""""""""""""""""""
 set spell spelllang=en_us
-autocmd VimEnter,BufNewFile,BufReadPost *.uml <buffer> :setlocal nospell
+autocmd VimEnter,BufNewFile,BufReadPost *.uml :setlocal nospell
 autocmd BufNewFile,BufRead *.txt           setlocal spell spelllang=en_us,de_de
 autocmd BufNewFile,BufRead *.tex           setlocal spell spelllang=en_us,de_de
 autocmd BufNewFile,BufRead *.todo          setlocal spell spelllang=en_us,de_de
