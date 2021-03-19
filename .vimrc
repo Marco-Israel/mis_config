@@ -105,6 +105,11 @@ autocmd BufNewFile,BufRead *.make,mk            setlocal list
 autocmd BufNewFile,BufRead *.make,mk            setlocal noexpandtab
 
 
+""" Fold """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType c      setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^\\s*//'
+autocmd FileType python setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^\\s*#'
+
+
 
 """ Open Quickfix entry in Vertical split """""""""""""""""""""""""""""""""""""
 autocmd FileType qf nnoremap <buffer> <leader><Enter> <C-w><Enter><C-w>L
