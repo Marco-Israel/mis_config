@@ -5,15 +5,9 @@
 .mozilla/
 .cache/
 .cups/
-.fzf.bash
-.fzf/
-.gitconfig
-.gitfiles/
-.gitignore
 .gnupg/
 .inputrc
 .local/
-.profile
 .sdirs
 .ssh/
 .viminfo
@@ -21,8 +15,6 @@ Downloads/
 config.tar.gz
 installArch.sh
 .config/
-.tmux/
-.vim/
 .pki/
 .wget-hsts
 .Xauthority

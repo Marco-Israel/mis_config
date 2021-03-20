@@ -1,0 +1,414 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/mis/.config/dwm/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/09e95135/
+${OBJ}	/home/mis/.config/dwm/Makefile	/^${OBJ}: config.h config.mk$/;"	t	line:20	language:Make
+.c.o	/home/mis/.config/dwm/Makefile	/^.c.o:$/;"	t	line:17	language:Make
+Arg	/home/mis/.config/dwm/dwm.c	/^} Arg;$/;"	t	line:75	language:C	typeref:union:__anon41c029c7060a	file:
+BETWEEN	/home/mis/.config/dwm/util.h	/^#define BETWEEN(/;"	d	line:5	language:C++	signature:(X,A,B)
+BUGS	/home/mis/.config/dwm/dwm.1	/^.SH BUGS$/;"	s	line:175	language:Man	title:DWM
+BUTTONMASK	/home/mis/.config/dwm/dwm.c	/^#define BUTTONMASK /;"	d	line:48	language:C	file:
+Button	/home/mis/.config/dwm/dwm.c	/^} Button;$/;"	t	line:83	language:C	typeref:struct:__anon41c029c70708	file:
+CC	/home/mis/.config/dwm/config.mk	/^CC = cc$/;"	m	line:38	language:Make
+CFLAGS	/home/mis/.config/dwm/config.mk	/^CFLAGS   = -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os ${INCS} ${CPPFLAGS}$/;"	m	line:30	language:Make
+CLEANMASK	/home/mis/.config/dwm/dwm.c	/^#define CLEANMASK(/;"	d	line:49	language:C	file:	signature:(mask)
+CPPFLAGS	/home/mis/.config/dwm/config.mk	/^CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=2 -DVERSION=\\"${VERSION}\\" ${XINE/;"	m	line:28	language:Make
+CUSTOMIZATION	/home/mis/.config/dwm/dwm.1	/^.SH CUSTOMIZATION$/;"	s	line:155	language:Man	title:DWM
+Client	/home/mis/.config/dwm/dwm.c	/^struct Client {$/;"	s	line:87	language:C	file:
+Client	/home/mis/.config/dwm/dwm.c	/^typedef struct Client Client;$/;"	t	line:86	language:C	typeref:struct:Client	file:
+ClkClientWin	/home/mis/.config/dwm/dwm.c	/^       ClkClientWin, ClkRootWin, ClkLast }; \/* clicks *\/$/;"	e	line:68	language:C	enum:__anon41c029c70503	file:	access:public
+ClkLast	/home/mis/.config/dwm/dwm.c	/^       ClkClientWin, ClkRootWin, ClkLast }; \/* clicks *\/$/;"	e	line:68	language:C	enum:__anon41c029c70503	file:	access:public
+ClkLtSymbol	/home/mis/.config/dwm/dwm.c	/^enum { ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle,$/;"	e	line:67	language:C	enum:__anon41c029c70503	file:	access:public
+ClkRootWin	/home/mis/.config/dwm/dwm.c	/^       ClkClientWin, ClkRootWin, ClkLast }; \/* clicks *\/$/;"	e	line:68	language:C	enum:__anon41c029c70503	file:	access:public
+ClkStatusText	/home/mis/.config/dwm/dwm.c	/^enum { ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle,$/;"	e	line:67	language:C	enum:__anon41c029c70503	file:	access:public
+ClkTagBar	/home/mis/.config/dwm/dwm.c	/^enum { ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle,$/;"	e	line:67	language:C	enum:__anon41c029c70503	file:	access:public
+ClkWinTitle	/home/mis/.config/dwm/dwm.c	/^enum { ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle,$/;"	e	line:67	language:C	enum:__anon41c029c70503	file:	access:public
+Clr	/home/mis/.config/dwm/drw.h	/^typedef XftColor Clr;$/;"	t	line:16	language:C++	typeref:typename:XftColor
+ColBg	/home/mis/.config/dwm/drw.h	/^enum { ColFg, ColBg, ColBorder }; \/* Clr scheme index *\/$/;"	e	line:15	language:C++	enum:__anon41bd96710203	access:public
+ColBorder	/home/mis/.config/dwm/drw.h	/^enum { ColFg, ColBg, ColBorder }; \/* Clr scheme index *\/$/;"	e	line:15	language:C++	enum:__anon41bd96710203	access:public
+ColFg	/home/mis/.config/dwm/drw.h	/^enum { ColFg, ColBg, ColBorder }; \/* Clr scheme index *\/$/;"	e	line:15	language:C++	enum:__anon41bd96710203	access:public
+Cur	/home/mis/.config/dwm/drw.h	/^} Cur;$/;"	t	line:5	language:C++	typeref:struct:__anon41bd96710108
+CurLast	/home/mis/.config/dwm/dwm.c	/^enum { CurNormal, CurResize, CurMove, CurLast }; \/* cursor *\/$/;"	e	line:61	language:C	enum:__anon41c029c70103	file:	access:public
+CurMove	/home/mis/.config/dwm/dwm.c	/^enum { CurNormal, CurResize, CurMove, CurLast }; \/* cursor *\/$/;"	e	line:61	language:C	enum:__anon41c029c70103	file:	access:public
+CurNormal	/home/mis/.config/dwm/dwm.c	/^enum { CurNormal, CurResize, CurMove, CurLast }; \/* cursor *\/$/;"	e	line:61	language:C	enum:__anon41c029c70103	file:	access:public
+CurResize	/home/mis/.config/dwm/dwm.c	/^enum { CurNormal, CurResize, CurMove, CurLast }; \/* cursor *\/$/;"	e	line:61	language:C	enum:__anon41c029c70103	file:	access:public
+DESCRIPTION	/home/mis/.config/dwm/dwm.1	/^.SH DESCRIPTION$/;"	s	line:7	language:Man	title:DWM
+DWM	/home/mis/.config/dwm/dwm.1	/^.TH DWM 1 dwm\\-VERSION$/;"	t	line:1	language:Man
+Drw	/home/mis/.config/dwm/drw.h	/^} Drw;$/;"	t	line:27	language:C++	typeref:struct:__anon41bd96710308
+FREETYPEINC	/home/mis/.config/dwm/config.mk	/^FREETYPEINC = \/usr\/include\/freetype2$/;"	m	line:19	language:Make
+FREETYPELIBS	/home/mis/.config/dwm/config.mk	/^FREETYPELIBS = -lfontconfig -lXft$/;"	m	line:18	language:Make
+Fnt	/home/mis/.config/dwm/drw.h	/^typedef struct Fnt {$/;"	s	line:7	language:C++
+Fnt	/home/mis/.config/dwm/drw.h	/^} Fnt;$/;"	t	line:13	language:C++	typeref:struct:Fnt
+HEIGHT	/home/mis/.config/dwm/dwm.c	/^#define HEIGHT(/;"	d	line:56	language:C	file:	signature:(X)
+INCS	/home/mis/.config/dwm/config.mk	/^INCS = -I${X11INC} -I${FREETYPEINC}$/;"	m	line:24	language:Make
+INTERSECT	/home/mis/.config/dwm/dwm.c	/^#define INTERSECT(/;"	d	line:50	language:C	file:	signature:(x,y,w,h,m)
+ISSUES	/home/mis/.config/dwm/dwm.1	/^.SH ISSUES$/;"	s	line:161	language:Man	title:DWM
+ISVISIBLE	/home/mis/.config/dwm/dwm.c	/^#define ISVISIBLE(/;"	d	line:52	language:C	file:	signature:(C)
+Key	/home/mis/.config/dwm/dwm.c	/^} Key;$/;"	t	line:107	language:C	typeref:struct:__anon41c029c70808	file:
+LDFLAGS	/home/mis/.config/dwm/config.mk	/^LDFLAGS  = ${LIBS}$/;"	m	line:31	language:Make
+LENGTH	/home/mis/.config/dwm/dwm.c	/^#define LENGTH(/;"	d	line:53	language:C	file:	signature:(X)
+LIBS	/home/mis/.config/dwm/config.mk	/^LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS}$/;"	m	line:25	language:Make
+Layout	/home/mis/.config/dwm/dwm.c	/^} Layout;$/;"	t	line:112	language:C	typeref:struct:__anon41c029c70908	file:
+MANPREFIX	/home/mis/.config/dwm/config.mk	/^MANPREFIX = ${PREFIX}\/share\/man$/;"	m	line:8	language:Make
+MAX	/home/mis/.config/dwm/util.h	/^#define MAX(/;"	d	line:3	language:C++	signature:(A,B)
+MIN	/home/mis/.config/dwm/util.h	/^#define MIN(/;"	d	line:4	language:C++	signature:(A,B)
+MODKEY	/home/mis/.config/dwm/config.def.h	/^#define MODKEY /;"	d	line:47	language:C++
+MODKEY	/home/mis/.config/dwm/config.h	/^#define MODKEY /;"	d	line:47	language:C++
+MOUSEMASK	/home/mis/.config/dwm/dwm.c	/^#define MOUSEMASK /;"	d	line:54	language:C	file:
+Monitor	/home/mis/.config/dwm/dwm.c	/^struct Monitor {$/;"	s	line:114	language:C	file:
+Monitor	/home/mis/.config/dwm/dwm.c	/^typedef struct Monitor Monitor;$/;"	t	line:85	language:C	typeref:struct:Monitor	file:
+NAME	/home/mis/.config/dwm/dwm.1	/^.SH NAME$/;"	s	line:2	language:Man	title:DWM
+NetActiveWindow	/home/mis/.config/dwm/dwm.c	/^       NetWMFullscreen, NetActiveWindow, NetWMWindowType,$/;"	e	line:64	language:C	enum:__anon41c029c70303	file:	access:public
+NetClientList	/home/mis/.config/dwm/dwm.c	/^       NetWMWindowTypeDialog, NetClientList, NetLast }; \/* EWMH atoms *\/$/;"	e	line:65	language:C	enum:__anon41c029c70303	file:	access:public
+NetLast	/home/mis/.config/dwm/dwm.c	/^       NetWMWindowTypeDialog, NetClientList, NetLast }; \/* EWMH atoms *\/$/;"	e	line:65	language:C	enum:__anon41c029c70303	file:	access:public
+NetSupported	/home/mis/.config/dwm/dwm.c	/^enum { NetSupported, NetWMName, NetWMState, NetWMCheck,$/;"	e	line:63	language:C	enum:__anon41c029c70303	file:	access:public
+NetWMCheck	/home/mis/.config/dwm/dwm.c	/^enum { NetSupported, NetWMName, NetWMState, NetWMCheck,$/;"	e	line:63	language:C	enum:__anon41c029c70303	file:	access:public
+NetWMFullscreen	/home/mis/.config/dwm/dwm.c	/^       NetWMFullscreen, NetActiveWindow, NetWMWindowType,$/;"	e	line:64	language:C	enum:__anon41c029c70303	file:	access:public
+NetWMName	/home/mis/.config/dwm/dwm.c	/^enum { NetSupported, NetWMName, NetWMState, NetWMCheck,$/;"	e	line:63	language:C	enum:__anon41c029c70303	file:	access:public
+NetWMState	/home/mis/.config/dwm/dwm.c	/^enum { NetSupported, NetWMName, NetWMState, NetWMCheck,$/;"	e	line:63	language:C	enum:__anon41c029c70303	file:	access:public
+NetWMWindowType	/home/mis/.config/dwm/dwm.c	/^       NetWMFullscreen, NetActiveWindow, NetWMWindowType,$/;"	e	line:64	language:C	enum:__anon41c029c70303	file:	access:public
+NetWMWindowTypeDialog	/home/mis/.config/dwm/dwm.c	/^       NetWMWindowTypeDialog, NetClientList, NetLast }; \/* EWMH atoms *\/$/;"	e	line:65	language:C	enum:__anon41c029c70303	file:	access:public
+NumTags	/home/mis/.config/dwm/dwm.c	/^struct NumTags { char limitexceeded[LENGTH(tags) > 31 ? -1 : 1]; };$/;"	s	line:278	language:C	file:
+OBJ	/home/mis/.config/dwm/Makefile	/^OBJ = ${SRC:.c=.o}$/;"	m	line:7	language:Make
+OPTIONS	/home/mis/.config/dwm/dwm.1	/^.SH OPTIONS$/;"	s	line:33	language:Man	title:DWM
+PREFIX	/home/mis/.config/dwm/config.mk	/^PREFIX = \/usr\/local$/;"	m	line:7	language:Make
+Rule	/home/mis/.config/dwm/dwm.c	/^} Rule;$/;"	t	line:142	language:C	typeref:struct:__anon41c029c70a08	file:
+SEE	/home/mis/.config/dwm/dwm.1	/^.SH SEE ALSO$/;"	s	line:158	language:Man	title:DWM
+SHCMD	/home/mis/.config/dwm/config.def.h	/^#define SHCMD(/;"	d	line:57	language:C++	signature:(cmd)
+SHCMD	/home/mis/.config/dwm/config.h	/^#define SHCMD(/;"	d	line:57	language:C++	signature:(cmd)
+SRC	/home/mis/.config/dwm/Makefile	/^SRC = drw.c dwm.c util.c$/;"	m	line:6	language:Make
+SYNOPSIS	/home/mis/.config/dwm/dwm.1	/^.SH SYNOPSIS$/;"	s	line:4	language:Man	title:DWM
+SchemeNorm	/home/mis/.config/dwm/dwm.c	/^enum { SchemeNorm, SchemeSel }; \/* color schemes *\/$/;"	e	line:62	language:C	enum:__anon41c029c70203	file:	access:public
+SchemeSel	/home/mis/.config/dwm/dwm.c	/^enum { SchemeNorm, SchemeSel }; \/* color schemes *\/$/;"	e	line:62	language:C	enum:__anon41c029c70203	file:	access:public
+TAGKEYS	/home/mis/.config/dwm/config.def.h	/^#define TAGKEYS(/;"	d	line:48	language:C++	signature:(KEY,TAG)
+TAGKEYS	/home/mis/.config/dwm/config.h	/^#define TAGKEYS(/;"	d	line:48	language:C++	signature:(KEY,TAG)
+TAGMASK	/home/mis/.config/dwm/dwm.c	/^#define TAGMASK /;"	d	line:57	language:C	file:
+TEXTW	/home/mis/.config/dwm/dwm.c	/^#define TEXTW(/;"	d	line:58	language:C	file:	signature:(X)
+USAGE	/home/mis/.config/dwm/dwm.1	/^.SH USAGE$/;"	s	line:37	language:Man	title:DWM
+UTF_INVALID	/home/mis/.config/dwm/drw.c	/^#define UTF_INVALID /;"	d	line:11	language:C	file:
+UTF_SIZ	/home/mis/.config/dwm/drw.c	/^#define UTF_SIZ /;"	d	line:12	language:C	file:
+VERSION	/home/mis/.config/dwm/config.mk	/^VERSION = 6.2$/;"	m	line:2	language:Make
+WIDTH	/home/mis/.config/dwm/dwm.c	/^#define WIDTH(/;"	d	line:55	language:C	file:	signature:(X)
+WMDelete	/home/mis/.config/dwm/dwm.c	/^enum { WMProtocols, WMDelete, WMState, WMTakeFocus, WMLast }; \/* default atoms *\/$/;"	e	line:66	language:C	enum:__anon41c029c70403	file:	access:public
+WMLast	/home/mis/.config/dwm/dwm.c	/^enum { WMProtocols, WMDelete, WMState, WMTakeFocus, WMLast }; \/* default atoms *\/$/;"	e	line:66	language:C	enum:__anon41c029c70403	file:	access:public
+WMProtocols	/home/mis/.config/dwm/dwm.c	/^enum { WMProtocols, WMDelete, WMState, WMTakeFocus, WMLast }; \/* default atoms *\/$/;"	e	line:66	language:C	enum:__anon41c029c70403	file:	access:public
+WMState	/home/mis/.config/dwm/dwm.c	/^enum { WMProtocols, WMDelete, WMState, WMTakeFocus, WMLast }; \/* default atoms *\/$/;"	e	line:66	language:C	enum:__anon41c029c70403	file:	access:public
+WMTakeFocus	/home/mis/.config/dwm/dwm.c	/^enum { WMProtocols, WMDelete, WMState, WMTakeFocus, WMLast }; \/* default atoms *\/$/;"	e	line:66	language:C	enum:__anon41c029c70403	file:	access:public
+X11INC	/home/mis/.config/dwm/config.mk	/^X11INC = \/usr\/X11R6\/include$/;"	m	line:10	language:Make
+X11LIB	/home/mis/.config/dwm/config.mk	/^X11LIB = \/usr\/X11R6\/lib$/;"	m	line:11	language:Make
+XINERAMAFLAGS	/home/mis/.config/dwm/config.mk	/^XINERAMAFLAGS = -DXINERAMA$/;"	m	line:15	language:Make
+XINERAMALIBS	/home/mis/.config/dwm/config.mk	/^XINERAMALIBS  = -lXinerama$/;"	m	line:14	language:Make
+__anon41bd96710108	/home/mis/.config/dwm/drw.h	/^typedef struct {$/;"	s	line:3	language:C++
+__anon41bd96710203	/home/mis/.config/dwm/drw.h	/^enum { ColFg, ColBg, ColBorder }; \/* Clr scheme index *\/$/;"	g	line:15	language:C++
+__anon41bd96710308	/home/mis/.config/dwm/drw.h	/^typedef struct {$/;"	s	line:18	language:C++
+__anon41c029c70103	/home/mis/.config/dwm/dwm.c	/^enum { CurNormal, CurResize, CurMove, CurLast }; \/* cursor *\/$/;"	g	line:61	language:C	file:
+__anon41c029c70203	/home/mis/.config/dwm/dwm.c	/^enum { SchemeNorm, SchemeSel }; \/* color schemes *\/$/;"	g	line:62	language:C	file:
+__anon41c029c70303	/home/mis/.config/dwm/dwm.c	/^enum { NetSupported, NetWMName, NetWMState, NetWMCheck,$/;"	g	line:63	language:C	file:
+__anon41c029c70403	/home/mis/.config/dwm/dwm.c	/^enum { WMProtocols, WMDelete, WMState, WMTakeFocus, WMLast }; \/* default atoms *\/$/;"	g	line:66	language:C	file:
+__anon41c029c70503	/home/mis/.config/dwm/dwm.c	/^enum { ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle,$/;"	g	line:67	language:C	file:
+__anon41c029c7060a	/home/mis/.config/dwm/dwm.c	/^typedef union {$/;"	u	line:70	language:C	file:
+__anon41c029c70708	/home/mis/.config/dwm/dwm.c	/^typedef struct {$/;"	s	line:77	language:C	file:
+__anon41c029c70808	/home/mis/.config/dwm/dwm.c	/^typedef struct {$/;"	s	line:102	language:C	file:
+__anon41c029c70908	/home/mis/.config/dwm/dwm.c	/^typedef struct {$/;"	s	line:109	language:C	file:
+__anon41c029c70a08	/home/mis/.config/dwm/dwm.c	/^typedef struct {$/;"	s	line:135	language:C	file:
+all	/home/mis/.config/dwm/Makefile	/^all: options dwm$/;"	t	line:9	language:Make
+applyrules	/home/mis/.config/dwm/dwm.c	/^applyrules(Client *c)$/;"	f	line:282	language:C	typeref:typename:void	signature:(Client * c)
+applysizehints	/home/mis/.config/dwm/dwm.c	/^applysizehints(Client *c, int *x, int *y, int *w, int *h, int interact)$/;"	f	line:318	language:C	typeref:typename:int	signature:(Client * c,int * x,int * y,int * w,int * h,int interact)
+arg	/home/mis/.config/dwm/dwm.c	/^	const Arg arg;$/;"	m	line:106	language:C	struct:__anon41c029c70808	typeref:typename:const Arg	file:	access:public
+arg	/home/mis/.config/dwm/dwm.c	/^	const Arg arg;$/;"	m	line:82	language:C	struct:__anon41c029c70708	typeref:typename:const Arg	file:	access:public
+arrange	/home/mis/.config/dwm/dwm.c	/^	void (*arrange)(Monitor *);$/;"	m	line:111	language:C	struct:__anon41c029c70908	typeref:typename:void (*)(Monitor *)	file:	access:public
+arrange	/home/mis/.config/dwm/dwm.c	/^arrange(Monitor *m)$/;"	f	line:384	language:C	typeref:typename:void	signature:(Monitor * m)
+arrangemon	/home/mis/.config/dwm/dwm.c	/^arrangemon(Monitor *m)$/;"	f	line:398	language:C	typeref:typename:void	signature:(Monitor * m)
+attach	/home/mis/.config/dwm/dwm.c	/^attach(Client *c)$/;"	f	line:406	language:C	typeref:typename:void	signature:(Client * c)
+attachstack	/home/mis/.config/dwm/dwm.c	/^attachstack(Client *c)$/;"	f	line:413	language:C	typeref:typename:void	signature:(Client * c)
+barwin	/home/mis/.config/dwm/dwm.c	/^	Window barwin;$/;"	m	line:131	language:C	struct:Monitor	typeref:typename:Window	file:	access:public
+baseh	/home/mis/.config/dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	line:92	language:C	struct:Client	typeref:typename:int	file:	access:public
+basew	/home/mis/.config/dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	line:92	language:C	struct:Client	typeref:typename:int	file:	access:public
+bh	/home/mis/.config/dwm/dwm.c	/^static int bh, blw = 0;      \/* bar geometry *\/$/;"	v	line:245	language:C	typeref:typename:int	file:
+blw	/home/mis/.config/dwm/dwm.c	/^static int bh, blw = 0;      \/* bar geometry *\/$/;"	v	line:245	language:C	typeref:typename:int	file:
+borderpx	/home/mis/.config/dwm/config.def.h	/^static const unsigned int borderpx  = 1;        \/* border pixel of windows *\/$/;"	v	line:4	language:C++	typeref:typename:const unsigned int
+borderpx	/home/mis/.config/dwm/config.h	/^static const unsigned int borderpx  = 1;        \/* border pixel of windows *\/$/;"	v	line:4	language:C++	typeref:typename:const unsigned int
+broken	/home/mis/.config/dwm/dwm.c	/^static const char broken[] = "broken";$/;"	v	line:241	language:C	typeref:typename:const char[]	file:
+button	/home/mis/.config/dwm/dwm.c	/^	unsigned int button;$/;"	m	line:80	language:C	struct:__anon41c029c70708	typeref:typename:unsigned int	file:	access:public
+buttonpress	/home/mis/.config/dwm/dwm.c	/^buttonpress(XEvent *e)$/;"	f	line:420	language:C	typeref:typename:void	signature:(XEvent * e)
+buttons	/home/mis/.config/dwm/config.def.h	/^static Button buttons[] = {$/;"	v	line:103	language:C++	typeref:typename:Button[]
+buttons	/home/mis/.config/dwm/config.h	/^static Button buttons[] = {$/;"	v	line:103	language:C++	typeref:typename:Button[]
+bw	/home/mis/.config/dwm/dwm.c	/^	int bw, oldbw;$/;"	m	line:93	language:C	struct:Client	typeref:typename:int	file:	access:public
+by	/home/mis/.config/dwm/dwm.c	/^	int by;               \/* bar geometry *\/$/;"	m	line:119	language:C	struct:Monitor	typeref:typename:int	file:	access:public
+checkotherwm	/home/mis/.config/dwm/dwm.c	/^checkotherwm(void)$/;"	f	line:471	language:C	typeref:typename:void	signature:(void)
+class	/home/mis/.config/dwm/dwm.c	/^	const char *class;$/;"	m	line:136	language:C	struct:__anon41c029c70a08	typeref:typename:const char *	file:	access:public
+clean	/home/mis/.config/dwm/Makefile	/^clean:$/;"	t	line:28	language:Make
+cleanup	/home/mis/.config/dwm/dwm.c	/^cleanup(void)$/;"	f	line:482	language:C	typeref:typename:void	signature:(void)
+cleanupmon	/home/mis/.config/dwm/dwm.c	/^cleanupmon(Monitor *mon)$/;"	f	line:509	language:C	typeref:typename:void	signature:(Monitor * mon)
+click	/home/mis/.config/dwm/dwm.c	/^	unsigned int click;$/;"	m	line:78	language:C	struct:__anon41c029c70708	typeref:typename:unsigned int	file:	access:public
+clientmessage	/home/mis/.config/dwm/dwm.c	/^clientmessage(XEvent *e)$/;"	f	line:525	language:C	typeref:typename:void	signature:(XEvent * e)
+clients	/home/mis/.config/dwm/dwm.c	/^	Client *clients;$/;"	m	line:127	language:C	struct:Monitor	typeref:typename:Client *	file:	access:public
+col_cyan	/home/mis/.config/dwm/config.def.h	/^static const char col_cyan[]        = "#005577";$/;"	v	line:14	language:C++	typeref:typename:const char[]
+col_cyan	/home/mis/.config/dwm/config.h	/^static const char col_cyan[]        = "#005577";$/;"	v	line:14	language:C++	typeref:typename:const char[]
+col_gray1	/home/mis/.config/dwm/config.def.h	/^static const char col_gray1[]       = "#222222";$/;"	v	line:10	language:C++	typeref:typename:const char[]
+col_gray1	/home/mis/.config/dwm/config.h	/^static const char col_gray1[]       = "#222222";$/;"	v	line:10	language:C++	typeref:typename:const char[]
+col_gray2	/home/mis/.config/dwm/config.def.h	/^static const char col_gray2[]       = "#444444";$/;"	v	line:11	language:C++	typeref:typename:const char[]
+col_gray2	/home/mis/.config/dwm/config.h	/^static const char col_gray2[]       = "#444444";$/;"	v	line:11	language:C++	typeref:typename:const char[]
+col_gray3	/home/mis/.config/dwm/config.def.h	/^static const char col_gray3[]       = "#bbbbbb";$/;"	v	line:12	language:C++	typeref:typename:const char[]
+col_gray3	/home/mis/.config/dwm/config.h	/^static const char col_gray3[]       = "#bbbbbb";$/;"	v	line:12	language:C++	typeref:typename:const char[]
+col_gray4	/home/mis/.config/dwm/config.def.h	/^static const char col_gray4[]       = "#eeeeee";$/;"	v	line:13	language:C++	typeref:typename:const char[]
+col_gray4	/home/mis/.config/dwm/config.h	/^static const char col_gray4[]       = "#eeeeee";$/;"	v	line:13	language:C++	typeref:typename:const char[]
+colors	/home/mis/.config/dwm/config.def.h	/^static const char *colors[][3]      = {$/;"	v	line:15	language:C++	typeref:typename:const char * [][3]
+colors	/home/mis/.config/dwm/config.h	/^static const char *colors[][3]      = {$/;"	v	line:15	language:C++	typeref:typename:const char * [][3]
+config.h	/home/mis/.config/dwm/Makefile	/^config.h:$/;"	t	line:22	language:Make
+configure	/home/mis/.config/dwm/dwm.c	/^configure(Client *c)$/;"	f	line:544	language:C	typeref:typename:void	signature:(Client * c)
+configurenotify	/home/mis/.config/dwm/dwm.c	/^configurenotify(XEvent *e)$/;"	f	line:563	language:C	typeref:typename:void	signature:(XEvent * e)
+configurerequest	/home/mis/.config/dwm/dwm.c	/^configurerequest(XEvent *e)$/;"	f	line:591	language:C	typeref:typename:void	signature:(XEvent * e)
+createmon	/home/mis/.config/dwm/dwm.c	/^createmon(void)$/;"	f	line:643	language:C	typeref:typename:Monitor *	signature:(void)
+cursor	/home/mis/.config/dwm/drw.h	/^	Cursor cursor;$/;"	m	line:4	language:C++	struct:__anon41bd96710108	typeref:typename:Cursor	access:public
+cursor	/home/mis/.config/dwm/dwm.c	/^static Cur *cursor[CurLast];$/;"	v	line:267	language:C	typeref:typename:Cur * []	file:
+destroynotify	/home/mis/.config/dwm/dwm.c	/^destroynotify(XEvent *e)$/;"	f	line:660	language:C	typeref:typename:void	signature:(XEvent * e)
+detach	/home/mis/.config/dwm/dwm.c	/^detach(Client *c)$/;"	f	line:670	language:C	typeref:typename:void	signature:(Client * c)
+detachstack	/home/mis/.config/dwm/dwm.c	/^detachstack(Client *c)$/;"	f	line:679	language:C	typeref:typename:void	signature:(Client * c)
+die	/home/mis/.config/dwm/util.c	/^die(const char *fmt, ...) {$/;"	f	line:20	language:C	typeref:typename:void	signature:(const char * fmt,...)
+dirtomon	/home/mis/.config/dwm/dwm.c	/^dirtomon(int dir)$/;"	f	line:693	language:C	typeref:typename:Monitor *	signature:(int dir)
+dist	/home/mis/.config/dwm/Makefile	/^dist: clean$/;"	t	line:31	language:Make
+dmenucmd	/home/mis/.config/dwm/config.def.h	/^static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray/;"	v	line:61	language:C++	typeref:typename:const char * []
+dmenucmd	/home/mis/.config/dwm/config.h	/^static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray/;"	v	line:61	language:C++	typeref:typename:const char * []
+dmenufont	/home/mis/.config/dwm/config.def.h	/^static const char dmenufont[]       = "monospace:size=10";$/;"	v	line:9	language:C++	typeref:typename:const char[]
+dmenufont	/home/mis/.config/dwm/config.h	/^static const char dmenufont[]       = "monospace:size=8";$/;"	v	line:9	language:C++	typeref:typename:const char[]
+dmenumon	/home/mis/.config/dwm/config.def.h	/^static char dmenumon[2] = "0"; \/* component of dmenucmd, manipulated in spawn() *\/$/;"	v	line:60	language:C++	typeref:typename:char[2]
+dmenumon	/home/mis/.config/dwm/config.h	/^static char dmenumon[2] = "0"; \/* component of dmenucmd, manipulated in spawn() *\/$/;"	v	line:60	language:C++	typeref:typename:char[2]
+dpy	/home/mis/.config/dwm/drw.h	/^	Display *dpy;$/;"	m	line:20	language:C++	struct:__anon41bd96710308	typeref:typename:Display *	access:public
+dpy	/home/mis/.config/dwm/drw.h	/^	Display *dpy;$/;"	m	line:8	language:C++	struct:Fnt	typeref:typename:Display *	access:public
+dpy	/home/mis/.config/dwm/dwm.c	/^static Display *dpy;$/;"	v	line:269	language:C	typeref:typename:Display *	file:
+drawable	/home/mis/.config/dwm/drw.h	/^	Drawable drawable;$/;"	m	line:23	language:C++	struct:__anon41bd96710308	typeref:typename:Drawable	access:public
+drawbar	/home/mis/.config/dwm/dwm.c	/^drawbar(Monitor *m)$/;"	f	line:708	language:C	typeref:typename:void	signature:(Monitor * m)
+drawbars	/home/mis/.config/dwm/dwm.c	/^drawbars(void)$/;"	f	line:762	language:C	typeref:typename:void	signature:(void)
+drw	/home/mis/.config/dwm/dwm.c	/^static Drw *drw;$/;"	v	line:270	language:C	typeref:typename:Drw *	file:
+drw_clr_create	/home/mis/.config/dwm/drw.c	/^drw_clr_create(Drw *drw, Clr *dest, const char *clrname)$/;"	f	line:196	language:C	typeref:typename:void	signature:(Drw * drw,Clr * dest,const char * clrname)
+drw_create	/home/mis/.config/dwm/drw.c	/^drw_create(Display *dpy, int screen, Window root, unsigned int w, unsigned int h)$/;"	f	line:64	language:C	typeref:typename:Drw *	signature:(Display * dpy,int screen,Window root,unsigned int w,unsigned int h)
+drw_cur_create	/home/mis/.config/dwm/drw.c	/^drw_cur_create(Drw *drw, int shape)$/;"	f	line:415	language:C	typeref:typename:Cur *	signature:(Drw * drw,int shape)
+drw_cur_free	/home/mis/.config/dwm/drw.c	/^drw_cur_free(Drw *drw, Cur *cursor)$/;"	f	line:428	language:C	typeref:typename:void	signature:(Drw * drw,Cur * cursor)
+drw_font_getexts	/home/mis/.config/dwm/drw.c	/^drw_font_getexts(Fnt *font, const char *text, unsigned int len, unsigned int *w, unsigned int *h/;"	f	line:400	language:C	typeref:typename:void	signature:(Fnt * font,const char * text,unsigned int len,unsigned int * w,unsigned int * h)
+drw_fontset_create	/home/mis/.config/dwm/drw.c	/^drw_fontset_create(Drw* drw, const char *fonts[], size_t fontcount)$/;"	f	line:169	language:C	typeref:typename:Fnt *	signature:(Drw * drw,const char * fonts[],size_t fontcount)
+drw_fontset_free	/home/mis/.config/dwm/drw.c	/^drw_fontset_free(Fnt *font)$/;"	f	line:187	language:C	typeref:typename:void	signature:(Fnt * font)
+drw_fontset_getwidth	/home/mis/.config/dwm/drw.c	/^drw_fontset_getwidth(Drw *drw, const char *text)$/;"	f	line:392	language:C	typeref:typename:unsigned int	signature:(Drw * drw,const char * text)
+drw_free	/home/mis/.config/dwm/drw.c	/^drw_free(Drw *drw)$/;"	f	line:94	language:C	typeref:typename:void	signature:(Drw * drw)
+drw_map	/home/mis/.config/dwm/drw.c	/^drw_map(Drw *drw, Window win, int x, int y, unsigned int w, unsigned int h)$/;"	f	line:382	language:C	typeref:typename:void	signature:(Drw * drw,Window win,int x,int y,unsigned int w,unsigned int h)
+drw_rect	/home/mis/.config/dwm/drw.c	/^drw_rect(Drw *drw, int x, int y, unsigned int w, unsigned int h, int filled, int invert)$/;"	f	line:239	language:C	typeref:typename:void	signature:(Drw * drw,int x,int y,unsigned int w,unsigned int h,int filled,int invert)
+drw_resize	/home/mis/.config/dwm/drw.c	/^drw_resize(Drw *drw, unsigned int w, unsigned int h)$/;"	f	line:81	language:C	typeref:typename:void	signature:(Drw * drw,unsigned int w,unsigned int h)
+drw_scm_create	/home/mis/.config/dwm/drw.c	/^drw_scm_create(Drw *drw, const char *clrnames[], size_t clrcount)$/;"	f	line:210	language:C	typeref:typename:Clr *	signature:(Drw * drw,const char * clrnames[],size_t clrcount)
+drw_setfontset	/home/mis/.config/dwm/drw.c	/^drw_setfontset(Drw *drw, Fnt *set)$/;"	f	line:225	language:C	typeref:typename:void	signature:(Drw * drw,Fnt * set)
+drw_setscheme	/home/mis/.config/dwm/drw.c	/^drw_setscheme(Drw *drw, Clr *scm)$/;"	f	line:232	language:C	typeref:typename:void	signature:(Drw * drw,Clr * scm)
+drw_text	/home/mis/.config/dwm/drw.c	/^drw_text(Drw *drw, int x, int y, unsigned int w, unsigned int h, unsigned int lpad, const char */;"	f	line:251	language:C	typeref:typename:int	signature:(Drw * drw,int x,int y,unsigned int w,unsigned int h,unsigned int lpad,const char * text,int invert)
+dwm	/home/mis/.config/dwm/Makefile	/^dwm: ${OBJ}$/;"	t	line:25	language:Make
+ecalloc	/home/mis/.config/dwm/util.c	/^ecalloc(size_t nmemb, size_t size)$/;"	f	line:10	language:C	typeref:typename:void *	signature:(size_t nmemb,size_t size)
+enternotify	/home/mis/.config/dwm/dwm.c	/^enternotify(XEvent *e)$/;"	f	line:771	language:C	typeref:typename:void	signature:(XEvent * e)
+expose	/home/mis/.config/dwm/dwm.c	/^expose(XEvent *e)$/;"	f	line:790	language:C	typeref:typename:void	signature:(XEvent * e)
+f	/home/mis/.config/dwm/dwm.c	/^	float f;$/;"	m	line:73	language:C	union:__anon41c029c7060a	typeref:typename:float	file:	access:public
+focus	/home/mis/.config/dwm/dwm.c	/^focus(Client *c)$/;"	f	line:800	language:C	typeref:typename:void	signature:(Client * c)
+focusin	/home/mis/.config/dwm/dwm.c	/^focusin(XEvent *e)$/;"	f	line:826	language:C	typeref:typename:void	signature:(XEvent * e)
+focusmon	/home/mis/.config/dwm/dwm.c	/^focusmon(const Arg *arg)$/;"	f	line:835	language:C	typeref:typename:void	signature:(const Arg * arg)
+focusstack	/home/mis/.config/dwm/dwm.c	/^focusstack(const Arg *arg)$/;"	f	line:849	language:C	typeref:typename:void	signature:(const Arg * arg)
+fonts	/home/mis/.config/dwm/config.def.h	/^static const char *fonts[]          = { "monospace:size=10" };$/;"	v	line:8	language:C++	typeref:typename:const char * []
+fonts	/home/mis/.config/dwm/config.h	/^static const char *fonts[]          = { "monospace:size=8" };$/;"	v	line:8	language:C++	typeref:typename:const char * []
+fonts	/home/mis/.config/dwm/drw.h	/^	Fnt *fonts;$/;"	m	line:26	language:C++	struct:__anon41bd96710308	typeref:typename:Fnt *	access:public
+func	/home/mis/.config/dwm/dwm.c	/^	void (*func)(const Arg *);$/;"	m	line:105	language:C	struct:__anon41c029c70808	typeref:typename:void (*)(const Arg *)	file:	access:public
+func	/home/mis/.config/dwm/dwm.c	/^	void (*func)(const Arg *arg);$/;"	m	line:81	language:C	struct:__anon41c029c70708	typeref:typename:void (*)(const Arg * arg)	file:	access:public
+gc	/home/mis/.config/dwm/drw.h	/^	GC gc;$/;"	m	line:24	language:C++	struct:__anon41bd96710308	typeref:typename:GC	access:public
+getatomprop	/home/mis/.config/dwm/dwm.c	/^getatomprop(Client *c, Atom prop)$/;"	f	line:875	language:C	typeref:typename:Atom	signature:(Client * c,Atom prop)
+getrootptr	/home/mis/.config/dwm/dwm.c	/^getrootptr(int *x, int *y)$/;"	f	line:891	language:C	typeref:typename:int	signature:(int * x,int * y)
+getstate	/home/mis/.config/dwm/dwm.c	/^getstate(Window w)$/;"	f	line:901	language:C	typeref:typename:long	signature:(Window w)
+gettextprop	/home/mis/.config/dwm/dwm.c	/^gettextprop(Window w, Atom atom, char *text, unsigned int size)$/;"	f	line:919	language:C	typeref:typename:int	signature:(Window w,Atom atom,char * text,unsigned int size)
+grabbuttons	/home/mis/.config/dwm/dwm.c	/^grabbuttons(Client *c, int focused)$/;"	f	line:944	language:C	typeref:typename:void	signature:(Client * c,int focused)
+grabkeys	/home/mis/.config/dwm/dwm.c	/^grabkeys(void)$/;"	f	line:965	language:C	typeref:typename:void	signature:(void)
+h	/home/mis/.config/dwm/drw.h	/^	unsigned int h;$/;"	m	line:9	language:C++	struct:Fnt	typeref:typename:unsigned int	access:public
+h	/home/mis/.config/dwm/drw.h	/^	unsigned int w, h;$/;"	m	line:19	language:C++	struct:__anon41bd96710308	typeref:typename:unsigned int	access:public
+h	/home/mis/.config/dwm/dwm.c	/^	int x, y, w, h;$/;"	m	line:90	language:C	struct:Client	typeref:typename:int	file:	access:public
+handler	/home/mis/.config/dwm/dwm.c	/^static void (*handler[LASTEvent]) (XEvent *) = {$/;"	v	line:249	language:C	typeref:typename:void (* [LASTEvent])(XEvent *)	file:
+i	/home/mis/.config/dwm/dwm.c	/^	int i;$/;"	m	line:71	language:C	union:__anon41c029c7060a	typeref:typename:int	file:	access:public
+inch	/home/mis/.config/dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	line:92	language:C	struct:Client	typeref:typename:int	file:	access:public
+incnmaster	/home/mis/.config/dwm/dwm.c	/^incnmaster(const Arg *arg)$/;"	f	line:983	language:C	typeref:typename:void	signature:(const Arg * arg)
+incw	/home/mis/.config/dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	line:92	language:C	struct:Client	typeref:typename:int	file:	access:public
+install	/home/mis/.config/dwm/Makefile	/^install: all$/;"	t	line:39	language:Make
+instance	/home/mis/.config/dwm/dwm.c	/^	const char *instance;$/;"	m	line:137	language:C	struct:__anon41c029c70a08	typeref:typename:const char *	file:	access:public
+isfixed	/home/mis/.config/dwm/dwm.c	/^	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;$/;"	m	line:95	language:C	struct:Client	typeref:typename:int	file:	access:public
+isfloating	/home/mis/.config/dwm/dwm.c	/^	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;$/;"	m	line:95	language:C	struct:Client	typeref:typename:int	file:	access:public
+isfloating	/home/mis/.config/dwm/dwm.c	/^	int isfloating;$/;"	m	line:140	language:C	struct:__anon41c029c70a08	typeref:typename:int	file:	access:public
+isfullscreen	/home/mis/.config/dwm/dwm.c	/^	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;$/;"	m	line:95	language:C	struct:Client	typeref:typename:int	file:	access:public
+isuniquegeom	/home/mis/.config/dwm/dwm.c	/^isuniquegeom(XineramaScreenInfo *unique, size_t n, XineramaScreenInfo *info)$/;"	f	line:991	language:C	typeref:typename:int	file:	signature:(XineramaScreenInfo * unique,size_t n,XineramaScreenInfo * info)
+isurgent	/home/mis/.config/dwm/dwm.c	/^	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;$/;"	m	line:95	language:C	struct:Client	typeref:typename:int	file:	access:public
+keypress	/home/mis/.config/dwm/dwm.c	/^keypress(XEvent *e)$/;"	f	line:1002	language:C	typeref:typename:void	signature:(XEvent * e)
+keys	/home/mis/.config/dwm/config.def.h	/^static Key keys[] = {$/;"	v	line:64	language:C++	typeref:typename:Key[]
+keys	/home/mis/.config/dwm/config.h	/^static Key keys[] = {$/;"	v	line:64	language:C++	typeref:typename:Key[]
+keysym	/home/mis/.config/dwm/dwm.c	/^	KeySym keysym;$/;"	m	line:104	language:C	struct:__anon41c029c70808	typeref:typename:KeySym	file:	access:public
+killclient	/home/mis/.config/dwm/dwm.c	/^killclient(const Arg *arg)$/;"	f	line:1018	language:C	typeref:typename:void	signature:(const Arg * arg)
+layouts	/home/mis/.config/dwm/config.def.h	/^static const Layout layouts[] = {$/;"	v	line:39	language:C++	typeref:typename:const Layout[]
+layouts	/home/mis/.config/dwm/config.h	/^static const Layout layouts[] = {$/;"	v	line:39	language:C++	typeref:typename:const Layout[]
+limitexceeded	/home/mis/.config/dwm/dwm.c	/^struct NumTags { char limitexceeded[LENGTH(tags) > 31 ? -1 : 1]; };$/;"	m	line:278	language:C	struct:NumTags	typeref:typename:char[]	file:	access:public
+lrpad	/home/mis/.config/dwm/dwm.c	/^static int lrpad;            \/* sum of left and right padding for text *\/$/;"	v	line:246	language:C	typeref:typename:int	file:
+lt	/home/mis/.config/dwm/dwm.c	/^	const Layout *lt[2];$/;"	m	line:132	language:C	struct:Monitor	typeref:typename:const Layout * [2]	file:	access:public
+ltsymbol	/home/mis/.config/dwm/dwm.c	/^	char ltsymbol[16];$/;"	m	line:115	language:C	struct:Monitor	typeref:typename:char[16]	file:	access:public
+main	/home/mis/.config/dwm/dwm.c	/^main(int argc, char *argv[])$/;"	f	line:2174	language:C	typeref:typename:int	signature:(int argc,char * argv[])
+main	/home/mis/.config/dwm/transient.c	/^int main(void) {$/;"	f	line:8	language:C	typeref:typename:int	signature:(void)
+manage	/home/mis/.config/dwm/dwm.c	/^manage(Window w, XWindowAttributes *wa)$/;"	f	line:1034	language:C	typeref:typename:void	signature:(Window w,XWindowAttributes * wa)
+mappingnotify	/home/mis/.config/dwm/dwm.c	/^mappingnotify(XEvent *e)$/;"	f	line:1096	language:C	typeref:typename:void	signature:(XEvent * e)
+maprequest	/home/mis/.config/dwm/dwm.c	/^maprequest(XEvent *e)$/;"	f	line:1106	language:C	typeref:typename:void	signature:(XEvent * e)
+mask	/home/mis/.config/dwm/dwm.c	/^	unsigned int mask;$/;"	m	line:79	language:C	struct:__anon41c029c70708	typeref:typename:unsigned int	file:	access:public
+maxa	/home/mis/.config/dwm/dwm.c	/^	float mina, maxa;$/;"	m	line:89	language:C	struct:Client	typeref:typename:float	file:	access:public
+maxh	/home/mis/.config/dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	line:92	language:C	struct:Client	typeref:typename:int	file:	access:public
+maxw	/home/mis/.config/dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	line:92	language:C	struct:Client	typeref:typename:int	file:	access:public
+mfact	/home/mis/.config/dwm/config.def.h	/^static const float mfact     = 0.55; \/* factor of master area size [0.05..0.95] *\/$/;"	v	line:35	language:C++	typeref:typename:const float
+mfact	/home/mis/.config/dwm/config.h	/^static const float mfact     = 0.55; \/* factor of master area size [0.05..0.95] *\/$/;"	v	line:35	language:C++	typeref:typename:const float
+mfact	/home/mis/.config/dwm/dwm.c	/^	float mfact;$/;"	m	line:116	language:C	struct:Monitor	typeref:typename:float	file:	access:public
+mh	/home/mis/.config/dwm/dwm.c	/^	int mx, my, mw, mh;   \/* screen size *\/$/;"	m	line:120	language:C	struct:Monitor	typeref:typename:int	file:	access:public
+mina	/home/mis/.config/dwm/dwm.c	/^	float mina, maxa;$/;"	m	line:89	language:C	struct:Client	typeref:typename:float	file:	access:public
+minh	/home/mis/.config/dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	line:92	language:C	struct:Client	typeref:typename:int	file:	access:public
+minw	/home/mis/.config/dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	line:92	language:C	struct:Client	typeref:typename:int	file:	access:public
+mod	/home/mis/.config/dwm/dwm.c	/^	unsigned int mod;$/;"	m	line:103	language:C	struct:__anon41c029c70808	typeref:typename:unsigned int	file:	access:public
+mon	/home/mis/.config/dwm/dwm.c	/^	Monitor *mon;$/;"	m	line:98	language:C	struct:Client	typeref:typename:Monitor *	file:	access:public
+monitor	/home/mis/.config/dwm/dwm.c	/^	int monitor;$/;"	m	line:141	language:C	struct:__anon41c029c70a08	typeref:typename:int	file:	access:public
+monocle	/home/mis/.config/dwm/dwm.c	/^monocle(Monitor *m)$/;"	f	line:1120	language:C	typeref:typename:void	signature:(Monitor * m)
+mons	/home/mis/.config/dwm/dwm.c	/^static Monitor *mons, *selmon;$/;"	v	line:271	language:C	typeref:typename:Monitor *	file:
+motionnotify	/home/mis/.config/dwm/dwm.c	/^motionnotify(XEvent *e)$/;"	f	line:1135	language:C	typeref:typename:void	signature:(XEvent * e)
+movemouse	/home/mis/.config/dwm/dwm.c	/^movemouse(const Arg *arg)$/;"	f	line:1152	language:C	typeref:typename:void	signature:(const Arg * arg)
+mw	/home/mis/.config/dwm/dwm.c	/^	int mx, my, mw, mh;   \/* screen size *\/$/;"	m	line:120	language:C	struct:Monitor	typeref:typename:int	file:	access:public
+mx	/home/mis/.config/dwm/dwm.c	/^	int mx, my, mw, mh;   \/* screen size *\/$/;"	m	line:120	language:C	struct:Monitor	typeref:typename:int	file:	access:public
+my	/home/mis/.config/dwm/dwm.c	/^	int mx, my, mw, mh;   \/* screen size *\/$/;"	m	line:120	language:C	struct:Monitor	typeref:typename:int	file:	access:public
+name	/home/mis/.config/dwm/dwm.c	/^	char name[256];$/;"	m	line:88	language:C	struct:Client	typeref:typename:char[256]	file:	access:public
+netatom	/home/mis/.config/dwm/dwm.c	/^static Atom wmatom[WMLast], netatom[NetLast];$/;"	v	line:265	language:C	typeref:typename:Atom[]	file:
+neverfocus	/home/mis/.config/dwm/dwm.c	/^	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;$/;"	m	line:95	language:C	struct:Client	typeref:typename:int	file:	access:public
+next	/home/mis/.config/dwm/drw.h	/^	struct Fnt *next;$/;"	m	line:12	language:C++	struct:Fnt	typeref:struct:Fnt *	access:public
+next	/home/mis/.config/dwm/dwm.c	/^	Client *next;$/;"	m	line:96	language:C	struct:Client	typeref:typename:Client *	file:	access:public
+next	/home/mis/.config/dwm/dwm.c	/^	Monitor *next;$/;"	m	line:130	language:C	struct:Monitor	typeref:typename:Monitor *	file:	access:public
+nexttiled	/home/mis/.config/dwm/dwm.c	/^nexttiled(Client *c)$/;"	f	line:1212	language:C	typeref:typename:Client *	signature:(Client * c)
+nmaster	/home/mis/.config/dwm/config.def.h	/^static const int nmaster     = 1;    \/* number of clients in master area *\/$/;"	v	line:36	language:C++	typeref:typename:const int
+nmaster	/home/mis/.config/dwm/config.h	/^static const int nmaster     = 1;    \/* number of clients in master area *\/$/;"	v	line:36	language:C++	typeref:typename:const int
+nmaster	/home/mis/.config/dwm/dwm.c	/^	int nmaster;$/;"	m	line:117	language:C	struct:Monitor	typeref:typename:int	file:	access:public
+num	/home/mis/.config/dwm/dwm.c	/^	int num;$/;"	m	line:118	language:C	struct:Monitor	typeref:typename:int	file:	access:public
+numlockmask	/home/mis/.config/dwm/dwm.c	/^static unsigned int numlockmask = 0;$/;"	v	line:248	language:C	typeref:typename:unsigned int	file:
+oldbw	/home/mis/.config/dwm/dwm.c	/^	int bw, oldbw;$/;"	m	line:93	language:C	struct:Client	typeref:typename:int	file:	access:public
+oldh	/home/mis/.config/dwm/dwm.c	/^	int oldx, oldy, oldw, oldh;$/;"	m	line:91	language:C	struct:Client	typeref:typename:int	file:	access:public
+oldstate	/home/mis/.config/dwm/dwm.c	/^	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;$/;"	m	line:95	language:C	struct:Client	typeref:typename:int	file:	access:public
+oldw	/home/mis/.config/dwm/dwm.c	/^	int oldx, oldy, oldw, oldh;$/;"	m	line:91	language:C	struct:Client	typeref:typename:int	file:	access:public
+oldx	/home/mis/.config/dwm/dwm.c	/^	int oldx, oldy, oldw, oldh;$/;"	m	line:91	language:C	struct:Client	typeref:typename:int	file:	access:public
+oldy	/home/mis/.config/dwm/dwm.c	/^	int oldx, oldy, oldw, oldh;$/;"	m	line:91	language:C	struct:Client	typeref:typename:int	file:	access:public
+options	/home/mis/.config/dwm/Makefile	/^options:$/;"	t	line:11	language:Make
+pattern	/home/mis/.config/dwm/drw.h	/^	FcPattern *pattern;$/;"	m	line:11	language:C++	struct:Fnt	typeref:typename:FcPattern *	access:public
+pop	/home/mis/.config/dwm/dwm.c	/^pop(Client *c)$/;"	f	line:1219	language:C	typeref:typename:void	signature:(Client * c)
+propertynotify	/home/mis/.config/dwm/dwm.c	/^propertynotify(XEvent *e)$/;"	f	line:1228	language:C	typeref:typename:void	signature:(XEvent * e)
+quit	/home/mis/.config/dwm/dwm.c	/^quit(const Arg *arg)$/;"	f	line:1265	language:C	typeref:typename:void	signature:(const Arg * arg)
+recttomon	/home/mis/.config/dwm/dwm.c	/^recttomon(int x, int y, int w, int h)$/;"	f	line:1271	language:C	typeref:typename:Monitor *	signature:(int x,int y,int w,int h)
+resize	/home/mis/.config/dwm/dwm.c	/^resize(Client *c, int x, int y, int w, int h, int interact)$/;"	f	line:1285	language:C	typeref:typename:void	signature:(Client * c,int x,int y,int w,int h,int interact)
+resizeclient	/home/mis/.config/dwm/dwm.c	/^resizeclient(Client *c, int x, int y, int w, int h)$/;"	f	line:1292	language:C	typeref:typename:void	signature:(Client * c,int x,int y,int w,int h)
+resizehints	/home/mis/.config/dwm/config.def.h	/^static const int resizehints = 1;    \/* 1 means respect size hints in tiled resizals *\/$/;"	v	line:37	language:C++	typeref:typename:const int
+resizehints	/home/mis/.config/dwm/config.h	/^static const int resizehints = 1;    \/* 1 means respect size hints in tiled resizals *\/$/;"	v	line:37	language:C++	typeref:typename:const int
+resizemouse	/home/mis/.config/dwm/dwm.c	/^resizemouse(const Arg *arg)$/;"	f	line:1307	language:C	typeref:typename:void	signature:(const Arg * arg)
+restack	/home/mis/.config/dwm/dwm.c	/^restack(Monitor *m)$/;"	f	line:1364	language:C	typeref:typename:void	signature:(Monitor * m)
+root	/home/mis/.config/dwm/drw.h	/^	Window root;$/;"	m	line:22	language:C++	struct:__anon41bd96710308	typeref:typename:Window	access:public
+root	/home/mis/.config/dwm/dwm.c	/^static Window root, wmcheckwin;$/;"	v	line:272	language:C	typeref:typename:Window	file:
+rules	/home/mis/.config/dwm/config.def.h	/^static const Rule rules[] = {$/;"	v	line:24	language:C++	typeref:typename:const Rule[]
+rules	/home/mis/.config/dwm/config.h	/^static const Rule rules[] = {$/;"	v	line:24	language:C++	typeref:typename:const Rule[]
+run	/home/mis/.config/dwm/dwm.c	/^run(void)$/;"	f	line:1389	language:C	typeref:typename:void	signature:(void)
+running	/home/mis/.config/dwm/dwm.c	/^static int running = 1;$/;"	v	line:266	language:C	typeref:typename:int	file:
+scan	/home/mis/.config/dwm/dwm.c	/^scan(void)$/;"	f	line:1400	language:C	typeref:typename:void	signature:(void)
+scheme	/home/mis/.config/dwm/drw.h	/^	Clr *scheme;$/;"	m	line:25	language:C++	struct:__anon41bd96710308	typeref:typename:Clr *	access:public
+scheme	/home/mis/.config/dwm/dwm.c	/^static Clr **scheme;$/;"	v	line:268	language:C	typeref:typename:Clr **	file:
+screen	/home/mis/.config/dwm/drw.h	/^	int screen;$/;"	m	line:21	language:C++	struct:__anon41bd96710308	typeref:typename:int	access:public
+screen	/home/mis/.config/dwm/dwm.c	/^static int screen;$/;"	v	line:243	language:C	typeref:typename:int	file:
+sel	/home/mis/.config/dwm/dwm.c	/^	Client *sel;$/;"	m	line:128	language:C	struct:Monitor	typeref:typename:Client *	file:	access:public
+sellt	/home/mis/.config/dwm/dwm.c	/^	unsigned int sellt;$/;"	m	line:123	language:C	struct:Monitor	typeref:typename:unsigned int	file:	access:public
+selmon	/home/mis/.config/dwm/dwm.c	/^static Monitor *mons, *selmon;$/;"	v	line:271	language:C	typeref:typename:Monitor *	file:
+seltags	/home/mis/.config/dwm/dwm.c	/^	unsigned int seltags;$/;"	m	line:122	language:C	struct:Monitor	typeref:typename:unsigned int	file:	access:public
+sendevent	/home/mis/.config/dwm/dwm.c	/^sendevent(Client *c, Atom proto)$/;"	f	line:1452	language:C	typeref:typename:int	signature:(Client * c,Atom proto)
+sendmon	/home/mis/.config/dwm/dwm.c	/^sendmon(Client *c, Monitor *m)$/;"	f	line:1427	language:C	typeref:typename:void	signature:(Client * c,Monitor * m)
+setclientstate	/home/mis/.config/dwm/dwm.c	/^setclientstate(Client *c, long state)$/;"	f	line:1443	language:C	typeref:typename:void	signature:(Client * c,long state)
+setfocus	/home/mis/.config/dwm/dwm.c	/^setfocus(Client *c)$/;"	f	line:1477	language:C	typeref:typename:void	signature:(Client * c)
+setfullscreen	/home/mis/.config/dwm/dwm.c	/^setfullscreen(Client *c, int fullscreen)$/;"	f	line:1489	language:C	typeref:typename:void	signature:(Client * c,int fullscreen)
+setlayout	/home/mis/.config/dwm/dwm.c	/^setlayout(const Arg *arg)$/;"	f	line:1517	language:C	typeref:typename:void	signature:(const Arg * arg)
+setmfact	/home/mis/.config/dwm/dwm.c	/^setmfact(const Arg *arg)$/;"	f	line:1532	language:C	typeref:typename:void	signature:(const Arg * arg)
+setup	/home/mis/.config/dwm/dwm.c	/^setup(void)$/;"	f	line:1546	language:C	typeref:typename:void	signature:(void)
+seturgent	/home/mis/.config/dwm/dwm.c	/^seturgent(Client *c, int urg)$/;"	f	line:1617	language:C	typeref:typename:void	signature:(Client * c,int urg)
+sh	/home/mis/.config/dwm/dwm.c	/^static int sw, sh;           \/* X display screen geometry width, height *\/$/;"	v	line:244	language:C	typeref:typename:int	file:
+showbar	/home/mis/.config/dwm/config.def.h	/^static const int showbar            = 1;        \/* 0 means no bar *\/$/;"	v	line:6	language:C++	typeref:typename:const int
+showbar	/home/mis/.config/dwm/config.h	/^static const int showbar            = 1;        \/* 0 means no bar *\/$/;"	v	line:6	language:C++	typeref:typename:const int
+showbar	/home/mis/.config/dwm/dwm.c	/^	int showbar;$/;"	m	line:125	language:C	struct:Monitor	typeref:typename:int	file:	access:public
+showhide	/home/mis/.config/dwm/dwm.c	/^showhide(Client *c)$/;"	f	line:1630	language:C	typeref:typename:void	signature:(Client * c)
+sigchld	/home/mis/.config/dwm/dwm.c	/^sigchld(int unused)$/;"	f	line:1648	language:C	typeref:typename:void	signature:(int unused)
+snap	/home/mis/.config/dwm/config.def.h	/^static const unsigned int snap      = 32;       \/* snap pixel *\/$/;"	v	line:5	language:C++	typeref:typename:const unsigned int
+snap	/home/mis/.config/dwm/config.h	/^static const unsigned int snap      = 32;       \/* snap pixel *\/$/;"	v	line:5	language:C++	typeref:typename:const unsigned int
+snext	/home/mis/.config/dwm/dwm.c	/^	Client *snext;$/;"	m	line:97	language:C	struct:Client	typeref:typename:Client *	file:	access:public
+spawn	/home/mis/.config/dwm/dwm.c	/^spawn(const Arg *arg)$/;"	f	line:1656	language:C	typeref:typename:void	signature:(const Arg * arg)
+stack	/home/mis/.config/dwm/dwm.c	/^	Client *stack;$/;"	m	line:129	language:C	struct:Monitor	typeref:typename:Client *	file:	access:public
+stext	/home/mis/.config/dwm/dwm.c	/^static char stext[256];$/;"	v	line:242	language:C	typeref:typename:char[256]	file:
+sw	/home/mis/.config/dwm/dwm.c	/^static int sw, sh;           \/* X display screen geometry width, height *\/$/;"	v	line:244	language:C	typeref:typename:int	file:
+symbol	/home/mis/.config/dwm/dwm.c	/^	const char *symbol;$/;"	m	line:110	language:C	struct:__anon41c029c70908	typeref:typename:const char *	file:	access:public
+tag	/home/mis/.config/dwm/dwm.c	/^tag(const Arg *arg)$/;"	f	line:1672	language:C	typeref:typename:void	signature:(const Arg * arg)
+tagmon	/home/mis/.config/dwm/dwm.c	/^tagmon(const Arg *arg)$/;"	f	line:1682	language:C	typeref:typename:void	signature:(const Arg * arg)
+tagnextmon	/home/mis/.config/dwm/dwm.c	/^tagnextmon(const Arg *arg)$/;"	f	line:1690	language:C	typeref:typename:void	signature:(const Arg * arg)
+tagothermon	/home/mis/.config/dwm/dwm.c	/^tagothermon(const Arg *arg, int dir)$/;"	f	line:1702	language:C	typeref:typename:void	signature:(const Arg * arg,int dir)
+tagprevmon	/home/mis/.config/dwm/dwm.c	/^tagprevmon(const Arg *arg)$/;"	f	line:1696	language:C	typeref:typename:void	signature:(const Arg * arg)
+tags	/home/mis/.config/dwm/config.def.h	/^static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };$/;"	v	line:22	language:C++	typeref:typename:const char * []
+tags	/home/mis/.config/dwm/config.h	/^static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };$/;"	v	line:22	language:C++	typeref:typename:const char * []
+tags	/home/mis/.config/dwm/dwm.c	/^	unsigned int tags;$/;"	m	line:139	language:C	struct:__anon41c029c70a08	typeref:typename:unsigned int	file:	access:public
+tags	/home/mis/.config/dwm/dwm.c	/^	unsigned int tags;$/;"	m	line:94	language:C	struct:Client	typeref:typename:unsigned int	file:	access:public
+tagset	/home/mis/.config/dwm/dwm.c	/^	unsigned int tagset[2];$/;"	m	line:124	language:C	struct:Monitor	typeref:typename:unsigned int[2]	file:	access:public
+termcmd	/home/mis/.config/dwm/config.def.h	/^static const char *termcmd[]  = { "st", NULL };$/;"	v	line:62	language:C++	typeref:typename:const char * []
+termcmd	/home/mis/.config/dwm/config.h	/^static const char *termcmd[]  = { "st", NULL };$/;"	v	line:62	language:C++	typeref:typename:const char * []
+tile	/home/mis/.config/dwm/dwm.c	/^tile(Monitor *m)$/;"	f	line:1720	language:C	typeref:typename:void	signature:(Monitor * m)
+title	/home/mis/.config/dwm/dwm.c	/^	const char *title;$/;"	m	line:138	language:C	struct:__anon41c029c70a08	typeref:typename:const char *	file:	access:public
+togglebar	/home/mis/.config/dwm/dwm.c	/^togglebar(const Arg *arg)$/;"	f	line:1746	language:C	typeref:typename:void	signature:(const Arg * arg)
+togglefloating	/home/mis/.config/dwm/dwm.c	/^togglefloating(const Arg *arg)$/;"	f	line:1755	language:C	typeref:typename:void	signature:(const Arg * arg)
+toggletag	/home/mis/.config/dwm/dwm.c	/^toggletag(const Arg *arg)$/;"	f	line:1769	language:C	typeref:typename:void	signature:(const Arg * arg)
+toggleview	/home/mis/.config/dwm/dwm.c	/^toggleview(const Arg *arg)$/;"	f	line:1784	language:C	typeref:typename:void	signature:(const Arg * arg)
+topbar	/home/mis/.config/dwm/config.def.h	/^static const int topbar             = 1;        \/* 0 means bottom bar *\/$/;"	v	line:7	language:C++	typeref:typename:const int
+topbar	/home/mis/.config/dwm/config.h	/^static const int topbar             = 1;        \/* 0 means bottom bar *\/$/;"	v	line:7	language:C++	typeref:typename:const int
+topbar	/home/mis/.config/dwm/dwm.c	/^	int topbar;$/;"	m	line:126	language:C	struct:Monitor	typeref:typename:int	file:	access:public
+ui	/home/mis/.config/dwm/dwm.c	/^	unsigned int ui;$/;"	m	line:72	language:C	union:__anon41c029c7060a	typeref:typename:unsigned int	file:	access:public
+unfocus	/home/mis/.config/dwm/dwm.c	/^unfocus(Client *c, int setfocus)$/;"	f	line:1796	language:C	typeref:typename:void	signature:(Client * c,int setfocus)
+uninstall	/home/mis/.config/dwm/Makefile	/^uninstall:$/;"	t	line:47	language:Make
+unmanage	/home/mis/.config/dwm/dwm.c	/^unmanage(Client *c, int destroyed)$/;"	f	line:1809	language:C	typeref:typename:void	signature:(Client * c,int destroyed)
+unmapnotify	/home/mis/.config/dwm/dwm.c	/^unmapnotify(XEvent *e)$/;"	f	line:1834	language:C	typeref:typename:void	signature:(XEvent * e)
+updatebarpos	/home/mis/.config/dwm/dwm.c	/^updatebarpos(Monitor *m)$/;"	f	line:1870	language:C	typeref:typename:void	signature:(Monitor * m)
+updatebars	/home/mis/.config/dwm/dwm.c	/^updatebars(void)$/;"	f	line:1848	language:C	typeref:typename:void	signature:(void)
+updateclientlist	/home/mis/.config/dwm/dwm.c	/^updateclientlist()$/;"	f	line:1883	language:C	typeref:typename:void	signature:()
+updategeom	/home/mis/.config/dwm/dwm.c	/^updategeom(void)$/;"	f	line:1897	language:C	typeref:typename:int	signature:(void)
+updatenumlockmask	/home/mis/.config/dwm/dwm.c	/^updatenumlockmask(void)$/;"	f	line:1975	language:C	typeref:typename:void	signature:(void)
+updatesizehints	/home/mis/.config/dwm/dwm.c	/^updatesizehints(Client *c)$/;"	f	line:1991	language:C	typeref:typename:void	signature:(Client * c)
+updatestatus	/home/mis/.config/dwm/dwm.c	/^updatestatus(void)$/;"	f	line:2034	language:C	typeref:typename:void	signature:(void)
+updatetitle	/home/mis/.config/dwm/dwm.c	/^updatetitle(Client *c)$/;"	f	line:2042	language:C	typeref:typename:void	signature:(Client * c)
+updatewindowtype	/home/mis/.config/dwm/dwm.c	/^updatewindowtype(Client *c)$/;"	f	line:2051	language:C	typeref:typename:void	signature:(Client * c)
+updatewmhints	/home/mis/.config/dwm/dwm.c	/^updatewmhints(Client *c)$/;"	f	line:2063	language:C	typeref:typename:void	signature:(Client * c)
+utf8decode	/home/mis/.config/dwm/drw.c	/^utf8decode(const char *c, long *u, size_t clen)$/;"	f	line:39	language:C	typeref:typename:size_t	file:	signature:(const char * c,long * u,size_t clen)
+utf8decodebyte	/home/mis/.config/dwm/drw.c	/^utf8decodebyte(const char c, size_t *i)$/;"	f	line:20	language:C	typeref:typename:long	file:	signature:(const char c,size_t * i)
+utf8validate	/home/mis/.config/dwm/drw.c	/^utf8validate(long *u, size_t i)$/;"	f	line:29	language:C	typeref:typename:size_t	file:	signature:(long * u,size_t i)
+utfbyte	/home/mis/.config/dwm/drw.c	/^static const unsigned char utfbyte[UTF_SIZ + 1] = {0x80,    0, 0xC0, 0xE0, 0xF0};$/;"	v	line:14	language:C	typeref:typename:const unsigned char[]	file:
+utfmask	/home/mis/.config/dwm/drw.c	/^static const unsigned char utfmask[UTF_SIZ + 1] = {0xC0, 0x80, 0xE0, 0xF0, 0xF8};$/;"	v	line:15	language:C	typeref:typename:const unsigned char[]	file:
+utfmax	/home/mis/.config/dwm/drw.c	/^static const long utfmax[UTF_SIZ + 1] = {0x10FFFF, 0x7F, 0x7FF, 0xFFFF, 0x10FFFF};$/;"	v	line:17	language:C	typeref:typename:const long[]	file:
+utfmin	/home/mis/.config/dwm/drw.c	/^static const long utfmin[UTF_SIZ + 1] = {       0,    0,  0x80,  0x800,  0x10000};$/;"	v	line:16	language:C	typeref:typename:const long[]	file:
+v	/home/mis/.config/dwm/dwm.c	/^	const void *v;$/;"	m	line:74	language:C	union:__anon41c029c7060a	typeref:typename:const void *	file:	access:public
+view	/home/mis/.config/dwm/dwm.c	/^view(const Arg *arg)$/;"	f	line:2082	language:C	typeref:typename:void	signature:(const Arg * arg)
+w	/home/mis/.config/dwm/drw.h	/^	unsigned int w, h;$/;"	m	line:19	language:C++	struct:__anon41bd96710308	typeref:typename:unsigned int	access:public
+w	/home/mis/.config/dwm/dwm.c	/^	int x, y, w, h;$/;"	m	line:90	language:C	struct:Client	typeref:typename:int	file:	access:public
+wh	/home/mis/.config/dwm/dwm.c	/^	int wx, wy, ww, wh;   \/* window area  *\/$/;"	m	line:121	language:C	struct:Monitor	typeref:typename:int	file:	access:public
+win	/home/mis/.config/dwm/dwm.c	/^	Window win;$/;"	m	line:99	language:C	struct:Client	typeref:typename:Window	file:	access:public
+wintoclient	/home/mis/.config/dwm/dwm.c	/^wintoclient(Window w)$/;"	f	line:2094	language:C	typeref:typename:Client *	signature:(Window w)
+wintomon	/home/mis/.config/dwm/dwm.c	/^wintomon(Window w)$/;"	f	line:2107	language:C	typeref:typename:Monitor *	signature:(Window w)
+wmatom	/home/mis/.config/dwm/dwm.c	/^static Atom wmatom[WMLast], netatom[NetLast];$/;"	v	line:265	language:C	typeref:typename:Atom[]	file:
+wmcheckwin	/home/mis/.config/dwm/dwm.c	/^static Window root, wmcheckwin;$/;"	v	line:272	language:C	typeref:typename:Window	file:
+ww	/home/mis/.config/dwm/dwm.c	/^	int wx, wy, ww, wh;   \/* window area  *\/$/;"	m	line:121	language:C	struct:Monitor	typeref:typename:int	file:	access:public
+wx	/home/mis/.config/dwm/dwm.c	/^	int wx, wy, ww, wh;   \/* window area  *\/$/;"	m	line:121	language:C	struct:Monitor	typeref:typename:int	file:	access:public
+wy	/home/mis/.config/dwm/dwm.c	/^	int wx, wy, ww, wh;   \/* window area  *\/$/;"	m	line:121	language:C	struct:Monitor	typeref:typename:int	file:	access:public
+x	/home/mis/.config/dwm/dwm.c	/^	int x, y, w, h;$/;"	m	line:90	language:C	struct:Client	typeref:typename:int	file:	access:public
+xerror	/home/mis/.config/dwm/dwm.c	/^xerror(Display *dpy, XErrorEvent *ee)$/;"	f	line:2127	language:C	typeref:typename:int	signature:(Display * dpy,XErrorEvent * ee)
+xerrordummy	/home/mis/.config/dwm/dwm.c	/^xerrordummy(Display *dpy, XErrorEvent *ee)$/;"	f	line:2145	language:C	typeref:typename:int	signature:(Display * dpy,XErrorEvent * ee)
+xerrorstart	/home/mis/.config/dwm/dwm.c	/^xerrorstart(Display *dpy, XErrorEvent *ee)$/;"	f	line:2153	language:C	typeref:typename:int	signature:(Display * dpy,XErrorEvent * ee)
+xerrorxlib	/home/mis/.config/dwm/dwm.c	/^static int (*xerrorxlib)(Display *, XErrorEvent *);$/;"	v	line:247	language:C	typeref:typename:int (*)(Display *,XErrorEvent *)	file:
+xfont	/home/mis/.config/dwm/drw.h	/^	XftFont *xfont;$/;"	m	line:10	language:C++	struct:Fnt	typeref:typename:XftFont *	access:public
+xfont_create	/home/mis/.config/dwm/drw.c	/^xfont_create(Drw *drw, const char *fontname, FcPattern *fontpattern)$/;"	f	line:105	language:C	typeref:typename:Fnt *	file:	signature:(Drw * drw,const char * fontname,FcPattern * fontpattern)
+xfont_free	/home/mis/.config/dwm/drw.c	/^xfont_free(Fnt *font)$/;"	f	line:158	language:C	typeref:typename:void	file:	signature:(Fnt * font)
+y	/home/mis/.config/dwm/dwm.c	/^	int x, y, w, h;$/;"	m	line:90	language:C	struct:Client	typeref:typename:int	file:	access:public
+zoom	/home/mis/.config/dwm/dwm.c	/^zoom(const Arg *arg)$/;"	f	line:2160	language:C	typeref:typename:void	signature:(const Arg * arg)
