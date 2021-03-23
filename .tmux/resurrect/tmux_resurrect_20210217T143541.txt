@@ -1,0 +1,7 @@
+pane	0	0	:bash	1	:*	0	:/home/mis	1	bash	:
+pane	1	0	:bash	1	:*	0	:/home/mis	1	bash	:
+pane	1	1	:bash	0	:-	0	:/home/mis	1	bash	:
+window	0	0	1	:*	b25d,80x24,0,0,0
+window	1	0	1	:*	a9ee,334x119,0,0,1
+window	1	1	0	:-	a9ef,334x119,0,0,2
+state	1	

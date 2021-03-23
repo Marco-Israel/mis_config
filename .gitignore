@@ -32,3 +32,16 @@ Documents/
 tags
 tmp
 project/
+.vim/autoload/
+.vim/backup/
+.vim/colors/1/
+.vim/colors/colortest.txt
+.vim/doc/
+.vim/plugged/
+.vim/plugin/
+.vim/sessions/
+.vim/undo/
+.vim/README
+.vim/undo/
+.vim/.netrwhist
+

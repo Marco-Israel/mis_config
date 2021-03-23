@@ -1,0 +1,4 @@
+{
+  "test/test_calc.py::TestCalc::test_upper": true,
+  "test/test_clacpy.py::test_calc2": true
+}

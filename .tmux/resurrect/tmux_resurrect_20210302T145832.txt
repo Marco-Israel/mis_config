@@ -1,0 +1,10 @@
+pane	0	0	:bash	1	:*	0	:/home/mis	1	bash	:
+pane	1	0	:vlc	0	:	0	:/home/mis	1	vlc	:vimb
+/usr/bin/vlc -I rc --random --no-video --loop --recursive expand /data/150_Musik/alphawellen/
+pane	1	1	:vim	0	:-	0	:/home/mis/project/rohde_und_schwarz/mis_ooc/test	1	vim	:vim documentation/test_smartCard.cpp
+pane	1	2	:vim	1	:*	0	:/home/mis/Downloads/pcsc_example	1	vim	:vim example.c
+window	0	0	1	:*	b25d,80x24,0,0,0
+window	1	0	0	:	a9ee,334x119,0,0,1
+window	1	1	0	:-	a9f1,334x119,0,0,4
+window	1	2	1	:*	a9f2,334x119,0,0,5
+state	1	
