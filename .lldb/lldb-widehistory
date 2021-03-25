@@ -52,3 +52,10 @@ b\040directccall_sendReceive\012
 b\040test_smartCard.cpp\040::directccall_sendReceive)\012
 b\040test_smartCard.cpp\040::directccall_sendReceive\012
 q\012
+break\040_connectionHandler\012
+break\040main\012
+b\040main\012
+b\040_connectionHandler\012
+r\012
+n\012
+q\012
