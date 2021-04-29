@@ -1,8 +1,0 @@
-# Defines which components for the subject DN are allowed in an issued certificate
-[ dn_name_policy ]
-countryName            = supplied
-stateOrProvinceName    = optional
-localityName           = optional
-organizationName       = supplied
-organizationalUnitName = optional
-commonName             = supplied
