@@ -1,7 +1,9 @@
+git.showCommit
+clangd.update
+clangd.install
 cSpell.addWordToDictionary
 cSpell.addWordToUserDictionary
 cSpell.addWordToWorkspaceDictionary
-clangd.update
 cSpell.addWordToDictionary="Rohde"
 cSpell.addWordToDictionary=Rohde
 cSpell.addWordTkjkoDictionary

@@ -1,0 +1,8 @@
+#ifndef  DUMPASN1_H_
+#define DUMPASN1_H_
+
+#include <stdio.h>
+extern int dumpasn1( FILE* inFile, long  offset, int argc, char *argv[] );
+
+extern int compareasn1( FILE* fileA, FILE * fileB, FILE * outputFile);
+#endif /*DUMPASN1_H_ */

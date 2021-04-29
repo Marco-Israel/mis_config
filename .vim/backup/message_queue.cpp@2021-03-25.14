@@ -1,0 +1,209 @@
+#include "libcsme/msg/message_queue.h"
+
+#include <iostream>
+#include <botan/base64.h>
+#include <flatbuffers/flatbuffers.h>
+
+#include "libcsme/platform/shared_types.h"
+#include "libcsme/platform/log/macros.h"
+
+namespace csme
+{
+namespace msg
+{
+    MessageQueue::MessageQueue( const pfsw::LogPtr logger )
+        : net::IProtocolHandler( )
+        , log_( logger )
+    {
+    }
+
+    MessageQueue::~MessageQueue( )
+    {
+    }
+
+    csme::platform::ThreadPtr MessageQueue::Start( )
+    {
+        is_started_                      = true;
+        csme::platform::ThreadPtr result = csme::platform::ThreadPtr( new std::thread( [this]( ) {
+            while ( ProcessNextMessage( ) ) {
+            }
+            LOG_TRACE_STR( "Message processing ended." );
+        } ) );
+        return result;
+    }
+
+    void MessageQueue::Stop( )
+    {
+        const std::lock_guard<std::mutex> lock( mutex_ ); //lint !e1788 RAII used intentionally
+        is_started_ = false;
+        condition_.notify_all( );
+    }
+
+    bool MessageQueue::IsStarted( ) const
+    {
+        return is_started_.load( );
+    }
+
+    net::ProtocolHandlerResult
+    MessageQueue::HandleIncomingMessage( const csme::platform::secure_vector<uint8_t> &message,
+                                         size_t const                                  message_size,
+                                         net::MessageSenderPtr                         response_sender )
+    {
+        if ( message.empty( ) ) {
+            LOG_ERROR_STR( "Message is empty" );
+            return net::ProtocolHandlerResult::kErrorCloseConnection;
+        }
+
+        if ( !response_sender ) {
+            LOG_ERROR_STR( "No response sender given" );
+            return net::ProtocolHandlerResult::kErrorCloseConnection;
+        }
+
+        const std::lock_guard<std::mutex> lock( mutex_ ); //lint !e1788 RAII used intentionally
+        if ( !IsStarted( ) ) {
+            LOG_ERROR_STR( "Cannot process messages at this point." );
+            return net::ProtocolHandlerResult::kErrorCloseConnection;
+        }
+
+        size_t new_message_size = message_size;
+        if ( !CutOffMessageSeparator( new_message_size ) ) {
+            LOG_ERROR_STR( "Cutting off message separator failed, closing down connection." );
+            return net::ProtocolHandlerResult::kErrorCloseConnection;
+        }
+
+        csme::platform::secure_vector<uint8_t> decoded_message;
+        if ( !DecodeMessage( message, new_message_size, decoded_message ) ) {
+            LOG_ERROR_STR( "Base64 decoding failed, closing down connection." );
+            return net::ProtocolHandlerResult::kErrorCloseConnection;
+        }
+
+        processing_requests_.push_back( std::make_pair( response_sender, decoded_message ) );
+        condition_.notify_one( );
+
+        return net::ProtocolHandlerResult::kOk;
+    }
+
+    std::string MessageQueue::GetMessageSeparator( )
+    {
+        return "\n";
+    }
+
+    bool MessageQueue::ProcessNextMessage( )
+    {
+        if ( !IsStarted( ) ) {
+            return false;
+        }
+
+        // Let's aquire the lock. It will be released, while we wait and re-aquired, when we wake up.
+        std::unique_lock<std::mutex> lock( mutex_ ); //lint !e1788 RAII used intentionally
+
+        // Let's wait until there's actually something to do
+        condition_.wait( lock, [this] {
+            if ( !IsStarted( ) ) {
+                return true;
+            }
+
+            if ( !processing_requests_.empty( ) ) {
+                return true;
+            }
+
+            return false;
+        } );
+
+        // We woke up to finish
+        if ( !IsStarted( ) ) {
+            LOG_TRACE_STR( "Queue stopped, shutting down." );
+            return false;
+        }
+
+        auto next_processing_request = processing_requests_.front( );
+        processing_requests_.pop_front( );
+
+        const net::MessageSenderPtr             response_sender = next_processing_request.first;
+        csme::platform::secure_vector<uint8_t> &message         = next_processing_request.second;
+
+        if ( !VerifyMessage( message ) ) {
+            LOG_ERROR_STR( "Message could not be verified!" );
+            response_sender->CloseConnectionOnError( );
+            return true;
+        }
+
+        try {
+            const std::shared_ptr<flatbuffers::FlatBufferBuilder> response_builder = ProcessVerifiedMessage( message );
+            if ( response_builder ) {
+                SendResponse( response_sender, response_builder );
+            }
+        } catch ( std::exception &e ) {
+            LOG_ERROR_STR( "Error occurred handling incoming message: " + std::string( e.what( ) ) +
+                           ". Closing connection." );
+            response_sender->CloseConnectionOnError( );
+            return true;
+        }
+
+        return true;
+    }
+
+    bool MessageQueue::CutOffMessageSeparator( size_t &message_size )
+    {
+        const std::string separator = GetMessageSeparator( );
+        if ( message_size <= separator.size( ) ) {
+            LOG_INFO_STR( "Message is too small!" );
+            return false;
+        }
+
+        message_size -= separator.size( );
+        return true;
+    }
+
+    void MessageQueue::AppendMessageSeparator( csme::platform::secure_vector<uint8_t> &message )
+    {
+        const auto sep = GetMessageSeparator( );
+        IGNORE_RETURN_VALUE( message.insert( message.end( ), sep.begin( ), sep.end( ) ) );
+    }
+
+    bool MessageQueue::DecodeMessage( const csme::platform::secure_vector<uint8_t> &message,
+                                      size_t const                                  message_size,
+                                      csme::platform::secure_vector<uint8_t> &      decoded_message )
+    {
+        const bool ignore_whitespaces = false;
+        try {
+            decoded_message = std::move( Botan::base64_decode(
+                reinterpret_cast<const char *>( message.data( ) ), //lint !e586 we need reinterpret_cast here
+                message_size,
+                ignore_whitespaces ) );
+        } catch ( std::exception &e ) {
+            LOG_ERROR_STR( "Error trying to decode an incoming message: " + std::string( e.what( ) ) );
+            return false;
+        }
+
+        return true;
+    }
+
+    void MessageQueue::EncodeMessage( const uint8_t *const message, //lint !e9183 avoid conflicting lint rules
+                                      size_t const         message_size,
+                                      csme::platform::secure_vector<uint8_t> &encoded_message )
+    {
+        std::string encoded_message_str = Botan::base64_encode( message, message_size );
+        encoded_message.clear( );
+        IGNORE_RETURN_VALUE( encoded_message.insert(
+            encoded_message.end( ), encoded_message_str.begin( ), encoded_message_str.end( ) ) );
+    }
+
+    void MessageQueue::SendResponse( const net::MessageSenderPtr                           response_sender,
+                                     const std::shared_ptr<flatbuffers::FlatBufferBuilder> response_builder )
+    {
+        uint8_t *const response_buffer = response_builder->GetBufferPointer( );
+        size_t const   response_size   = response_builder->GetSize( );
+
+        csme::platform::secure_vector<uint8_t> response_message;
+        EncodeMessage( response_buffer, response_size, response_message );
+        AppendMessageSeparator( response_message );
+        response_sender->SendMessage( response_message );
+    }
+
+    std::mutex &MessageQueue::GetMutex( )
+    {
+        return mutex_; //lint !e1536 we need access to this member in derived classes
+    }
+} // namespace msg
+} // namespace csme

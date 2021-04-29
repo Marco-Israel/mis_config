@@ -99,6 +99,7 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias off='shutdown -h now'
 alias dhcpcd='sudo dhcpcd -4'
+alias makej='make -j16'
 
 #### cd ################
 alias cddesk='cd /cygdrive/c/Users/Z651633/Desktop/'

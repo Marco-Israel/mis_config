@@ -1,0 +1,6 @@
+#ifndef  DUMPASN1_H_
+#define DUMPASN1_H_
+
+extern int asn1parse( int argc, char *argv[] );
+
+#endif /*DUMPASN1_H_ */

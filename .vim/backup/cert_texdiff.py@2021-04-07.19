@@ -1,0 +1,87 @@
+#!/usr/bin/python3/python3
+
+
+def _print_help():
+    sys.stdout.writelines("\
+###############################################################################\
+# @file cert_texdiff.py                                                     \
+# @author Marco Israel                                                      \
+# @version GIT                                                              \
+# @date 2021-04-07                                                          \
+# @brief    Compare keyword lines in a file with a corresponding line in b file\
+#                                                                           \
+#                                                                           \
+# USAGE: python3 cer_textdiff-py <golden.txt> <silver.txt> [--output <out.txt>]\
+# <golden.txt>  =   The original text file                                  \
+# <silver.txt>  =   The file to compare with the golden text file           \
+# [optional:]   --output <out.txt>  =   Instead of write to stdout use a file \
+# [optional:]   --help              =   Print this help message             \
+###############################################################################\
+")
+
+
+import argparse
+import difflib
+import sys
+
+from pathlib import Path
+
+
+
+
+def _line_diff(golden:str, silver:str, string:str,  output_file: Path = None):
+
+    golden_line = "\n"
+    silver_line = "\n"
+
+    with open (golden, "r") as f1:
+        for line in f1:
+            if string in line:
+                golden_line = line.splitlines(True)
+                break
+
+    with open (silver, "r") as f2:
+        for line in f2:
+            if string in line:
+                silver_line = line.splitlines(True)
+                break
+
+    delta = difflib.unified_diff(golden_line, silver_line,golden, silver)
+    if output_file:
+        with open(output_file, "w") as f:
+            f.writelines(delta)
+    else:
+        sys.stdout.writelines(delta)
+
+
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("golden")
+    parser.add_argument("silver")
+    parser.add_argument("--output", help="the output file" )
+    parser.add_argument("--help", help="print the help message" )
+    args = parser.parse_args()
+
+    if args.help:
+        _print_help()
+        exit()
+
+    golden= Path(args.golden)
+    silver= Path(args.silver)
+
+    if args.output:
+        output_file = args.output
+    else:
+        output_file = None
+
+    keyword_list = ["CA:", "Basic"]
+
+    for keyword in keyword_list:
+        _line_diff(golden.__str__(), silver.__str__(), keyword, output_file)
+
+
+if __name__ == "__main__":
+    main()
+

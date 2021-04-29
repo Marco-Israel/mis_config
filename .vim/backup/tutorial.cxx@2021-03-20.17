@@ -1,0 +1,70 @@
+#include <iostream>
+
+#include <botan/auto_rng.h>
+#include "cryptlib.h"
+
+int cryptlib_get_random(unsigned int num)
+{
+    int status;
+    uint8_t crypt[num] = {0};
+
+    if (num == 0) return -1;
+
+    status = cryptInit();
+    if( status != CRYPT_OK) std::cout << "cryptlib init failed with status: " << status << std::endl;
+
+    CRYPT_CONTEXT crypt_context;
+
+    /* This example uses cryptlib internal functions to generate random data */
+    cryptCreateContext( &crypt_context, CRYPT_UNUSED , CRYPT_ALGO_AES );
+    cryptSetAttribute( crypt_context, CRYPT_CTXINFO_MODE, CRYPT_MODE_CFB );
+    cryptSetAttributeString( crypt_context, CRYPT_CTXINFO_LABEL, "AES_SYM_KEY", 10);
+    cryptGenerateKey( crypt_context );
+
+    /* cryptlib does not expose rng, so we encrypt some data to get random values */
+    cryptEncrypt( crypt_context, crypt, num );
+    cryptDestroyContext( crypt_context );
+
+    std::cout << "cryptlib random" << std::endl;
+    for(unsigned int i = 0; i < num; ++i) {
+        std::cout << static_cast<int>(crypt[i]) << std::endl;
+    }
+
+    CRYPT_DEVICE crypt_device;
+
+    /* This example uses the custom crypto core to generate random data */
+    cryptDeviceOpen(&crypt_device, CRYPT_UNUSED, CRYPT_DEVICE_HARDWARE, "Generic crypto core");
+
+    /* Create the AES GCM context, set a label for the key, and generate a key into it */
+    cryptDeviceCreateContext(crypt_device, &crypt_context, CRYPT_ALGO_AES );
+     apt install nodejs npm
+    cryptSetAttribute( crypt_context, CRYPT_CTXINFO_MODE, CRYPT_MODE_CFB );
+    cryptSetAttributeString( crypt_context, CRYPT_CTXINFO_LABEL, "AES_SYM_KEY", 10);
+    cryptGenerateKey( crypt_context );
+    cryptEncrypt(crypt_context, crypt, num);
+
+    /* Destroy the context */
+    cryptDestroyContext( crypt_context );
+    cryptDeviceClose(crypt_device);
+
+    std::cout << "cryptlib random (custom cryto core)" << std::endl;
+    for(unsigned int i = 0; i < num; ++i) {
+        std::cout << static_cast<int>(crypt[i]) << std::endl;
+    }
+
+    status = cryptEnd();
+    if( status != CRYPT_OK) std::cout << "cryptlib shutdown failed with status: " << status << std::endl;
+    return 0;
+}
+
+int botan_get_random(unsigned int num)
+{
+    static Botan::AutoSeeded_RNG rng;
+
+    if (num == 0) return -1;
+    std::cout << "botan random" << std::endl;
+    for(unsigned int i = 0; i < num; ++i) {
+        std::cout << static_cast<int>(rng.next_byte()) << std::endl;
+    }
+    return 0;
+}

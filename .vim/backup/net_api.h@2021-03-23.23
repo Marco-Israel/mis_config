@@ -1,0 +1,77 @@
+#ifndef CSME_NET_NET_API_H
+#define CSME_NET_NET_API_H
+
+#include <asio/io_context.hpp>
+
+#include "libplatform/log/ilogger.h"
+#include "libcsme/net/iprotocol_handler.h"
+#include "libcsme/net/server/session_pool.h"
+#include "libcsme/platform/shared_types.h"
+#include "libcsme/net/server/server.h"
+#include "libcsme/net/server/netapi_config_generated.h"
+
+namespace csme
+{
+namespace net
+{
+    // TODO(sven): anzahl der stellen, an denen solche defaults stehen reduzieren
+    constexpr auto kDefaultConnectionThreadPoolSize = 1U;
+    constexpr auto kDefaultTcpPort                  = 13799U;
+    constexpr auto kDefaultMaxConcurrentConnections = 50U;
+    constexpr auto kDefaultHeartbeatInterval        = std::chrono::milliseconds( 100 );
+    constexpr auto kDefaultConnectionTimeout        = std::chrono::milliseconds( 500 );
+
+    class NetApi
+    {
+    public:
+        explicit NetApi( ProtocolHandlerPtr        protocol_handler,
+                         LogPtr                    logger,
+                         const NetApiConfig *const config = nullptr );
+
+        // Starts the servers. Adds all created threads into given thread pool.
+        bool Start( std::vector<ThreadPtr> &thread_pool );
+        bool Stop( );
+
+        // After all threads have been join, we may need to trigger the destruction of the io_context.
+        void ResetIoContext( );
+
+        bool SetConnectionThreadPoolSize( uint8_t const size );
+        bool SetTcpListenPort( uint16_t const port );
+        bool SetIpV4Endpoint( std::shared_ptr<tcp::endpoint> endpoint );
+        bool SetIpV6Endpoint( std::shared_ptr<tcp::endpoint> endpoint );
+        bool SetMaxConcurrentConnections( uint16_t const max_connections );
+
+        bool SetHeartbeatInterval( uint16_t const interval_ms );
+        bool SetConnectionTimeout( uint16_t const timeout_ms );
+
+    private:
+        bool is_started_ = false;
+
+        // How many thread should be used to serve all connections
+        uint8_t connection_thread_pool_size_ = kDefaultConnectionThreadPoolSize;
+        // On which port should the api be made available
+        uint16_t                       tcp_port_ = kDefaultTcpPort;
+        std::shared_ptr<tcp::endpoint> v4_endpoint_;
+        std::shared_ptr<tcp::endpoint> v6_endpoint_;
+        // How many concurrent connections should be allowed. Set to 0 to allow unlimited new connections.
+        uint16_t max_concurrent_connections_ = kDefaultMaxConcurrentConnections;
+        // Milliseconds interval to send heartbeats after send inactivity. Set to 0 to disabled heartbeat sending.
+        std::chrono::milliseconds heartbeat_interval_ = kDefaultHeartbeatInterval;
+        // Milliseconds timeout duration for received messages. If this timeout expires, the connection is closed. Set
+        // to 0 to disable timeout.
+        std::chrono::milliseconds connection_timeout_ = kDefaultConnectionTimeout;
+        // Handler for incoming messages
+        ProtocolHandlerPtr protocol_handler_;
+        LogPtr             log_;
+        asio::io_context   io_context_;
+        // Shared pool of all current connections
+        SessionPoolPtr session_pool_;
+        ServerPtr      ipv4_server_ = nullptr;
+        ServerPtr      ipv6_server_ = nullptr;
+    };
+
+    using NetApiPtr = std::shared_ptr<NetApi>;
+
+} // namespace net
+} // namespace csme
+#endif

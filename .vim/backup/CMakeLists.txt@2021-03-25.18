@@ -1,0 +1,9 @@
+# Setup unit tests here
+
+add_subdirectory(client)
+add_subdirectory(server)
+
+
+target_sources(
+    ${TARGET}
+    PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/response_factory.test.cpp

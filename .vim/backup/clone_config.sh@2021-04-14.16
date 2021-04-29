@@ -1,0 +1,51 @@
+#!/bin/sh
+################################################################################
+# @brief    Script Help
+################################################################################
+_usage() {
+cat <<-EOF
+                "${0##*/}"
+################################################################################
+
+@Author:    Marco Israel
+@Date:      2021-04
+@Brief      Create an independent runable config folder at the new path.
+@detail     This script cones the config folder to an abitary path and
+            foldername and repaces the hardcoded pathes in the scripts by the
+            new path. Afterwards it does a git checkout openssl_configs to
+            revert you changes in case you modified the original configs.
+
+USAGE:
+${0##*/}    <new_path>/<new_config_foldername>
+
+@example
+${0##*/}   ./my_openssl_configs_copy
+
+################################################################################
+# END OF HELP.
+EOF
+}
+
+
+# MAIN #########################################################################
+if [ "$#" -eq 1 ]
+then
+    if [ ! -d "$1" ]
+    then
+        cp -r ./openssl_configs "$1"
+
+        sed  -i "s/inputdir = openssl_configs/inputdir = ${1}/g"    \
+            "$1"/root-ca-1.cnf
+
+        sed  -i "s/inputdir = openssl_configs/inputdir = ${1}/g"    \
+            "$1"/sub-ca-1.cnf
+
+        git checkout openssl_configs
+    fi
+
+else
+    _usage
+fi
+
+
+### EOF ########################################################################

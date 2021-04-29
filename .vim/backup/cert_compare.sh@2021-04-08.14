@@ -1,0 +1,51 @@
+#!/bin/bash
+
+_usage() {
+cat <<-EOF
+                "${0##*/}"
+################################################################################
+
+@author     Marco Israel (MI)
+@date       2021
+
+  USAGE:
+ "${0##*/} <testName>/<testCase>
+
+ @example
+ "${0##*/} 1.2.3.4_myRequirement/1_my_test_case
+
+################################################################################
+# END OF HELP.
+EOF
+}
+
+
+
+### MAIN #######################################################################
+
+if [ "$#" -eq  0 ]
+then
+    PATH_GOLDEN_CERTS=./golden_certificates
+    PATH_SILVER_CERTS="$1"
+    FILE_COMPARE_LOG=./cert_compare.log
+
+    echo "" > $FILE_COMPARE_LOG
+    echo "GOLDEN certificate path:  $PATH_GOLDEN_CERTS" >> $FILE_COMPARE_LOG
+    echo "SILVER certificate path:  $PATH_SILVER_CERTS" >> $FILE_COMPARE_LOG
+
+    CERT_NAMES=("root-ca-1.der" "sub-ca-1.der" "subscriber-1.der")
+
+    for (( i = 0; i < ${#CERT_NAMES[@]}; i++ )); do
+
+    echo "CERTIFICATES:  $CERT_NAMES[$i]" >> $FILE_COMPARE_LOG
+
+        python3 ./tools/certdiff/cert_texdiff.py $GOLDEN_PATH/$CERT_NAMES[$i] \
+            $PATH_SILVER_CERTS/$CERT_NAMES[$i] --output certcompare.log
+    done
+
+
+else
+    _usage
+fi
+
+### EOF ########################################################################

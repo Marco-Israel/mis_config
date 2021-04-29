@@ -1,0 +1,98 @@
+ADD new test. FIX bugs. ADD tools for certcompare
+
+########################################################################
+# --------------------
+# SUBJECT_TAG can be
+#   ADD         (Added new content to exsisting file; eg. a new var)
+#   DBG         (Changes in debugging code only; not in production code)
+#   DOC         (Changes to documentation)
+#   FEAT        (Howl new feature added)
+#   FIX         (Bug fix)
+#   NEW         (Howl brand new file added)
+#   REFAC       (Refactoring code)
+#   STYLE       (Formatting, missing semi colons, etc; no code change)
+#   TEST        (adding or refactoring tests; no production code change)
+#   TODO        (Temporary fix to; please avoid it AND fix it asp.)
+#   LIC         (Edits/New licensing; no production code change)
+#   VERS        (Version bump/new release; no production code change)
+#   WIP         (Work In Progress; for intermediate commits)
+#   NONE        (None of this)
+#
+# Note: Multiple tags are allowed.
+#
+# --------------------
+# FINALT_TAG can be
+#   OPEN        (New incident was open with number)
+#   CLOSE       (Incident with number was closed)
+#   REOPEN      (Incident with number was reopend)
+#
+# Note: Multiple entries are allowed; e.g multiple tags open/closed.
+#
+# --------------------
+# Remember to:
+#   * Capitalize the subject line.
+#   * Use the imperative mood in the SUBJECT line.
+#   * Do not end the SUBJECT line with a period.
+#   * Maximum to SUBJECT si 52 cahrs. Maximum to DETAILS/FINAL is 72.
+#   * Separate SUBJECT from DETIL and FINAL with a blank line.
+#   * Use the DETAIL to explain what and why. Not how.
+#   * Can use multiple lines with "-" or "*" in DETAILS/FINAL
+#   * Multiple tags are allowed in SUBJECT and FINALT.
+#   *
+#   * !!! FINALLY: NEVER COMMIT TO MUCH THINGS IN ON COMMIT !!!
+# --------------------
+#######################################################################
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch israelM/ED7SW-1539/Beispielzertifikate_PGutmann
+# Your branch is ahead of 'origin/israelM/ED7SW-1539/Beispielzertifikate_PGutmann' by 18 commits.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#	new file:   certificate_compare.log
+#	new file:   certificate_compare.sh
+#	new file:   golden_certificates/dn-name-policy.cnf
+#	new file:   golden_certificates/oids.cnf
+#	new file:   golden_certificates/output/certs/root-ca-1.der
+#	new file:   golden_certificates/output/certs/root-ca-1.pem
+#	new file:   golden_certificates/output/certs/sub-ca-1.der
+#	new file:   golden_certificates/output/certs/sub-ca-1.pem
+#	new file:   golden_certificates/output/certs/subscriber-1.der
+#	new file:   golden_certificates/output/certs/subscriber-1.pem
+#	new file:   golden_certificates/output/compiler.log
+#	new file:   golden_certificates/output/dbs/root-ca-1-index.txt
+#	new file:   golden_certificates/output/dbs/root-ca-1-index.txt.attr
+#	new file:   golden_certificates/output/dbs/root-ca-1-index.txt.attr.old
+#	new file:   golden_certificates/output/dbs/root-ca-1-index.txt.old
+#	new file:   golden_certificates/output/dbs/root-ca-1-serial.txt
+#	new file:   golden_certificates/output/dbs/root-ca-1-serial.txt.old
+#	new file:   golden_certificates/output/dbs/sub-ca-1-index.txt
+#	new file:   golden_certificates/output/dbs/sub-ca-1-index.txt.attr
+#	renamed:    tools/certdiff/tmp.txt -> golden_certificates/output/dbs/sub-ca-1-index.txt.old
+#	new file:   golden_certificates/output/dbs/sub-ca-1-serial.txt
+#	new file:   golden_certificates/output/dbs/subscriber-1-index.txt
+#	new file:   golden_certificates/output/hu/root-ca-1.cert.txt
+#	new file:   golden_certificates/output/hu/root-ca-1.csr.txt
+#	new file:   golden_certificates/output/hu/root-ca-1.key.txt
+#	new file:   golden_certificates/output/hu/sub-ca-1.cert.txt
+#	new file:   golden_certificates/output/hu/sub-ca-1.csr.txt
+#	new file:   golden_certificates/output/hu/sub-ca-1.key.txt
+#	new file:   golden_certificates/output/hu/subscriber-1.cert.txt
+#	new file:   golden_certificates/output/hu/subscriber-1.csr.txt
+#	new file:   golden_certificates/output/hu/subscriber-1.key.txt
+#	new file:   golden_certificates/output/sks/root-ca-1.pem
+#	new file:   golden_certificates/output/sks/sub-ca-1.pem
+#	new file:   golden_certificates/output/sks/subscriber-1.pem
+#	new file:   golden_certificates/output/tas/root-ca-1.pem
+#	new file:   golden_certificates/root-ca-1.cnf
+#	new file:   golden_certificates/sub-ca-1.cnf
+#	new file:   golden_certificates/subscriber-1.cnf
+#	modified:   test-runner.sh
+#	deleted:    tools/certdiff/a.txt
+#	deleted:    tools/certdiff/b.txt
+#	modified:   tools/certdiff/cert_texdiff.py
+#	modified:   tools/certdiff/golden_root.cert.txt
+#	modified:   tools/certdiff/silver_root.cert.txt
+#

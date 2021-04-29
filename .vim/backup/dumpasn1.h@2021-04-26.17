@@ -1,0 +1,23 @@
+#ifndef  DUMPASN1_H_
+#define DUMPASN1_H_
+
+/* ASN.1 item chain to hold all ASN.1 items. */
+#define MAX_VALUE_SIE   (512u)
+
+typedef struct data_offset_list{
+    long offset;
+    long length;
+    long headerSize;
+    struct data_offset_list * nextptr;
+    struct data_offset_list * prevptr;
+  } DATA_OFFSET_LIST;
+
+
+#include <stdio.h>
+extern int dumpasn1( FILE* inFile, long  offset, int argc, char *argv[] );
+
+extern int compareasn1( FILE * fileA, FILE * fileB, FILE * outputStream,);
+#endif /*DUMPASN1_H_ */
+
+
+

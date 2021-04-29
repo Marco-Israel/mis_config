@@ -1,0 +1,218 @@
+#!/bin/bash
+################################################################################
+# @brief    Print the help according to this script
+################################################################################
+_usage() {
+cat <<-EOF
+                "${0##*/}"
+################################################################################
+
+@author     Marco Israel (MI)
+@date       2021
+@brief      Geberate a certificate test folder and run the creation script.
+@detail     If the testfolder and testcase already exists, the script will only
+            Execute the test. In both cases:
+            - the results will be copied into the testcase folder called output
+            - The compiler log file will be saved into the outpudfolder
+            - Beside the keys and certificatess also a human readlbe certificate
+              is placed into the output/hu folder
+            - The testlist README file will gets open so you can update it
+            - The new tree or changed files will be commited to git finaly
+
+
+  USAGE:
+ "${0##*/} <testName> <testCase>
+
+ @example
+ "${0##*/} 1.2.3.4_myRequirement 1_my_test_case
+
+################################################################################
+# END OF HELP.
+EOF
+}
+
+
+################################################################################
+# @brief    Generate a README testlist template file in the root testcase folder
+################################################################################
+_gen_readme() {
+cat <<-EOF > "$1/$2"/README
+TEST
+"$1"
+--------------------------------------------------------------------------------
+REQUIRED SCOPE:
+
+1.
+TODO the kind to test out of the required text part.
+
+
+--------------------------------------------------------------------------------
+TESTLIST:
+
+1_TODO_test_name
+TODO Test description. E.g. what is the test defining in configuration files.
+
+
+--------------------------------------------------------------------------------
+1_TODO_test_name
+
+EXPECT:
+TODO what result is expacted. E.g. the Result mentiond out in manuals
+
+RESULT
+TRUE or FALSE
+TODO in case of FALSE (result not equivalent to the expactation) a result
+description. In case of TRUE no further explanation is needed.
+
+
+--- EOF ------------------------------------------------------------------------
+EOF
+}
+
+
+
+################################################################################
+# @brief    Create a testcase or run it if it already exists
+################################################################################
+_output_handler() {
+    RESULT=$1
+    FLAGS=$2
+
+    if [ -d "$RESULT"/output ]
+    then
+        rm -rf "$RESULT/output"
+    fi
+
+    if [ ! "$FLAGS" = "--noresults" ] && [ ! "$FLAGS" = "--removeAllOutput" ]
+    then
+        mv ./output "$RESULT"
+        mv /tmp.log "$RESULT/"output/compiler.log
+    else
+        if [ -d ./output ]
+        then
+        rm -rf ./output
+        fi
+
+        if [ -f ./tmp.log ]
+        then
+        rm /tmp.log
+        fi
+    fi
+}
+
+
+
+################################################################################
+# @brief    Create a testcase or run it if it already exists
+################################################################################
+_gen_test_case() {
+    TEST_CASE="$1"
+    GIT_LOG_TAG="WIP"
+    FLAGS=$3
+    TEMPLATE_FOLDER=$4
+
+    if [ ! -d $NAME ]
+    then
+    echo "NEW REQUIRED"
+        mkdir "$NAME"
+        _gen_readme "$NAME"
+    fi
+
+    if [ ! -d $TEST_CASE ]
+    then
+        echo "NEW TESTCASE"
+        cp -r $TEMPLATE_FOLDER "$NAME/$2"
+        git checkout $TEMPLATE_FOLDER
+        GIT_LOG_TAG="INIT"
+    fi
+
+
+    ./create-certificates.sh "$TEST_CASE" 1> ./tmp.log 2>&1
+     cat ./tmp.log
+
+     _output_handler $TEST_CASE $FLAGS
+
+     vim "$TEST_CASE/../README"
+     git add "$TEST_CASE/../README"
+     for FILE in $TEST_CASE
+     do
+         if [ -f $FILE ]
+         then
+            git add $FILE
+         fi
+     done
+
+     git commit "$TEST_CASE" -m "$GIT_LOG_TAG TEST [$TEST_CASE]"
+}
+
+
+
+################################################################################
+# @brief    Delete or Generate output in all existing tests in the given folder
+################################################################################
+_handle_all_tests() {
+    TEST_FOLDER=$1
+    FLAGS=$2
+    for FOLDER in $TEST_FOLDER/*
+    do
+        if [ -d $FOLDER ]
+        then
+            for TEST_CASE in $FOLDER/*
+            do
+                if [ -d $TEST_CASE ]
+                then
+                    if [ ! $FLAGS = "--removeAllOutput" ]
+                    then
+                        echo "Regenerating $TEST_CASE"
+                        ./create-certificates.sh "$TEST_CASE"  \
+                            1> ./tmp.log 2>&1
+                    fi
+
+                    _output_handler $TEST_CASE $FLAGS
+                else
+                    continue
+                fi
+            done
+        else
+            continue
+        fi
+    done
+}
+
+
+################################################################################
+# @brief    Script MAIN
+################################################################################
+_main() {
+    INPUT_FOLDER=./golden_certificates
+    OUTPUT_FOLDER=./silver_certificates
+
+    if [ "$#" -ge  1 ] && [ "$#" -le 2 ]
+    then
+
+        if [ ! -f ./create-certificates.sh ]
+        then
+            echo "The script to generate the certificates was not found"
+            echo "The Script needs to be in the same folder then this script"
+            exit 1
+        fi
+
+        if [ "$1" = "--all" ] || [ "$1" = "-a" ]
+        then
+            _handle_all_tests "$OUTPUT_FOLDER" $2
+        elif [ "$1" = "--removeAllOutput" ] || [ "$1" = "-r" ]
+        then
+            _handle_all_tests "$OUTPUT_FOLDER" "--removeAllOutput"
+        elif [ "$1" = "--test" ] || [ "$2" = "-t" ]
+        then
+            _handle_all_tests "$OUTPUT_FOLDER" "--test"
+        else
+            _gen_test_case "$1" "$2" "$INPUT_FOLDER"
+        fi
+    else
+        _usage
+    fi
+}
+_main $1 $2
+
+### EOF ########################################################################

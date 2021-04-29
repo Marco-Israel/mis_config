@@ -1,0 +1,11 @@
+pane	0	0	:bash	1	:*	0	:/home/mis	1	bash	:
+pane	1	0	:vlc	1	:*	0	:/home/mis	1	vlc	:/usr/lib/firefox/firefox
+/usr/bin/vlc -I rc --random --no-video --loop --recursive expand Musik/alphawellen
+pane	1	1	:vim	0	:	0	:/data/90_Projekte/rohde_schwarze/mi_ooc/test	0	vim	:vim -O AllTests/test_smartCard_b.cpp ../../main.c ../src/mis_smartCard_b.c ../src/mis_smartCard_b.h
+pane	1	1	:vim	0	:	1	:/data/90_Projekte/rohde_schwarze/mi_ooc/src	1	vim	:vim
+pane	1	2	:bash	0	:-	0	:/data/90_Projekte/rohde_schwarze/mi_ooc/test	1	bash	:
+window	0	0	1	:*	b25d,80x24,0,0,0
+window	1	0	1	:*	ab7e,478x119,0,0,1
+window	1	1	0	:	95c3,478x119,0,0{219x119,0,0,16,258x119,220,0,22}
+window	1	2	0	:-	55f4,478x119,0,0,15
+state	1	

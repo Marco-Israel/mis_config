@@ -1,0 +1,171 @@
+REN old folder
+
+########################################################################
+# --------------------
+# SUBJECT_TAG can be
+#   ADD         (Added new content to exsisting file; eg. a new var)
+#   DBG         (Changes in debugging code only; not in production code)
+#   DOC         (Changes to documentation)
+#   FEAT        (Howl new feature added)
+#   FIX         (Bug fix)
+#   NEW         (Howl brand new file added)
+#   REFAC       (Refactoring code)
+#   STYLE       (Formatting, missing semi colons, etc; no code change)
+#   TEST        (adding or refactoring tests; no production code change)
+#   TODO        (Temporary fix to; please avoid it AND fix it asp.)
+#   LIC         (Edits/New licensing; no production code change)
+#   VERS        (Version bump/new release; no production code change)
+#   WIP         (Work In Progress; for intermediate commits)
+#   NONE        (None of this)
+#
+# Note: Multiple tags are allowed.
+#
+# --------------------
+# FINALT_TAG can be
+#   OPEN        (New incident was open with number)
+#   CLOSE       (Incident with number was closed)
+#   REOPEN      (Incident with number was reopend)
+#
+# Note: Multiple entries are allowed; e.g multiple tags open/closed.
+#
+# --------------------
+# Remember to:
+#   * Capitalize the subject line.
+#   * Use the imperative mood in the SUBJECT line.
+#   * Do not end the SUBJECT line with a period.
+#   * Maximum to SUBJECT si 52 cahrs. Maximum to DETAILS/FINAL is 72.
+#   * Separate SUBJECT from DETIL and FINAL with a blank line.
+#   * Use the DETAIL to explain what and why. Not how.
+#   * Can use multiple lines with "-" or "*" in DETAILS/FINAL
+#   * Multiple tags are allowed in SUBJECT and FINALT.
+#   *
+#   * !!! FINALLY: NEVER COMMIT TO MUCH THINGS IN ON COMMIT !!!
+# --------------------
+#######################################################################
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch israelM/ED7SW-1539/Beispielzertifikate_PGutmann
+# Changes to be committed:
+#	modified:   ../../../.gitignore
+#	deleted:    ../../ASN1/doc/01_Cryptlib - Request for Tender.pdf
+#	deleted:    ../../ASN1/doc/01_Cryptlib - Request for Tender.pdf:PG$Secure
+#	deleted:    ../../ASN1/doc/02_Specification for cryptlib work V_1_3.pdf
+#	deleted:    ../../ASN1/doc/02_Specification for cryptlib work V_1_3.pdf:PG$Secure
+#	deleted:    ../../ASN1/doc/03_Zertifikatsrichtlinie_ED7_SCIP.pdf
+#	deleted:    ../../ASN1/doc/04_CS_Requirements_Doors_Export.pdf
+#	deleted:    "../../ASN1/doc/05_ASN1-X509-Pr\303\244sentation.pdf"
+#	deleted:    ../../ASN1/modules/CompilerDirectives.asn
+#	deleted:    ../../ASN1/modules/X.500-family/AlgorithmObjectIdentifiers.asn
+#	deleted:    ../../ASN1/modules/X.500-family/AttributeCertificateDefinitions.asn
+#	deleted:    ../../ASN1/modules/X.500-family/AuthenticationFramework.asn
+#	deleted:    ../../ASN1/modules/X.500-family/BasicAccessControl.asn
+#	deleted:    ../../ASN1/modules/X.500-family/CertificateExtensions.asn
+#	deleted:    ../../ASN1/modules/X.500-family/CommonProtocolSpecification.asn
+#	deleted:    ../../ASN1/modules/X.500-family/DSAOperationalAttributeTypes.asn
+#	deleted:    ../../ASN1/modules/X.500-family/DirectoryAbstractService.asn
+#	deleted:    ../../ASN1/modules/X.500-family/DirectoryOSIProtocols.asn
+#	deleted:    ../../ASN1/modules/X.500-family/DirectoryOperationalBindingTypes.asn
+#	deleted:    ../../ASN1/modules/X.500-family/DirectoryShadowAbstractService.asn
+#	deleted:    ../../ASN1/modules/X.500-family/DistributedOperations.asn
+#	deleted:    ../../ASN1/modules/X.500-family/EnhancedSecurity.asn
+#	deleted:    ../../ASN1/modules/X.500-family/ExtensionAttributes.asn
+#	deleted:    ../../ASN1/modules/X.500-family/HierarchicalOperationalBindings.asn
+#	deleted:    ../../ASN1/modules/X.500-family/InformationFramework.asn
+#	deleted:    ../../ASN1/modules/X.500-family/LdapSystemSchema.asn
+#	deleted:    ../../ASN1/modules/X.500-family/Lightweight-Directory-Access-Protocol-V3.asn
+#	deleted:    ../../ASN1/modules/X.500-family/OSIProtocolSpecification.asn
+#	deleted:    ../../ASN1/modules/X.500-family/OperationalBindingManagement.asn
+#	deleted:    ../../ASN1/modules/X.500-family/PasswordPolicy.asn
+#	deleted:    ../../ASN1/modules/X.500-family/PkiPmiExternalDataTypes.asn
+#	deleted:    ../../ASN1/modules/X.500-family/SchemaAdministration.asn
+#	deleted:    ../../ASN1/modules/X.500-family/SelectedAttributeTypes.asn
+#	deleted:    ../../ASN1/modules/X.500-family/SelectedObjectClasses.asn
+#	deleted:    ../../ASN1/modules/X.500-family/ServiceAdministration.asn
+#	deleted:    ../../ASN1/modules/X.500-family/SpkmGssTokens.asn
+#	deleted:    ../../ASN1/modules/X.500-family/UsefulDefinitions.asn
+#	deleted:    ../../ASN1/modules/custom/CustomDefinitions.asn
+#	deleted:    ../../ASN1/modules/rfcs/rfc3279.asn
+#	deleted:    ../../ASN1/modules/rfcs/rfc4055.asn
+#	deleted:    ../../ASN1/modules/rfcs/rfc5280.asn
+#	deleted:    ../../ASN1/modules/rfcs/rfc5480.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full.zip
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/AttributeCertificateDefinitions.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/AuthenticationFramework.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/BasicAccessControl.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/CertificateExtensions.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/CommonProtocolSpecification.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/DSAOperationalAttributeTypes.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/DirectoryAbstractService.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/DirectoryOSIProtocols.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/DirectoryOperationalBindingTypes.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/DirectoryShadowAbstractService.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/DistributedOperations.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/EnhancedSecurity.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/InformationFramework.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/Lightweight-Directory-Access-Protocol-V3.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/OSIProtocolSpecification.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/OperationalBindingManagement.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/PasswordPolicy.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/PkiPmiExternalDataTypes.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/SchemaAdministration.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/SelectedAttributeTypes.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/SelectedObjectClasses.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/ServiceAdministration.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/SpkmGssTokens.asn
+#	deleted:    ../../ASN1/modules/x.521-2016-10.form_desc.full/UsefulDefinitions.asn
+#	deleted:    ../../ASN1/openssl/cnf/dn-name-policy.cnf
+#	deleted:    ../../ASN1/openssl/cnf/oids.cnf
+#	deleted:    ../../ASN1/openssl/cnf/root-ca-1.cnf
+#	deleted:    ../../ASN1/openssl/cnf/sub-ca-1.cnf
+#	deleted:    ../../ASN1/openssl/cnf/subscriber-1.cnf
+#	deleted:    ../../ASN1/openssl/create-certificates.sh
+#	deleted:    ../../ASN1/openssl/doc/openssl-ciphers.txt
+#	deleted:    ../../ASN1/openssl/output/.gitkeep
+#	deleted:    ../../ASN1/openssl/output/certs/.gitkeep
+#	deleted:    ../../ASN1/openssl/output/certs/sub-ca-1
+#	deleted:    ../../ASN1/openssl/output/certs/sub-ca-1.der
+#	deleted:    ../../ASN1/openssl/output/certs/sub-ca-1.pem
+#	deleted:    ../../ASN1/openssl/output/certs/subscriber-1.der
+#	deleted:    ../../ASN1/openssl/output/certs/subscriber-1.pem
+#	deleted:    ../../ASN1/openssl/output/crls/.gitkeep
+#	deleted:    ../../ASN1/openssl/output/dbs/.gitkeep
+#	deleted:    ../../ASN1/openssl/output/dbs/root-ca-1-index.txt
+#	deleted:    ../../ASN1/openssl/output/dbs/root-ca-1-index.txt.attr
+#	deleted:    ../../ASN1/openssl/output/dbs/root-ca-1-index.txt.attr.old
+#	deleted:    ../../ASN1/openssl/output/dbs/root-ca-1-index.txt.old
+#	deleted:    ../../ASN1/openssl/output/dbs/root-ca-1-serial.txt
+#	deleted:    ../../ASN1/openssl/output/dbs/root-ca-1-serial.txt.old
+#	deleted:    ../../ASN1/openssl/output/dbs/root-ca-3-index.txt
+#	deleted:    ../../ASN1/openssl/output/dbs/root-ca-3-index.txt.attr
+#	deleted:    ../../ASN1/openssl/output/dbs/root-ca-3-index.txt.attr.old
+#	deleted:    ../../ASN1/openssl/output/dbs/root-ca-3-index.txt.old
+#	deleted:    ../../ASN1/openssl/output/dbs/root-ca-3-serial.txt
+#	deleted:    ../../ASN1/openssl/output/dbs/root-ca-3-serial.txt.old
+#	deleted:    ../../ASN1/openssl/output/dbs/sub-ca-1-index.txt
+#	deleted:    ../../ASN1/openssl/output/dbs/sub-ca-1-index.txt.attr
+#	deleted:    ../../ASN1/openssl/output/dbs/sub-ca-1-index.txt.attr.old
+#	deleted:    ../../ASN1/openssl/output/dbs/sub-ca-1-index.txt.old
+#	deleted:    ../../ASN1/openssl/output/dbs/sub-ca-1-serial.txt
+#	deleted:    ../../ASN1/openssl/output/dbs/sub-ca-1-serial.txt.old
+#	deleted:    ../../ASN1/openssl/output/sks/.gitkeep
+#	deleted:    ../../ASN1/openssl/output/sks/root-ca-1.der
+#	deleted:    ../../ASN1/openssl/output/sks/root-ca-1.pem
+#	deleted:    ../../ASN1/openssl/output/sks/root-ca-3.pem
+#	deleted:    ../../ASN1/openssl/output/sks/sub-ca-1.pem
+#	deleted:    ../../ASN1/openssl/output/sks/subscriber-1.pem
+#	deleted:    ../../ASN1/openssl/output/tas/.gitkeep
+#	deleted:    ../../ASN1/openssl/output/tas/root-ca-1.der
+#	deleted:    ../../ASN1/openssl/output/tas/root-ca-1.pem
+#	deleted:    ../../ASN1/pdus/DFN-Verein_Certification_Authority_2.der
+#	deleted:    ../../ASN1/pdus/T-TeleSec_GlobalRoot_Class_2.der
+#	deleted:    ../../ASN1/pdus/ipgate_IPGate_SIT_SIT_cert_out.der
+#	deleted:    ../../ASN1/pdus/root-ca-1.der
+#	deleted:    ../../ASN1/pdus/rs-example-subscriber.der
+#	deleted:    ../../ASN1/pdus/sub-ca-1.der
+#	deleted:    ../../ASN1/pdus/subscriber-1.der
+#	deleted:    ../../ASN1/pdus/subscriber-with-crldp.der
+#	deleted:    ../../ASN1/pdus/www-google-com.der
+#	deleted:    ../../ASN1/x509.a1sproj
+#

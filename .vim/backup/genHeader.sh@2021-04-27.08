@@ -1,0 +1,13 @@
+xxd -i silver_certificates/root-ca-1.der > silver_certificates/root-ca-1.h
+xxd -i silver_certificates/sub-ca-1.h > silver_certificates/sub-ca-1.h
+xxd -i silver_certificates/subscriber-1.h > silver_certificates/subscriber-1.h
+
+
+./dasn1 silver_certificates/root-ca-1.der > dr2
+./dasn1 golden_certificates/root-ca-1.der > dr1
+
+./dasn1 silver_certificates/sub-ca-1.der > ds2
+./dasn1 golden_certificates/sub-ca-1.der > ds1
+
+./dasn1 silver_certificates/subscriber-1.der > dss2
+./dasn1 golden_certificates/subscriber-1.der > dss1

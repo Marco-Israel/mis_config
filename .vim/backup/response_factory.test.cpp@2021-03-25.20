@@ -1,0 +1,56 @@
+#include <catch2/catch.hpp>
+#include <gmock/gmock.h>
+#include <flatbuffers/flatbuffers.h>
+
+
+#include "libcsme/msg/client/iresponse_handler.h"
+#include "libcsme/msg/response_factory.h"
+#include "util/MockScopeGuard.hpp"
+
+namespace test {
+    namespace unit  {
+        namespace csme {
+            namespace msg  {
+                using namespace testing;
+                using ::csme::msg::FlatBufferBuilderPtr;
+                using ::csme::msg::ResponseFactory;
+
+                TEST_CASE( "libcsme/msg/response_factory" )
+                {
+                    ::csme::platform::secure_vector<uint8_t> certificate;
+                    ::csme::platform::secure_vector<uint8_t> finger_print;
+                    FlatBufferBuilderPtr expact = nullptr;
+
+
+                    SECTION("CrFeateCertDataResponse")
+                    {
+                   auto factoryData = ResponseFactory::CreateCertDataResponse(certificate, finger_print);
+                   uint32_t size = factoryData->GetSize();
+                   uint8_t* bufferPtr = factoryData->GetBufferPointer();
+
+                   REQUIRE(factoryData != nullptr);
+                   REQUIRE(0u != size);
+                   REQUIRE(nullptr!= bufferPtr);
+                    }
+
+
+                    SECTION("CreateDummyDataResponse")
+                    {
+                   auto factoryData = ResponseFactory::CreateCertDataDummyResponse();
+                   uint32_t size = factoryData->GetSize();
+                   uint8_t* bufferPtr = factoryData->GetBufferPointer();
+
+                   REQUIRE(factoryData != nullptr);
+                   REQUIRE(0u != size);
+                   REQUIRE(nullptr!= bufferPtr);
+                    }
+
+
+
+
+
+                }
+            }
+    }
+}
+}

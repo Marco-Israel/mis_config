@@ -1,0 +1,286 @@
+   0 1104: SEQUENCE {
+   4  981:   SEQUENCE {
+   8    3:     [0] {
+  10    1:       INTEGER 2
+         :       }
+  13   20:     INTEGER 6B 8D E7 8F 62 6F F3 80 1B 31 40 97 A1 28 82 3F 2D 34 64 79
+  35   10:     SEQUENCE {
+  37    8:       OBJECT IDENTIFIER ecdsaWithSHA384 (1 2 840 10045 4 3 3)
+         :       }
+  47  126:     SEQUENCE {
+  49   11:       SET {
+  51    9:         SEQUENCE {
+  53    3:           OBJECT IDENTIFIER countryName (2 5 4 6)
+  58    2:           PrintableString 'DE'
+         :           }
+         :         }
+  62   18:       SET {
+  64   16:         SEQUENCE {
+  66    3:           OBJECT IDENTIFIER stateOrProvinceName (2 5 4 8)
+  71    9:           UTF8String 'Somewhere'
+         :           }
+         :         }
+  82   16:       SET {
+  84   14:         SEQUENCE {
+  86    3:           OBJECT IDENTIFIER localityName (2 5 4 7)
+  91    7:           UTF8String 'Nowhere'
+         :           }
+         :         }
+ 100   22:       SET {
+ 102   20:         SEQUENCE {
+ 104    3:           OBJECT IDENTIFIER organizationalUnitName (2 5 4 11)
+ 109   13:           UTF8String 'My Department'
+         :           }
+         :         }
+ 124   49:       SET {
+ 126   47:         SEQUENCE {
+ 128    3:           OBJECT IDENTIFIER commonName (2 5 4 3)
+ 133   40:           UTF8String 'My Company Ltd., Sub-CA (20210322175318)'
+         :           }
+         :         }
+         :       }
+ 175   30:     SEQUENCE {
+ 177   13:       UTCTime 26/04/2021 16:04:33 GMT
+ 192   13:       UTCTime 26/05/2021 16:04:33 GMT
+         :       }
+ 207   94:     SEQUENCE {
+ 209   11:       SET {
+ 211    9:         SEQUENCE {
+ 213    3:           OBJECT IDENTIFIER countryName (2 5 4 6)
+ 218    2:           PrintableString 'DE'
+         :           }
+         :         }
+ 222   23:       SET {
+ 224   21:         SEQUENCE {
+ 226    3:           OBJECT IDENTIFIER stateOrProvinceName (2 5 4 8)
+ 231   14:           UTF8String 'Somewhere Else'
+         :           }
+         :         }
+ 247   21:       SET {
+ 249   19:         SEQUENCE {
+ 251    3:           OBJECT IDENTIFIER localityName (2 5 4 7)
+ 256   12:           UTF8String 'Unknown City'
+         :           }
+         :         }
+ 270   31:       SET {
+ 272   29:         SEQUENCE {
+ 274    3:           OBJECT IDENTIFIER commonName (2 5 4 3)
+ 279   22:           UTF8String 'Meeting Room 3rd Floor'
+         :           }
+         :         }
+         :       }
+ 303  118:     SEQUENCE {
+ 305   16:       SEQUENCE {
+ 307    7:         OBJECT IDENTIFIER ecPublicKey (1 2 840 10045 2 1)
+ 316    5:         OBJECT IDENTIFIER secp384r1 (1 3 132 0 34)
+         :         }
+ 323   98:       BIT STRING
+         :         04 55 4F 4D F1 6C 82 47 82 27 41 86 45 36 4B 85
+         :         86 D1 55 E1 6B 72 FC D2 8B 12 E2 05 E5 95 58 C5
+         :         06 9D AB 27 3F E1 14 75 F2 69 26 FB E0 0A 2F AF
+         :         F3 03 12 0C 0E C2 0D AF 7D B6 AD BF C1 87 11 4C
+         :         2A 1A 2E AF 31 1E D2 21 2D 35 7B F0 4C A2 3F A7
+         :         95 2E D0 3A FF 4A 05 24 08 CA F7 21 38 A2 8F 54
+         :         6A
+         :       }
+ 423  562:     [3] {
+ 427  558:       SEQUENCE {
+ 431   12:         SEQUENCE {
+ 433    3:           OBJECT IDENTIFIER basicConstraints (2 5 29 19)
+ 438    1:           BOOLEAN TRUE
+ 441    2:           OCTET STRING, encapsulates {
+ 443    0:             SEQUENCE {}
+         :             }
+         :           }
+ 445   14:         SEQUENCE {
+ 447    3:           OBJECT IDENTIFIER keyUsage (2 5 29 15)
+ 452    1:           BOOLEAN TRUE
+ 455    4:           OCTET STRING, encapsulates {
+ 457    2:             BIT STRING 5 unused bits
+         :               '101'B
+         :             }
+         :           }
+ 461   24:         SEQUENCE {
+ 463    3:           OBJECT IDENTIFIER certificatePolicies (2 5 29 32)
+ 468   17:           OCTET STRING, encapsulates {
+ 470   15:             SEQUENCE {
+ 472   13:               SEQUENCE {
+ 474   11:                 OBJECT IDENTIFIER '1 3 6 1 4 0 42 1 2 1 1 0'
+         :                 }
+         :               }
+         :             }
+         :           }
+ 487   29:         SEQUENCE {
+ 489    3:           OBJECT IDENTIFIER subjectKeyIdentifier (2 5 29 14)
+ 494   22:           OCTET STRING, encapsulates {
+ 496   20:             OCTET STRING
+         :               63 60 D1 C7 D3 39 50 95 DE 7F A7 63 79 13 D6 B4
+         :               8A 2D F1 BF
+         :             }
+         :           }
+ 518   31:         SEQUENCE {
+ 520    3:           OBJECT IDENTIFIER authorityKeyIdentifier (2 5 29 35)
+ 525   24:           OCTET STRING, encapsulates {
+ 527   22:             SEQUENCE {
+ 529   20:               [0]
+         :                 40 3F 47 93 1D 3C 6C 7C 26 E2 D2 22 E5 B9 72 93
+         :                 54 80 55 D5
+         :               }
+         :             }
+         :           }
+ 551   21:         SEQUENCE {
+ 553    3:           OBJECT IDENTIFIER extKeyUsage (2 5 29 37)
+ 558   14:           OCTET STRING, encapsulates {
+ 560   12:             SEQUENCE {
+ 562   10:               OBJECT IDENTIFIER '1 3 6 1 4 0 42 2 5 2 2'
+         :               }
+         :             }
+         :           }
+ 574  190:         SEQUENCE {
+ 577    3:           OBJECT IDENTIFIER cRLDistributionPoints (2 5 29 31)
+ 582  182:           OCTET STRING, encapsulates {
+ 585  179:             SEQUENCE {
+ 588  176:               SEQUENCE {
+ 591   13:                 [0] {
+ 593   11:                   [0] {
+ 595    9:                     [8] 2B 06 01 04 00 2A 02 04 01
+         :                     }
+         :                   }
+ 606  158:                 [2] {
+ 609  155:                   [4] {
+ 612  152:                     SEQUENCE {
+ 615   11:                       SET {
+ 617    9:                         SEQUENCE {
+ 619    3:                           OBJECT IDENTIFIER countryName (2 5 4 6)
+ 624    2:                           PrintableString 'DE'
+         :                           }
+         :                         }
+ 628   18:                       SET {
+ 630   16:                         SEQUENCE {
+ 632    3:                           OBJECT IDENTIFIER
+         :                             stateOrProvinceName (2 5 4 8)
+ 637    9:                           UTF8String 'Somewhere'
+         :                           }
+         :                         }
+ 648   16:                       SET {
+ 650   14:                         SEQUENCE {
+ 652    3:                           OBJECT IDENTIFIER localityName (2 5 4 7)
+ 657    7:                           UTF8String 'Nowhere'
+         :                           }
+         :                         }
+ 666   24:                       SET {
+ 668   22:                         SEQUENCE {
+ 670    3:                           OBJECT IDENTIFIER
+         :                             organizationName (2 5 4 10)
+ 675   15:                           UTF8String 'My Company Ltd.'
+         :                           }
+         :                         }
+ 692   22:                       SET {
+ 694   20:                         SEQUENCE {
+ 696    3:                           OBJECT IDENTIFIER
+         :                             organizationalUnitName (2 5 4 11)
+ 701   13:                           UTF8String 'My Department'
+         :                           }
+         :                         }
+ 716   49:                       SET {
+ 718   47:                         SEQUENCE {
+ 720    3:                           OBJECT IDENTIFIER commonName (2 5 4 3)
+ 725   40:                           UTF8String 'My Company Ltd., Sub-CA (20210322175318)'
+         :                           }
+         :                         }
+         :                       }
+         :                     }
+         :                   }
+         :                 }
+         :               }
+         :             }
+         :           }
+ 767   72:         SEQUENCE {
+ 769    3:           OBJECT IDENTIFIER subjectDirectoryAttributes (2 5 29 9)
+ 774   65:           OCTET STRING, encapsulates {
+ 776   63:             SEQUENCE {
+ 778   47:               SEQUENCE {
+ 780    3:                 OBJECT IDENTIFIER clearance (2 5 4 55)
+ 785   40:                 SET {
+ 787   38:                   SEQUENCE {
+ 789   11:                     OBJECT IDENTIFIER '1 3 6 1 4 0 42 1 2 1 1 0'
+ 802    2:                     BIT STRING 4 unused bits
+         :                       '1111'B
+ 806   19:                     SET {
+ 808   17:                       SEQUENCE {
+ 810    9:                         [0] 2B 06 01 04 00 2A 02 06 01
+ 821    4:                         [1] {
+ 823    2:                           PrintableString 'DE'
+         :                           }
+         :                         }
+         :                       }
+         :                     }
+         :                   }
+         :                 }
+ 827   12:               SEQUENCE {
+ 829    3:                 OBJECT IDENTIFIER objectClass (2 5 4 0)
+ 834    5:                 SET {
+ 836    3:                   OBJECT IDENTIFIER device (2 5 6 14)
+         :                   }
+         :                 }
+         :               }
+         :             }
+         :           }
+ 841  145:         SEQUENCE {
+ 844    3:           OBJECT IDENTIFIER subjectAltName (2 5 29 17)
+ 849  137:           OCTET STRING, encapsulates {
+ 852  134:             SEQUENCE {
+ 855  131:               [4] {
+ 858  128:                 SEQUENCE {
+ 861   11:                   SET {
+ 863    9:                     SEQUENCE {
+ 865    3:                       OBJECT IDENTIFIER countryName (2 5 4 6)
+ 870    2:                       PrintableString 'DE'
+         :                       }
+         :                     }
+ 874   18:                   SET {
+ 876   16:                     SEQUENCE {
+ 878    3:                       OBJECT IDENTIFIER localityName (2 5 4 7)
+ 883    9:                       UTF8String 'Stuttgart'
+         :                       }
+         :                     }
+ 894   33:                   SET {
+ 896   31:                     SEQUENCE {
+ 898    3:                       OBJECT IDENTIFIER organizationName (2 5 4 10)
+ 903   24:                       UTF8String 'Rohde & Schwarz SIT GmbH'
+         :                       }
+         :                     }
+ 929   58:                   SET {
+ 931   56:                     SEQUENCE {
+ 933    3:                       OBJECT IDENTIFIER commonName (2 5 4 3)
+ 938   49:                       UTF8String
+         :                   'Rohde $ Schwarz whishes you the best for the day'
+         :                   '!'
+         :                       }
+         :                     }
+         :                   }
+         :                 }
+         :               }
+         :             }
+         :           }
+         :         }
+         :       }
+         :     }
+ 989   10:   SEQUENCE {
+ 991    8:     OBJECT IDENTIFIER ecdsaWithSHA384 (1 2 840 10045 4 3 3)
+         :     }
+1001  105:   BIT STRING, encapsulates {
+1004  102:     SEQUENCE {
+1006   49:       INTEGER
+         :         00 A4 1E 26 56 71 A7 36 87 45 82 FF BD B7 6F 3D
+         :         2F 69 7F 69 7A 1D A0 5E DE BB BC 93 6D 26 A0 91
+         :         04 B6 03 4A 9A 9B 4F 0A 0D 8E 06 4F 62 B1 9C 11
+         :         7E
+1057   49:       INTEGER
+         :         00 AB C7 4C 90 EE C3 CE 0D D6 6A D1 08 28 F0 E9
+         :         15 34 5D 19 D0 E6 71 4B 12 50 81 C2 1D 0E 98 43
+         :         6A 6C 0B 03 DB 6F 89 9D 92 31 13 A6 5D C1 92 11
+         :         E9
+         :       }
+         :     }
+         :   }

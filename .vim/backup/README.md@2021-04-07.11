@@ -1,0 +1,83 @@
+## Table of contents
+* [General info](#general-info)
+* [Folder structure](#folder-structure)
+* [Scripts](#scripts)
+
+## General info
+This folder folds configuration files used by openssl tool to generate X509
+conform certificates by using. This configuration files are a mix of asn1 syntax
+elements and openssl specific syntax elements.
+
+## Folder structure
+This folder holds a couple of sup folders:
+* The folders with a dotted number are test cases.
+* The folder cnf holds the default configuration file.
+* ./create-certificates.sh is a script building the certificates. run --help to
+    get further information
+* ./test-runner.sh is a wrapper to ./create-certificates.sh. When first called
+    it sets up the test folder structure. When called again it will execute the
+    certificate generation process in the given testcase folder. Run --help for
+    more information.
+* doc holds some documentation about asn1 or the requirements related to this
+    project as also the schemata description files.
+* README.md is this file
+
+
+### The folder structure mentioned above
+    .
+    |-- 3.2.2.1_Extension_BasicConstraints
+    |   |-- 1_root_pathlen_0_su_cert_CA_true
+    |   `-- README
+    |-- <3....>_<..>
+    |   |-- ...
+    |   `-- README
+    |-- README.md
+    |-- cnf
+    |   |-- dn-name-policy.cnf
+    |   |-- oids.cnf
+    |   |-- root-ca-1.cnf
+    |   |-- sub-ca-1.cnf
+    |   `-- subscriber-1.cnf
+    |-- create-certificates.sh
+    |-- doc
+    |   |-- 01_Cryptlib\ -\ Request\ for\ Tender.pdf
+    |   |-- ...
+    |   |-- schematas
+    |       |-- X.500-family
+    |       |-- rfcs
+    |       |-- ...
+    `-- test-runner.sh
+
+
+
+### Test case folder naming and content
+Main Test folder:       <R.e.q.u.i.r.e.m.e.t.n.r>_<Requirement_name>
+README TEST-List:           |-> README
+Test Case folder:           |-> <TestNr>_<Testname>
+openssl-configuration:          |-> <root/sub/subscriber/...>.cnf
+openssl-result folder:          |-> output
+
+Example:.
+|-- 3.2.2.1_Extension_BasicConstraints
+|   |-- 1_root_pathlen_0_su_cert_CA_true
+|   |   |-- dn-name-policy.cnf
+|   |   |-- oids.cnf
+|   |   |-- output
+|   |   |-- root-ca-1.cnf
+|   |   |-- sub-ca-1.cnf
+|   |   `-- subscriber-1.cnf
+|   `-- README
+
+
+## Scripts
+This folder holds two scripts type <scritpname>.sh --help for further
+information
+
+### ./create-certificates.sh
+This is a script building the certificates. Run --help for further information
+
+### ./test-runner.sh
+This is a wrapper to ./create-certificates.sh. When first called it sets up the
+test folder structure. When called again it will execute the certificate
+generation process in the given test case folder. Run --help for more
+information.

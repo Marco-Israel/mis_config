@@ -1,0 +1,126 @@
+#
+# Sub CA for PKI Type 1
+#
+# Author: Matthias Nagel
+# Date: 2019-11-21
+#
+
+
+.include ./cnf/oids.cnf
+.include ./cnf/dn-name-policy.cnf
+
+
+[ default ]
+dir          = ./output
+ca           = sub_ca_1
+openssl_conf = openssl_init
+
+
+
+[ openssl_init ]
+oid_section  = additional_oids
+
+
+
+[ ca ]
+
+default_ca   = sub_ca_1
+
+
+
+[ sub_ca_1_dn ]
+
+countryName             = "DE"
+stateOrProvinceName     = "Somewhere"
+localityName            = "Nowhere"
+organizationName        = "My Company Ltd."
+organizationalUnitName  = "My Department"
+commonName              = "My Company Ltd., Sub-CA (20210322175318)"
+
+
+
+#
+# This settings apply if the CA creates a CR forits own CA certificate
+#
+[ req ]
+
+encrypt_key        = no
+utf8               = yes
+certificatePolicies    = ed7DocsScipTlcp10
+name_opt          = multiline,-esc_msb,utf8,use_quote  # Subject Name options
+cert_opt          = ca_default                         # Certificate field options
+copy_extensions   = copy                               # Copy extension from request, needed to copy the subjectAltName, but it is a security risk, because you might unintentionally copy unwanted extensions
+
+
+
+[ issued_extensions ]  # Defines the extensions that are added to issued certificates
+
+basicConstraints       = critical,CA:FALSE
+keyUsage               = critical,digitalSignature,keyEncipherment
+certificatePolicies    = ed7DocsScipTlcp10
+subjectKeyIdentifier   = hash
+authorityKeyIdentifier = keyid:always
+extendedKeyUsage       = id-kp-OCSPSigning
+crlDistributionPoints  = crlDistributionPoint1
+subjectDirectoryAttributes = ASN1:SEQUENCE:subject_dir_attributes
+
+
+[crlDistributionPoint1]
+fullname = RID:ed7DpTasklist
+CRLissuer = dirName:sub_ca_1_dn
+
+
+
+[ subject_dir_attributes ]
+attribute1 = SEQUENCE:subject_clearance
+attribute2 = SEQUENCE:subject_class
+
+
+
+[ subject_clearance ]
+
+type = OID:clearanceAttribute
+values = SET:subject_clearance_values
+
+
+
+[ subject_clearance_values ]
+
+value0 = SEQUENCE:subject_clearance_value_0
+
+
+
+[ subject_clearance_value_0 ]
+
+policyId = OID:ed7DocsScipTlcp10
+classList = FORMAT:BITLIST,BITSTRING:1,2,3,4
+securityCategories = SET:subject_clearance_value_0_security_categories
+
+
+
+[ subject_clearance_value_0_security_categories ]
+
+category0 = SEQUENCE:subject_clearance_value_0_information_domain
+
+
+
+[ subject_clearance_value_0_information_domain ]
+
+type = IMPLICIT:0,OID:ed7InformationDomain
+value = EXPLICIT:1,PRINTABLESTRING:DE
+
+
+[ subject_class ]
+
+type = OID:2.5.4.0    # Using the symbolic constant 'objectClassAttribute' instead of literal OID, results in parsing error. WTF?
+values = SET:subject_class_values
+
+
+[ subject_class_values ]
+
+value0 = OID:2.5.6.14    # Using the symbolic constant 'device' instead of literal OID, results in parsing error. WTF?
+
+
+
+##### EOF ######################################################################
+# vim:ft=sh

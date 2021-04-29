@@ -1,0 +1,165 @@
+CustomDefinitions DEFINITIONS IMPLICIT TAGS ::= BEGIN
+
+IMPORTS
+  certificateExtensions, authenticationFramework, algorithmObjectIdentifiers, informationFramework, selectedAttributeTypes, enhancedSecurity
+    FROM UsefulDefinitions {joint-iso-itu-t ds(5) module(1) usefulDefinitions(0) 8}
+
+  EXTENSION, ALGORITHM, dummyCurv
+    FROM AuthenticationFramework authenticationFramework
+
+  subjectDirectoryAttributes, subjectKeyIdentifier, keyUsage, privateKeyUsagePeriod,
+  subjectAltName, issuerAltName, basicConstraints, nameConstraints, cRLDistributionPoints,
+  certificatePolicies, policyMappings, authorityKeyIdentifier, policyConstraints, extKeyUsage
+      FROM CertificateExtensions certificateExtensions
+
+  authorityInfoAccess, subjectInfoAccess
+     FROM PKIX1Implicit88 { iso(1) identified-organization(3) dod(6) internet(1) security(5) mechanisms(5) pkix(7) id-mod(0) id-pkix1-implicit(19) }
+
+   mD5Algorithm, sha1Algorithm, sha224, sha256, sha384, sha512,
+   aes128-CBC, aes192-CBC, aes256-CBC,
+   rsaEncryptionAlgorithm,
+   keyExchangeAlgorithm,
+   dsa, ecPublicKey, ecDH, dh-public-numberAlgorithm,
+   sha1WithRSAEncryptionAlgorithm, sha224WithRSAEncryptionAlgorithm, sha256WithRSAEncryptionAlgorithm, sha384WithRSAEncryptionAlgorithm, sha512WithRSAEncryptionAlgorithm,
+   rSASSA-PSS,
+   dsa-with-sha224, dsa-with-sha256,
+   ecdsa-with-SHA224-Algorithm, ecdsa-with-SHA256-Algorithm, ecdsa-with-SHA384-Algorithm, ecdsa-with-SHA512-Algorithm,
+   hmacWithSHA224, hmacWithSHA256, hmacWithSHA384, hmacWithSHA512
+      FROM AlgorithmObjectIdentifiers algorithmObjectIdentifiers
+
+   ATTRIBUTE, objectClass
+      FROM InformationFramework informationFramework
+
+   clearance, SECURITY-CATEGORY
+      FROM EnhancedSecurity enhancedSecurity
+
+   countryName, stateOrProvinceName, localityName, organizationName, organizationalUnitName, commonName, serialNumber
+      FROM SelectedAttributeTypes selectedAttributeTypes;
+
+
+ExtensionSet EXTENSION ::= {
+   subjectDirectoryAttributes | -- id-ce-subjectDirectoryAttributes         OBJECT IDENTIFIER ::= {id-ce 9}
+   subjectKeyIdentifier |       -- id-ce-subjectKeyIdentifier               OBJECT IDENTIFIER ::= {id-ce 14}
+   keyUsage |                   -- id-ce-keyUsage                           OBJECT IDENTIFIER ::= {id-ce 15}
+   privateKeyUsagePeriod |      -- id-ce-privateKeyUsagePeriod              OBJECT IDENTIFIER ::= {id-ce 16}
+   subjectAltName |             -- id-ce-subjectAltName                     OBJECT IDENTIFIER ::= {id-ce 17}
+   issuerAltName |              -- id-ce-issuerAltName                      OBJECT IDENTIFIER ::= {id-ce 18}
+   basicConstraints |           -- id-ce-basicConstraints                   OBJECT IDENTIFIER ::= {id-ce 19}
+   nameConstraints |            -- id-ce-nameConstraints                    OBJECT IDENTIFIER ::= {id-ce 30}
+   cRLDistributionPoints |      -- id-ce-cRLDistributionPoints              OBJECT IDENTIFIER ::= {id-ce 31}
+   certificatePolicies |        -- id-ce-certificatePolicies                OBJECT IDENTIFIER ::= {id-ce 32}
+   policyMappings |             -- id-ce-policyMappings                     OBJECT IDENTIFIER ::= {id-ce 33}
+   authorityKeyIdentifier |     -- id-ce-authorityKeyIdentifier             OBJECT IDENTIFIER ::= {id-ce 35}
+   policyConstraints |          -- id-ce-policyConstraints                  OBJECT IDENTIFIER ::= {id-ce 36}
+   extKeyUsage |                -- id-ce-extKeyUsage                        OBJECT IDENTIFIER ::= {id-ce 37}
+   authorityInfoAccess |
+   subjectInfoAccess,
+   ...
+}
+
+SupportedSignatureAlgorithms ALGORITHM ::= {
+   sha1WithRSAEncryptionAlgorithm |       -- sic! An RSA signature is signalled as an RSA encryption
+   sha224WithRSAEncryptionAlgorithm |
+   sha256WithRSAEncryptionAlgorithm |
+   sha384WithRSAEncryptionAlgorithm |
+   sha512WithRSAEncryptionAlgorithm |
+   rSASSA-PSS |
+   dsa-with-sha224 |
+   dsa-with-sha256 |
+   ecdsa-with-SHA224-Algorithm |
+   ecdsa-with-SHA256-Algorithm |
+   ecdsa-with-SHA384-Algorithm |
+   ecdsa-with-SHA512-Algorithm
+}
+
+SupportedHashAlgorithms ALGORITHM ::= {
+   mD5Algorithm |
+   sha1Algorithm |
+   sha224 |
+   sha256 |
+   sha384 |
+   sha512
+}
+
+SupportedMACAlgorithms ALGORITHM ::= {
+   hmacWithSHA224 |
+   hmacWithSHA256 |
+   hmacWithSHA384 |
+   hmacWithSHA512
+}
+
+SupportedAsymmKeyTypes ALGORITHM ::= {
+   rsaEncryptionAlgorithm |       -- sic! This type identifies an RSA key, although its name contains "Algorithm". A true RSA-like algorithm starts with the name of a hash function, see SupportedSignatureAlgorithms
+   dsa |
+   ecPublicKey |
+   ecDH
+}
+
+SupportedSymmEncryptionAlgorithms ALGORITHM ::= {
+   aes128-CBC |
+   aes192-CBC |
+   aes256-CBC
+}
+
+SupportedDNAttributes ATTRIBUTE ::= {
+  countryName |
+  stateOrProvinceName |
+  localityName |
+  organizationName |
+  organizationalUnitName |
+  commonName |
+  serialNumber
+}
+
+SupportedSubjectDirectoryAttributes ATTRIBUTE ::= {
+  clearance |
+  objectClass
+}
+
+informationDomain SECURITY-CATEGORY ::= {
+  PrintableString IDENTIFIED BY ed7-information-domain
+}
+
+SecurityCategoriesTable SECURITY-CATEGORY ::= {
+  informationDomain,
+  ...
+}
+
+/*
+ * The following symbolic constants are not final
+ * They are placeholders to allow the prelimiary creation of certificates for development and testing
+ * They are only at the stage of a proposal and taken from the appendix C of the certificate policy.
+ */
+
+r-and-s-products        OBJECT IDENTIFIER ::= { 1 3 6 1 4 0 }
+elcrodat-7              OBJECT IDENTIFIER ::= { r-and-s-products 42 }
+
+ed7-documents           OBJECT IDENTIFIER ::= { elcrodat-7 1 }
+ed7-pki                 OBJECT IDENTIFIER ::= { elcrodat-7 2 }
+
+ed7-docs-pf             OBJECT IDENTIFIER ::= { ed7-documents 1 }
+ed7-docs-scip           OBJECT IDENTIFIER ::= { ed7-documents 2 }
+
+ed7-docs-scip-tlcp      OBJECT IDENTIFIER ::= { ed7-docs-scip 1 }
+ed7-docs-scip-tlcp-v10  OBJECT IDENTIFIER ::= { ed7-docs-scip-tlcp 1 0 }
+
+ed7-key-types           OBJECT IDENTIFIER ::= { ed7-pki 1 }
+ed7-key-parameters      OBJECT IDENTIFIER ::= { ed7-pki 2 }
+ed7-key-algorithms      OBJECT IDENTIFIER ::= { ed7-pki 3 }
+ed7-distribution-points OBJECT IDENTIFIER ::= { ed7-pki 4 }
+ed7-key-purposes        OBJECT IDENTIFIER ::= { ed7-pki 5 }
+ed7-values-types        OBJECT IDENTIFIER ::= { ed7-pki 6 }
+
+ed7-dp-tasklist         OBJECT IDENTIFIER ::= { ed7-distribution-points 1 }
+
+ed7-kp-platform         OBJECT IDENTIFIER ::= { ed7-key-purposes 1 }
+ed7-kp-scip             OBJECT IDENTIFIER ::= { ed7-key-purposes 2 }
+
+ed7-kp-scip-r-cc        OBJECT IDENTIFIER ::= { ed7-kp-scip 1 }
+ed7-kp-scip-s-cc        OBJECT IDENTIFIER ::= { ed7-kp-scip 2 }
+ed7-kp-scip-r-sgl       OBJECT IDENTIFIER ::= { ed7-kp-scip 3 }
+ed7-kp-scip-s-pd        OBJECT IDENTIFIER ::= { ed7-kp-scip 4 }
+
+ed7-information-domain  OBJECT IDENTIFIER ::= { ed7-values-types 1 }
+
+END

@@ -1,0 +1,80 @@
+#include <catch2/catch.hpp>
+#include <gmock/gmock.h>
+#include <flatbuffers/flatbuffers.h>
+
+#include "libcsme/msg/CryptoServiceResponse_generated.h"
+#include "libcsme/msg/client/heartbeat_response_handler.h"
+#include "libcsme/msg/response_factory.h"
+#include "mocks/libplatform/log/iloggermock.h"
+#include "util/MockScopeGuard.hpp"
+
+namespace test
+{
+namespace unit
+{
+    namespace csme
+    {
+        namespace msg
+        {
+            namespace
+            {
+                using namespace testing;
+                using ::csme::msg::FlatBufferBuilderPtr;
+                using ::csme::msg::ResponseFactory;
+                using pfsw::LogSeverity;
+
+                TEST_CASE( "libcsme/msg/client/HeartbeatResponseHandler" )
+                {
+                    auto logger     = std::make_shared<test::ILoggerMock>( );
+                    auto mock_guard = MockScopeGuard( *logger );
+
+                    ::csme::msg::HeartbeatResponseHandler dut( logger );
+
+                    SECTION( "NullResponse" )
+                    {
+                        EXPECT_CALL( *logger, LogMessage( LogSeverity::kError, _ ) ).Times( 1 );
+                        dut.HandleResponse( ::csme::msg::AnyResponse::Heartbeat, nullptr );
+                    }
+
+                    SECTION( "ResponseHandling" )
+                    {
+                        auto builder = ResponseFactory::CreateHeartbeatResponse( );
+
+                        const ::csme::msg::CryptoServiceResponse *response_fb =
+                            ::csme::msg::GetSizePrefixedCryptoServiceResponse( builder->GetBufferPointer( ) );
+
+                        REQUIRE( ::csme::msg::AnyResponse::Heartbeat == response_fb->response_type( ) );
+                        REQUIRE( dut.CanHandleResponse( response_fb->response_type( ) ) );
+                        REQUIRE( not dut.CanHandleResponse( ::csme::msg::AnyResponse::Certificate ) );
+
+                        EXPECT_CALL( *logger, LogMessage( LogSeverity::kError, _ ) ).Times( 0 );
+                        dut.HandleResponse( response_fb->response_type( ), response_fb );
+                    }
+
+                    SECTION( "WrongResponseType" )
+                    {
+                        auto builder =
+                            ResponseFactory::CreateRngErrorResponse( ::csme::msg::RngDataErrorType::UNKNOWN );
+
+                        const ::csme::msg::CryptoServiceResponse *response_fb =
+                            ::csme::msg::GetSizePrefixedCryptoServiceResponse( builder->GetBufferPointer( ) );
+
+                        EXPECT_CALL( *logger, LogMessage( LogSeverity::kError, _ ) ).Times( 1 );
+                        dut.HandleResponse( response_fb->response_type( ), response_fb );
+                    }
+                }
+
+                TEST_CASE ("libcsme/msg/client/src_libcsme_msg_response_factory")
+                {
+                    FlatBufferBuilderPtr expact= nullptr;
+                    ::csme::msg::AnyResponse::Certificate
+                    REQUIRE(0, )
+
+
+                }
+
+            } // namespace
+        }     // namespace msg
+    }         // namespace csme
+} // namespace unit
+} // namespace test

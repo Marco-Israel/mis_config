@@ -1,4 +1,3 @@
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set backup
 set undofile
@@ -325,9 +324,7 @@ autocmd BufFilePost,BufEnter,BufReadPost,FileReadPost,SessionLoadPost *.tex
 
 
  """ Deleat all Trailing Whitespace """"""""""""""""""""""""""""""""""""""""""""
-"autocmd TabClosed,BufLeave,VimLeave,VimLeavePre,WinLeave,BufWrite * :%s/\s\+$//e<CR>
-"autocmd BufLeave,VimLeave,VimLeavePre,BufWritePre * :call StripTrailingWhitespaces()
-autocmd VimLeavePre,BufWritePre * :call StripTrailingWhitespaces()
+autocmd VimLeavePre,BufWritePre * if &ft != "markdown" | :call StripTrailingWhitespaces()
 function! StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/

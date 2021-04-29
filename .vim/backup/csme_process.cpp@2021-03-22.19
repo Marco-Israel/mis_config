@@ -1,0 +1,253 @@
+#include "libcsme/csme_process.h"
+#include "libcryptoservice/version/version_generated.h"
+#include "libcsme/platform/log/macros.h"
+
+#include "libcryptoservice/cryptlib_crypto_core/crypto_core.h"
+#include "libcryptoservice/selftest_coordinator.h"
+
+namespace csme
+{
+constexpr auto kHelp = "help";
+constexpr auto kPort = "bind-port";
+constexpr auto kIPv4 = "ipv4-address";
+constexpr auto kIPv6 = "ipv6-address";
+
+constexpr auto kIpBindAddressAllOption  = "all";
+constexpr auto kIpBindAddressNoneOption = "none";
+
+// default values
+constexpr auto kPort_default = "42042";
+
+CsMeProcess::CsMeProcess( const char *const product_name )
+    : product_name_( product_name )
+    , bind_port_( 0U )
+{
+}
+
+const std::string CsMeProcess::GetProductName( ) const
+{
+    return product_name_;
+}
+
+int CsMeProcess::Main( int argc, char **argv ) //lint !e586 !e952 !e953 main() signature is the way it is
+{
+    std::cout << cryptoservice::version::GetVersion( product_name_.c_str( ) ) << std::endl;
+    ParseArguments( argc, argv );
+
+    if ( !Initialize( ) ) {
+        std::cerr << "Initialization failed" << std::endl;
+        return 1;
+    }
+
+    if ( !Run( ) ) {
+        std::cerr << "Run failed" << std::endl;
+        return 2;
+    }
+
+    std::cout << "Run terminated" << std::endl;
+    return 0;
+}
+
+void CsMeProcess::ParseArguments( int argc, char **argv ) //lint !e586 !e952 !e953 main() signature is the way it is
+{
+    try {
+        const auto options = CreateOptionParser( );
+        if ( !options ) {
+            std::exit( 2 ); //lint !e586 deprecation is not an issue here
+        }
+        auto result = options->parse( argc, argv );
+        ProcessOptionParserResult( options, result );
+
+    } catch ( const cxxopts::OptionException &e ) {
+        std::cout << "error parsing command line options: " << e.what( ) << ". Try --help." << std::endl;
+        std::exit( 3 ); //lint !e586 deprecation is not an issue here
+    }
+}
+
+PlatformProviderPtr CsMeProcess::GetPlatformProvider( )
+{
+    return platform_provider_;
+}
+
+void CsMeProcess::Terminate( )
+{
+    // cannot do anything here, if this should fail. Error will be reported from the inside.
+    IGNORE_RETURN_VALUE( crypto_service_->Deinitialize( ) );
+
+    if ( request_queue_ ) {
+        LOG_TRACE_STR( "Stopping request queue" );
+        request_queue_->Stop( );
+    }
+
+    if ( net_api_ ) {
+        LOG_TRACE_STR( "Stopping net api" );
+        if ( !net_api_->Stop( ) ) {
+            LOG_ERROR_STR( "Failed to stop network api!" );
+        }
+    }
+}
+
+bool CsMeProcess::Initialize( )
+{
+    platform_provider_ = CreatePlatformProvider( );
+    if ( !platform_provider_ ) {
+        return false;
+    }
+    log_ = platform_provider_->CreateLogger( "" );
+
+    crypto_service_ = std::make_shared<crypto_service::CryptoService>( platform_provider_ );
+    if ( !crypto_service_->Initialize( ) ) {
+        LOG_ERROR_STR( "Crypto Service initialization failed." );
+        return false;
+    }
+
+    auto startup_test = crypto_service::SelftestCoordinator( log_, crypto_service::crypto_core::CryptoCore::Get( ) );
+    if ( !startup_test.RunSelftests( ) ) {
+        LOG_ERROR_STR( "Error running startup tests" );
+        return false;
+    }
+
+    request_queue_ = std::make_shared<csme::msg::RequestQueue>( platform_provider_->CreateLogger( "CC " ) );
+    for ( auto &handler : CreateRequestHandlers( ) ) {
+        if ( !request_queue_->RegisterRequestHandler( handler ) ) {
+            LOG_ERROR_STR( "Error registering request handler" );
+            return false;
+        }
+    }
+
+    net_api_ = std::make_shared<csme::net::NetApi>( request_queue_, platform_provider_->CreateLogger( "NET" ) );
+    if ( !net_api_->SetTcpListenPort( bind_port_ ) ) {
+        LOG_ERROR_STR( "Error setting tcp bind port" );
+        return false;
+    }
+
+    asio::error_code ec;
+    if ( ipv4_bind_address_ == kIpBindAddressNoneOption ) {
+        if ( !net_api_->SetIpV4Endpoint( nullptr ) ) {
+            LOG_ERROR_STR( "Error disabling IPv4 endpoint" );
+            return false;
+        }
+    } else {
+        if ( ipv4_bind_address_ != kIpBindAddressAllOption ) {
+            const auto ipv4_endpoint = std::make_shared<asio::ip::tcp::endpoint>(
+                asio::ip::make_address_v4( ipv4_bind_address_, ec ), bind_port_ );
+            if ( ec ) {
+                LOG_ERROR_STR( "Error setting IPv4 bind address to '" + ipv4_bind_address_ + "': " + ec.message( ) );
+                return false;
+            }
+
+            if ( !net_api_->SetIpV4Endpoint( ipv4_endpoint ) ) {
+                LOG_ERROR_STR( "Error setting IPv4 endpoint" );
+                return false;
+            }
+        }
+    }
+
+    if ( ipv6_bind_address_ == kIpBindAddressNoneOption ) {
+        if ( !net_api_->SetIpV6Endpoint( nullptr ) ) {
+            LOG_ERROR_STR( "Error disabling IPv6 endpoint" );
+            return false;
+        }
+    } else {
+        if ( ipv6_bind_address_ != kIpBindAddressAllOption ) {
+            const auto ipv6_endpoint = std::make_shared<asio::ip::tcp::endpoint>(
+                asio::ip::make_address_v6( ipv6_bind_address_, ec ), bind_port_ );
+            if ( ec ) {
+                LOG_ERROR_STR( "Error setting IPv6 bind address to '" + ipv4_bind_address_ + "': " + ec.message( ) );
+                return false;
+            }
+            if ( !net_api_->SetIpV6Endpoint( ipv6_endpoint ) ) {
+                LOG_ERROR_STR( "Error setting IPv6 endpoint" );
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+bool CsMeProcess::Run( )
+{
+    if ( !net_api_ ) {
+        return false;
+    }
+
+    bool result = true;
+
+    const auto request_handler_thread = request_queue_->Start( );
+    if ( !request_handler_thread ) {
+        LOG_ERROR_STR( "Starting message handler failed" );
+        return false;
+    }
+    thread_pool_.push_back( request_handler_thread );
+
+    if ( !net_api_->Start( thread_pool_ ) ) {
+        LOG_ERROR_STR( "Starting network API failed" );
+        result = false;
+        request_queue_->Stop( );
+    }
+
+    for ( auto &thread : thread_pool_ ) {
+        thread->join( );
+    }
+
+   net_api_->ResetIoContext( );
+
+    return result;
+}
+
+std::shared_ptr<cxxopts::Options> CsMeProcess::CreateOptionParser( )
+{
+    try {
+        auto options = std::make_shared<cxxopts::Options>( "" );
+        RegisterHelpOptionGroup( "" );
+
+        // clang-format off
+        options->add_options()
+            ( "h," + std::string( kHelp ), "Print help" )
+            ( "b," + std::string( kPort ), "TCP listen port", cxxopts::value<uint16_t>( bind_port_ )->default_value( kPort_default ))
+            ( "4," + std::string( kIPv4 ), "IPv4 bind address. '" + std::string(kIpBindAddressNoneOption) + "' disables IPv4", cxxopts::value<std::string>( ipv4_bind_address_ )->default_value( kIpBindAddressAllOption ))
+            ( "6," + std::string( kIPv6 ), "IPv6 bind address. '" + std::string(kIpBindAddressNoneOption) + "' disables IPv6", cxxopts::value<std::string>( ipv6_bind_address_ )->default_value( kIpBindAddressAllOption ))
+            ;
+        clang-format on
+
+        return options;
+
+    } catch ( const cxxopts::OptionException &e ) {
+        std::cout << "error creation command line options parser: " << e.what( ) << std::endl;
+        return nullptr;
+    }
+}
+
+void CsMeProcess::ProcessOptionParserResult( const std::shared_ptr<cxxopts::Options> options,
+                                             cxxopts::ParseResult &                  result )
+{
+    if ( result.count( kHelp ) > 0U ) {
+        std::cout << options->help( help_option_groups_ ) << std::endl;
+        std::exit( 0 ); //lint !e586 deprecation is not an issue here
+    }
+
+    if ( ipv4_bind_address_ == kIpBindAddressNoneOption ) {
+        if ( ipv6_bind_address_ == kIpBindAddressNoneOption ) {
+            std::cout << "All tcp bind addresses are disabled, exiting." << std::endl;
+            std::exit( 0 ); //lint !e586 deprecation is not an issue here
+        }
+    }
+}
+
+void CsMeProcess::RegisterAdditionalThread( ThreadPtr thread )
+{
+    thread_pool_.push_back( std::move( thread ) );
+}
+
+uint16_t CsMeProcess::GetBindPort( ) const
+{
+    return bind_port_;
+}
+
+void CsMeProcess::RegisterHelpOptionGroup( const std::string option_group_name )
+{
+    help_option_groups_.push_back( option_group_name );
+}
+
+} // namespace csme

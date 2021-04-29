@@ -1,0 +1,215 @@
+## Table of contents
+* [General info](#general-info)
+* [Folder structure](#folder-structure)
+* [Scripts](#scripts)
+
+## General info
+This folder folds configuration files used by openssl tool to generate X509
+conform certificates by using. This configuration files are a mix of asn1 syntax
+elements and openssl specific syntax elements.
+
+## Folder structure
+This folder holds a couple of sup folders. Most of them are test-cases expact
+the folder cnf which holds the default configuration file.
+
+### Folder naming and structure
+Main Test folder:       <R.e.q.u.i.r.e.m.e.t.n.r>_<Requirement_name>
+README TEST-List:           |-> README
+Test Case folder:           |-> <TestNr>_<Testname>
+openssl-configuration:          |-> <root/sub/subscriber/...>.cnf
+openssl-result folder:          |-> output
+.
+|-- 3.2.2.1_Extension_BasicConstraints
+|   |-- 1_root_pathlen_0_su_cert_CA_true
+|   |   |-- dn-name-policy.cnf
+|   |   |-- oids.cnf
+|   |   |-- output
+|   |   |-- root-ca-1.cnf
+|   |   |-- sub-ca-1.cnf
+|   |   `-- subscriber-1.cnf
+|   `-- README
+|-- 3.2.2.2_Extension_CertificatePolicies
+|   |-- 1_multi_policyInformation_entries
+|   |   |-- dn-name-policy.cnf
+|   |   |-- oids.cnf
+|   |   |-- output
+|   |   |-- root-ca-1.cnf
+|   |   |-- sub-ca-1.cnf
+|   |   `-- subscriber-1.cnf
+|   `-- README
+|-- 3.2.2.4_Extension_ExtendedKeyUsage
+|   |-- 1_invalide_OIDS
+|   |   |-- dn-name-policy.cnf
+|   |   |-- oids.cnf
+|   |   |-- output
+|   |   |-- root-ca-1.cnf
+|   |   |-- sub-ca-1.cnf
+|   |   `-- subscriber-1.cnf
+|   |-- 2_rfc_conform_OIDs_but_this_OIDs_are_not_vaild_for_this_project
+|   |   |-- dn-name-policy.cnf
+|   |   |-- oids.cnf
+|   |   |-- output
+|   |   |-- root-ca-1.cnf
+|   |   |-- sub-ca-1.cnf
+|   |   `-- subscriber-1.cnf
+|   |-- 3_a_lower_certificate_with_more_extended_key_usages
+|   |   |-- dn-name-policy.cnf
+|   |   |-- oids.cnf
+|   |   |-- output
+|   |   |-- root-ca-1.cnf
+|   |   |-- sub-ca-1.cnf
+|   |   `-- subscriber-1.cnf
+|   |-- README
+|   `-- output
+|       |-- certs
+|       |-- compiler.log
+|       |-- dbs
+|       |-- hu
+|       |-- sks
+|       `-- tas
+|-- 3.2.2.5_Extension_SubjectKeyIdentifier
+|   |-- 1_deleate_subjectKeyIdentifier_and_authorityKeyIdentifier_in_root
+|   |   |-- dn-name-policy.cnf
+|   |   |-- oids.cnf
+|   |   |-- output
+|   |   |-- root-ca-1.cnf
+|   |   |-- sub-ca-1.cnf
+|   |   `-- subscriber-1.cnf
+|   `-- README
+|-- 3.2.2.7_Extension_CRLDistributionPoints
+|   |-- 1_requirements_oposide__noFullName_multichoice_withReason_scrlIssuerOtherName
+|   |   |-- dn-name-policy.cnf
+|   |   |-- oids.cnf
+|   |   |-- output
+|   |   |-- root-ca-1.cnf
+|   |   |-- sub-ca-1.cnf
+|   |   `-- subscriber-1.cnf
+|   `-- README
+|-- 3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance
+|   |-- 1_different_clearanceBitmask_in_root_and_sub
+|   |   |-- dn-name-policy.cnf
+|   |   |-- oids.cnf
+|   |   |-- output
+|   |   |-- root-ca-1.cnf
+|   |   |-- sub-ca-1.cnf
+|   |   `-- subscriber-1.cnf
+|   |-- 2_clearance_not_implemented_in_root
+|   |   |-- dn-name-policy.cnf
+|   |   |-- oids.cnf
+|   |   |-- output
+|   |   |-- root-ca-1.cnf
+|   |   |-- sub-ca-1.cnf
+|   |   `-- subscriber-1.cnf
+|   |-- 3_gaps_in_clearance_bitmask
+|   |   |-- dn-name-policy.cnf
+|   |   |-- oids.cnf
+|   |   |-- output
+|   |   |-- root-ca-1.cnf
+|   |   |-- sub-ca-1.cnf
+|   |   `-- subscriber-1.cnf
+|   |-- 4_securityCategory_value_with_OID_instead_printableString
+|   |   |-- dn-name-policy.cnf
+|   |   |-- oids.cnf
+|   |   |-- output
+|   |   |-- root-ca-1.cnf
+|   |   |-- sub-ca-1.cnf
+|   |   `-- subscriber-1.cnf
+|   |-- 5_multi_securityCategory
+|   |   |-- dn-name-policy.cnf
+|   |   |-- oids.cnf
+|   |   |-- output
+|   |   |-- root-ca-1.cnf
+|   |   |-- sub-ca-1.cnf
+|   |   `-- subscriber-1.cnf
+|   `-- README
+|-- README.md
+|-- cnf
+|   |-- dn-name-policy.cnf
+|   |-- oids.cnf
+|   |-- root-ca-1.cnf
+|   |-- sub-ca-1.cnf
+|   `-- subscriber-1.cnf
+|-- create-certificates.sh
+|-- doc
+|   |-- 01_Cryptlib\ -\ Request\ for\ Tender.pdf
+|   |-- 02_Specification\ for\ cryptlib\ work\ V_1_3.pdf
+|   |-- 03_Zertifikatsrichtlinie_ED7_SCIP.pdf
+|   |-- 04_CS_Requirements_Doors_Export.pdf
+|   |-- 05_ASN1-X509-Pr\303\244sentation.pdf
+|   |-- examplePDU
+|   |   |-- DFN-Verein_Certification_Authority_2.der
+|   |   |-- T-TeleSec_GlobalRoot_Class_2.der
+|   |   |-- ipgate_IPGate_SIT_SIT_cert_out.der
+|   |   |-- root-ca-1.der
+|   |   |-- rs-example-subscriber.der
+|   |   |-- sub-ca-1.der
+|   |   |-- subscriber-1.der
+|   |   |-- subscriber-with-crldp.der
+|   |   `-- www-google-com.der
+|   `-- openssl-ciphers.txt
+|-- schematas
+|   |-- CompilerDirectives.asn
+|   |-- X.500-family
+|   |   |-- AlgorithmObjectIdentifiers.asn
+|   |   |-- AttributeCertificateDefinitions.asn
+|   |   |-- AuthenticationFramework.asn
+|   |   |-- BasicAccessControl.asn
+|   |   |-- CertificateExtensions.asn
+|   |   |-- CommonProtocolSpecification.asn
+|   |   |-- DSAOperationalAttributeTypes.asn
+|   |   |-- DirectoryAbstractService.asn
+|   |   |-- DirectoryOSIProtocols.asn
+|   |   |-- DirectoryOperationalBindingTypes.asn
+|   |   |-- DirectoryShadowAbstractService.asn
+|   |   |-- DistributedOperations.asn
+|   |   |-- EnhancedSecurity.asn
+|   |   |-- ExtensionAttributes.asn
+|   |   |-- HierarchicalOperationalBindings.asn
+|   |   |-- InformationFramework.asn
+|   |   |-- LdapSystemSchema.asn
+|   |   |-- Lightweight-Directory-Access-Protocol-V3.asn
+|   |   |-- OSIProtocolSpecification.asn
+|   |   |-- OperationalBindingManagement.asn
+|   |   |-- PasswordPolicy.asn
+|   |   |-- PkiPmiExternalDataTypes.asn
+|   |   |-- SchemaAdministration.asn
+|   |   |-- SelectedAttributeTypes.asn
+|   |   |-- SelectedObjectClasses.asn
+|   |   |-- ServiceAdministration.asn
+|   |   |-- SpkmGssTokens.asn
+|   |   `-- UsefulDefinitions.asn
+|   |-- custom
+|   |   `-- CustomDefinitions.asn
+|   |-- rfcs
+|   |   |-- rfc3279.asn
+|   |   |-- rfc4055.asn
+|   |   |-- rfc5280.asn
+|   |   `-- rfc5480.asn
+|   `-- x.521-2016-10.form_desc.full
+|       |-- AttributeCertificateDefinitions.asn
+|       |-- AuthenticationFramework.asn
+|       |-- BasicAccessControl.asn
+|       |-- CertificateExtensions.asn
+|       |-- CommonProtocolSpecification.asn
+|       |-- DSAOperationalAttributeTypes.asn
+|       |-- DirectoryAbstractService.asn
+|       |-- DirectoryOSIProtocols.asn
+|       |-- DirectoryOperationalBindingTypes.asn
+|       |-- DirectoryShadowAbstractService.asn
+|       |-- DistributedOperations.asn
+|       |-- EnhancedSecurity.asn
+|       |-- InformationFramework.asn
+|       |-- Lightweight-Directory-Access-Protocol-V3.asn
+|       |-- OSIProtocolSpecification.asn
+|       |-- OperationalBindingManagement.asn
+|       |-- PasswordPolicy.asn
+|       |-- PkiPmiExternalDataTypes.asn
+|       |-- SchemaAdministration.asn
+|       |-- SelectedAttributeTypes.asn
+|       |-- SelectedObjectClasses.asn
+|       |-- ServiceAdministration.asn
+|       |-- SpkmGssTokens.asn
+|       `-- UsefulDefinitions.asn
+`-- test-runner.sh
+
+44 directories, 148 files

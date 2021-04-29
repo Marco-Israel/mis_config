@@ -1,0 +1,8 @@
+#ifndef  DUMPASN1_H_
+#define DUMPASN1_H_
+
+#include <stdio.h>
+
+extern int dumpasn1( unsigned char* buffer, unsigned int offset );
+
+#endif /*DUMPASN1_H_ */

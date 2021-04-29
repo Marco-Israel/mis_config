@@ -1,0 +1,58 @@
+#!/bin/sh
+#
+# Author: Matthias Nagel
+# Date: 2019-11-21
+set -ex
+
+BASE_NAME=""
+CR_FILE="/tmp/tmp-cr"
+CA_CNF_FILE=""
+CNF_FILE=""
+KEY_FILE=$CR_FILE
+CERT_FILE=""
+CNF_DIR="./cnf"
+KEY_DIR="./output/sks"
+CERT_DIR="./output/certs"
+TA_DIR="./output/tas"
+
+
+_setup_privateKey() {
+    openssl ecparam -name secp384r1 -genkey -noout -out $KEY_FILE.pem
+    openssl req -new -utf8 -config $CNF_FILE.cnf -key $KEY_FILE.pem -out $CR_FILE.pem
+}
+
+# Create Root CA certificate
+# ecparam:  Generates a private key key *.pen from an elliptic curve (EC)
+# req:  Creates certificate in PKCS#10 format and (or) can create self
+#       signed certificates for use as root CAs for example.
+# ca:   Sign certificate given by teh input.
+# x509: Converts the just created certificate to an x509 standard.
+BASE_NAME="root-ca-1"
+CA_CNF_FILE="${CNF_DIR}/${BASE_NAME}"
+CNF_FILE=$CA_CNF_FILE
+CERT_FILE="${TA_DIR}/${BASE_NAME}"
+touch "./output/dbs/${BASE_NAME}-index.txt"
+openssl ca -batch -selfsign -utf8 -config $CA_CNF_FILE.cnf \
+           -extensions self_issued_extensions -create_serial \
+           -in $CR_FILE.pem -notext -out $CERT_FILE.pem
+openssl x509 -inform PEM -in $CERT_FILE.pem -outform DER -out $CERT_FILE.der
+
+
+# Create Sub CA certificate
+BASE_NAME="sub-ca-1"
+CA_CNF_FILE="${CNF_DIR}/root-ca-1"
+CNF_FILE="${CNF_DIR}/${BASE_NAME}"
+CERT_FILE="${CERT_DIR}/${BASE_NAME}"
+touch "./output/dbs/${BASE_NAME}-index.txt"
+openssl ca -batch -utf8 -config $CA_CNF_FILE.cnf -create_serial \
+           -in $CR_FILE.pem -notext -out $CERT_FILE.pem
+openssl x509 -inform PEM -in $CERT_FILE.pem -outform DER -out $CERT_FILE.der
+
+# Create a subscriber certificate
+BASE_NAME="subscriber-1"
+CA_CNF_FILE="${CNF_DIR}/sub-ca-1"
+CNF_FILE="${CNF_DIR}/${BASE_NAME}"
+CERT_FILE="${CERT_DIR}/${BASE_NAME}"
+openssl ca -batch -utf8 -config $CA_CNF_FILE.cnf -create_serial \
+           -in $CR_FILE.pem -notext -out $CERT_FILE.pem
+openssl x509 -inform PEM -in $CERT_FILE.pem -outform DER -out $CERT_FILE.der

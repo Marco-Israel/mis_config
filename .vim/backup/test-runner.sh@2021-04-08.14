@@ -1,0 +1,107 @@
+#!/bin/bash
+
+_usage() {
+cat <<-EOF
+                "${0##*/}"
+################################################################################
+
+@author     Marco Israel (MI)
+@date       2021
+@brief      Geberate a certificate test folder and run the creation script.
+@detail     If the testfolder and testcase already exists, the script will only
+            Execute the test. In both cases:
+            - the results will be copied into the testcase folder called output
+            - The compiler log file will be saved into the outpudfolder
+            - Beside the keys and certificatess also a human readlbe certificate
+              is placed into the output/hu folder
+            - The testlist README file will gets open so you can update it
+            - The new tree or changed files will be commited to git finaly
+
+
+  USAGE:
+ "${0##*/} <testName> <testCase>
+
+ @example
+ "${0##*/} 1.2.3.4_myRequirement 1_my_test_case
+
+################################################################################
+# END OF HELP.
+EOF
+}
+
+
+
+_gen_readme() {
+cat <<-EOF > "$1/$2"/README
+TEST
+"$1"
+--------------------------------------------------------------------------------
+REQUIRED SCOPE:
+
+1.
+TODO the kind to test out of the required text part.
+
+
+--------------------------------------------------------------------------------
+TESTLIST:
+
+1_TODO_test_name
+TODO Test description. E.g. what is the test defining in configuration files.
+
+
+--------------------------------------------------------------------------------
+1_TODO_test_name
+
+EXPECT:
+TODO what result is expacted. E.g. the Result mentiond out in manuals
+
+RESULT
+TRUE or FALSE
+TODO in case of FALSE (result not equivalent to the expactation) a result
+description. In case of TRUE no further explanation is needed.
+
+
+--- EOF ------------------------------------------------------------------------
+EOF
+}
+
+
+
+### MAIN #######################################################################
+
+if [ "$#" -eq  2 ]
+then
+    NAME="$1"
+
+    if [ ! -d $NAME ]
+    then
+    echo "NEW REQUIRED"
+        mkdir "$NAME"
+        _gen_readme "$NAME"
+    fi
+
+    if [ ! -d $NAME/$2 ]
+    then
+        echo "NEW TESTCASE"
+        cp -r cnf "$NAME/$2"
+        git checkout cnf
+    else
+        rm -rf "$NAME/$2"/output
+    fi
+
+
+     ./create-certificates.sh "$NAME/$2" 1> /tmp/tmp.log 2>&1
+
+     mv ./output "$NAME/$2/"
+     mv /tmp/tmp.log "$NAME/$2/"output/compiler.log
+     cat "$NAME/$2/"output/compiler.log
+
+     vim "$NAME/README"
+     git add "$NAME"
+     git commit "$NAME" -m "ADD INIT TEST [$NAME]"
+
+else
+    _usage
+fi
+
+### EOF ########################################################################

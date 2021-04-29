@@ -1,0 +1,47 @@
+TEST
+3.2.2.1	Extension BasicConstraints
+--------------------------------------------------------------------------------
+REQUIRED SCOPE:
+
+1.
+A CA certificate must include the basicConstraints name with the CA parameter
+set to TRUE. An end-user certificate must either have CA:FALSE or omit the
+extension entirely.
+
+2.
+The pathlen parameter specifies the maximum number of CAs
+that can appear below this one in a chain. A pathlen of zero means the CA
+cannot sign any sub-CA's, and can only sign end-entity certificates.
+
+
+--------------------------------------------------------------------------------
+TESTLIST:
+
+1.
+* Define a root-ca configuration with pathlen of 0
+* Additional define a sub end-user certificate configuration with CA parameter
+  sets to TRUE
+
+
+--------------------------------------------------------------------------------
+EXPACT:
+
+1.
+openssl should NOT be able to generate a sub certificate because sub is not
+  allowed to be a CA (defined by the parameter CA=TRUE) when root pathlen is 0
+
+according to man 5 x509v3_config:
+"The pathlen parameter indicates the maximum number of CAs that can appear below
+this one in a chain. So if you have a CA with a pathlen of zero it can only be
+used to sign end user certificates and not further CAs."
+
+
+--------------------------------------------------------------------------------
+RESULT:
+All certificates gets generated without any error notification by openssl.
+
+
+--- EOF ------------------------------------------------------------------------
+
+
+

@@ -1,0 +1,5 @@
+add_subdirectory(cryptlib_crypto_core)
+add_subdirectory(importers)
+add_subdirectory(util)
+add_subdirectory(tools)
+add_subdirectory(generatorse)

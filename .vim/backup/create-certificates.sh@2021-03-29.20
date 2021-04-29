@@ -1,0 +1,94 @@
+#!/bin/sh
+set -e
+################################################################################
+# @Author:  Matthias Nagel, Marco israel
+#ö@Date:    2019-11-21
+# @Brief    Generate PKI Key pairs and certificates by use of openssl tools.
+################################################################################
+
+DIR_CONFIG="./cnf"
+DIR_KEY="./output/sks"
+DIR_CERT="./output/certs"
+DIR_DBS="./output/dbs"
+DIR_TAS="./output/tas"
+
+_generateCertificate() {
+    THIS=$1
+    CA=$2
+
+    echo ""
+    echo "====================================================================="
+    echo "Create $THIS certificate"
+    echo "====================================================================="
+
+    touch "$DIR_DBS/${BASE_NAME}-index.txt"
+
+    # ecparam:  Generates a private key key *.pen from an elliptic curve (EC)
+    openssl ecparam -name secp384r1 -genkey -noout -out "$DIR_KEY/$THIS.pem"
+
+    # req:  Creates certificate in PKCS#10 format and (or) can create self
+    #       signed certificates for use as root CAs for example.
+    openssl req -new -utf8 -config "$DIR_CONFIG/$THIS".cnf \
+            -key "$DIR_KEY/$THIS.pem" -out $DIR_CERT/$THIS.pem
+
+    if [ $THIS = $CA ]
+    then
+        # ca:   Sign ROOT certificate given by the input.
+        # The self signed root CA certificate needs to include the extensions
+        openssl ca -batch -utf8 -config "$DIR_CONFIG/$CA.cnf" -create_serial \
+                   -extensions self_issued_extensions -selfsign  \
+                   -in "$DIR_CERT/$THIS.pem" -notext -out $DIR_CERT/$THIS.pem
+
+ cp $DIR_CERT/$THIS.pem $DIR_TAS/$THIS.pem
+
+    else
+        # ca:   Sign USER certificate given by the input.
+        openssl ca -batch -utf8 -config "$DIR_CONFIG/$CA.cnf" -create_serial \
+                    -in "$DIR_CERT/$THIS.pem" -notext -out "$DIR_CERT/$THIS.pem"
+    fi
+
+        openssl x509 -in "$DIR_CERT/$THIS.pem" \
+            -outform DER -out "$DIR_CERT/$THIS.der"
+
+    echo "====================================================================="
+}
+
+# Create Root CA certificate
+_createCA_root() {
+    BASE_NAME="root-ca-1"
+    CACONF_FILE="${BASE_NAME}"
+
+    _generateCertificate $BASE_NAME $CACONF_FILE
+}
+
+_createCA_sub() {
+    # Create Sub CA certificate
+    BASE_NAME="sub-ca-1"
+    CACONF_FILE="root-ca-1"
+    _generateCertificate $BASE_NAME $CACONF_FILE
+}
+
+
+_createCA_subscriber() {
+    # Create a subscriber certificate
+    BASE_NAME="subscriber-1"
+    CACONF_FILE="sub-ca-1"
+
+    _generateCertificate $BASE_NAME $CACONF_FILE
+}
+
+
+##### MAIN #####################################################################
+rm -rf ./output
+mkdir -p $DIR_TAS
+mkdir -p $DIR_KEY
+mkdir -p $DIR_DBS
+mkdir -p $DIR_CERT
+
+_createCA_root
+
+_createCA_sub
+
+_createCA_subscriber
+################################################################################
+

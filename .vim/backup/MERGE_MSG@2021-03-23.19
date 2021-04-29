@@ -1,0 +1,18 @@
+FIX [ED7SW-1492] TEST [Advanced-Communication]
+
+DETAIL:
+* EXPECT_CALL macro does not free its shared_pointer reference all
+  the time in time. We need to do it manual when using such pointers
+  in tests.
+* Because of using threads, some timings are to hard before tests are
+  verified before all threads are are terminated. That ends  up in
+  falling testcasee when the CPU load is very high.
+
+
+Merge branch 'test_advanced_communication' into israelM/ED7SW-1492/Advanced-Communication
+
+# Please enter a commit message to explain why this merge is necessary,
+# especially if it merges an updated upstream into a topic branch.
+#
+# Lines starting with '#' will be ignored, and an empty message aborts
+# the commit.

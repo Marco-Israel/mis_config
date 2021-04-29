@@ -1,0 +1,115 @@
+#!/bin/bash
+
+
+################################################################################
+# @brief    Help
+################################################################################
+_usage() {
+cat <<-EOF
+                "${0##*/}"
+################################################################################
+
+@author     Marco Israel (MI)
+@date       2021
+@brief      Recursive batch wrapper to the correspondig python script.
+
+@attention      NOTE:   You need to produce the human readable output before.
+                        E-g. by verbose call './create-certificates.sh -v [...]'
+
+@details
+This is a *python3* script to get a diff from two human readable
+certificate txt files.  This is useful if you generate certificates from
+modified *openssl_configs*.  Run --help will give you some more details.
+
+How to generate human readable certificates see *./create-certificates.sh
+--verbose*.  See also *./clone_config.sh* and *./chain_diff_human_readable.sh*
+in case you like to create a modified copy of openssl_configs
+
+  USAGE:
+ "${0##*/} <path/golden_output>  <path/silver_output>   [ -h, -c, -n ]
+    -h / --help     Show this help.
+    -c / --clean    Remove the old log file. Default: extend the log file.
+    -n / --none / --nooutput    Output only to stdout. No output to a log file.
+
+ @example
+    Compare multi certificates and store the differances in a clean logfile
+ "${0##*/}      <path>/<folder_name> -c
+
+    Don't store the differances in a logfile. Only print it on stdout (and
+    redirect it manual to an other_path and other_folder_name).
+ "${0##*/}      -n  > ./<other_path>/<other_folder_name>
+
+################################################################################
+# END OF HELP.
+EOF
+}
+
+
+
+################################################################################
+# @brief    Main
+################################################################################
+_main(){
+    if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ "$1" = "-help" ]
+    then
+        _usage
+        exit 0
+    fi
+
+    if [ -d "$1"/human_readables ]
+    then
+        PATH_GOLDEN_CERTS="$1"/human_readables
+    else
+        PATH_GOLDEN_CERTS="$1"
+    fi
+
+
+    if [ -d "$2"/human_readables ]
+    then
+        PATH_SILVER_CERTS="$2"/human_readables
+    else
+        PATH_SILVER_CERTS="$2"
+    fi
+
+
+    if [ ! "$3" ]
+    then
+        FILE_COMPARE_LOG=./certificate_compare.log
+    else
+        if [ ! "$3" = "-n" ] && [ ! "$3" = "--none" ] && [ ! "$3" = "-none" ]  \
+           &&  [ ! "$3" = "--nooutput" ] &&  [ ! "$3" = "-nooutput" ]
+        then
+            FILE_COMPARE_LOG=$3
+        else
+            FILE_COMPARE_LOG="/dev/null"
+        fi
+    fi
+
+
+    if [ "$2" = "-c" ] || [ "$2" = "--clean" ]
+    then
+        rm $FILE_COMPARE_LOG
+    fi
+
+    echo "GOLDEN certificate path:  $PATH_GOLDEN_CERTS" >> $FILE_COMPARE_LOG
+    echo "SILVER certificate path:  $PATH_SILVER_CERTS" >> $FILE_COMPARE_LOG
+
+    CERT_NAMES=("root-ca-1.cert.txt"    \
+        "sub-ca-1.cert.txt"             \
+        "subscriber-1.cert.txt")
+
+    for (( i = 0; i < ${#CERT_NAMES[@]}; i++ )); do
+
+        echo "" >> $FILE_COMPARE_LOG
+        echo "############################################" >> $FILE_COMPARE_LOG
+        echo    CERTIFICATES:  ${CERT_NAMES[$i]} >> $FILE_COMPARE_LOG
+        echo "############################################" >> $FILE_COMPARE_LOG
+
+        python3 ./diff_human_readable.py    \
+        $PATH_GOLDEN_CERTS/${CERT_NAMES[$i]}    \
+        $PATH_SILVER_CERTS/${CERT_NAMES[$i]} | tee -a $FILE_COMPARE_LOG
+    done
+}
+_main $1 $2 $3
+
+### EOF ########################################################################

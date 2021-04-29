@@ -1,0 +1,35 @@
+# !/bin/bash
+################################################################################
+# @file stressTest.sh
+# @brief    Stresstest: Run all tests in a loop with increasing cpu load
+# @author Marco Israel
+# @version GIT
+# @date 2021-03-23
+# --rerun-failed
+# --repeat-until-fail <n>
+# ----extra-verbose
+# --debug
+# -- parallel <n>
+# --test-load 100
+################################################################################
+
+##### MAIN #####################################################################
+make -j 16
+
+for i in {1..100}
+do
+    ctest --output-on-failure --extra-verbose \
+        --rerun-failed  --repeat-until-fail 100
+    if [ $? -eq 0 ]
+    then
+        echo TRUE
+    else
+        echo Testrun $i FIALED
+        killall yes
+        break
+    fi
+    yes > /dev/null &
+ done
+
+ killall yes
+##### EOF ######################################################################

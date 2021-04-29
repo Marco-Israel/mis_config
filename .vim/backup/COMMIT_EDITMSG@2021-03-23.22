@@ -1,0 +1,22 @@
+FIX TEST [ED7SW-1492] [Advanced-Communication]  add sleep
+
+DETAILS:
+* ADD sleep before exit a test to give time for the deconstruction
+* REFAC some test timeout timings
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Mon Mar 22 22:02:29 2021 +0100
+#
+# On branch israelM/ED7SW-1492/Advanced-Communication
+# Your branch and 'origin/israelM/ED7SW-1492/Advanced-Communication' have diverged,
+# and have 1 and 1 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# Changes to be committed:
+#	modified:   ../.gitignore
+#	modified:   ../src/libcsme/net/server/net_api.h
+#	modified:   ../tests/unit/libcsme/net/server/netapi.test.cpp
+#

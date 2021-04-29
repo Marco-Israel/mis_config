@@ -1,0 +1,40 @@
+TEST
+"3.2.2.5_Extension_SubjectKeyIdentifier"
+--------------------------------------------------------------------------------
+REQUIRED SCOPE:
+
+1.
+The library MUST support to calculate the subject key identifier and create the
+extension
+
+2.
+The CA operation MUST be able to add this extension.
+
+3.
+When issuing a certificate, the library MUST provide support to add the
+extension AuthorityKeyIdentifier to the issued certificate based on the
+SubjectKeyIdentifier of the issuing certificate.
+
+
+--------------------------------------------------------------------------------
+TESTLIST:
+
+1_deleate_SubjectKeyIdentifier_and_AuthorityKeyIdentifier_in_root_certificate
+When this entries are not available to true available in a sub certificate
+according to the requirement the SubjectKeyIdentifier and the
+AuthorityKeyIdentifier needs to be calculated by the software.
+
+
+--------------------------------------------------------------------------------
+1_TODO_test_name
+
+EXPACT:
+The generation of certificates should fail after the root certificate was
+created. The sub certificate expact the two KeyIdentifiers which are not
+available in the root and so the compilation stops in this point.
+
+RESULT
+TRUE
+
+
+--- EOF ------------------------------------------------------------------------

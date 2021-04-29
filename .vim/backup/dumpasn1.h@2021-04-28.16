@@ -1,0 +1,43 @@
+#ifndef DUMPASN1_H_
+#define DUMPASN1_H_
+
+#include <stdbool.h>
+
+/* OID data sizes.  Because of Microsoft's "encode random noise and call it
+   an OID" approach, we maintain two size limits, a sane one and one capable
+   of holding the random-noise OID data, which we warn about */
+
+#define MAX_OID_SIZE 40
+#define MAX_SANE_OID_SIZE 32
+
+/* Useful defines */
+
+#ifndef TRUE
+#define FALSE 0
+#define TRUE ( !FALSE )
+#endif /* TRUE */
+#ifndef BYTE
+typedef unsigned char BYTE;
+#endif /* BYTE */
+
+/**
+ * @brief    Dump a certificate file. Equal to the dumpasn1 tool but as a lib
+ * @param    fileB  The file to parse and dump
+ * @param    fileA  An offset to object to dump only. 0 to dump the how file
+ * @param    argc   Arguments counter equal to the original dumpasn1 tool
+ * @param    argv[] Arguments counter equal to the original dumpasn1 tool
+ */
+extern void dumpasn1( FILE *inFile, long offset, int argc, char *argv[] );
+
+
+
+/**
+ * @brief    Compare two certificate. It can dump the different
+ * @param    fileA  The certificate where to test against
+ * @param    fileB  The certificate you like to test against fileA
+ * @param    outputStream   A FILE where to output differences. Or NULL for none
+ * @param    verbose_output Print the differences (TRUE) or only the first offset
+ * @returns     The offset to the first difference. Or '0' for none differences
+ */
+extern int compareasn1( FILE *fileA, FILE *fileB, FILE *outputStream, _Bool verbose_output );
+#endif /*DUMPASN1_H_ */

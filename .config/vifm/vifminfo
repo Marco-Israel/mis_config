@@ -1,0 +1,286 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/home/mis/
+	..
+1616743117
+'b
+	/home/mis/bin/
+	..
+1616743117
+'h
+	/home/mis/
+	..
+1616743117
+'v
+	/home/mis/git-repos/cryptoservice/tests/unit/libcsme/net/client
+	tcp_test_client.hpp
+1616743741
+
+# Bookmarks:
+b/home/mis/git-repos/cryptoservice/tests/unit/libcsme/
+	test
+	1616743207
+b/home/mis/git-repos/cryptoservice/src/libcsme/net/
+	src
+	1616743237
+
+# TUI:
+al
+q0
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/home/mis/git-repos/cryptoservice
+	src
+9
+d/home/mis/git-repos/cryptoservice/src
+	libcryptoservice
+4
+d/home/mis/git-repos/cryptoservice/src/libcryptoservice
+	..
+0
+d/home/mis/git-repos/cryptoservice/src
+	cs-sms
+3
+d/home/mis/git-repos/cryptoservice/src/cs-sms
+	..
+0
+d/home/mis/git-repos/cryptoservice/src
+	libcsme
+5
+d/home/mis/git-repos/cryptoservice/src/libcsme
+	..
+0
+d/home/mis/git-repos/cryptoservice/src
+	libcsme
+5
+d/home/mis/git-repos/cryptoservice/src/libcsme
+	net
+2
+d/home/mis/git-repos/cryptoservice/src/libcsme/net
+	..
+0
+d/home/mis/git-repos/cryptoservice/tools/asn.1/3.2.2.1_Extension_BasicConstraints/1_root_pathlen_0_su_cert_CA_true
+	..
+0
+d/home/mis/git-repos/cryptoservice/tools/asn.1/3.2.2.1_Extension_BasicConstraints
+	..
+0
+d/home/mis/git-repos/cryptoservice/tools/asn.1
+	tools
+12
+d/home/mis/git-repos/cryptoservice/tools/asn.1/tools
+	certdiff
+2
+d/home/mis/git-repos/cryptoservice/tools/asn.1/tools/certdiff
+	sub-ca-1.cnf
+5
+d/home/mis/git-repos/cryptoservice/tools/asn.1
+	..
+0
+d/home/mis/git-repos/cryptoservice/tools
+	asn.1
+1
+d/home/mis/git-repos/cryptoservice/tools/asn.1
+	..
+0
+d/home/mis/git-repos/cryptoservice/tools
+	..
+0
+d/home/mis/git-repos/cryptoservice
+	..
+0
+d/home/mis/git-repos
+	cert_mgmt
+1
+d/home/mis/git-repos/cert_mgmt
+	openssl
+2
+d/home/mis/git-repos/cert_mgmt/openssl
+	openssl_configs
+1
+d/home/mis/git-repos/cert_mgmt/openssl/openssl_configs
+	..
+0
+d/home/mis/git-repos/cert_mgmt/openssl
+	..
+0
+d/home/mis/git-repos/cert_mgmt
+	..
+0
+d/home/mis/git-repos
+	..
+0
+d/home/mis
+	..
+0
+d/home
+	mis
+1
+d/home/mis
+	git-repos
+8
+d/home/mis/git-repos
+	cryptoservice
+2
+d/home/mis/git-repos/cryptoservice
+	tools
+12
+d/home/mis/git-repos/cryptoservice/tools
+	asn.1
+1
+d/home/mis/git-repos/cryptoservice/tools/asn.1
+	..
+0
+d/home/mis/git-repos/cryptoservice/tools
+	..
+0
+d/home/mis/git-repos/cryptoservice
+	tools
+12
+d
+
+# Right window history (oldest to newest):
+D/home/mis/git-repos/cryptoservice
+	tests
+11
+D/home/mis/git-repos/cryptoservice/tests
+	unit
+2
+D/home/mis/git-repos/cryptoservice/tests/unit
+	libcsme
+5
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme
+	net
+2
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme/net
+	..
+0
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme
+	net
+2
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme/net
+	..
+0
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme
+	net
+2
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme/net
+	client
+1
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme/net/client
+	..
+0
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme/net
+	server
+2
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme/net/server
+	..
+0
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme/net
+	client
+1
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme/net/client
+	..
+0
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme/net
+	server
+2
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme/net/server
+	..
+0
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme/net
+	..
+0
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme
+	..
+0
+D/home/mis/git-repos/cryptoservice/tests/unit
+	libcsme
+5
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme
+	..
+0
+D/home/mis/git-repos/cryptoservice/tests/unit
+	libcsme
+5
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme
+	net
+2
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme/net
+	server
+2
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme/net/server
+	..
+0
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme/net
+	server
+2
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme/net/server
+	..
+0
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme/net
+	client
+1
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme/net/client
+	..
+0
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme/net
+	server
+1
+D/home/mis/git-repos/cryptoservice/tests/unit/libcsme/net/server
+	netapi.test.cpp
+2
+D
+
+# Command line history (oldest to newest):
+:bmark
+:bmark test
+:bmark src
+:mkdir client
+:help
+:mkdir 
+:rename tcp_test_client.hpp tcp_test_client.cpp
+:mv
+:mv silver.cer.txt
+::q
+:q:q!
+:q
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+
+# Local filter history (oldest to newest):
+
+# Registers:
+""/home/mis/.local/share/vifm/Trash/000_-none
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/home/mis/.local/share/vifm/Trash/000_client
+	/home/mis/git-repos/cryptoservice/tests/unit/libcsme/net/client
+t/home/mis/.local/share/vifm/Trash/000_-n
+	/home/mis/git-repos/cert_mgmt/openssl/-n
+t/home/mis/.local/share/vifm/Trash/000_certificate_compare.log
+	/home/mis/git-repos/cert_mgmt/openssl/certificate_compare.log
+t/home/mis/.local/share/vifm/Trash/000_-none
+	/home/mis/git-repos/cert_mgmt/openssl/-none
+
+# State:
+f
+i1
+[.1
+[F
+F
+I1
+].1
+]F
+s0

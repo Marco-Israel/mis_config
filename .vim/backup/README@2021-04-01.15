@@ -1,0 +1,32 @@
+TEST
+"3.2.2.2_Extension_CertificatePolicies"
+--------------------------------------------------------------------------------
+REQUIRED SCOPE:
+
+1.
+The size of the SEQUENCE of PolicyInformation MAY be limited to 1. The
+implementation is only required to provide support for at most a single
+PolicyInformation. The PolicyInformation MAY only support the attribute
+policyIdentifier. Support for the optional attribute policyQualifiers MAY be
+omitted.
+
+
+--------------------------------------------------------------------------------
+TESTLIST:
+
+1_TODO_test_name
+Define a non-relaxation PolicyInformation with multi entries and optional fields
+as allowed by the standard but not used (or allowed) by this project.
+
+--------------------------------------------------------------------------------
+1_TODO_test_name
+
+EXPACT:
+equivalent to the standard, the certificates will we created without any error
+notification
+
+RESULT
+TRUE
+
+
+--- EOF ------------------------------------------------------------------------

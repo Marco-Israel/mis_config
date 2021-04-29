@@ -1,0 +1,19 @@
+# Compare Certificate to find differences
+## Content
+This folder holds a couple of files need to compare certificates and produce 
+the content.
+
+.
+|-- CMakeLists.txt              The Cmake file   
+|-- README.md                   This file  
+|-- certificate_compare.cpp     The certificate compare test case.  
+|-- dumpasn1.c                  The certificate compare tool  
+|-- dumpasn1.cfg                A config file to define your meaning of the oids   
+|-- dumpasn1.h                  The header you need to include in your test   
+|-- dumpasn1_conf.h             The config file auto-converted to a byte stream    
+|-- golden_certificates         The golden certificates the tool tests against    
+`-- silver_certificates         DUMMY till this app is able to generate certificates    
+
+NOTE: in time when this cryptoservice is able to generate certificates the
+folder silver_certificates is no longer in case you will give the generated
+certificates to the comparer.

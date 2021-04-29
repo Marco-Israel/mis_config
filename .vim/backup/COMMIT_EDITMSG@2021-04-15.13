@@ -1,0 +1,247 @@
+
+
+########################################################################
+# --------------------
+# SUBJECT_TAG can be
+#   ADD         (Added new content to exsisting file; eg. a new var)
+#   DBG         (Changes in debugging code only; not in production code)
+#   DOC         (Changes to documentation)
+#   FEAT        (Howl new feature added)
+#   FIX         (Bug fix)
+#   NEW         (Howl brand new file added)
+#   REFAC       (Refactoring code)
+#   STYLE       (Formatting, missing semi colons, etc; no code change)
+#   TEST        (adding or refactoring tests; no production code change)
+#   TODO        (Temporary fix to; please avoid it AND fix it asp.)
+#   LIC         (Edits/New licensing; no production code change)
+#   VERS        (Version bump/new release; no production code change)
+#   WIP         (Work In Progress; for intermediate commits)
+#   NONE        (None of this)
+#
+# Note: Multiple tags are allowed.
+#
+# --------------------
+# FINALT_TAG can be
+#   OPEN        (New incident was open with number)
+#   CLOSE       (Incident with number was closed)
+#   REOPEN      (Incident with number was reopend)
+#
+# Note: Multiple entries are allowed; e.g multiple tags open/closed.
+#
+# --------------------
+# Remember to:
+#   * Capitalize the subject line.
+#   * Use the imperative mood in the SUBJECT line.
+#   * Do not end the SUBJECT line with a period.
+#   * Maximum to SUBJECT si 52 cahrs. Maximum to DETAILS/FINAL is 72.
+#   * Separate SUBJECT from DETIL and FINAL with a blank line.
+#   * Use the DETAIL to explain what and why. Not how.
+#   * Can use multiple lines with "-" or "*" in DETAILS/FINAL
+#   * Multiple tags are allowed in SUBJECT and FINALT.
+#   *
+#   * !!! FINALLY: NEVER COMMIT TO MUCH THINGS IN ON COMMIT !!!
+# --------------------
+#######################################################################
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch israelM/ED7SW-1539/Beispielzertifikate_PGutmann
+# Your branch is ahead of 'origin/israelM/ED7SW-1539/Beispielzertifikate_PGutmann' by 4 commits.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#	modified:   ../.gitmodules
+#	deleted:    asn.1/..help/dn-name-policy.cnf
+#	deleted:    asn.1/..help/oids.cnf
+#	deleted:    asn.1/..help/root-ca-1.cnf
+#	deleted:    asn.1/..help/sub-ca-1.cnf
+#	deleted:    asn.1/..help/subscriber-1.cnf
+#	new file:   asn.1/cert_mgmt
+#	deleted:    asn.1/chain_diff_human_readable.sh
+#	deleted:    asn.1/clone_config.sh
+#	deleted:    asn.1/create-certificates.sh
+#	modified:   asn.1/create-test-certificates.sh
+#	deleted:    asn.1/diff_human_readable.py
+#	deleted:    asn.1/openssl_configs/dn-name-policy.cnf
+#	deleted:    asn.1/openssl_configs/oids.cnf
+#	deleted:    asn.1/openssl_configs/root-ca-1.cnf
+#	deleted:    asn.1/openssl_configs/sub-ca-1.cnf
+#	deleted:    asn.1/openssl_configs/subscriber-1.cnf
+#	new file:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/1_root_pathlen_0_su_cert_CA_true/output/certificates/root-ca-1.der
+#	new file:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/1_root_pathlen_0_su_cert_CA_true/output/certificates/root-ca-1.pem
+#	new file:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/1_root_pathlen_0_su_cert_CA_true/output/certificates/sub-ca-1.der
+#	new file:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/1_root_pathlen_0_su_cert_CA_true/output/certificates/sub-ca-1.pem
+#	new file:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/1_root_pathlen_0_su_cert_CA_true/output/certificates/subscriber-1.der
+#	new file:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/1_root_pathlen_0_su_cert_CA_true/output/certificates/subscriber-1.pem
+#	new file:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/1_root_pathlen_0_su_cert_CA_true/output/private_keys/root-ca-1.pem
+#	new file:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/1_root_pathlen_0_su_cert_CA_true/output/private_keys/sub-ca-1.pem
+#	new file:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/1_root_pathlen_0_su_cert_CA_true/output/private_keys/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/2_sub_pathlen_99..99_and_CA_false/output/certificates/root-ca-1.der
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/2_sub_pathlen_99..99_and_CA_false/output/certificates/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/2_sub_pathlen_99..99_and_CA_false/output/certificates/sub-ca-1.der
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/2_sub_pathlen_99..99_and_CA_false/output/certificates/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/2_sub_pathlen_99..99_and_CA_false/output/certificates/subscriber-1.der
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/2_sub_pathlen_99..99_and_CA_false/output/certificates/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/2_sub_pathlen_99..99_and_CA_false/output/private_keys/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/2_sub_pathlen_99..99_and_CA_false/output/private_keys/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/2_sub_pathlen_99..99_and_CA_false/output/private_keys/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/2_sub_pathlen_99..99_and_CA_false/root-ca-1.cnf
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/2_sub_pathlen_99..99_and_CA_false/sub-ca-1.cnf
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/3_root_pathlen_0_and_CA_true/output/certificates/root-ca-1.der
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/3_root_pathlen_0_and_CA_true/output/certificates/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/3_root_pathlen_0_and_CA_true/output/certificates/sub-ca-1.der
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/3_root_pathlen_0_and_CA_true/output/certificates/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/3_root_pathlen_0_and_CA_true/output/certificates/subscriber-1.der
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/3_root_pathlen_0_and_CA_true/output/certificates/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/3_root_pathlen_0_and_CA_true/output/private_keys/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/3_root_pathlen_0_and_CA_true/output/private_keys/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/3_root_pathlen_0_and_CA_true/output/private_keys/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/3_root_pathlen_0_and_CA_true/root-ca-1.cnf
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/3_root_pathlen_0_and_CA_true/sub-ca-1.cnf
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/4_root_pathlen_1_and_CA_true/output/certificates/root-ca-1.der
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/4_root_pathlen_1_and_CA_true/output/certificates/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/4_root_pathlen_1_and_CA_true/output/certificates/sub-ca-1.der
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/4_root_pathlen_1_and_CA_true/output/certificates/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/4_root_pathlen_1_and_CA_true/output/certificates/subscriber-1.der
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/4_root_pathlen_1_and_CA_true/output/certificates/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/4_root_pathlen_1_and_CA_true/output/private_keys/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/4_root_pathlen_1_and_CA_true/output/private_keys/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/4_root_pathlen_1_and_CA_true/output/private_keys/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/4_root_pathlen_1_and_CA_true/root-ca-1.cnf
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/4_root_pathlen_1_and_CA_true/sub-ca-1.cnf
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/5_sub_pathlen_9_and_CA_true/output/certificates/root-ca-1.der
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/5_sub_pathlen_9_and_CA_true/output/certificates/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/5_sub_pathlen_9_and_CA_true/output/certificates/sub-ca-1.der
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/5_sub_pathlen_9_and_CA_true/output/certificates/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/5_sub_pathlen_9_and_CA_true/output/certificates/subscriber-1.der
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/5_sub_pathlen_9_and_CA_true/output/certificates/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/5_sub_pathlen_9_and_CA_true/output/private_keys/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/5_sub_pathlen_9_and_CA_true/output/private_keys/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/5_sub_pathlen_9_and_CA_true/output/private_keys/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/5_sub_pathlen_9_and_CA_true/root-ca-1.cnf
+#	modified:   asn.1/tests/3.2.2.1_Extension_BasicConstraints/5_sub_pathlen_9_and_CA_true/sub-ca-1.cnf
+#	modified:   asn.1/tests/3.2.2.2_Extension_CertificatePolicies/1_multi_policyInformation_entries/output/certificates/root-ca-1.der
+#	modified:   asn.1/tests/3.2.2.2_Extension_CertificatePolicies/1_multi_policyInformation_entries/output/certificates/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.2_Extension_CertificatePolicies/1_multi_policyInformation_entries/output/certificates/sub-ca-1.der
+#	modified:   asn.1/tests/3.2.2.2_Extension_CertificatePolicies/1_multi_policyInformation_entries/output/certificates/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.2_Extension_CertificatePolicies/1_multi_policyInformation_entries/output/certificates/subscriber-1.der
+#	modified:   asn.1/tests/3.2.2.2_Extension_CertificatePolicies/1_multi_policyInformation_entries/output/certificates/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.2.2_Extension_CertificatePolicies/1_multi_policyInformation_entries/output/private_keys/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.2_Extension_CertificatePolicies/1_multi_policyInformation_entries/output/private_keys/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.2_Extension_CertificatePolicies/1_multi_policyInformation_entries/output/private_keys/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.2.2_Extension_CertificatePolicies/1_multi_policyInformation_entries/root-ca-1.cnf
+#	modified:   asn.1/tests/3.2.2.2_Extension_CertificatePolicies/1_multi_policyInformation_entries/sub-ca-1.cnf
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/1_invalid_OIDS/output/certificates/root-ca-1.der
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/1_invalid_OIDS/output/certificates/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/1_invalid_OIDS/output/certificates/sub-ca-1.der
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/1_invalid_OIDS/output/certificates/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/1_invalid_OIDS/output/certificates/subscriber-1.der
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/1_invalid_OIDS/output/certificates/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/1_invalid_OIDS/output/private_keys/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/1_invalid_OIDS/output/private_keys/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/1_invalid_OIDS/output/private_keys/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/1_invalid_OIDS/root-ca-1.cnf
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/1_invalid_OIDS/sub-ca-1.cnf
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/2_rfc_conform_OIDs_but_this_OIDs_are_not_vaild_for_this_project/output/certificates/root-ca-1.der
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/2_rfc_conform_OIDs_but_this_OIDs_are_not_vaild_for_this_project/output/certificates/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/2_rfc_conform_OIDs_but_this_OIDs_are_not_vaild_for_this_project/output/certificates/sub-ca-1.der
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/2_rfc_conform_OIDs_but_this_OIDs_are_not_vaild_for_this_project/output/certificates/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/2_rfc_conform_OIDs_but_this_OIDs_are_not_vaild_for_this_project/output/certificates/subscriber-1.der
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/2_rfc_conform_OIDs_but_this_OIDs_are_not_vaild_for_this_project/output/certificates/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/2_rfc_conform_OIDs_but_this_OIDs_are_not_vaild_for_this_project/output/private_keys/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/2_rfc_conform_OIDs_but_this_OIDs_are_not_vaild_for_this_project/output/private_keys/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/2_rfc_conform_OIDs_but_this_OIDs_are_not_vaild_for_this_project/output/private_keys/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/2_rfc_conform_OIDs_but_this_OIDs_are_not_vaild_for_this_project/root-ca-1.cnf
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/2_rfc_conform_OIDs_but_this_OIDs_are_not_vaild_for_this_project/sub-ca-1.cnf
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/3_a_lower_certificate_with_more_extended_key_usages/output/certificates/root-ca-1.der
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/3_a_lower_certificate_with_more_extended_key_usages/output/certificates/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/3_a_lower_certificate_with_more_extended_key_usages/output/certificates/sub-ca-1.der
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/3_a_lower_certificate_with_more_extended_key_usages/output/certificates/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/3_a_lower_certificate_with_more_extended_key_usages/output/certificates/subscriber-1.der
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/3_a_lower_certificate_with_more_extended_key_usages/output/certificates/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/3_a_lower_certificate_with_more_extended_key_usages/output/private_keys/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/3_a_lower_certificate_with_more_extended_key_usages/output/private_keys/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/3_a_lower_certificate_with_more_extended_key_usages/output/private_keys/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/3_a_lower_certificate_with_more_extended_key_usages/root-ca-1.cnf
+#	modified:   asn.1/tests/3.2.2.4_Extension_ExtendedKeyUsage/3_a_lower_certificate_with_more_extended_key_usages/sub-ca-1.cnf
+#	modified:   asn.1/tests/3.2.2.5_Extension_SubjectKeyIdentifier/1_no_subjectKeyIdentifier_and_authorityKeyIdentifier_in_root/output/certificates/root-ca-1.der
+#	modified:   asn.1/tests/3.2.2.5_Extension_SubjectKeyIdentifier/1_no_subjectKeyIdentifier_and_authorityKeyIdentifier_in_root/output/certificates/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.5_Extension_SubjectKeyIdentifier/1_no_subjectKeyIdentifier_and_authorityKeyIdentifier_in_root/output/certificates/sub-ca-1.der
+#	modified:   asn.1/tests/3.2.2.5_Extension_SubjectKeyIdentifier/1_no_subjectKeyIdentifier_and_authorityKeyIdentifier_in_root/output/certificates/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.5_Extension_SubjectKeyIdentifier/1_no_subjectKeyIdentifier_and_authorityKeyIdentifier_in_root/output/certificates/subscriber-1.der
+#	modified:   asn.1/tests/3.2.2.5_Extension_SubjectKeyIdentifier/1_no_subjectKeyIdentifier_and_authorityKeyIdentifier_in_root/output/certificates/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.2.5_Extension_SubjectKeyIdentifier/1_no_subjectKeyIdentifier_and_authorityKeyIdentifier_in_root/output/private_keys/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.5_Extension_SubjectKeyIdentifier/1_no_subjectKeyIdentifier_and_authorityKeyIdentifier_in_root/output/private_keys/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.5_Extension_SubjectKeyIdentifier/1_no_subjectKeyIdentifier_and_authorityKeyIdentifier_in_root/output/private_keys/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.2.5_Extension_SubjectKeyIdentifier/1_no_subjectKeyIdentifier_and_authorityKeyIdentifier_in_root/root-ca-1.cnf
+#	modified:   asn.1/tests/3.2.2.5_Extension_SubjectKeyIdentifier/1_no_subjectKeyIdentifier_and_authorityKeyIdentifier_in_root/sub-ca-1.cnf
+#	modified:   asn.1/tests/3.2.2.7_Extension_CRLDistributionPoints/1_requirements_oposide_noFullName_multichoice_withReason_scrlIssuerOtherName/output/certificates/root-ca-1.der
+#	modified:   asn.1/tests/3.2.2.7_Extension_CRLDistributionPoints/1_requirements_oposide_noFullName_multichoice_withReason_scrlIssuerOtherName/output/certificates/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.7_Extension_CRLDistributionPoints/1_requirements_oposide_noFullName_multichoice_withReason_scrlIssuerOtherName/output/certificates/sub-ca-1.der
+#	modified:   asn.1/tests/3.2.2.7_Extension_CRLDistributionPoints/1_requirements_oposide_noFullName_multichoice_withReason_scrlIssuerOtherName/output/certificates/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.7_Extension_CRLDistributionPoints/1_requirements_oposide_noFullName_multichoice_withReason_scrlIssuerOtherName/output/certificates/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.2.7_Extension_CRLDistributionPoints/1_requirements_oposide_noFullName_multichoice_withReason_scrlIssuerOtherName/output/private_keys/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.7_Extension_CRLDistributionPoints/1_requirements_oposide_noFullName_multichoice_withReason_scrlIssuerOtherName/output/private_keys/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.2.7_Extension_CRLDistributionPoints/1_requirements_oposide_noFullName_multichoice_withReason_scrlIssuerOtherName/output/private_keys/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.2.7_Extension_CRLDistributionPoints/1_requirements_oposide_noFullName_multichoice_withReason_scrlIssuerOtherName/root-ca-1.cnf
+#	modified:   asn.1/tests/3.2.2.7_Extension_CRLDistributionPoints/1_requirements_oposide_noFullName_multichoice_withReason_scrlIssuerOtherName/sub-ca-1.cnf
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/1_different_clearanceBitmask_in_root_and_sub/output/certificates/root-ca-1.der
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/1_different_clearanceBitmask_in_root_and_sub/output/certificates/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/1_different_clearanceBitmask_in_root_and_sub/output/certificates/sub-ca-1.der
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/1_different_clearanceBitmask_in_root_and_sub/output/certificates/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/1_different_clearanceBitmask_in_root_and_sub/output/certificates/subscriber-1.der
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/1_different_clearanceBitmask_in_root_and_sub/output/certificates/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/1_different_clearanceBitmask_in_root_and_sub/output/private_keys/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/1_different_clearanceBitmask_in_root_and_sub/output/private_keys/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/1_different_clearanceBitmask_in_root_and_sub/output/private_keys/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/1_different_clearanceBitmask_in_root_and_sub/root-ca-1.cnf
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/1_different_clearanceBitmask_in_root_and_sub/sub-ca-1.cnf
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/2_clearance_not_implemented_in_root/output/certificates/root-ca-1.der
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/2_clearance_not_implemented_in_root/output/certificates/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/2_clearance_not_implemented_in_root/output/certificates/sub-ca-1.der
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/2_clearance_not_implemented_in_root/output/certificates/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/2_clearance_not_implemented_in_root/output/certificates/subscriber-1.der
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/2_clearance_not_implemented_in_root/output/certificates/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/2_clearance_not_implemented_in_root/output/private_keys/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/2_clearance_not_implemented_in_root/output/private_keys/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/2_clearance_not_implemented_in_root/output/private_keys/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/2_clearance_not_implemented_in_root/root-ca-1.cnf
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/2_clearance_not_implemented_in_root/sub-ca-1.cnf
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/3_gaps_in_clearance_bitmask/output/certificates/root-ca-1.der
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/3_gaps_in_clearance_bitmask/output/certificates/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/3_gaps_in_clearance_bitmask/output/certificates/sub-ca-1.der
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/3_gaps_in_clearance_bitmask/output/certificates/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/3_gaps_in_clearance_bitmask/output/certificates/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/3_gaps_in_clearance_bitmask/output/private_keys/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/3_gaps_in_clearance_bitmask/output/private_keys/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/3_gaps_in_clearance_bitmask/output/private_keys/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/3_gaps_in_clearance_bitmask/root-ca-1.cnf
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/3_gaps_in_clearance_bitmask/sub-ca-1.cnf
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/4_securityCategory_value_with_OID_instead_printableString/output/certificates/root-ca-1.der
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/4_securityCategory_value_with_OID_instead_printableString/output/certificates/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/4_securityCategory_value_with_OID_instead_printableString/output/certificates/sub-ca-1.der
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/4_securityCategory_value_with_OID_instead_printableString/output/certificates/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/4_securityCategory_value_with_OID_instead_printableString/output/certificates/subscriber-1.der
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/4_securityCategory_value_with_OID_instead_printableString/output/certificates/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/4_securityCategory_value_with_OID_instead_printableString/output/private_keys/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/4_securityCategory_value_with_OID_instead_printableString/output/private_keys/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/4_securityCategory_value_with_OID_instead_printableString/output/private_keys/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/4_securityCategory_value_with_OID_instead_printableString/root-ca-1.cnf
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/4_securityCategory_value_with_OID_instead_printableString/sub-ca-1.cnf
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/5_more_than_one_securityCategory/output/certificates/root-ca-1.der
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/5_more_than_one_securityCategory/output/certificates/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/5_more_than_one_securityCategory/output/certificates/sub-ca-1.der
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/5_more_than_one_securityCategory/output/certificates/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/5_more_than_one_securityCategory/output/certificates/subscriber-1.der
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/5_more_than_one_securityCategory/output/certificates/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/5_more_than_one_securityCategory/output/private_keys/root-ca-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/5_more_than_one_securityCategory/output/private_keys/sub-ca-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/5_more_than_one_securityCategory/output/private_keys/subscriber-1.pem
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/5_more_than_one_securityCategory/root-ca-1.cnf
+#	modified:   asn.1/tests/3.2.5.3_Extension_SubjectDirectoryAttributes_Attribute_Clearance/5_more_than_one_securityCategory/sub-ca-1.cnf
+#	deleted:    cert_mgmt
+#
+# Untracked files:
+#	../tests/unit/libcryptoservice/generators/
+#

@@ -1,0 +1,75 @@
+#include <algorithm>
+#include <bits/stdint-uintn.h>
+#include <catch2/catch.hpp>
+#include <cstddef>
+#include <cstdio>
+#include <cstring>
+#include <iostream>
+//
+#include "golden_certificates/root-ca-1.h"
+#include "golden_certificates/sub-ca-1.h"
+#include "golden_certificates/subscriber-1.h"
+
+#include "silver_certificates/root-ca-2.h"
+#include "silver_certificates/sub-ca-2.h"
+#include "silver_certificates/subscriber-2.h"
+//
+
+extern "C" {
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include "dumpasn1.h"
+}
+
+// Device under test
+#include "libcryptoservice/util/static_map.hpp"
+
+namespace test
+{
+namespace unit
+{
+    namespace crypto_service
+    {
+        namespace generators
+        {
+            namespace
+            {
+                TEST_CASE( "libcryptoservice/generators/certificate_compare" )
+                {
+                    SECTION( "Root Certificate compare" )
+                    {
+
+                       FILE * pFile;
+                       pFile = tmpfile ();
+                       const char* tempfile = (char*) root_ca_1_der;
+                       std::fputs(tempfile, pFile);
+
+
+
+                            uint8_t argc = 2u;
+                        char* argv[] = {"-16","-F/tmp/someOut.txt"};
+                        uint16_t max_len = root_ca_1_der_len >=
+                            root_ca_2_der_len ?
+                            root_ca_1_der_len : root_ca_2_der_len;
+                        uint16_t offset = 0u;
+
+//                        do {
+//                            if (root_ca_1_der[offset] != root_ca_2_der[offset])
+//                            {
+//                                std::cout << "Offset:" << offset << std::endl;
+//
+//                            }
+//                            ++offset;
+//                        }while(offset < max_len);
+
+                                uint32_t ret = dumpasn1(pFile, argc, argv );
+                                std::cout << "\n\n\nREEEEEEEEEEEEEEEEEEEEET:\n\n\n" <<  std::endl;
+//
+                    }
+                }
+            } // namespace
+        }     // namespace generators
+    }         // namespace crypto_service
+} // namespace unit
+} // namespace test

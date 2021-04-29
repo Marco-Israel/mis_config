@@ -1,0 +1,42 @@
+#
+# Subscriber
+#
+# Author: Matthias Nagel
+# Date: 2019-11-21
+#
+
+[ subscriber_1_dn ]
+
+countryName          = "DE"
+stateOrProvinceName  = "Somewhere Else"
+localityName         = "Unknown City"
+organizationName     = "Anonymous Organization"
+commonName           = "Meeting Room 3rd Floor"
+
+
+
+[ req ]
+
+encrypt_key        = no
+utf8               = yes
+string_mask        = utf8only
+distinguished_name = subscriber_1_dn
+req_extensions     = req_extensions
+default_md         = sha384
+prompt             = no
+
+
+[ req_extensions ]
+
+subjectAltName     = dirName:subscriber_1_alt_name
+
+[ subscriber_1_alt_name ]
+
+countryName          = "DE"
+localityName         = "Stuttgart"
+organizationName     = "Rohde & Schwarz SIT GmbH"
+commonName           = "Rohde $ Schwarz which you the best for the day"
+
+
+##### EOF ######################################################################
+# vim:ft=sh

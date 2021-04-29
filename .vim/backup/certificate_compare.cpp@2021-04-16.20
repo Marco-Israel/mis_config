@@ -1,0 +1,74 @@
+#include <algorithm>
+#include <bits/stdint-uintn.h>
+#include <catch2/catch.hpp>
+#include <cstddef>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <iostream>
+#include <ostream>
+//
+#include "golden_certificates/root-ca-1.h"
+#include "golden_certificates/sub-ca-1.h"
+#include "golden_certificates/subscriber-1.h"
+
+#include "silver_certificates/root-ca-2.h"
+#include "silver_certificates/sub-ca-2.h"
+#include "silver_certificates/subscriber-2.h"
+//
+
+extern "C" {
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include "dumpasn1.h"
+}
+
+// Device under test
+#include "libcryptoservice/util/static_map.hpp"
+
+namespace test
+{
+namespace unit
+{
+    namespace crypto_service
+    {
+        namespace generators
+        {
+            namespace
+            {
+                TEST_CASE( "libcryptoservice/generators/certificate_compare" )
+                {
+                    SECTION( "Root Certificate compare" )
+                    {
+
+                        uint8_t argc = 0;
+                        char* argv[] = {};
+                        FILE * tmpFile2 = fmemopen(root_ca_1_der,
+                                root_ca_1_der_len, "rb+");
+
+                        int offset = 735;
+                        uint16_t min_len = std::min(
+                                root_ca_1_der_len, root_ca_2_der_len);;
+
+                          while (offset < min_len) {
+                            if ( root_ca_1_der[offset] != root_ca_2_der[offset])
+                             {
+                                int ret =0;
+                                ret  = dumpasn1(tmpFile2,offset, argc, argv );
+                                if ( -1 == ret ) {
+                                    ret  = dumpasn1(tmpFile2,offset+1, argc, argv );
+                                }
+                                std::cout<< ret <<std::endl;
+                                break;
+                                offset = ret;
+                             }
+                                offset++;
+                          }
+                    }
+                }
+            } // namespace
+        }     // namespace generators
+    }         // namespace crypto_service
+} // namespace unit
+} // namespace test

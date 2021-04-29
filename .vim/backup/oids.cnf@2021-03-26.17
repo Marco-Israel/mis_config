@@ -1,0 +1,47 @@
+[ additional_oids ]
+
+# X.5xx well-known OIDs
+
+clearanceAttribute = 2.5.4.55
+
+
+#
+# The following symbolic constants are not final
+# They are placeholders to allow the prelimiary creation of certificates for development and testing
+# They are only at the stage of a proposal and taken from the appendix C of the certificate policy.
+#
+
+rsProducts            = 1.3.6.1.4.0
+elcrodat7             = ${rsProducts}.42
+
+ed7Documents          = ${elcrodat7}.1
+ed7PKI                = ${elcrodat7}.2
+
+ed7DocsPf             = ${ed7Documents}.1
+ed7DocsScip           = ${ed7Documents}.2
+
+ed7DocsScipTlcp       = ${ed7DocsScip}.1
+ed7DocsScipTlcp10     = ${ed7DocsScipTlcp}.1.0
+
+ed7KeyTypes           = ${ed7PKI}.1
+ed7KeyParameters      = ${ed7PKI}.2
+ed7KeyAlgorithms      = ${ed7PKI}.3
+ed7DistributionPoints = ${ed7PKI}.4
+ed7KeyPurposes        = ${ed7PKI}.5
+ed7ValueTypes         = ${ed7PKI}.6
+
+ed7DpTasklist         = ${ed7DistributionPoints}.1
+
+ed7KpPlatform         = ${ed7KeyPurposes}.1
+ed7KpScip             = ${ed7KeyPurposes}.2
+
+ed7KpScipRCC          = ${ed7KpScip}.1
+ed7KpScipSCC          = ${ed7KpScip}.2
+ed7KpScipRSGL         = ${ed7KpScip}.3
+ed7KpScipSPD          = ${ed7KpScip}.4
+
+ed7InformationDomain  = ${ed7ValueTypes}.1
+
+
+##### EOF ######################################################################
+# vim:ft=sh

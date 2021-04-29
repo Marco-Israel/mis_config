@@ -1,0 +1,77 @@
+#include <algorithm>
+#include <bits/stdint-uintn.h>
+#include <catch2/catch.hpp>
+#include <cstddef>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <iostream>
+#include <ostream>
+//
+#include "golden_certificates/root-ca-1.h"
+#include "golden_certificates/sub-ca-1.h"
+#include "golden_certificates/subscriber-1.h"
+
+#include "silver_certificates/root-ca-1.h"
+#include "silver_certificates/sub-ca-1.h"
+#include "silver_certificates/subscriber-1.h"
+//
+
+extern "C" {
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include "dumpasn1.h"
+}
+
+// Device under test
+#include "libcryptoservice/util/static_map.hpp"
+
+namespace test
+{
+namespace unit
+{
+    namespace crypto_service
+    {
+        namespace generators
+        {
+            namespace
+            {
+                TEST_CASE( "libcryptoservice/generators/certificate_compare" )
+                {
+                    SECTION( "Root Certificate compare" )
+                    {
+
+                        FILE * root_file[2] = {
+                            fmemopen(golden_certificates_root_ca_1_der,
+                                    golden_certificates_root_ca_1_der_len, "rb+"),
+                            fmemopen(silver_certificates_root_ca_1_der, silver_certificates_root_ca_1_der_len, "rb+")
+                        };
+
+                        FILE * sub_file[2] = {
+                            fmemopen(golden_certificates_sub_ca_1_der, golden_certificates_sub_ca_1_der_len, "rb+"),
+                            fmemopen(silver_certificates_sub_ca_1_der, silver_certificates_sub_ca_1_der_len, "rb+")
+                        };
+
+                        FILE * subscriber_file[2] = {
+                            fmemopen(golden_certificates_subscriber_1_der, golden_certificates_subscriber_1_der_len, "rb+"),
+                            fmemopen(silver_certificates_subscriber_1_der, silver_certificates_subscriber_1_der_len, "rb+")
+                        };
+
+                        int pos;
+//                        std::cout << "\n ROOT:" << std::endl;
+//                        pos = compareasn1(root_file[0], root_file[1], stdout);
+//
+//                        std::cout << "\n SUB:" << std::endl;
+//                        pos = compareasn1(sub_file[0], sub_file[1], stdout);
+
+                        std::cout << "\n SUBSCRIBER:" << std::endl;
+                        pos = compareasn1(subscriber_file[0], subscriber_file[1], stdout);
+
+                    }
+                    }
+            } // namespace
+        }     // namespace generators
+    }         // namespace crypto_service
+} // namespace unit
+} // namespace test

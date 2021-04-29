@@ -88,6 +88,17 @@ echo -e "\033]12;magenta\007"
 ### Clear the screan
 clear
 
+
 #### EOF #######################################################################
 
+export http_proxy=http://israel_m:WCP_4791_asm@proxy-emea.rsint.net:80
+export https_proxy=http://israel_m:WCP_4791_asm@proxy-emea.rsint.net:80
+export ftp_proxy=http://israel_m:WCP_4791_asm@proxy-emea.rsint.net:80
+export HTTP_PROXY=$http_proxy
+export HTTPS_PROXY=$https_proxy
+export FTP_PROXY=$ftp_proxy
 
+export GTEST_COLOR=1
+
+export DISPLAY='127.0.0.1:0.0'
+source /home/mis/.bash.d/bashmark.sh

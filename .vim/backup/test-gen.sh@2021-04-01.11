@@ -1,0 +1,97 @@
+#!/bin/bash
+
+_usage() {
+cat <<-EOF
+                "${0##*/}"
+################################################################################
+
+@author    Marco Israel (MI)
+@date      2001
+@brief     Geberate a certificate test folder and run the creation script.
+
+
+  USAGE:
+ "${0##*/} <testName>
+
+ @example
+ "${0##*/} 1.2.3.4_myRequirement
+
+################################################################################
+# END OF HELP.
+EOF
+}
+
+
+
+_gen_readme() {
+cat <<-EOF > "$1"/README
+TEST
+"$1"
+--------------------------------------------------------------------------------
+REQUIRED SCOPE:
+
+1.
+TODO
+
+2.
+TODO
+
+--------------------------------------------------------------------------------
+TESTLIST:
+
+1.
+* TODO
+
+
+--------------------------------------------------------------------------------
+EXPACT:
+
+1.
+* TODO
+
+
+--------------------------------------------------------------------------------
+RESULT:
+
+1.
+* TODO
+
+
+--- EOF ------------------------------------------------------------------------
+EOF
+}
+
+
+
+### MAIN #######################################################################
+
+if [ "$#" -eq  2 ]
+then
+    NAME="$1"
+
+    if [ ! -d $NAME ]
+    then
+    echo "NEW REQUIRED"
+        _gen_readme "$NAME"
+    fi
+
+    if [ ! -d $NAME/$2 ]
+    then
+        echo "NEW TESTCASE"
+        cp -r cnf "$NAME/$2
+    fi
+
+     ./create-certificates.sh "$NAME/$2" 1> /tmp/tmp.log 2>&1
+
+     mv ./output "$NAME/$2/"
+     mv /tmp/tmp.log "$NAME/$2/"output/compiler.log
+
+     vim "$NAME/README"
+     git add "$NAME"
+     git commit "$NAME" -m "ADD INIT TEST [§NAME]"
+
+else
+    _usage
+fi
+
+### EOF ########################################################################

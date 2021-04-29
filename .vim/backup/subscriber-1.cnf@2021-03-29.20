@@ -1,0 +1,48 @@
+#
+# Subscriber
+#
+# Author: Matthias Nagel
+# Date: 2019-11-21
+#
+
+[ subscriber_1_dn ]
+
+countryName          = "DE"
+stateOrProvinceName  = "Somewhere Else"
+localityName         = "Unknown City"
+organizationName     = "Anonymous Organization"
+commonName           = "Meeting Room 3rd Floor"
+
+
+
+[ req ]
+
+encrypt_key        = no
+utf8               = yes
+string_mask        = utf8only
+distinguished_name = subscriber_1_dn
+req_extensions     = req_extensions
+default_md         = sha384
+prompt             = no
+
+[ attributes ]
+SubjectPublicKeyInfo  =  ASN1:SEQUENCE:myAlgorithmIdentifier
+
+
+[ req_extensions ]
+subjectAltName     = dirName:subscriber_1_alt_name
+
+[ subscriber_1_alt_name ]
+countryName          = "DE"
+localityName         = "Stuttgart"
+organizationName     = "Rohde & Schwarz SIT GmbH"
+commonName           = "ED7-FN 9876.2222.54-123456"
+
+
+
+[ myAlgorithmIdentifier ]
+policyId = OID:ed7KeyAlgorithms2
+namedCurve = OID:ed7NamedCurve
+
+##### EOF ######################################################################
+# vim:ft=sh
