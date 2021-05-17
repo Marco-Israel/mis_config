@@ -23,7 +23,7 @@ FINALT:
 #   FIX         (Bug fix)
 #   NEW         (Howl brand new file added)
 #   REFAC       (Refactoring code)
-    RELESE      (commit a relase(able) state)
+#    RELESE      (commit a relase(able) state)
 #   STYLE       (Formatting, missing semi colons, etc; no code change)
 #   TEST        (adding or refactoring tests; no production code change)
 #   TODO        (Temporary fix to; please avoid it AND fix it asp.)

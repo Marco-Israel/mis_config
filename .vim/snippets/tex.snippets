@@ -7,6 +7,12 @@ snippet ver
 
 snippet tabx tabular (or arbitrary) environment
 	\\begin{${5:tabularx}}{${0:|c|c|c|} }
-	\hline ${1:${VISUAL}} && 	${2:${VISUAL}} && 	${3:${VISUAL}} \\\
+	\hline ${1:${VISUAL}} & 	${2:${VISUAL}} & 	${3:${VISUAL}} \\\
+	\hline
+	\\end{${5}}
+
+snippet tabe tabular (or arbitrary) environment
+	\\begin{${5:tabular}}{${0:|c|c|c|} }
+	\hline ${1:${VISUAL}} & 	${2:${VISUAL}} & 	${3:${VISUAL}} \\\
 	\hline
 	\\end{${5}}
