@@ -1,0 +1,403 @@
+%-------------------------------------------------------------------------------
+% @author    Marco Israel (MI)
+% @date      2020-12
+% @authors   Last changed by:  Marco Israel - 2020.
+%
+%
+% @brief     German DinBrief template
+% @details   German DinBrief template
+%
+%
+%  @example
+%  "mkpdf -f letter_template.tex"
+%
+%  @copyright     Available under the MIT License.
+%
+%			Copyright (C) 2020 Marco Israel (MI).			All rights reserved.
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in
+% the Software without restriction, including without limitation the rights to
+% use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+% of the Software, and to permit persons to whom the Software is furnished to
+% do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall and MUST BE
+% included in all copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+% THE SOFTWARE.
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+%	DOCUMENT CONFIGURATIONS
+%-------------------------------------------------------------------------------
+
+\documentclass[
+    version=last,           % use last release of scrlttr2 package
+    DIV=13,                 % ?
+    BCOR=0mm,               % ?
+    paper=a4,               % paper size
+    fontsize=12pt,          % fontsize
+    firsthead=on,           % display header on first page
+    firstfoot=on,           % display footer on first page
+    pagenumber=on,i         % position of the page number
+    parskip=half,           % Use indent instead of skip, half, false
+    enlargefirstpage=,      % more space on first page
+    firsthead=on,           % Display the adress
+    fromrule=afteraddress,  % separate the address with a line in letter he
+    priority=off,           % print a priority onto the document
+    backaddress=true,       % Adress to send back
+    refline=dateright,      % location of the date
+	fromalign=right,	    % Aligns the from address to the right
+    fromemail=on,i          % turn on email of sender
+    fromurl=on,             % print URL of sender
+    frombank=on,
+    fromphone=on,           % turn on phone of sender
+    frommobilephone=on      % Mobile Phone number
+    fromlogo=on,            % turn on logo of sender
+    addrfield=on,           % address field for envelope with window, on or true
+    subject=untitled,  % placement of subject, beforeopening or titled
+    foldmarks=off,          % print foldmarks
+    numericaldate=off,      % display date in numbers only
+	pagenumber=right,	        % Set page numbers from page 2 onwards
+	parskip=half,	        % Separates paragraphs with some whitespace,
+    headsep=false,          % Seperatorline in the header
+    footsepline=true,       % Seperatorline in the footer
+			%use parskip=full for more space or comment out to return to default
+    foldmarks=off,		    % Prints small fold marks on the left of the page
+	]{scrlttr2}
+
+% Set Font: sans serif Latin Modern
+\usepackage{lmodern}
+\usepackage[T1]{fontenc} % For extra glyphs (accents, etc)
+\usepackage{stix} % Use the Stix font by default
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+%\usepackage[english]{babel}
+\usepackage[ngerman,english]{babel}
+\usepackage{url}
+\usepackage{csquotes}
+\usepackage{listings}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\renewcommand*{\raggedsignature}{\raggedright} %Signatur rechtsbündig
+
+\usepackage{array}
+\usepackage{makecell}
+
+
+% Set Page layout:
+\usepackage{changepage}
+    %\changepage{text height}{text width}{even-side margin}
+    %{odd-side margin}{column sep.}
+    %{topmargin}{headheight}{headsep}{footskip}
+\changepage{}{}{}{}{}{}{}{}{}
+
+%-------------------------------------------------------------------------------
+%	YOUR INFORMATION AND LETTER DATE
+%-------------------------------------------------------------------------------
+
+\KOMAoptions{foldmarks=true,
+foldmarks=false,
+fromurl=false,
+fromemail=true,
+fromphone=false,
+fromfax=false,
+fromalign=right,
+fromrule=off,
+footsepline=on,
+fromlogo=true,
+headsepline = true,
+footsepline = true
+%fromrule=afteraddress%  % Trennlinie unter dem Briefkopf
+}
+
+%\setkomavar{fromlogo}{\parbox[b]{8cm}{\usekomafont{fromaddress}%
+%        {\mbox{\LARGE \bfseries Embedded System Design GmbH}}
+%        \smallskip}
+%}
+%
+
+\setkomavar*{urlseparator}{}
+\setkomavar{urlseparator}{}
+\setkomavar{frombank}{Eine Bank\\BLZ~123\,45\,678\\Kto~123456789}
+\setkomavar{fromname}{Marco Israel} % Your name used in the from address
+\setkomavar{fromurl}{www.marcois.eu}
+\setkomavar{fromaddress}{Am Wickenkamp 38\\ 32351 Stemwede}
+\setkomavar{fromemail}{Marco-Israel@online.de}
+\setkomavar{signature}{Marco Israel}
+\setkomavar{fromphone}{05773 00000000}
+\setkomavar{frommobilephone}{0175 00000}
+%\setkomavar{place}{Stemwede}
+%\includegraphics[⟨options⟩]{⟨file⟩}
+\firstfoot{}
+\nextfoot{}
+
+
+%-------------------------------------------------------------------------------
+%  HEADER SECTION
+%-------------------------------------------------------------------------------
+%\firsthead{\centering
+%        {\mbox{\LARGE \bfseries Embedded System Design GmbH}}
+%}
+%
+
+%-------------------------------------------------------------------------------
+%  FOOTER SECTION
+%-------------------------------------------------------------------------------
+%\firstfoot{%
+%\centering
+%{\renewcommand{\\}{\ {\large\textperiodcentered}\ }
+%\small\usekomavar{frombank}
+%}%
+%}
+%
+
+
+
+
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+%-------------------------------------------------------------------------------
+%	ADDRESSEE
+%-------------------------------------------------------------------------------
+
+% Addressee name and address
+\begin{letter} {Wilhelm Büchner Hochschule \\
+Hilpertstr. 31\\
+64295 Darmstad}
+
+\setkomavar*{yourref}{AufgabenCode}
+\setkomavar{yourref}{CLE03-XX1-N01}		% Ihr Zeichen
+\setkomavar*{yourmail}{HeftKürzel} 	% Ihr Schreiben vom
+\setkomavar{yourmail}{CLE03XX 1} 	% Ihr Schreiben vom
+\setkomavar*{myref}{Auflage}       	% Unser Zeichen
+\setkomavar{myref}{0111 N01}       	% Unser Zeichen
+\setkomavar*{customer}{Matrikel-Nr}
+\setkomavar{customer}{580201} 	% Kundennummer
+\setkomavar*{invoice}{StudiengangsNr.}   	% Rechnungsnummer
+\setkomavar{invoice}{1640}   	% Rechnungsnummer
+\setkomavar{place}{Stemwede}		% Ort
+\setkomavar{date}{\today}			% Datum
+
+\setkomavar{subject}{Einsendeaufgaben Typ A }
+
+\opening{Sehr geehrte(r) Herr / Frau}
+
+Guten Tag,
+
+im Anhang die Lösungen für o.g. Einsendeaufgabe Typ A,
+\\
+\begin{itemize}
+    \item Multiple Choice
+        \begin{enumerate}
+        \item \textbf{Collaboration:} C
+        \item \textbf{Gruppen, Teams, Communities und Organisationen:} B
+        \end{enumerate}
+            \vspace{1cm}
+    \item Textaufgaben
+        \begin{enumerate}
+        \setcounter{enumi}{2}
+    \item \textbf{Drei Ebenen der Zusammenarbeit}
+        \begin{description}
+    \item[Sprint:]  Ansammlung individueller Arbeiten die von einzelnen ohne
+        Interaktion bearbeitet werden. Dabei ist keine Koordination zwischen den
+        einzelnen Personen und ihren Aufgaben nötig.
+    \item[Staffel:] Die Arbeiten sind in Pakete geteilt, die individuell und
+        einzeln / alleine bearbeitet werden. Nach vollendung des Arbeitspaketes
+        ist eine Übergabe nötig, damit der nächste Mitmensch an der Aufgabe
+        weiterarbeiten und um sein Arbeitspaket ergänzen kann. Am Ende steht ein
+        Ergebnis, das aus vielen einzelarbeiten zusammen gesetzt wurde. Hierbei
+        ist lediglich die Übergabe und die Schnittstellen zwischen den Arbeiten
+        abzustimmen und zu koordinieren.
+    \item[Mannschaft:] Hierbei ist die stetige Zusammenarbeit einer
+        Mahnschaft/eines Teams / Organisation ... nötig. Keiner kann das Ziel
+        alleine erarbeiten/erreichen und jedes Team-Mitglied hat den gleichen
+        (stellen) Wert. Hier muss das Team stetig koordiniert, synchronisiert
+        und zum Ziel ausgerichtet werden.
+        werden.
+        \end{description}
+
+            \vspace{1cm}
+        \item \textbf{Sechs Muster der Zusammenarbeit}
+            \begin{description}
+        \item[Generierung:] Dieses Muster dient der Generierung und Sammlung von
+            Ideen innerhalb einer Zusammenarbeit. Der Ideenpool wird durch
+            Kreativität / Kreativitätstechniken und/oder das Sammeln von
+            Informationen und den Austausch von Gedanken erweitert werden.
+        \item [Reduktion:] Aus einer Vielzahl von Ideen werden diejenigen
+            herausgearbeitet, welche in der Gruppe am meisten Aufmerksamkeit
+            bekommt. Durch das Reduzieren der Ideen wird zunehmend auch auf
+            die wesentlichen Informationen reduziert oder abstrahiert und so der
+            Kern verschiedener Ideen zu einer klaren Idee zusammen gefasst. Das
+            Reduzieren bedeutet nicht, das sich auf Ideen geeinigt wurde. Es ist
+            lediglich ein Reduzieren und Zusammenfassen des Gesamten, auf wenige
+            in sich eigenständig stimmige Ideen.
+        \item [Verdeutlichung:]
+            Es soll ein gemeinsames Verständnis über die verbliebenen
+            (reduzierten, zusammengefassten, abstrahierten) Ideen in der Gruppe
+            erreicht werden. Hierzu muss ein gemeinsames Verständnis über die
+            Ideen und deren Sinn / Bedeutung geschaffen werden. Damit einher
+            geht auch (Voraussetzung für das Verdeutlichen ist) ein Verständnis
+            des eigentlichen Problems / der Herausforderung und seiner
+            Lösungsalternativen.
+        \item [Gliederung und Organisierung:]
+            Hier soll ein Verständnis über bestehende oder mögliche Beziehungen
+            zwischen den Ideen erreicht werden. So werden auch komplexe Ideen
+            verständlicher. Die Gliederung und organisation der verbleibenden
+            Ideen erleichtert zudem die nachfolgenden Arbeitsschritte.
+        \item [Bewertung:]
+            Das Bewerten von Ideen setzt zunächst voraus, das ein Verständnis
+            der Idee(n) und jener Werte entwickelt wird. Dieses Verständnis
+            unterstützt letzten Endes bei der Entscheidungsfindung und hilft der
+            Gruppenkommunikation. Hierbei werden zunächst individuelle
+            Präferenzen begründet und anschließend zu einer Gruppenpräferenz
+            weiterentwickelt. Durch die Bewertung werden auch neue Thesen,
+            Meinungsunterschiede und -Übereinstimmungen aufgedeckt.
+         \item [Einigung / Konsensbildung:]
+             Durch verschiedene Techniken wie dem herausarbeiten der
+             gemeinsamen Präferenzen oder der Klärung der Gegensätze soll eine
+             Einigung auf Ideen geschaffen werden, welche als Lösung(en) zur
+             Aufgabenstellung dienen.
+            \end{description}
+
+            \vspace{1cm}
+        \item \textbf{Fünf Effekte der Zufriedenheit in der IS-Forschung (aus
+            zehn Effekten) }
+            In der IS-Forschung wird wischen zwei unterschiedlichen Bedeutungen
+            unterschieden:
+            \begin{description}
+        \item[Zufriedenheit als Urteil:] Hier ist Zufriedenheit demnach erfüllt,
+            inwieweit ein Bedüfnis erfüllt wurde. Beispielsweise ein
+            Informationsbedürfnis, Hunger, Schlaf oder Leistungen eines
+            Arbeitgebers.
+        \item [Zufriedeneheit als Gemütserregung:] Dies wird als emotionale
+            Reaktion beschrieben. Beispielsweise bei einer wahrgenommenen,
+            erfüllten Verantwortung gegenüber etwas.
+            \end{description}
+            Die Yield Shift Theory of Satisfaction grenzt dabei zehn
+            wiederkehrende Muster der Zufriedenheit ab. Beispielsweise:
+            \begin{description}
+            \item [Nostalgic effects:] Dies ist eine positive oder negative
+                Zufriedenheit basierend auf vergangenen Erfolgen oder
+                Misserfolgen ohne das sich diese alten Umstände auf
+                gegenwärtige Umstände auswirken.
+            \item [Differential effects:] Trotz das unterschiedliche Individuen
+                ähnlichen Nutzen aus einer Sache ziehen, empfinden sie ein
+                unterschiedliches Gefühl der Zufriedenheit / Unzufriedenheit
+                (trotz gleicher Erfolge / gleichem Nutzen).
+            \item[Hygiene effect:] Hierbei wird davon ausgegangen, dass
+                Individuen einen IS-/IT-Gegenstand niemals zustimmen, sondern
+                im besten fall neutral oder sonst ablehnend gegenüberstehen,
+                unabhängig ob des Objekt fehlerfrei ist.
+            \item [Mixed feelings:] Dies beschreibt ein gemischtes Gefühl von
+                Individuen gegenüber neuem. Beispielsweise der Neueinführung
+                einer Software durch die IT.
+            \item [Attenuation effects:] Dies beschreibt, das eine anfängliche
+                Zufriedenheit oder Unzufriedenheit über die Zeit abnimmt /
+                abschwächt (gedämpft wird).
+            \end{description}
+
+            \vspace{1cm}
+        \item \textbf{Yield Shift Theory of Satisfaction nach Briggs}:
+            Die Yield Shift Theory of Satisfaction beschreibt Erklärungsansätze
+            zur Entstehung und Veränderung von (Un-) Zufriedenheit. Die Theorie
+            grenzt dabei zehn wiederkehrende Muster der Zufriedenheit ab
+            (Beispiele s.o).
+            \\
+            Der Effekt in der Aufgabenstellung lässt sich darin begründen, das
+            Gruppe A nicht trotz der IT-Probleme Zufriedener zu sein schien,
+            sonder wegen der kürzlichen (noch präsenten) Probleme zufriedener
+            ist. Die Probleme zeigen den Mitarbeitenden, das die (Berufs-)Welt
+            nicht perfekt ist, aber sie einen Arbeitgeber oder eine IT-Abteilung
+            haben, welche Sie nicht im Stich lässt, sondern die Probleme (für
+            sie) löst. Die Mitarbeiter sind dankbar, das Ihnen geholfen wurde
+            und sie ihrer Arbeit wieder nachgehen, welche sie aus verschiedenen
+            intrinsischen und/oder extrinsischen Gründen tun (möchten). Die
+            Mitarbeiter wissen aus ihrem privaten Leben (insgeheim oder
+            bewusst), dass auch dort immer wieder Herausforderungen auf sie
+            warten, welche Ihnen dort nicht so einfach abgenommen werden. Sie
+            werden durch die Probleme an ihre eigenen erinnert und sind dankbar,
+            dass dieses im Berufsleben für sie gelöst werden.
+            Werden solche und andere Probleme wiederkehrend unkompliziert für
+            sie von anderen gelöst, tritt ein \textit{Nostalgic effect} ein
+            (s.o.).
+            \\
+            Bei Gruppe B
+            tritt so etwas wie ein \textit{Attenuation effect} auf (s.o), bei
+            welchem die laufende IT Infrastuktur als selbstverständlich
+            angesehen wird und alle anderen Problems des Alltages weiter in den
+            Vordergrund rücken, welche die Gesamt-Zufriedenheit stört.
+
+            \vspace{1cm}
+            \item \textbf{ Fünf Ursachen für Konflikte  und Lösungsansätze }
+                \\
+            \vspace{0.2cm}
+            \begin{tabular}{|c|c|c| }
+                \hline  Konflikt Art  & Konflikt Beschreibung & Lösung Beschreibung\\
+                \hline Bedeutungsunterschiede & \thead{Unterschiedliches Verständnis
+                \\ einer Sache } & \thead{ Definieren der Sache \\ und ihrer Beziehungen }\\
+                \hline \thead{Widersprüchliche \\ Information } & \thead{
+                Asymmetrische Informationen \\ führen zu Konflikten } & \thead{
+                Informationen Gegenüberstellen, \\ Vergleichen und auf
+             \\Glaubwürdigkeit prüfen} \\
+             \hline \thead{Unterschiedliche \\ mentale Modelle \\ (Ursache-Wirkung Modelle) } & \thead {Mentale
+             Modelle können \\ durch Unstimmigkeit zu \\ Problemen führen }  &
+                \end{tabular}
+
+        \end{enumerate}
+\end{itemize}
+\vspace{1cm}
+Mit freundlichen Grüßen \\
+\\
+    \includegraphics[scale=0.70]{../unterschrift.png}
+    \\
+    Marco Israel
+
+
+
+%\encl{Myattachments} % Attached documents
+
+%-------------------------------------------------------------------------------
+%   Postskriptum
+%
+%\ps\ PS:\ someText
+%-------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------
+%  Anlagen
+%\setkomavar*{enclseparator}{Anlage}
+%\encl{%
+%  Anlage 1\\
+%  Anlage 2%
+%}
+%-------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------
+%   Verteiler
+%\setkomavar*{ccseparator}{Kopie an}
+%\cc{%
+%  Verteiler 1\\
+%  Verteiler 2%
+%}
+%-------------------------------------------------------------------------------
+
+\end{letter}
+
+\end{document}
+
+%--- EOF -----------------------------------------------------------------------
+%
+%
