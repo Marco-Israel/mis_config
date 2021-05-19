@@ -1,0 +1,357 @@
+%-------------------------------------------------------------------------------
+% @author    Marco Israel (MI)
+% @date      2020-12
+% @authors   Last changed by:  Marco Israel - 2020.
+%
+%
+% @brief     German DinBrief template
+% @details   German DinBrief template
+%
+%
+%  @example
+%  "mkpdf -f letter_template.tex"
+%
+%  @copyright     Available under the MIT License.
+%
+%			Copyright (C) 2020 Marco Israel (MI).			All rights reserved.
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in
+% the Software without restriction, including without limitation the rights to
+% use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+% of the Software, and to permit persons to whom the Software is furnished to
+% do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall and MUST BE
+% included in all copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+% THE SOFTWARE.
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+%	DOCUMENT CONFIGURATIONS
+%-------------------------------------------------------------------------------
+
+\documentclass[
+    version=last,           % use last release of scrlttr2 package
+    DIV=13,                 % ?
+    BCOR=0mm,               % ?
+    paper=a4,               % paper size
+    fontsize=12pt,          % fontsize
+    firsthead=on,           % display header on first page
+    firstfoot=on,           % display footer on first page
+    pagenumber=on,i         % position of the page number
+    parskip=half,           % Use indent instead of skip, half, false
+    enlargefirstpage=,      % more space on first page
+    firsthead=on,           % Display the adress
+    fromrule=afteraddress,  % separate the address with a line in letter he
+    priority=off,           % print a priority onto the document
+    backaddress=true,       % Adress to send back
+    refline=dateright,      % location of the date
+	fromalign=right,	    % Aligns the from address to the right
+    fromemail=on,i          % turn on email of sender
+    fromurl=on,             % print URL of sender
+    frombank=on,
+    fromphone=on,           % turn on phone of sender
+    frommobilephone=on      % Mobile Phone number
+    fromlogo=on,            % turn on logo of sender
+    addrfield=on,           % address field for envelope with window, on or true
+    subject=untitled,  % placement of subject, beforeopening or titled
+    foldmarks=off,          % print foldmarks
+    numericaldate=off,      % display date in numbers only
+	pagenumber=right,	        % Set page numbers from page 2 onwards
+	parskip=half,	        % Separates paragraphs with some whitespace,
+    headsep=false,          % Seperatorline in the header
+    footsepline=true,       % Seperatorline in the footer
+			%use parskip=full for more space or comment out to return to default
+    foldmarks=off,		    % Prints small fold marks on the left of the page
+	]{scrlttr2}
+
+% Set Font: sans serif Latin Modern
+\usepackage{lmodern}
+\usepackage[T1]{fontenc} % For extra glyphs (accents, etc)
+\usepackage{stix} % Use the Stix font by default
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+%\usepackage[english]{babel}
+\usepackage[ngerman,english]{babel}
+\usepackage{url}
+\usepackage{csquotes}
+\usepackage{listings}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\renewcommand*{\raggedsignature}{\raggedright} %Signatur rechtsbündig
+
+\usepackage{array}
+\usepackage{makecell}
+
+
+% Set Page layout:
+\usepackage{changepage}
+    %\changepage{text height}{text width}{even-side margin}
+    %{odd-side margin}{column sep.}
+    %{topmargin}{headheight}{headsep}{footskip}
+\changepage{}{}{}{}{}{}{}{}{}
+
+%-------------------------------------------------------------------------------
+%	YOUR INFORMATION AND LETTER DATE
+%-------------------------------------------------------------------------------
+
+\KOMAoptions{foldmarks=true,
+foldmarks=false,
+fromurl=false,
+fromemail=true,
+fromphone=false,
+fromfax=false,
+fromalign=right,
+fromrule=off,
+footsepline=on,
+fromlogo=true,
+headsepline = true,
+footsepline = true
+%fromrule=afteraddress%  % Trennlinie unter dem Briefkopf
+}
+
+%\setkomavar{fromlogo}{\parbox[b]{8cm}{\usekomafont{fromaddress}%
+%        {\mbox{\LARGE \bfseries Embedded System Design GmbH}}
+%        \smallskip}
+%}
+%
+
+\setkomavar*{urlseparator}{}
+\setkomavar{urlseparator}{}
+\setkomavar{frombank}{Eine Bank\\BLZ~123\,45\,678\\Kto~123456789}
+\setkomavar{fromname}{Marco Israel} % Your name used in the from address
+\setkomavar{fromurl}{www.marcois.eu}
+\setkomavar{fromaddress}{Am Wickenkamp 38\\ 32351 Stemwede}
+\setkomavar{fromemail}{Marco-Israel@online.de}
+\setkomavar{signature}{Marco Israel}
+\setkomavar{fromphone}{05773 00000000}
+\setkomavar{frommobilephone}{0175 00000}
+%\setkomavar{place}{Stemwede}
+%\includegraphics[⟨options⟩]{⟨file⟩}
+\firstfoot{}
+\nextfoot{}
+
+
+%-------------------------------------------------------------------------------
+%  HEADER SECTION
+%-------------------------------------------------------------------------------
+%\firsthead{\centering
+%        {\mbox{\LARGE \bfseries Embedded System Design GmbH}}
+%}
+%
+
+%-------------------------------------------------------------------------------
+%  FOOTER SECTION
+%-------------------------------------------------------------------------------
+%\firstfoot{%
+%\centering
+%{\renewcommand{\\}{\ {\large\textperiodcentered}\ }
+%\small\usekomavar{frombank}
+%}%
+%}
+%
+
+
+
+
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+%-------------------------------------------------------------------------------
+%	ADDRESSEE
+%-------------------------------------------------------------------------------
+
+% Addressee name and address
+\begin{letter} {Wilhelm Büchner Hochschule \\
+Hilpertstr. 31\\
+64295 Darmstad}
+
+\setkomavar*{yourref}{AufgabenCode}
+\setkomavar{yourref}{CLE02-XX1-K02}		% Ihr Zeichen
+\setkomavar*{yourmail}{HeftKürzel} 	% Ihr Schreiben vom
+\setkomavar{yourmail}{CLE02XX} 	% Ihr Schreiben vom
+\setkomavar*{myref}{Auflage}       	% Unser Zeichen
+\setkomavar{myref}{0119K02}       	% Unser Zeichen
+\setkomavar*{customer}{Matrikel-Nr}
+\setkomavar{customer}{580201} 	% Kundennummer
+\setkomavar*{invoice}{StudiengangsNr.}   	% Rechnungsnummer
+\setkomavar{invoice}{1640}   	% Rechnungsnummer
+\setkomavar{place}{Stemwede}		% Ort
+\setkomavar{date}{\today}			% Datum
+
+\setkomavar{subject}{Einsendeaufgaben Typ A }
+
+\opening{Sehr geehrte(r) Herr / Frau}
+
+Guten Tag,
+
+im Anhang die Lösungen für o.g. Einsendeaufgabe Typ A,
+\\
+\begin{itemize}
+    \item Multiple Choice
+        \begin{enumerate}
+        \item \textbf{CSCW:} D
+        \item \textbf{Web 2.0:} A. (Wobei in Zeiten des Dynamischen  Webs im
+            Gegensatz zum statischen Web ist wohl 4. nicht mehr richtig.
+            Aber das Studienheft ist sicher auch noch aus Zeiten des statischen
+            webs und alle anderen Punkte sind irgendwie auch richtig.).
+       \item \textbf{Social-Sharing-Plattformen}: A
+       \item \textbf{Anforderungen an Enterprise 2.0 nach MacAfee:} B
+
+
+        \end{enumerate}
+            \vspace{1cm}
+    \item Textaufgaben
+        \begin{enumerate}
+        \setcounter{enumi}{2}
+    \item \textbf{Ansatzpunkte der Vorwärts- und Rückwerts CSCW}
+        Bei der Vorwärtsinterpretation steht der Computer (C) als
+        Unterstützungsmedium (S) am Anfang der Betrachtung um eine Form
+        der Zusammenarbeit / Kooperation (C) bei Arbeitsaufgaben (W) zu
+        unterstützen. Der Fokus liegt auf der Technologie mit der Aufgaben
+        erfüllt werden können.\\
+
+        Bei der Rückwärtsinterpretation ist die Arbeitsaufgabe (W) Ausgangspunkt,
+        welche kooperativ und arbeitsteilig durchgeführt wird (C) und
+        Unterstützung durch Technologie erfährt (C). Der Fokus liegt auf der
+        Aufgabe, nicht auf der eingesetzten Technologie. \\
+
+        Das 3-K Modell beschreibt dabei die Art der unterstützten Interaktion
+        zwischen den Teammitgliedern durch die Technik (C) und kann auf Basis
+        von Kommunikation, Koordination oder Kooperation erfolgen. Die
+        eingesetzten, unterstützenden Technologien lassen sich in Systemklassen
+        einteilen; wie \textit{Kommunikation, gemeinsame Informationsräume,
+        Workflow Management} oder \textit{Workgroup Computing}.
+            \vspace{1cm}
+        \item \textbf{Enterprise 2.0 und die Funktionen der sechs Komponenten}
+            Enterprise 2.0 beschreibt nach MacAfee: den unternehmerischen
+            Einsatz von Social Software. Sie sammeln nicht nur Wissen, sondern
+            auch Praktiken und Ergebnisse der Mitarbeiter dokumentieren. Dabei
+            sollen Enterprise 2.0 sechs nachfolgende Kriterien erfüllen, die
+            auch als \textit{SALSE-Kriterien} bezeichnet werden.
+
+            \begin{description}
+            \item[Search:] Schlagwortsuche ermöglichen das finden relevanter,
+                gesuchter Informationen und Inhalte.
+            \item[Links:] Es sollen selbst Links auf relevante Inhalte erstellt
+                werden, bzw. Inhalte untereinander verlinkt werden können um so
+                die Navigation und Suche zu erleichtern.
+                \item[Authoring] Mitarbeiter sollen die Möglichkeit haben, Beiträge
+                    zu verfassen und und eigne wie andere zu editieren. So ist
+                    das System (Intranet, Internet, ...) größtmöglich aktuell
+                    und wachsend,
+                \item[Tags:] Das Tagen von Inhalten bedeutet in Kategorisieren
+                    von Inhalten. Beiträge und Vorschläge können so anhand von
+                    Tags gefunden und gefiltert werden.
+                \item[Extensions]
+                    Extension sind Erweiterungen von Tags. Sie liefern
+                    Suchergebnisse und Vorschläge aufgrund des (Surf-) Verhaltens
+                    des Anwenders und seiner Interessen
+                \item[Signals:] Signale wie Feeds informieren Interessenten /
+                    Abonnenten der Feeds über Änderungen in Inhalten bestimmter
+                    Seiten oder ganzer Kategorialen (Tags-Gruppen).
+            \end{description}
+
+            \vspace{1cm}
+
+        \item \textbf{Formen von Awareness, Informationstransparenz und wie sich
+            diese auf Social Software auswirkt}
+            Die Erkenntnis der Mitarbeiter, dass sie Teil einer Gemeinschaft
+            sind, ist ein wesentliches Kriterium für eine erfolgreiche
+            Zusammenarbeit. Das wissen um den Andren, seiner Interessen und
+            Stärken sowie über gemeinsame Artefakte bildet eine Basis für
+            Zusammenarbeit und weiteren Austausch.
+
+
+            \vspace{1cm}
+        \item \textbf{Sieben Paradigmen zur Charakterisierung des Web 2.0}
+            \begin{description}
+                \item[The Web is a Platform]:
+                    Das Web 2.0 ist eine offene Plattform, welche keinem alleine
+                    gehört, sondern sich gegenseitig durch unterschiedliche
+                    Dienste, freie Standards und Inhalte ergänzt und erweitert.
+                    Solche werden geteilt und wiederverwendet.
+                \item[Harnessing Collective Intelligence]:
+                \item[Data is the Next \textit{Intel Inside} ]:
+                    Den Kern von Webapplikationen bilden die Daten (Inhalte und
+                    Informationen) selbst sowie drumherum die Mechanismen diese
+                    Abzulegen, Aufzubereiten, darzustellen, zu speichern, zu
+                    kategorisieren und aufzufinden.
+                \item[Lightweigt Programming Models]:
+                \item[End of Software Release Cycle]:
+                    Webanwendungen werden zunehmend eine Dienstleistung, die
+                    sich stetig dem Nutzerverhalten und seinen (An-)Forderungen
+                    und Wünschen anpasst. Es existiert somit kein endgültiger
+                    Software release mehr.
+                \item[Software above the Level of a Single Device]:
+                    Der Nutzer soll unabhängig einer bestimmten Hardware oder
+                    Software werden. Er soll von überall und zu jederzeit
+                    zugriff auf seine Daten und auf Informationen haben
+                    unabhängig der ihm aktuell zur Verfügung stehenden
+                    technischen Möglichkeiten. Beispielsweise: Datenspeicherung
+                    in einer globalen Cloud und Zugriff auf diese wie
+                    unterschiedlicher Geräte wie PC, Tablet,Smartphone.
+                \item[Rich User Experiences]:
+                    Durch verschiedene Technologien (z.B. Ajax) werden
+                    Webapplikationen mit interaktiven Benutzeroberflächen
+                    möglich, die klassischen Desktopanwendungen ebenbürtig sind.
+            \end{description}
+
+
+        \end{enumerate}
+\end{itemize}
+\vspace{1cm}
+Mit freundlichen Grüßen \\
+\\
+    \includegraphics[scale=0.70]{../unterschrift.png}
+    \\
+    Marco Israel
+
+
+
+%\encl{Myattachments} % Attached documents
+
+%-------------------------------------------------------------------------------
+%   Postskriptum
+%
+%\ps\ PS:\ someText
+%-------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------
+%  Anlagen
+%\setkomavar*{enclseparator}{Anlage}
+%\encl{%
+%  Anlage 1\\
+%  Anlage 2%
+%}
+%-------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------
+%   Verteiler
+%\setkomavar*{ccseparator}{Kopie an}
+%\cc{%
+%  Verteiler 1\\
+%  Verteiler 2%
+%}
+%-------------------------------------------------------------------------------
+
+\end{letter}
+
+\end{document}
+
+%--- EOF -----------------------------------------------------------------------
+%
+%
