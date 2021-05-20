@@ -1,0 +1,428 @@
+%-------------------------------------------------------------------------------
+% @author    Marco Israel (MI)
+% @date      2020-12
+% @authors   Last changed by:  Marco Israel - 2020.
+%
+%
+% @brief     German DinBrief template
+% @details   German DinBrief template
+%
+%
+%  @example
+%  "mkpdf -f letter_template.tex"
+%
+%  @copyright     Available under the MIT License.
+%
+%			Copyright (C) 2020 Marco Israel (MI).			All rights reserved.
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in
+% the Software without restriction, including without limitation the rights to
+% use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+% of the Software, and to permit persons to whom the Software is furnished to
+% do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall and MUST BE
+% included in all copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+% THE SOFTWARE.
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+%	DOCUMENT CONFIGURATIONS
+%-------------------------------------------------------------------------------
+
+\documentclass[
+    version=last,           % use last release of scrlttr2 package
+    DIV=13,                 % ?
+    BCOR=0mm,               % ?
+    paper=a4,               % paper size
+    fontsize=12pt,          % fontsize
+    firsthead=on,           % display header on first page
+    firstfoot=on,           % display footer on first page
+    pagenumber=on,i         % position of the page number
+    parskip=half,           % Use indent instead of skip, half, false
+    enlargefirstpage=,      % more space on first page
+    firsthead=on,           % Display the adress
+    fromrule=afteraddress,  % separate the address with a line in letter he
+    priority=off,           % print a priority onto the document
+    backaddress=true,       % Adress to send back
+    refline=dateright,      % location of the date
+	fromalign=right,	    % Aligns the from address to the right
+    fromemail=on,i          % turn on email of sender
+    fromurl=on,             % print URL of sender
+    frombank=on,
+    fromphone=on,           % turn on phone of sender
+    frommobilephone=on      % Mobile Phone number
+    fromlogo=on,            % turn on logo of sender
+    addrfield=on,           % address field for envelope with window, on or true
+    subject=untitled,  % placement of subject, beforeopening or titled
+    foldmarks=off,          % print foldmarks
+    numericaldate=off,      % display date in numbers only
+	pagenumber=right,	        % Set page numbers from page 2 onwards
+	parskip=half,	        % Separates paragraphs with some whitespace,
+    headsep=false,          % Seperatorline in the header
+    footsepline=true,       % Seperatorline in the footer
+			%use parskip=full for more space or comment out to return to default
+    foldmarks=off,		    % Prints small fold marks on the left of the page
+	]{scrlttr2}
+
+% Set Font: sans serif Latin Modern
+\usepackage{lmodern}
+\usepackage[T1]{fontenc} % For extra glyphs (accents, etc)
+\usepackage{stix} % Use the Stix font by default
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+%\usepackage[english]{babel}
+\usepackage[ngerman,english]{babel}
+\usepackage{url}
+\usepackage{csquotes}
+\usepackage{listings}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\renewcommand*{\raggedsignature}{\raggedright} %Signatur rechtsbündig
+
+% Set Page layout:
+\usepackage{changepage}
+    %\changepage{text height}{text width}{even-side margin}
+    %{odd-side margin}{column sep.}
+    %{topmargin}{headheight}{headsep}{footskip}
+\changepage{}{}{}{}{}{}{}{}{}
+
+%-------------------------------------------------------------------------------
+%	YOUR INFORMATION AND LETTER DATE
+%-------------------------------------------------------------------------------
+
+\KOMAoptions{foldmarks=true,
+foldmarks=false,
+fromurl=false,
+fromemail=true,
+fromphone=false,
+fromfax=false,
+fromalign=right,
+fromrule=off,
+footsepline=on,
+fromlogo=true,
+headsepline = true,
+footsepline = true
+%fromrule=afteraddress%  % Trennlinie unter dem Briefkopf
+}
+
+%\setkomavar{fromlogo}{\parbox[b]{8cm}{\usekomafont{fromaddress}%
+%        {\mbox{\LARGE \bfseries Embedded System Design GmbH}}
+%        \smallskip}
+%}
+%
+
+\setkomavar*{urlseparator}{}
+\setkomavar{urlseparator}{}
+\setkomavar{frombank}{Eine Bank\\BLZ~123\,45\,678\\Kto~123456789}
+\setkomavar{fromname}{Marco Israel} % Your name used in the from address
+\setkomavar{fromurl}{www.marcois.eu}
+\setkomavar{fromaddress}{Am Wickenkamp 38\\ 32351 Stemwede}
+\setkomavar{fromemail}{Marco-Israel@online.de}
+\setkomavar{signature}{Marco Israel}
+\setkomavar{fromphone}{05773 00000000}
+\setkomavar{frommobilephone}{0175 00000}
+%\setkomavar{place}{Stemwede}
+%\includegraphics[⟨options⟩]{⟨file⟩}
+\firstfoot{}
+\nextfoot{}
+
+
+%-------------------------------------------------------------------------------
+%  HEADER SECTION
+%-------------------------------------------------------------------------------
+%\firsthead{\centering
+%        {\mbox{\LARGE \bfseries Embedded System Design GmbH}}
+%}
+%
+
+%-------------------------------------------------------------------------------
+%  FOOTER SECTION
+%-------------------------------------------------------------------------------
+%\firstfoot{%
+%\centering
+%{\renewcommand{\\}{\ {\large\textperiodcentered}\ }
+%\small\usekomavar{frombank}
+%}%
+%}
+%
+
+
+
+
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+%-------------------------------------------------------------------------------
+%	ADDRESSEE
+%-------------------------------------------------------------------------------
+
+% Addressee name and address
+\begin{letter} {Wilhelm Büchner Hochschule \\
+Hilpertstr. 31\\
+64295 Darmstad}
+
+\setkomavar*{yourref}{AufgabenCode}
+\setkomavar{yourref}{CLE04-XX1-N01}		% Ihr Zeichen
+\setkomavar*{yourmail}{HeftKürzel} 	% Ihr Schreiben vom
+\setkomavar{yourmail}{CLE04XX} 	% Ihr Schreiben vom
+\setkomavar*{myref}{Auflage}       	% Unser Zeichen
+\setkomavar{myref}{CLE04-XX1-N01}
+\setkomavar*{customer}{Matrikel-Nr}
+\setkomavar{customer}{580201} 	% Kundennummer
+\setkomavar*{invoice}{StudiengangsNr.}   	% Rechnungsnummer
+\setkomavar{invoice}{1640}   	% Rechnungsnummer
+\setkomavar{place}{Stemwede}		% Ort
+\setkomavar{date}{\today}			% Datum
+
+\setkomavar{subject}{Einsendeaufgaben Typ A }
+
+\opening{Sehr geehrte(r) Herr / Frau}
+
+Guten Tag,
+
+im Anhang die Lösungen für o.g. Einsendeaufgabe Typ A,
+\\
+\begin{itemize}
+    \item Multiple Choice
+        \begin{enumerate}
+        \item \textbf{thinkLets 1}: C \\
+        \item \textbf{thinkLets 2}: D \\
+        \end{enumerate}
+            \vspace{1cm}
+    \item Textaufgaben
+        \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item \textbf{Elemente des Four-Ways-Framework als Rahmen zur
+            Gestaltung der Zusammenarbeit:} \\
+            \begin{description}
+                \item[Way of thinking]
+                    Die Art und Weise des Denkens beinhaltet die dem Ansatz
+                    zugrunde liegende Philosophie und damit die Sicht auf die
+                    Problemstellung sowie die zugrunde liegenden Annahmen und
+                    Fundamente.
+                \item [Way of working]
+                    Verbindung möglicher Aufgaben, die im Gestaltungsprozess
+                    durchgeführt werden. Bezeichnet als  Arbeitsweise.
+                 \item [Way of modeling]
+                    Modellierung und solche Konzepte zur Darstellung von
+                    relevanten Aspekten der Problemstellung
+                \item [Way of controlling] Die Managementmethode zur Steuerung
+                    bringt die leitenden Aspekte wie Maßregeln und Methoden zur
+                    Durchführung eines Gestaltungsansatzes.
+            \end{description}
+            \vspace{1cm}
+            \item \textbf{ Nennen und beschreiben Sie die Elemente eines
+                thinkLets:} \\
+                ThinkLets sollen wiederholbare, gleiche Ergebnisse-Qualitäten in
+                Gruppenprozessen bei gleichem Zeit und Budgetrahmen erzeugt werden.
+                ThinkLet sind dabei Bausteine die Teilprozesse repräsentieren
+                und zu einem Prozess zusammen gesetzt werden können.
+                Das anfängliche Konzept eines ThinkLets beschreibt nachfolgende
+                drei Elementare Komponenten:
+                \begin{description}
+                    \item[Das Werkzeug: ] Die Technologie, welche das Muster der
+                        Zusammenarbeit erzeugt. Von Zetteln, Stiften und
+                        Flipcharts bis hin zu Hardware- und Softwaresystemen.
+                    \item [Die Konfiguration: ] Beschreibt, wie das
+                        \textit{Werkzeug} gebrauchsfertig gemacht
+                        (eingerichtet) wird. Z.B. wie werden anonym Vorschläge
+                        in das / mit dem Werkzeug eingebracht. Vorbereitende
+                        Aufgaben der Teilnehmer / der Gruppenmitglieder
+                    \item [ Das Skript: ] Dieses beschreibt alle Aussagen und
+                        Handlungen, welche der \textit{Facilitator} tun/sagen
+                        sollte, bzw. wie er mit der Gruppe,den Werkzeugen, dem
+                        Input und den Ergebnissen (Output) umgehen
+                        umgehen soll (im Rahmen eines ThinkLets).
+                \end{description}
+            \vspace{1cm}
+            \item \textbf{ Fünf ThinkLets und representative ihre Muster der
+                Zusammenarbeit: }
+                \begin{description}
+                    \item[ FreeBrainstorming: ]  \hfill
+                        \begin{itemize}
+                        \item \textit{Generierung:} Durch das ThinkLet werden
+                                Gruppenmitglieder aus gewohnten Denkmustern
+                                herausgeholt und Ihre Energie in Richtung neuer
+                                Ideen gebracht.
+                            \item \textit{Verdeutlichung:} Die Ideen anderer
+                                        können aufgegriffen und ergänzt werden.
+
+                                    \item (ggf. \textit{ Reduktion: } Das ThinkLet
+                                        verhindert eine Informationsüberflutung da
+                                        Ideen anderer nicht neu erfunden werden
+                                        müssen sonder aufgegriffen werden können.)
+                        \end{itemize}
+                    \item [ OnePage, DealersChoice] \hfill
+                        \begin{itemize}
+                        \item \textit{Generierung} und \textit{Verdeutlichung}:
+                            wie oben in FreeBrainstorming
+                        \end{itemize}
+                    \item [ LeafHopper: ] \hfill
+                        \begin{itemize}
+                        \item \textit{Generierung} und \textit{Verdeutlichung}:
+                            Eine durch Diskussionsthemen gegliederte
+                            Kommentar-Sammlung.
+                        \end{itemize}
+                    \item [ FastFocus, Conentration, (PintheTailontheDonkey)] \hfill
+                            \begin{itemize}
+                                \item \textit{Verdeutlichung}:
+                                    Durch die Anwendung dieses ThinkLets wird
+                                    sich die Gruppe mehr über die Bedeutungen
+                                    und Formulierung der festgehaltenen
+                                    Ergebnissen einig.
+                                \item \textit{Gliederung und Organeisirrung}:
+                                    Das Ergebnis dieses ThinkLets ist eine
+                                    ordentliche, nicht redundante Liste der
+                                    Ergebnisse einer Brainstorming-Aktivität
+                                    (thinkLet).
+                                \item \textit{Reduzierung:} Durch das
+                                        Kathegorisieren, Gliedern und
+                                        Organiseren werden gleichzeitig die
+                                        (teils rohen) Brainstorming Ergebnisse
+                                        neu betrachtet und zum teil Redundanzen
+                                        aussortiert.
+                            \end{itemize}
+                        \item [ ThemeSeeker, PopcornSort, ChauffeurSort, Evolution] \hfill
+                            \begin{itemize}
+                            \item \textit{Gliederung und Organeisirrung}:
+                                Diese ThinkLets erzeugt als Output eine
+                                Zusammenstellung von Kategorien oder bekommen
+                                sie direkt als Input, um mit diesen die Inhalte
+                                eines Brainstorming im Anschluss zu gliedern und
+                                zusammen zu fassen.
+                            \item (\textit{Verdeutlichung}: Durch die
+                                Kategorisierung und das erarbeiten von
+                                Kategorien im vorfeld, findet auch
+                                eine Verdeutlichung der Brainstorming Ergebnisse
+                                statt. Denn nur wenn diese Ergebnisse verstanden
+                                worden sind, können richtige Kategorien
+                                gebildet werden und die Ergebnisse richtig
+                                zugeordnet werden.)
+                            \end{itemize}
+                        \item [ StrawPoll: ] \hfill
+                            \begin{itemize}
+                            \item \textit{Verdeutlichung:} Das ThinkLet überprüft den
+                                Konsens einer Gruppe und deckt gleich oder
+                                unterschiedliche Ansichten über Ergebnisse auf.
+                            \item \textit{Bewertung, Einigung und Konsensbildung}:
+                                Durch ausgewählte Methoden und Kriterien der
+                                Abstimmung werden die Brainstorming Ergebnisse
+                                (und Ihre Kategorien) durch die Teilnehmer
+                                bewertet und eine Liste mit gegliederte
+                                und bewerteten Positionen entsteht. Je nach
+                                Abstimmungskriterien und Abstimmungsmethoden
+                                wird hierdurch auch eine Einigung und
+                                Konsensbildung erreicht und eine grafische
+                                Strukturdarstellung des Konsens innerhalb der Gruppe
+                                kann erzeugt werden.
+                            \end{itemize}
+                            \item [ MoodRing: ] \hfill
+                                \begin{itemize}
+                                    \item \textit{Verdeutlichung, Einigung,
+                                        Konsensbildung}: Durch dieses thinkLet
+                                        werden bisherige Ergebnisse diskutiert,
+                                        Unklarheiten und Fehler korrigiert und
+                                        gleichzeit das Verständnis über die
+                                        Ergebnisse weiter verdeutlicht.
+                                \end{itemize}
+                \end{description}
+
+            \vspace{1cm}
+        \item \textbf{Die Bedeutung von Übergängen in thinkLets: } \\
+            Da thinkLets jeweils einzelne Teile eines gesamten Prozesses
+            darstellen und gleichzeitig unabhängig voneinander sind sind und
+            nahezu beliebig kombiniert
+            werden können, müssen Übergänge zwischen den einzelnen
+            Arbeitsschritten / Prozessteilen und damit zwischen den thinkLets,
+            geschaffen werden. So benötigt jedes thinkLet bestimmte
+            Rahmenbedingungen um funktionieren zu können. Etwa den Input an
+            Daten, die genutzten Werkzeuge oder der ein Arbeitsort und
+            Verantwortlichkeiten. Die Übergänge definieren dabei alle
+            (Weiter-)Entwicklungen, Maßnahmen und Aktivitäten, die erfolgen
+            müssen, um die Teilnehmer vom Ende eines thinkLets zum Beginn des
+            nächsten thinkLets (Prozessschrittes) zu begleiten. Aspekte
+            die zur Ausgestaltung eins Überganges berücksichtigt werden
+            müssen, sind nachfolgende:
+            \begin{description}
+                \item [ Changes of technology: ]
+                    Ggf. muss die Technologie bzw. das Werkzeug zwischen
+                    verschiedenen thinkLets getauscht werden
+                \item [ Changes of data: ]
+                    Ggf. muss der Output des zuletzt angewendeten thinkLets so
+                    angepasst werden, das es dem ausgewählten nachfolgenden
+                    thinkLet genügt.
+                \item [ Changes of orientation: ]
+                    Der Gruppe muss signalisiert werden, wann eine Aktivität /
+                    ein thinkLet endet und ein neues beginnt. Damit einhergehend
+                    müssen zum Ende einer Aktivität die Ergebnisse reflektiert
+                    oder zusammengefasst werden.
+                \item [ Changes of location: ]
+                    Ebenso wie die Technologie / das Werkzeug,
+                    kann es auch notwendig sein, den Arbeitsort zu wechseln
+                    (ggf. sogar in Abhängigkeit der Technologie / des Werkzeugess).
+                \item [ Changes of membership ] Genau wie die Technologie oder
+                    der Arbeitsort, kann oder muss es auch notwendig sein, die
+                    Zusammenstellung des Teams / der Teams zu verändern:
+                    beispielsweise durch austauschen verschiedener Personen
+                    und/oder der Positionen.
+            \end{description}
+
+
+        \end{enumerate}
+\end{itemize}
+\vspace{1cm}
+Mit freundlichen Grüßen \\
+\\
+    \includegraphics[scale=0.70]{../unterschrift.png}
+    \\
+    Marco Israel
+
+
+
+%\encl{Myattachments} % Attached documents
+
+%-------------------------------------------------------------------------------
+%   Postskriptum
+%
+%\ps\ PS:\ someText
+%-------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------
+%  Anlagen
+%\setkomavar*{enclseparator}{Anlage}
+%\encl{%
+%  Anlage 1\\
+%  Anlage 2%
+%}
+%-------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------
+%   Verteiler
+%\setkomavar*{ccseparator}{Kopie an}
+%\cc{%
+%  Verteiler 1\\
+%  Verteiler 2%
+%}
+%-------------------------------------------------------------------------------
+
+\end{letter}
+
+\end{document}
+
+%--- EOF -----------------------------------------------------------------------
+%
+%
