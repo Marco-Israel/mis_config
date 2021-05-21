@@ -35,7 +35,7 @@ BraceWrapping:
     AfterEnum: false
     AfterFunction: true
     AfterCaseLabel: false
-    AfterNamespace: true
+    AfterNamespace: false
     AfterStruct: false
     AfterExternBlock: false
     BeforeCatch: true
@@ -52,7 +52,7 @@ BreakBeforeBinaryOperators: true
 BreakConstructorInitializers: AfterColon
 BreakInheritanceList: AfterColon
 BreakStringLiterals: true
-CompactNamespaces: false
+CompactNamespaces: true
 ConstructorInitializerAllOnOneLineOrOnePerLine: false
 ConstructorInitializerIndentWidth: 4
 ContinuationIndentWidth: 4
@@ -88,7 +88,7 @@ JavaScriptWrapImports: true
 KeepEmptyLinesAtTheStartOfBlocks: true
 MacroBlockBegin: '^*MI_OOC_*$'
 MaxEmptyLinesToKeep: 3
-NamespaceIndentation: All
+NamespaceIndentation: Inner
 ObjCBinPackProtocolList: Auto
 ObjCBlockIndentWidth: 4
 ObjCBreakBeforeNestedBlockParam: true

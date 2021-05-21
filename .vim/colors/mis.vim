@@ -59,7 +59,7 @@ hi Typedef      guifg=#4a4a4a guibg=NONE guisp=NONE gui=NONE ctermfg=30  ctermbg
 
 """ SPECIAL """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi SpecialChar    guifg=#707070 guibg=NONE guisp=NONE gui=NONE ctermfg=242 ctermbg=NONE cterm=NONE
-hi Tag            guifg=#707070 guibg=NONE guisp=NONE gui=NONE ctermfg=30   ctermbg=NONE cterm=NONE
+hi Tag            guifg=#707070 guibg=NONE guisp=NONE gui=NONE ctermfg=0   ctermbg=NONE cterm=NONE
 hi Delimiter      guifg=#707070 guibg=NONE guisp=NONE gui=NONE ctermfg=198 ctermbg=NONE cterm=NONE
 hi SpecialComment guifg=#707070 guibg=NONE guisp=NONE gui=NONE ctermfg=242 ctermbg=NONE cterm=NONE
 hi Debug          guifg=#707071 guibg=NONE guisp=NONE gui=NONE ctermfg=242 ctermbg=NONE cterm=NONE
@@ -74,10 +74,10 @@ hi Debug          guifg=#707071 guibg=NONE guisp=NONE gui=NONE ctermfg=242 cterm
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi ColorColumn     guifg=NONE    guibg=#f5f5f5 guisp=#f5f5f5    gui=NONE      ctermfg=NONE ctermbg=237      cterm=NONE
 hi Conceal          guifg=#707070 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=242  ctermbg=NONE    cterm=NONE
-hi Cursor           guifg=#080808 guibg=#c6c6c6 guisp=#c6c6c6    gui=underline ctermfg=282  ctermbg=282     cterm=underline
-hi lCursor          guifg=#080808 guibg=#c6c6c6 guisp=#c6c6c6    gui=underline ctermfg=282  ctermbg=NONE    cterm=underline
-hi CursorIM         guifg=#080808 guibg=#c6c6c6 guisp=#c6c6c6    gui=underline ctermfg=282  ctermbg=NONE    cterm=underline
-hi CursorColumn     guifg=NONE    guibg=#f5f5f5 guisp=#f5f5f5    gui=NONE      ctermfg=NONE ctermbg=282     cterm=NONE
+hi Cursor           guifg=#080808 guibg=#c6c6c6 guisp=#c6c6c6    gui=underline ctermfg=0  ctermbg=0     cterm=underline
+hi lCursor          guifg=#080808 guibg=#c6c6c6 guisp=#c6c6c6    gui=underline ctermfg=0  ctermbg=NONE    cterm=underline
+hi CursorIM         guifg=#080808 guibg=#c6c6c6 guisp=#c6c6c6    gui=underline ctermfg=0  ctermbg=NONE    cterm=underline
+hi CursorColumn     guifg=NONE    guibg=#f5f5f5 guisp=#f5f5f5    gui=NONE      ctermfg=NONE ctermbg=0     cterm=NONE
 hi CursorLine       guifg=#080808 guibg=#c6c6c6 guisp=#c6c6c6    gui=underline ctermfg=NONE ctermbg=NONE     cterm=underline
 hi Directory        guifg=#4a4a4a guibg=NONE    guisp=NONE       gui=NONE      ctermfg=249  ctermbg=NONE    cterm=NONE
 hi DiffAdd          guifg=#4a4a4a guibg=NONE    guisp=NONE       gui=NONE      ctermfg=249  ctermbg=darkred cterm=NONE
@@ -91,10 +91,10 @@ hi Folded           guifg=#808080 guibg=#000040 ctermfg=darkgrey ctermbg=black c
 hi FoldColumn       guifg=#808080 guibg=#000040 ctermfg=darkgrey ctermbg=black cterm=bold   term=bold
 hi SignColumn       guifg=#c2c2c2 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=7    ctermbg=NONE    cterm=NONE
 hi IncSearch        guifg=#700253 guibg=#ffd7d7 guisp=#ffd7d7    gui=bold      ctermfg=53   ctermbg=214     cterm=bold
-hi LineNr           guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=14  ctermbg=NONE    cterm=NONE
-hi CursorLineNr     guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=14  ctermbg=NONE    cterm=NONE
-hi LineNrAbove      guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=226 ctermbg=NONE    cterm=NONE
-hi LineNrBelow      guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=214  ctermbg=NONE    cterm=NONE
+hi LineNr           guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=208  ctermbg=NONE    cterm=NONE
+hi CursorLineNr     guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=214  ctermbg=NONE    cterm=NONE
+hi LineNrAbove      guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=84 ctermbg=NONE    cterm=NONE
+hi LineNrBelow      guifg=#ffd700 guibg=NONE    guisp=NONE       gui=NONE      ctermfg=85  ctermbg=NONE    cterm=NONE
 hi MatchParen       guifg=NONE    guibg=#e3e3e3 guisp=#e3e3e3    gui=NONE      ctermfg=202  ctermbg=254     cterm=NONE
 hi ModeMsg          guifg=#00ff00 guibg=#262626 guisp=#262626    gui=NONE      ctermfg=172  ctermbg=193     cterm=NONE
 hi MoreMsg          guifg=#00ff00 guibg=#262626 guisp=#262626    gui=NONE      ctermfg=172  ctermbg=193     cterm=NONE
@@ -132,7 +132,7 @@ hi CTagsImport         guifg=#00ffff guibg=NONE    guisp=NONE    gui=NONE ctermf
 hi CTagsGlobalVariable guifg=#00ffff guibg=NONE    guisp=NONE    gui=NONE ctermfg=9   ctermbg=NONE cterm=ITALIC
 hi CTagsGlobalConstant guifg=#00ffff guibg=NONE    guisp=NONE    gui=NONE ctermfg=9   ctermbg=NONE cterm=ITALIC
 hi CTagsClass          guifg=#00ffff guibg=NONE    guisp=NONE    gui=NONE ctermfg=9   ctermbg=NONE cterm=ITALIC
-hi CTagsMember         guifg=#00ffff guibg=NONE    guisp=NONE    gui=NONE ctermfg=9   ctermbg=282  cterm=ITALIC
+hi CTagsMember         guifg=#00ffff guibg=NONE    guisp=NONE    gui=NONE ctermfg=9   ctermbg=0  cterm=ITALIC
 hi EnumerationValue    guifg=#00ffff guibg=NONE    guisp=NONE    gui=NONE ctermfg=85  ctermbg=NONE cterm=ITALIC
 hi EnumerationName     guifg=#00ffff guibg=NONE    guisp=NONE    gui=NONE ctermfg=85  ctermbg=NONE cterm=ITALIC
 hi LocalVariable       guifg=NONE    guibg=#262626 guisp=#262626 gui=NONE ctermfg=9   ctermbg=NONE cterm=BOLD

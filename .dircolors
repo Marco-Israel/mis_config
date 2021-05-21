@@ -212,26 +212,26 @@ EXEC 01;38;5;196
   .java   00;38;5;89
   .h     00;38;5;216
   .hpp     00;38;5;216
-  .o          00;38;5;38
+  .o          00;38;5;34
 
-  .vimrc     00;38;5;288
-  .bashrc     00;38;5;288
-  .bash_alias 00;38;5;288
-  .bash_profile 00;38;5;288
-  .asoundrc 00;38;5;288
-  .dircolors  00;38;5;288
-  .Xresources  00;38;5;288
-  .xinitrc  00;38;5;288
-  .bash_profile 00;38;5;288
-  .git       00;38;5;288
-  .gitconfig 00;38;5;288
-  .gitignore 00;38;5;288
-  .inputrc 00;38;5;288
-  .indent.pro 00;38;5;288
-  .clang_text 00;38;5;288
-  .tags 00;38;5;288
-  .GTAGS 00;38;5;288
-
+#.vimrc     00;38;5;288
+#  .bashrc     00;38;5;288
+#  .bash_alias 00;38;5;288
+#  .bash_profile 00;38;5;288
+#  .asoundrc 00;38;5;288
+#  .dircolors  00;38;5;288
+#  .Xresources  00;38;5;288
+#  .xinitrc  00;38;5;288
+#  .bash_profile 00;38;5;288
+#  .git       00;38;5;288
+#  .gitconfig 00;38;5;288
+#  .gitignore 00;38;5;288
+#  .inputrc 00;38;5;288
+#  .indent.pro 00;38;5;288
+#  .clang_text 00;38;5;288
+#  .tags 00;38;5;288
+#  .GTAGS 00;38;5;288
+#
   # "unimportant" files as logs and backups (base01)
   .log        00;38;5;237
   .bak        00;38;5;237

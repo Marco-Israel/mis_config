@@ -1,9 +1,0 @@
-pane	0	0	:bash	1	:*	0	:/home/mis	1	bash	:
-pane	1	0	:vlc	0	:-	0	:/home/mis	1	vlc	:/usr/lib/firefox/firefox
-vimb
-/usr/bin/vlc -I rc --random --no-video --loop --recursive expand /data/150_Musik/alphawellen/
-pane	1	1	:vim	1	:*	0	:/home/mis/project/rohde_und_schwarz/mis_ooc/test	1	vim	:vim -O documentation/test_base_template.cpp ../template/mi_ooc_base_template.c
-window	0	0	1	:*	b25d,80x24,0,0,0
-window	1	0	0	:-	a9be,262x119,0,0,1
-window	1	1	1	:*	a9bf,262x119,0,0,2
-state	1	

@@ -495,7 +495,7 @@ indent-switches
 
 
 
-indent-namespaces
+#indent-namespaces
 #Add extra indentation to namespace blocks. This option has no effect on Java files. It will also indent CORBA IDL module statements.
 #
 #namespace foospace
