@@ -23,7 +23,8 @@ alias balias='vim ~/.bash_alias'
 alias vrc='vim ~/.vimrc'
 alias vplug='vim ~/.vimplug.conf'
 alias vol='pacmd set-sink-volume'
-alias ls='ls  -la --file-type --human-readable --color=always' #colore ls
+#alias ls='ls  -la --file-type --human-readable --color=always' #colore ls
+alias ls='ls  -la --color=always' #colore ls
 alias less='less -r -I -H'
 alias dir='dir --color=always' #colore dir
 alias vdir='vdir --color=always' #colore vdir
@@ -153,6 +154,8 @@ alias gx='gitx --all'
 alias got='git '
 alias get='git '
 
+
+
 mmnt()
 {
     while [ $# -gt 0 ]
@@ -243,7 +246,7 @@ dict() {
 	less -FRX
 }
 
-#
+
 
 ####  Export ###################################################################
 export EDITOR=vim
@@ -335,5 +338,15 @@ export LESS_TERMCAP_ZW=$(tput rsupm)
 export GROFF_NO_SGR=1         # For Konsole and Gnome-terminal
 
 
+#export http_proxy=http://israel_m:WCP_4791_asm@proxy-emea.rsint.net:80
+#export https_proxy=http://israel_m:WCP_4791_asm@proxy-emea.rsint.net:80
+#export ftp_proxy=http://israel_m:WCP_4791_asm@proxy-emea.rsint.net:80
+#export HTTP_PROXY=$http_proxy
+#export HTTPS_PROXY=$https_proxy
+#export FTP_PROXY=$ftp_proxy
+#
+#export GTEST_COLOR=1
+#
+#export DISPLAY='127.0.0.1:0.0'
 
 ### EOF ########################################################################

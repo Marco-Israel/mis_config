@@ -21,6 +21,11 @@ if [ -f "${HOME}/.bash_alias" ] ; then
   source "${HOME}/.bash_alias"
 fi
 
+ #Start a tmux session
+if [ -z "$TMUX" ]; then
+      #tmux attach -t default || tmux new -s default
+      tmux
+fi
 
 
 ### COLORS ##########
@@ -53,25 +58,71 @@ else
 fi
 
 
+### Bashmarks ###
 if [ -f ~/.local/bin/bashmarks.sh ]; then
     . ~/.local/bin/bashmarks.sh
 fi
 
+
+### FZF integration ###
 if [ -f ~/.fzf/fzf-marks/fzf-marks.plugin.bash  ]; then
     . ~/.fzf/fzf-marks/fzf-marks.plugin.bash
 fi
 
-if [ -f ~/.fzf.bash ] ; then
-   . ~/.fzf.bash
+if [ -f ~/.fzf/fzf.bash ] ; then
+   . ~/.fzf/fzf.bash
 fi
 
 
-### EXPORTS ##########
+### FUF ##########
 export FZF_DEFAULT_COMMAND='rg --files --hidden --smart-case --glob "!.git/*"'
 
+source .fzf/functions.sh
+if [[ $- =~ i ]]; then
+  bind '"\er": redraw-current-line'
+  bind '"\C-g\C-f": "$(_gf)\e\C-e\er"'
+  bind '"\C-g\C-b": "$(_gb)\e\C-e\er"'
+  bind '"\C-g\C-t": "$(_gt)\e\C-e\er"'
+  bind '"\C-g\C-h": "$(_gh)\e\C-e\er"'
+  bind '"\C-g\C-r": "$(_gr)\e\C-e\er"'
+  bind '"\C-g\C-s": "$(_gs)\e\C-e\er"'
+fi
 
-        # no duplicates in the history. bash(1) ==  more options
-export HISTCONTROL=ignoredups
+
+
+# Use ~~ as the trigger sequence instead of the default **
+#export FZF_COMPLETION_TRIGGER='~~'
+
+# Options to fzf command
+export FZF_COMPLETION_OPTS='--border --info=inline'
+
+# Use fd (https://github.com/sharkdp/fd) instead of the default find
+# command for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+
+# (EXPERIMENTAL) Advanced customization of fzf options via _fzf_comprun function
+# - The first argument to the function is the name of the command.
+# - You should make sure to pass the rest of the arguments to fzf.
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf "$@" --preview 'tree -C {} | head -200' ;;
+    export|unset) fzf "$@" --preview "eval 'echo \$'{}" ;;
+    ssh)          fzf "$@" --preview 'dig {}' ;;
+    *)            fzf "$@" ;;
+  esac
+}
 
 
 #### EOF #######################################################################
@@ -85,20 +136,11 @@ export PS1="\[\033[38;5;243m\][\[$(tput sgr0)\]\[\033[38;5;198m\]\!\[$(tput sgr0
 # Promt to magenta
 echo -e "\033]12;magenta\007"
 
-### Clear the screan
-clear
+        # no duplicates in the history. bash(1) ==  more options
+export HISTCONTROL=ignoredups
 
+
+### Clear the screan clear
 
 #### EOF #######################################################################
 
-export http_proxy=http://israel_m:WCP_4791_asm@proxy-emea.rsint.net:80
-export https_proxy=http://israel_m:WCP_4791_asm@proxy-emea.rsint.net:80
-export ftp_proxy=http://israel_m:WCP_4791_asm@proxy-emea.rsint.net:80
-export HTTP_PROXY=$http_proxy
-export HTTPS_PROXY=$https_proxy
-export FTP_PROXY=$ftp_proxy
-
-export GTEST_COLOR=1
-
-export DISPLAY='127.0.0.1:0.0'
-source /home/mis/.bash.d/bashmark.sh

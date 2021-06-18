@@ -1,3 +1,4 @@
+latex.UpdateLanguageServer
 git.showCommit
 clangd.update
 clangd.install

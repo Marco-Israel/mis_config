@@ -10,6 +10,7 @@ set autoindent "automatische Zeileneinrueckung
 set smartindent "intelligente Zeileneinrueckung
 set expandtab "Tabs durch Leerzeichen ersetzen lassen
 set shiftwidth=4 "Anzahl der Leezeichen fuer autoindent
+set shiftround " When shifting lines, round the indentation to the nearest multiple of “shiftwidth.”
 set softtabstop=4 "Ruecktaste loescht Tab, 4 Leerzeichen
 set ignorecase "Gross-/Kleinschreibung ignorieren
 "set smartcase "Gross-/Kleinschreibung NICHT ignorieren wenn CameCase
@@ -25,7 +26,6 @@ set wrap
 set linebreak "Bei aautomatiscben Linebreak (set wrap) Wörter nicht trennen
 set list "listchars anzeigen
 set listchars=tab:>-,trail:.,extends:>,precedes:<,nbsp:+,eol:$,precedes:#,extends:* " Tabs und Leerzeichen am Zeilenende anzeigen hjkhj
-set list "listchars anzeigen
 set relativenumber "Relative Zeilennummern
 set nocompatible "enter the current millenium
 set colorcolumn=80 "show a line in <n> coloum
@@ -58,10 +58,18 @@ set fo=tcroqnblj   "Activate textwide wrapping.
 set shortmess+=aI  " Short message or turn massage off
 set belloff+=all "If Vim beeps during completion
 set matchpairs=(:),{:},[:] "define matching pairs
-set ruler rulerformat=%15(%c%V\ %p%%%)
+set rulerformat=%15(%c%V\ %p%%%)
+set ruler  "Always show cursor position.
 set encoding=utf8
 set fillchars=fold:\
 set sessionoptions=curdir,folds,tabpages,winsize,terminal
+
+set noswapfile " Disable swap files.
+set wildignore+=.pyc,.swp " Ignore files matching these patterns when opening files based on a glob pattern.
+set showmode showcmd " Display options
+set confirm  " Display a confirmation dialog when closing an unsaved file.
+set dir=~/.cache/vim  " Directory to store swap files.
+set formatoptions+=j " Delete comment characters when joining lines.
 "set isfname-=:  "split a filename:linenumber to filename when press key gf
 
 
@@ -107,7 +115,6 @@ autocmd BufNewFile,BufRead *.make,mk            setlocal noexpandtab
 """ Fold """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType c      setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^\\s*//'
 autocmd FileType python setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^\\s*#'
-
 
 
 """ Open Quickfix entry in Vertical split """""""""""""""""""""""""""""""""""""
@@ -211,10 +218,8 @@ endfunction
 command! -nargs=+ GrepBufs call GrepBuffers(<q-args>)
 
 
-
 """ color current line, not underline it """""""""""""""""""""""""""""""""""""""
 "highlight CursorLine term=bold,underline,undercurl cterm=bold,underline,undercurl
-
 
 
 """ Spelling and spellcheck """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -248,7 +253,6 @@ colorscheme mis
 "source ~/.config/vimrc_256colors
 match TODO /s+%#@<!$/
 let g:rainbow_active = 0    "Colord Brackets
-set autoindent              "turns it on
 set smartindent   "does the right thing (mostly) in programs
 set cindent       "stricter rules for C programs
 let c_space_errors = 1 "space errors einschalten
@@ -478,15 +482,10 @@ map <C-F9> :call StripTrailingWhitespaces()
 
 
 
-
-
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ PLUGINS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source  ~/.vimplug.conf
-
-
 
 
 
@@ -516,3 +515,5 @@ nnoremap ,erroh :-1read $PROJECT_HOME/TOOLS/thirdparty/mi_ooc/productive/mi_ooc_
 nnoremap ,errohh :-1read $PROJECT_HOME/TOOLS/thirdparty/mi_ooc/productive/mi_ooc_errorHandler.h<CR>/____TODO______<CR>
 nnoremap ,umlc :-1read $PROJECT_HOME/TOOLS/templates/plantumlNote.txt<CR>/____TODO______<CR>
 nnoremap ,sempty :-1read $PROJECT_HOME/TOOLS/templates/shortDocinfo.txt<CR>/____TODO______<CR>
+
+
