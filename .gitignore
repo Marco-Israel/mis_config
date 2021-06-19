@@ -44,4 +44,5 @@ project/
 .vim/README
 .vim/undo/
 .vim/.netrwhist
+latex/
 

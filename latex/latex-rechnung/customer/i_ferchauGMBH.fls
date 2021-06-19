@@ -1,0 +1,5 @@
+PWD /data/200_Linux/latex-rechnung/customer
+INPUT /usr/share/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT i_ferchauGMBH.tex
+OUTPUT i_ferchauGMBH.log
