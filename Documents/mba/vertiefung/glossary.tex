@@ -1,0 +1,126 @@
+
+\newglossaryentry{klassischeSW}
+{
+        name=klassische Softwareentwicklung,
+        description={Klassische (Vorgehensmodelle der) Softwareentwicklung liegt
+                ein linearer Ansatz zugrunde, mit definiertem Anfangszustand und
+                definiertem Endzustand sowie definierten Zwischenschritten. Dabei
+                baut ein (Zwischen)schritt auf den Ergebnissen des vorherigen
+                Schrittes auf. Ein Schritt muss erst  \textbf{vollständig}
+                abgeschlossen sein, bevor der nächste Schritt beginnt.
+                Nur in einigen (neueren) Vorgehensmodellen ist Vorgesehen, einen
+                Prozessschritt zurück zu gehen um die Ergebnisse zu
+                überarbeiten. Ein beispielhafter \textit{klassischer}
+                        Entwicklungsprozess wäre: Erst die Anforderungen
+                        definieren, dann UML Software Modelle erstellen,
+                        auf Grundlage dieser Modelle die Softwaremodelle
+                        schreiben und zu guter letzt die Software zu
+                        testen und ausliefern.
+                        Beispiele
+                        klassischer Vorgehensmodelle sind das
+                        \textit{Wasserfallmodell}, das
+                \textit{Spieralmodell} oder das \textit{V-Modell (XT)} }
+}
+
+\newglossaryentry{agilSW}
+{
+        name=agile Softwareentwicklung,
+        description={Die agile Softwareentwicklung wird auch als
+                leichtgewichtiger \textit{Softwareentwicklungsprozess}
+                bezeichnet. Anders als in der \gls{klassischeSW} dient
+                lediglich eine Grobe Vorstellung des Auftraggebers als
+                Ausgangspunkt zur Entwicklung. In wiederkehrenden Phasen
+                (die im Kern sehr ähnlich den Phasen der klassischen
+                Softwareentwicklung sein können) entstehen oder verändern sich nacheinander
+                kleine Teile (Inkremente) des Gesamtprojektes, die kontinuierlich dem
+                Auftraggeber zur Verfügung gestellt werden. Das Projekt
+                entsteht und wächst dynamisch entsprechend den Vorstellungen des
+                Kunden. Ziel solcher Vorgehensmodelle ist es, dem Kunden
+                möglichst schnell, wiederkehrende, lauffähige (aber noch nicht
+                nicht vollständige) Softwareteile auszuliefern, die dann als
+                Grundlage für weitere Entscheidungen und so für neue oder
+                geänderte Anforderungen dienen.
+                Beispiele solcher Vorgehensmodelle in der Software Entwicklung
+                sind: \textit{Extreme Programming}, \textit{Scrum} oder
+        \textit{Test getriebene Entwicklung (TDD)}.}
+}
+
+
+\newglossaryentry{ThinkLet}
+{
+        name = ThinkLet,
+        description={ThinkLets sind wiederverwendbare Muster oder Bausteine um kreative Gruppenprozesse zu gestalten und zu steuern (moderieren). Diese Bausteine entsprechen Vorgehens- und Verhaltensweisen bzw. -Methoden für kleinste Teilschritte eines gesamten Gruppenprozesses und sind in einer Einheitlichen Sprache (Notation) beschrieben, der s.g. \textit{ \gls{ThinkLet-Sprache}}. Diese Vorgehensbeschreibungen bzw. Verhaltensbeschreibungen legen dar, wie in einzelnen Teile eines gesamten Gruppenprozesses vorzugehen ist, um sichere (qualitativ hochwertige und nahezu reproduzierbare) Teilergebnisse in Gruppen zu generieren und um (Teil-)Ergebnisse einzelner Schritte zielgerichtet weiterzuverarbeiten. Mehre, aufeinanderfolgende ThinkLets Kombination bilden einen wiederholbaren Gruppenprozess.
+        }
+}
+
+
+
+\newglossaryentry{ThinkLet-Sprache}
+{
+        name=ThinkLet-Sprache, description={Die ThinkLet-Sprache definiert, wie
+                ein \gls{ThinkLet}
+        beschrieben werden muss. Hierzu gehört die Beschreibungsstruktur, aber
+        auch die Inhalte, welche ein ThinkLet zu beschreiben hat. Solche Inhalte
+        sind z.B. ein eindeutiger Name, der Sinn (die Aufgabe) dieses ThinkLets,
+Mögliche Werkzeuge oder Methoden, Eine Vorgehensanweisung (Skrip) für
+Moderatoren oder welche Informationen (Daten) es als Einstieg braucht und welche
+Ergebnisse es daraus generiert. Die Thinklet-Sprache strukturiert somit in
+Einheitlicher Darstellung die Antworten auf alle möglichen Arten von
+\textit{W}-Fragen (Was, Warum, Womit, Wodurch, Wo, Wohin, \dots)}
+}
+
+
+
+%
+%
+%
+%
+%
+%\newglossaryentry{APIG}{
+%    name=\glslink{API}{Application Programming Interface (\gls{API})},
+%    description={
+%    Application Programming Interface Desc}
+%}
+%
+%\newglossaryentry{APIR}{
+%    type=\acronymtype,
+%    name=API,
+%    first=Application Programming Interface (API),
+%    firstplural={Application Programming Interfaces (API's)},
+%    see=[Glossary:]{\gls{APIG}},
+%    description=\glslink{APIG}{Application Programming Interfaces}
+%}
+
+
+% #1 - reference e.g. api
+% #2 - Short e.g. API
+% #3 - Full name e.g. Application Programming Interface
+% #4 - Description
+%\newcommand{\newdefineabbreviation}[4]
+%{
+%    % Glossary entry
+%    \newglossaryentry{#1_glossary}
+%    {
+%        text={#2},
+%        long={#3},
+%        name={\glsentrylong{#1_glossary} (\glsentrytext{#1_glossary})},
+%        description={#4}
+%    }
+%
+%    % Acronym
+%    \newglossaryentry{#1}
+%    {
+%        type=\acronymtype,
+%        name={\glsentrytext{#1_glossary}}, % Short
+%        description={\glsentrylong{#1_glossary}}, % Full name
+%        first={\glsentryname{#1_glossary}\glsadd{#1_glossary}},
+%        firstplural={\glsentrylong{#1_glossary}\glspluralsuffix\ (\glsentryname{#1_glossary})},
+%        see=[Glossary:]{#1_glossary} % Reference to corresponding glossary entry
+%    }
+%}
+%
+%\newdefineabbreviation
+%    {API}
+%    {API}
+%    {Application Programming Interface}
+%    {This is a description of the glossary entry}

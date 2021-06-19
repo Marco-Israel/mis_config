@@ -1,0 +1,8 @@
+2020/12/23-12:28:46.206 13ac3 Reusing MANIFEST /home/mis/.config/Min/Partitions/webcontent/IndexedDB/https_www.tipser.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/12/23-12:28:46.207 13ac3 Recovering log #4
+2020/12/23-12:28:46.207 13ac3 Reusing old log /home/mis/.config/Min/Partitions/webcontent/IndexedDB/https_www.tipser.com_0.indexeddb.leveldb/000004.log 
+2020/12/23-12:48:33.029 13efc Level-0 table #8: started
+2020/12/23-12:48:33.029 13efc Level-0 table #8: 0 bytes OK
+2020/12/23-12:48:33.033 13efc Delete type=0 #4
+2020/12/23-12:48:33.033 13efc Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2020/12/23-12:48:33.033 13efc Manual compaction at level-1 from (begin) .. (end); will stop at (end)

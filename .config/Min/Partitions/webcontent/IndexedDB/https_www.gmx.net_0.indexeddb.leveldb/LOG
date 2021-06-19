@@ -1,0 +1,15 @@
+2020/12/27-23:58:46.936 3e1 Reusing MANIFEST /home/mis/.config/Min/Partitions/webcontent/IndexedDB/https_www.gmx.net_0.indexeddb.leveldb/MANIFEST-000001
+2020/12/27-23:58:46.936 3e1 Recovering log #22
+2020/12/27-23:58:46.936 3e1 Reusing old log /home/mis/.config/Min/Partitions/webcontent/IndexedDB/https_www.gmx.net_0.indexeddb.leveldb/000022.log 
+2020/12/27-23:59:33.622 3ac Level-0 table #27: started
+2020/12/27-23:59:33.626 3ac Level-0 table #27: 1335 bytes OK
+2020/12/27-23:59:33.627 3ac Delete type=0 #22
+2020/12/27-23:59:33.627 3ac Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2020/12/27-23:59:33.628 3ac Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x02\x01 \x03\x00`A\xcffjwB\x00\x011\x00p\x00a\x00g\x00e\x00s\x00|\x00h\x00t\x00t\x00p\x00s\x00:\x00/\x00/\x00w\x00w\x00w\x00.\x00g\x00m\x00x\x00.\x00n\x00e\x00t\x00/\x00?\x00s\x00t\x00a\x00t\x00u\x00s\x00=\x00s\x00e\x00s\x00s\x00i\x00o\x00n\x00-\x00e\x00x\x00p\x00i\x00r\x00e\x00d' @ 275 : 1
+2020/12/27-23:59:33.628 3ac Compacting 1@1 + 1@2 files
+2020/12/27-23:59:33.629 3ac Generated table #28@1: 38 keys, 1209 bytes
+2020/12/27-23:59:33.629 3ac Compacted 1@1 + 1@2 files => 1209 bytes
+2020/12/27-23:59:33.630 3ac compacted to: files[ 0 0 1 0 0 0 0 ]
+2020/12/27-23:59:33.630 3ac Delete type=2 #27
+2020/12/27-23:59:33.630 3ac Delete type=2 #24
+2020/12/27-23:59:33.631 3ac Manual compaction at level-1 from '\x00\x02\x01 \x03\x00`A\xcffjwB\x00\x011\x00p\x00a\x00g\x00e\x00s\x00|\x00h\x00t\x00t\x00p\x00s\x00:\x00/\x00/\x00w\x00w\x00w\x00.\x00g\x00m\x00x\x00.\x00n\x00e\x00t\x00/\x00?\x00s\x00t\x00a\x00t\x00u\x00s\x00=\x00s\x00e\x00s\x00s\x00i\x00o\x00n\x00-\x00e\x00x\x00p\x00i\x00r\x00e\x00d' @ 275 : 1 .. (end); will stop at (end)

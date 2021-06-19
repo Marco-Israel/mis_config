@@ -1,0 +1,8 @@
+2020/12/29-00:08:49.869 73a2 Reusing MANIFEST /home/mis/.config/Min/Partitions/webcontent/IndexedDB/file__0.indexeddb.leveldb/MANIFEST-000001
+2020/12/29-00:08:49.869 73a2 Recovering log #26
+2020/12/29-00:08:49.870 73a2 Reusing old log /home/mis/.config/Min/Partitions/webcontent/IndexedDB/file__0.indexeddb.leveldb/000026.log 
+2020/12/29-00:09:03.014 73a2 Level-0 table #30: started
+2020/12/29-00:09:03.014 73a2 Level-0 table #30: 0 bytes OK
+2020/12/29-00:09:03.017 73a2 Delete type=0 #26
+2020/12/29-00:09:03.017 73a2 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2020/12/29-00:09:03.017 73a2 Manual compaction at level-1 from (begin) .. (end); will stop at (end)

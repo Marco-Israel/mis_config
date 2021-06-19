@@ -1,0 +1,195 @@
+# Path to the default download directory. If no download directory is set,
+# download will be written into current directory. The following pattern will
+# be expanded if the download is started '~/', '~user', '$VAR' and '${VAR}'.
+set download-path=~/Downloads
+
+# Command with placeholder '%s' called if form field is opened with $EDITOR to
+# spawn the editor-like `x-terminal-emulator -e vim %s'. To use Gvim as the
+# editor, it's necessary to call it with `-f' to run it in the foreground.
+set editor-command=termite -e "vim %s"
+
+# If enabled the inputbox will be hidden whenever it contains no text.
+set input-autohide=true
+
+# Enable or disable the spell checking feature.
+set spell-checking=true
+
+# Set comma separated list of spell checking languages to be used for
+# spell checking.
+set spell-checking-languages=en,de
+
+# Enable or disable support for WebGL on pages.
+set webgl=true
+
+# While typing a search command, show where the pattern typed so far matches.
+set incsearch=true
+
+# The font family to use as the default for content that does not specify a
+# font.
+set default-font=DejaVu Sans
+
+# The font family used as the default for content using monospace font.
+set monospace-font=DejaVu Sans Mono
+
+# The font family used as the default for content using sans-serif font.
+set sans-serif-font=DejaVu Sans
+
+# The font family used as the default for content using serif font.
+set serif-font=DejaVu Serif
+
+# The default font size used to display text.
+set font-size=16
+
+# Default font size for the monospace font.
+set monospace-font-size=13
+
+# Default Full-Content zoom level in percent. Default is 100.
+set default-zoom=60
+
+# Whether to enable HTML5 offline web application cache support. Offline web
+# application cache allows web applications to run even when the user is not
+# connected to the network.
+set offline-cache=false
+
+# additional parameters.
+shortcut-default s
+shortcut-add duck=https://duckduckgo.com/?q=$0
+shortcut-add d=https://dict.cc/?s=$0
+shortcut-add g=https://encrypted.google.com/search?q=$0
+shortcut-add y=https://www.youtube.com/results?search_query=$0
+shortcut-add s=https://www.startpage.com/do/dsearch?query=$0
+shortcut-add gmap=https://maps.google.com/maps?saddr=$0&daddr=$1
+shortcut-add gh=https://github.com/$0/$1
+
+# Set the shortcut as the default, that is the shortcut to be used if no
+# shortcut is given and the string to open is not an URI.
+shortcut-default s
+
+# Map page zoom in normal mode to keys commonly used across applications
+# + (zoom in), - (zoom out), = (zoom reset)
+nnoremap + zI
+nnoremap - zO
+nnoremap = zz
+nnoremap <Space> :o<Space>
+
+# The tool used to handel in side handlers
+handler-add mailto=urxvt -e mutt %s
+#handler-add magnet=xdg-open %s
+handler-add magnet=transmission-remote-gtk %s
+handler-add ftp=urxvt -e wget %s -P ~/ftp-downloads
+handler-add watch=youtube-view %s
+handler-add playVideo=youtube-view %s
+
+# Whether to enable accessibility enhanced keyboard navigation.
+set caret=true
+
+# Cookie accept policy {`always', `never', `origin' (accept all non-third-party cookies)}.
+set cookie-accept=never
+
+# Homepage that vimb opens if started without a URI.
+#set home-page=www.startpage.com
+
+# Maximum number of unique items stored in search-, command or URI history.  If
+# history-max-items is set to 0, the history file will not be changed.  This
+# setting has no ef‐ fect if option --incognito is set.
+set history-max-items=100
+
+# Controls website access to the geolocation API {`always', `never', `ask'
+# (display a prompt each time)}
+set geolocation=never
+
+# Enable or disable the spell checking feature.
+set spell-checking=de_de,en_us
+
+# Set comma separated list of spell checking languages to be used
+# for spell checking.  The locale string typically is in the form
+# lang_COUNTRY, where lang is an ISO-639 language code, and COUNTRY
+# is an ISO-3166 country code. For instance, sv_FI for Swedish as
+# written in Finland or pt_BR for Portuguese as written in Brazil.
+set spell-checking-languages=de_de,en_en
+
+# Whether the Tab key cycles through elements on the page.  If true, pressing
+# the Tab key will focus the next element in the web view.  Otherwise, the web
+# view will interpret Tab key presses as normal key presses.  If the selected
+# element is editable, the Tab key will cause the insertion of a Tab character.
+set tabs-to-links=true
+
+#If 'on' the user scripts are injected into every page.
+set user-scripts=false
+
+# Enable or disable support for WebAudio on pages.  WebAudio is an
+# experimental proposal for allowing web pages to generate Audio WAVE data
+# from JavaScript.
+set webaudio=false
+
+# Enable or disable support for WebGL on pages.
+set webgl=false
+
+# Determines whether or not developer tools, such as the Web Inspector, are enabled.
+set webinspector=false
+
+# Determines whether or not Java script executes within a page.
+set scripts=false
+
+# Command used if hint mode ;x is fired.  The command can be any vimb command
+# string.  Note that the command is run through the mapping mechanism of vimb so
+# it might change the behaviour by adding or changing mappings.
+# This example fills the inputbox with the prefilled download command and
+# replaces `<C-R>%' with the current URI and `<C-R>;' with the URI of the hinted
+# element.
+:set x-hint-command=:sh! curl -e <C-R>% <C-R>;
+
+# Whether to enable the XSS auditor.  This feature filters some kinds of
+# reflective XSS attacks on vulnerable web sites.
+set xss-auditor=true
+
+# Whether to open links, that would normally open in a new window, in the current
+# window. This option does not affect links fired by hinting.
+set prevent-newwindow=true
+
+# Whether background images should be drawn during printing.
+set print-backgrounds=false
+
+# Whether media playback is full-screen only or inline playback is allowed.
+# Setting it to false allows specifying that media playback should be always
+# fullscreen.
+set media-playback-allows-inline=false
+
+# Whether a user gesture (such as clicking the play button) would be required to
+# start media playback or load media.  Setting it on requires a gesture by the
+# user to start playback, or to load the media.
+set media-playback-requires-user-gesture=true
+
+# Enable or disable support for MediaSource on pages.  MediaSource is an
+# experimental proposal which extends HTMLMediaElement to allow JavaScript to
+# generate media streams for playback.
+set media-stream=false
+
+# Enable or disable support for MediaSource on pages.  MediaSource is an
+# experimental proposal which extends HTMLMediaElement to allow JavaScript to
+# generate media streams for playback.
+set mediasource=false
+
+# If 'on', vimb will not load a untrusted https site
+# Application configuration
+aug scripts
+#au LoadCommitted * set scripts=off|set cookie-accept=never
+  au LoadCommitted http{s,}://github.com/* set scripts=on
+  au LoadStarting https://youtube.com/* set scripts=true
+aug end
+
+
+#Set search field header color
+set status-css=color:#ffcc66;background-color:#393939;font:6pt
+
+# GUI color settings
+# Color scheme: Base16 Eighties (https://github.com/chriskempson/base16)
+#set completion-css=color:#d3d0c8;background-color:#393939;font:DejaVu Sans Mono;
+#set completion-hover-css=color:#d3d0c8;background-color:#393939;font:DejaVu Sans Mono;
+#set completion-selected-css=color:#d3d0c8;background-color:#515151;font:DejaVu Sans Mono;
+#set input-css=color:#d3d0c8;background-color:#393939;font:DejaVu Sans Mono;
+#set input-error-css=color:#f2777a;background-color:#393939;font:DejaVu Sans Mono;
+#set status-css=color:#ffcc66;background-color:#393939;font:DejaVu Sans Mono;
+#set status-ssl-css=color:#99cc99;background-color:#393939;font:DejaVu Sans Mono;
+#set status-ssl-invalid-css=color:#f2777a;background-color:#393939;font:DejaVu Sans Mono;
+#

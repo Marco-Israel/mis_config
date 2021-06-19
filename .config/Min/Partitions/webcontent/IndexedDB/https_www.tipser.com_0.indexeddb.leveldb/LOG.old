@@ -1,0 +1,5 @@
+2020/12/23-11:55:56.342 137d0 Reusing MANIFEST /home/mis/.config/Min/Partitions/webcontent/IndexedDB/https_www.tipser.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/12/23-12:12:48.961 1394b Level-0 table #5: started
+2020/12/23-12:12:48.965 1394b Level-0 table #5: 838 bytes OK
+2020/12/23-12:12:48.966 1394b Delete type=0 #3
+2020/12/23-12:12:48.967 1394b Manual compaction at level-0 from (begin) .. (end); will stop at (end)

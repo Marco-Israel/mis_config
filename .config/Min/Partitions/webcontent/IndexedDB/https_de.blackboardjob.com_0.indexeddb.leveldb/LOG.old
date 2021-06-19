@@ -1,0 +1,28 @@
+2020/12/23-12:45:39.465 13e50 Reusing MANIFEST /home/mis/.config/Min/Partitions/webcontent/IndexedDB/https_de.blackboardjob.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/12/23-12:45:39.587 13e50 Level-0 table #5: started
+2020/12/23-12:45:39.588 13e50 Level-0 table #5: 1224 bytes OK
+2020/12/23-12:45:39.591 13e50 Delete type=0 #3
+2020/12/23-12:45:39.591 13e50 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
+2020/12/23-12:47:28.308 13e16 Level-0 table #7: started
+2020/12/23-12:47:28.310 13e16 Level-0 table #7: 1630 bytes OK
+2020/12/23-12:47:28.311 13e16 Delete type=0 #4
+2020/12/23-12:47:28.311 13e16 Manual compaction at level-0 from '\x00\x03\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at (end)
+2020/12/23-12:47:32.464 13e16 Level-0 table #9: started
+2020/12/23-12:47:32.465 13e16 Level-0 table #9: 1438 bytes OK
+2020/12/23-12:47:32.467 13e16 Delete type=0 #6
+2020/12/23-12:47:32.467 13e16 Manual compaction at level-0 from (begin) .. (end); will stop at '\x00\x02\x01\x02\x018\x00s\x00e\x00r\x00c\x00a\x00n\x00t\x00o\x00-\x003\x009\x00e\x00c\x009\x00!\x001\x00:\x004\x002\x008\x003\x008\x004\x001\x005\x007\x008\x002\x008\x00:\x00w\x00e\x00b\x00:\x005\x009\x001\x00d\x005\x009\x00b\x000\x00a\x00b\x004\x001\x00b\x005\x000\x001\x00e\x00c\x000\x002\x00d\x001' @ 111 : 1
+2020/12/23-12:47:32.467 13e16 Compacting 1@0 + 1@1 files
+2020/12/23-12:47:32.468 13e16 Generated table #10@0: 29 keys, 1426 bytes
+2020/12/23-12:47:32.468 13e16 Compacted 1@0 + 1@1 files => 1426 bytes
+2020/12/23-12:47:32.469 13e16 compacted to: files[ 0 1 1 0 0 0 0 ]
+2020/12/23-12:47:32.470 13e16 Delete type=2 #9
+2020/12/23-12:47:32.470 13e16 Delete type=2 #7
+2020/12/23-12:47:32.470 13e16 Manual compaction at level-0 from '\x00\x02\x01\x02\x018\x00s\x00e\x00r\x00c\x00a\x00n\x00t\x00o\x00-\x003\x009\x00e\x00c\x009\x00!\x001\x00:\x004\x002\x008\x003\x008\x004\x001\x005\x007\x008\x002\x008\x00:\x00w\x00e\x00b\x00:\x005\x009\x001\x00d\x005\x009\x00b\x000\x00a\x00b\x004\x001\x00b\x005\x000\x001\x00e\x00c\x000\x002\x00d\x001' @ 111 : 1 .. (end); will stop at (end)
+2020/12/23-12:47:32.470 13e16 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x02\x01\x02\x018\x00s\x00e\x00r\x00c\x00a\x00n\x00t\x00o\x00-\x003\x009\x00e\x00c\x009\x00!\x001\x00:\x004\x002\x008\x003\x008\x004\x001\x005\x007\x008\x002\x008\x00:\x00w\x00e\x00b\x00:\x005\x009\x001\x00d\x005\x009\x00b\x000\x00a\x00b\x004\x001\x00b\x005\x000\x001\x00e\x00c\x000\x002\x00d\x001' @ 123 : 1
+2020/12/23-12:47:32.470 13e16 Compacting 1@1 + 1@2 files
+2020/12/23-12:47:32.471 13e16 Generated table #11@1: 20 keys, 1347 bytes
+2020/12/23-12:47:32.471 13e16 Compacted 1@1 + 1@2 files => 1347 bytes
+2020/12/23-12:47:32.472 13e16 compacted to: files[ 0 0 1 0 0 0 0 ]
+2020/12/23-12:47:32.473 13e16 Delete type=2 #10
+2020/12/23-12:47:32.473 13e16 Delete type=2 #5
+2020/12/23-12:47:32.473 13e16 Manual compaction at level-1 from '\x00\x02\x01\x02\x018\x00s\x00e\x00r\x00c\x00a\x00n\x00t\x00o\x00-\x003\x009\x00e\x00c\x009\x00!\x001\x00:\x004\x002\x008\x003\x008\x004\x001\x005\x007\x008\x002\x008\x00:\x00w\x00e\x00b\x00:\x005\x009\x001\x00d\x005\x009\x00b\x000\x00a\x00b\x004\x001\x00b\x005\x000\x001\x00e\x00c\x000\x002\x00d\x001' @ 123 : 1 .. (end); will stop at (end)

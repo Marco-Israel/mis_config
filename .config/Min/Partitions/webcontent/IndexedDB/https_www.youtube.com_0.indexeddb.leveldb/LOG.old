@@ -1,0 +1,15 @@
+2020/12/28-15:38:17.250 3ab2 Reusing MANIFEST /home/mis/.config/Min/Partitions/webcontent/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/12/28-15:38:17.250 3ab2 Recovering log #63
+2020/12/28-15:38:17.250 3ab2 Reusing old log /home/mis/.config/Min/Partitions/webcontent/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/000063.log 
+2020/12/28-15:51:00.455 3c56 Level-0 table #68: started
+2020/12/28-15:51:00.458 3c56 Level-0 table #68: 563 bytes OK
+2020/12/28-15:51:00.460 3c56 Delete type=0 #63
+2020/12/28-15:51:00.460 3c56 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2020/12/28-15:51:00.460 3c56 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01\x02\x01\x16\x00y\x00t\x00-\x00i\x00d\x00b\x00-\x00t\x00e\x00s\x00t\x00-\x00d\x00o\x00-\x00n\x00o\x00t\x00-\x00u\x00s\x00e' @ 2391 : 1
+2020/12/28-15:51:00.460 3c56 Compacting 1@1 + 1@2 files
+2020/12/28-15:51:00.461 3c56 Generated table #69@1: 77 keys, 1854 bytes
+2020/12/28-15:51:00.461 3c56 Compacted 1@1 + 1@2 files => 1854 bytes
+2020/12/28-15:51:00.463 3c56 compacted to: files[ 0 0 1 0 0 0 0 ]
+2020/12/28-15:51:00.463 3c56 Delete type=2 #68
+2020/12/28-15:51:00.463 3c56 Delete type=2 #65
+2020/12/28-15:51:00.463 3c56 Manual compaction at level-1 from '\x00\x01\x01\x02\x01\x16\x00y\x00t\x00-\x00i\x00d\x00b\x00-\x00t\x00e\x00s\x00t\x00-\x00d\x00o\x00-\x00n\x00o\x00t\x00-\x00u\x00s\x00e' @ 2391 : 1 .. (end); will stop at (end)

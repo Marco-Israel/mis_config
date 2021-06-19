@@ -1,0 +1,15 @@
+2020/12/23-12:28:45.782 13ac3 Reusing MANIFEST /home/mis/.config/Min/Partitions/webcontent/IndexedDB/https_www.elle.de_0.indexeddb.leveldb/MANIFEST-000001
+2020/12/23-12:28:45.783 13ac3 Recovering log #4
+2020/12/23-12:28:45.783 13ac3 Reusing old log /home/mis/.config/Min/Partitions/webcontent/IndexedDB/https_www.elle.de_0.indexeddb.leveldb/000004.log 
+2020/12/23-12:48:33.100 13efc Level-0 table #8: started
+2020/12/23-12:48:33.102 13efc Level-0 table #8: 652 bytes OK
+2020/12/23-12:48:33.104 13efc Delete type=0 #4
+2020/12/23-12:48:33.104 13efc Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2020/12/23-12:48:33.104 13efc Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01\x02\x01\x17\x00_\x00i\x00m\x00m\x00o\x00r\x00t\x00a\x00l\x00|\x00G\x00A\x00_\x00S\x00E\x00S\x00S\x00I\x00O\x00N\x00_\x00I\x00D' @ 73 : 1
+2020/12/23-12:48:33.104 13efc Compacting 1@1 + 1@2 files
+2020/12/23-12:48:33.105 13efc Generated table #9@1: 19 keys, 605 bytes
+2020/12/23-12:48:33.105 13efc Compacted 1@1 + 1@2 files => 605 bytes
+2020/12/23-12:48:33.107 13efc compacted to: files[ 0 0 1 0 0 0 0 ]
+2020/12/23-12:48:33.107 13efc Delete type=2 #8
+2020/12/23-12:48:33.107 13efc Delete type=2 #5
+2020/12/23-12:48:33.107 13e16 Manual compaction at level-1 from '\x00\x01\x01\x02\x01\x17\x00_\x00i\x00m\x00m\x00o\x00r\x00t\x00a\x00l\x00|\x00G\x00A\x00_\x00S\x00E\x00S\x00S\x00I\x00O\x00N\x00_\x00I\x00D' @ 73 : 1 .. (end); will stop at (end)

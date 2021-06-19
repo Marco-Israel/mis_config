@@ -1,0 +1,9 @@
+if [ -nz $CPPUTEST_HOME ]
+then
+ source $CPPUTEST_HOME/gdb-cpputest/gdb-cpputest.py
+ source /data/90_Projekte/rohde_schwarze/cpputest/gdb-cpputest/gdb-cpputest.py
+else
+    echo "CPPUTEST_HOME is unknown"
+fi
+
+

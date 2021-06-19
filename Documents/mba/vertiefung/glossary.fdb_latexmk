@@ -1,0 +1,12 @@
+# Fdb version 3
+["pdflatex"] 1623947921 "glossary.tex" "glossary.pdf" "glossary" 1623947921
+  "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1595962604 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1595962604 1328 c834bbb027764024c09d3d2bf908b5f0 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1595962604 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1595962604 39446 755423e82e7afb756f49b242a15f4ec2 ""
+  "/usr/share/texmf-var/web2c/pdftex/pdflatex.fmt" 1622467010 2434876 86a2f8f94e48537ea36b0e36196acaa7 ""
+  "glossary.aux" 1623942365 8 a94a2480d3289e625eea47cd1b285758 ""
+  "glossary.tex" 1623947920 5790 180ca84dea6686b4b3ec5ac2ed62dd62 ""
+  (generated)
+  "glossary.pdf"
+  "glossary.log"
