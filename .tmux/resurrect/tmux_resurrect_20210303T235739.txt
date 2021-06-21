@@ -1,8 +1,0 @@
-pane	0	0	:bash	1	:*	0	:/home/mis	1	bash	:
-pane	1	0	:vlc	0	:-	0	:/home/mis	1	vlc	:/usr/bin/vlc -I rc --random --no-video --loop --recursive expand /data/150_Musik/piano/covers /data/150_Musik/piano/klasisch /data/150_Musik/piano/mixed
-pane	1	1	:vim	1	:*	0	:/home/mis/project/rohde_und_schwarz/mis_ooc/test	1	vim	:vim documentation/test_base_template.cpp
-vim documentation/test_base_template.cpp
-window	0	0	1	:*	b25d,80x24,0,0,0
-window	1	0	0	:-	ab7e,478x119,0,0,1
-window	1	1	1	:*	ab7f,478x119,0,0,2
-state	1	

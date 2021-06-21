@@ -71,13 +71,17 @@ fi
 
 if [ -f ~/.fzf/fzf.bash ] ; then
    . ~/.fzf/fzf.bash
+ else
+if [ -f ~/fzf.bash ] ; then
+  . ~/fzf.bash
 fi
 
 
 ### FUF ##########
 export FZF_DEFAULT_COMMAND='rg --files --hidden --smart-case --glob "!.git/*"'
 
-source .fzf/functions.sh
+#source .fzf/functions.sh
+
 if [[ $- =~ i ]]; then
   bind '"\er": redraw-current-line'
   bind '"\C-g\C-f": "$(_gf)\e\C-e\er"'
@@ -139,8 +143,4 @@ echo -e "\033]12;magenta\007"
         # no duplicates in the history. bash(1) ==  more options
 export HISTCONTROL=ignoredups
 
-
-### Clear the screan clear
-
 #### EOF #######################################################################
-

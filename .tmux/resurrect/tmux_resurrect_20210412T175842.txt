@@ -1,5 +1,0 @@
-pane	0	0	:bash	0	:-	0	:/home/mis/git-repos/cryptoservice/tests/unit/libcryptoservice	1	bash	:vim /home/mis/.vimrc
-pane	0	1	:[tmux]	1	:*	0	:/home/mis/git-repos/cryptoservice	1	bash	:
-window	0	0	0	:-	ab7d,478x119,0,0,0
-window	0	1	1	:*	ab7e,478x119,0,0,1
-state	0	

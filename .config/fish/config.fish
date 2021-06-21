@@ -45,3 +45,5 @@ end
 function kill
     command kill (__fish_expand_pid_args $argv)
 end
+set fish_color_valid_path
+set -gx EDITOR vim

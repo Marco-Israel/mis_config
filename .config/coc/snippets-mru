@@ -1,3 +1,6 @@
+it
+desc
+item
 ita
 bf
 it
@@ -15,15 +18,11 @@ MIT
 <
 ver
 enum
-.
-asm
-pro
-switch
-ld
-readfile
-main
-date
-time
+ita
+bf
 tabx
+tab
+tabe
+MIT
 fig
 if
