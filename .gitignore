@@ -50,4 +50,5 @@ latex/
 .vim/.netrwhist
 .tmux/resurrect/last
 Documents/projects/
+./.git-credentials
 

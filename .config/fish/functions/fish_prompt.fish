@@ -18,5 +18,7 @@ function fish_prompt --description 'Prompt ausgeben'
         set suffix '>'
     end
 
-    echo -n -s "$USER" @ (prompt_hostname) ' ' (set_color $color_cwd) (prompt_pwd) (set_color normal) "$suffix "
+    echo -n -s (set_color brcyan) "$USER" (set_color brblack) @ \
+       (set_color brmagenta ) (prompt_hostname)  ' ' (set_color brblack) \
+       (prompt_pwd) (set_color brmagenta) "$suffix "
 end
