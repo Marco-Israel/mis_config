@@ -256,6 +256,7 @@ export VISUAL=$EDITOR
 export STARDICT_DATA_DIR=~/.config/stardict
 export PROJECT_HOME='~/project/rohde_und_schwarz'
 export CPPUTEST_HOME=$PROJECT_HOME'/mis_ooc/tool/cpputest'
+export PATH='/home/mis/.local/bin':$PATH
 
 
 

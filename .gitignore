@@ -31,7 +31,7 @@ tmp
 .vim/plugged/
 .vim/sessions/
 .vim/undo/
-.tmux/resurrect
+.tmux/resurrect/
 .ash_history
 .bookmarkdir/
 .fzf-marks
