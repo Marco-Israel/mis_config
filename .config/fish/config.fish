@@ -1,2 +1,2 @@
-fish_vi_key_bindings
-
+set fish_color_valid_path
+set -gx EDITOR vim

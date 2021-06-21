@@ -77,7 +77,8 @@ fi
 ### FUF ##########
 export FZF_DEFAULT_COMMAND='rg --files --hidden --smart-case --glob "!.git/*"'
 
-source .fzf/functions.sh
+#source .fzf/functions.sh
+
 if [[ $- =~ i ]]; then
   bind '"\er": redraw-current-line'
   bind '"\C-g\C-f": "$(_gf)\e\C-e\er"'

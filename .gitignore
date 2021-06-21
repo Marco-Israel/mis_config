@@ -48,3 +48,6 @@ latex/
 .python_history
 .telegram-cli/
 .vim/.netrwhist
+.tmux/resurrect/last
+Documents/projects/
+
