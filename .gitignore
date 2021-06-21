@@ -38,3 +38,4 @@ tmp
 .python_history
 .telegram-cli/
 .vim/.netrwhist
+./git-credentials
