@@ -37,14 +37,14 @@ function fish_prompt
   set -g __fish_git_prompt_color_suffix brblack
   set -g __fish_git_prompt_color_bare brcyan
   set -g __fish_git_prompt_color_merging bryellow
-  set -g __fish_git_prompt_color_stashstate brblue
-  set -g __fish_git_prompt_color_upstream brcyan
+  set -g __fish_git_prompt_color_stashstate bryellow
+  set -g __fish_git_prompt_color_upstream brmagenta
   set -g __fish_git_prompt_color_branch brcyan
   set -g __fish_git_prompt_color_dirtystate brmagenta
   set -g __fish_git_prompt_color_stagedstate yellow
   set -g __fish_git_prompt_color_invalidstate brred
   set -g __fish_git_prompt_color_untrackedfiles brmagenta
-  set -g __fish_git_prompt_color_cleanstate green
+  set -g __fish_git_prompt_color_cleanstate brmagenta
   set -g __fish_git_prompt_color brblack
 
   set -g __fish_git_prompt_char_stateseparator ":"
