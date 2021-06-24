@@ -21,6 +21,14 @@
     listInControl='git ls-tree -r master --name-only --full-tree'
     #If you want a list of files that ever existed (i.e. including deleted files):
     everExists="git log --pretty=format: --name-only --diff-filter=A | sort - | sed '/^$/d'"
+    last = 'log -1 HEAD'
+    latest = 'show --name-only --oneline HEAD'
+    down = 'pull --rebase origin master'
+    up = 'push -u origin master'
+    save = '!git add -A; git commit .'
+    uptags = 'push --follow-tags'
+    downtags = 'fetch --tags'
+    lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 [diff]
 	tool = vimdiff
 [core]

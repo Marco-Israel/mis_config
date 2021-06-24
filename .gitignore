@@ -48,7 +48,8 @@ latex/
 .python_history
 .telegram-cli/
 ./git-credentials
-Documents//
+Documents/
+.fzf/
 ./.git-credentials
 *db
 ./.config/.scopedb/
@@ -65,6 +66,10 @@ Documents//
 ./.config/omf
 ./.config/thefuck
 ./.config/configstore
-
+.tmux/plugins/tpm/
+.git-credentials
+.fishmarks/
+go/
+*.list
 
 

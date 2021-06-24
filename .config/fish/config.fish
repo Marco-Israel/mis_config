@@ -38,6 +38,7 @@ for jobbltn in bg wait disown
         builtin $jobbltn (__fish_expand_pid_args $argv)
     end
 end
+
 function fg
     builtin fg (__fish_expand_pid_args $argv)[-1]
 end
@@ -47,3 +48,8 @@ function kill
 end
 set fish_color_valid_path
 set -gx EDITOR vim
+
+thefuck --alias --enable-experimental-instant-mode | source
+
+# Load fishmarks (http://github.com/techwizrd/fishmarks)
+. $HOME/.fishmarks/marks.fish

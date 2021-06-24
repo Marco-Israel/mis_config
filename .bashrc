@@ -71,8 +71,7 @@ fi
 
 if [ -f ~/.fzf/fzf.bash ] ; then
    . ~/.fzf/fzf.bash
- else
-if [ -f ~/fzf.bash ] ; then
+elif [ -f ~/fzf.bash ] ; then
   . ~/fzf.bash
 fi
 
