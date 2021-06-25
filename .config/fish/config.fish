@@ -49,7 +49,7 @@ end
 set fish_color_valid_path
 set -gx EDITOR vim
 
-thefuck --alias --enable-experimental-instant-mode | source
+thefuck --alias  | source
 
 # Load fishmarks (http://github.com/techwizrd/fishmarks)
 . $HOME/.fishmarks/marks.fish
