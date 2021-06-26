@@ -1,6 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set backup
 set undofile
+set nocompatible "Disable backward compatibility to vi. Enable vim only settings.
 set backupdir=~/.vim/backup
 set undodir=~/.vim/undo
 set directory=~/.vim/swp,/tmp,/var/tmp,.
@@ -26,8 +27,8 @@ set wrap
 set linebreak "Bei aautomatiscben Linebreak (set wrap) Wörter nicht trennen
 set list "listchars anzeigen
 set listchars=tab:>-,trail:.,extends:>,precedes:<,nbsp:+,eol:$,precedes:#,extends:* " Tabs und Leerzeichen am Zeilenende anzeigen hjkhj
-set relativenumber "Relative Zeilennummern
-set nocompatible "enter the current millenium
+"set relativenumber "Relative Zeilennummern
+"set number "Activates real number"
 set colorcolumn=80 "show a line in <n> coloum
 set textwidth=80  "autowrap after 80 char for instance. 0==turn off.
 set splitright " new vertical splits are on the right
@@ -45,7 +46,6 @@ set path+=** "extand the vim path"
 "set path+=../**
 "set path+=../../**
 "set tags+=$PWD/.tags/tags
-set number "Activates real number"
 set scrolloff=15 "show the last X lines. 999 = Center everytime.
 set viminfo='100,f1,:20,@20,/20
 set encoding=utf-8
@@ -64,29 +64,29 @@ set encoding=utf8
 set fillchars=fold:\
 set sessionoptions=curdir,folds,tabpages,winsize,terminal
 
-set noswapfile " Disable swap files.
-set wildignore+=.pyc,.swp " Ignore files matching these patterns when opening files based on a glob pattern.
-set showmode showcmd " Display options
-set confirm  " Display a confirmation dialog when closing an unsaved file.
-set dir=~/.cache/vim  " Directory to store swap files.
-set formatoptions+=j " Delete comment characters when joining lines.
-"set isfname-=:  "split a filename:linenumber to filename when press key gf
+ set noswapfile " Disable swap files.
+ set wildignore+=.pyc,.swp " Ignore files matching these patterns when opening files based on a glob pattern.
+ set showmode showcmd " Display options
+ set confirm  " Display a confirmation dialog when closing an unsaved file.
+ set dir=~/.cache/vim  " Directory to store swap files.
+ set formatoptions+=j " Delete comment characters when joining lines.
+ "set isfname-=:  "split a filename:linenumber to filename when press key gf
 
 
-"set pumheight=8 "Maximum members of matches shown in poplist. 0 all.
-"set previewpopup=height:10,width:60 "Overwrite use of preview to popup
-"set shortmess+=c " Don't pass messages to |ins-completion-menu|.
-"
-"
-" Always show the signcolumn, otherwise it would shift the text
-" each time diagnostics appear/become resolved.
-" Recently vim can merge signcolumn and number column into one
-"if has("patch-8.1.1564")
-"    set signcolumn=number
-"else
-"    set signcolumn=yes
-"endif
-""
+ "set pumheight=8 "Maximum members of matches shown in poplist. 0 all.
+ "set previewpopup=height:10,width:60 "Overwrite use of preview to popup
+ "set shortmess+=c " Don't pass messages to |ins-completion-menu|.
+ "
+ "
+ " Always show the signcolumn, otherwise it would shift the text
+ " each time diagnostics appear/become resolved.
+ " Recently vim can merge signcolumn and number column into one
+ "if has("patch-8.1.1564")
+ "    set signcolumn=number
+ "else
+ "    set signcolumn=yes
+ "endif
+ ""
 
 """ "Vim (quickfix) completion """""""""""""""""""""""""""""""""""""""""""""""""
 set autowrite
@@ -484,10 +484,8 @@ map <C-F9> :call StripTrailingWhitespaces()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ PLUGINS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source  ~/.vimplug.conf
-
-
 
 """" Grep in all open bufffers """"""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -515,5 +513,4 @@ nnoremap ,erroh :-1read $PROJECT_HOME/TOOLS/thirdparty/mi_ooc/productive/mi_ooc_
 nnoremap ,errohh :-1read $PROJECT_HOME/TOOLS/thirdparty/mi_ooc/productive/mi_ooc_errorHandler.h<CR>/____TODO______<CR>
 nnoremap ,umlc :-1read $PROJECT_HOME/TOOLS/templates/plantumlNote.txt<CR>/____TODO______<CR>
 nnoremap ,sempty :-1read $PROJECT_HOME/TOOLS/templates/shortDocinfo.txt<CR>/____TODO______<CR>
-
 

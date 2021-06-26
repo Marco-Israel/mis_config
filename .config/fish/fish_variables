@@ -155,7 +155,8 @@ SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_cd_files:/home/mis/\x2econfig/fish
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_git_2D_flow_files:/home/mis/\x2econfig/fish/conf\x2ed/git\x2dflow\x2efish\x1e/home/mis/\x2econfig/fish/completions/git\x2efish
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_proxy_files:/home/mis/\x2econfig/fish/functions/__proxy\x2eset\x2efish\x1e/home/mis/\x2econfig/fish/functions/noproxy\x2efish\x1e/home/mis/\x2econfig/fish/functions/proxy\x2efish\x1e/home/mis/\x2econfig/fish/conf\x2ed/plugin\x2dproxy\x2efish
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_shark_files:/home/mis/\x2econfig/fish/functions/shark\x2efish\x1e/home/mis/\x2econfig/fish/functions/shark\x2ehelp\x2efish\x1e/home/mis/\x2econfig/fish/functions/shark\x2esplit\x2efish\x1e/home/mis/\x2econfig/fish/completions/shark\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1eoh\x2dmy\x2dfish/plugin\x2dcd\x1eoh\x2dmy\x2dfish/plugin\x2dshark\x1ewfxr/forgit\x1ejethrokuan/fzf\x1ejoseluisq/gitnow\x402\x2e8\x2e0\x1ejorgebucaran/autopair\x2efish\x1eedc/bass\x1eoh\x2dmy\x2dfish/plugin\x2dgit\x2dflow\x1ejoseluisq/git\x2duseful\x2daliases\x1eoh\x2dmy\x2dfish/plugin\x2dproxy
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1eoh\x2dmy\x2dfish/plugin\x2dcd\x1eoh\x2dmy\x2dfish/plugin\x2dshark\x1ewfxr/forgit\x1ejethrokuan/fzf\x1ejoseluisq/gitnow\x402\x2e8\x2e0\x1ejorgebucaran/autopair\x2efish\x1eedc/bass\x1eoh\x2dmy\x2dfish/plugin\x2dgit\x2dflow\x1ejoseluisq/git\x2duseful\x2daliases\x1eoh\x2dmy\x2dfish/plugin\x2dproxy\x1eurbainvaes/fzf\x2dmarks
+SETUVAR _fisher_urbainvaes_2F_fzf_2D_marks_files:/home/mis/\x2econfig/fish/conf\x2ed/fzf\x2dmarks\x2eplugin\x2efish
 SETUVAR _fisher_wfxr_2F_forgit_files:/home/mis/\x2econfig/fish/conf\x2ed/forgit\x2eplugin\x2efish
 SETUVAR fish_color_autosuggestion:BD93F9
 SETUVAR fish_color_cancel:normal
