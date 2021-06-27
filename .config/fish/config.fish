@@ -1,11 +1,12 @@
 fish_vi_key_bindings
+fzf_key_bindings
 
 #Remove fish default greeting
 set -U fish_greeting
 
 # Start X at login
 if status is-login
-    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
+    if test -z "$DISPLAY"
         exec startx -- -keeptty
     end
 end

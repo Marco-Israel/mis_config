@@ -142,4 +142,6 @@ echo -e "\033]12;magenta\007"
         # no duplicates in the history. bash(1) ==  more options
 export HISTCONTROL=ignoredups
 
+exec /usr/bin/fish
+
 #### EOF #######################################################################
