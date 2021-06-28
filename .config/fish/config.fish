@@ -4,12 +4,18 @@ fzf_key_bindings
 #Remove fish default greeting
 set -U fish_greeting
 
-# Start X at login
-if status is-login
-    if test -z "$DISPLAY"
-        exec startx -- -keeptty
-    end
-end
+## Start X at login
+#if status is-login
+#    if test -z "$DISPLAY"
+#        exec startx -- -keeptty
+#    end
+#end
+
+#Start a tmux session
+#if test -z "$TMUX"
+#     #tmux attach -t default || tmux new -s default
+#     exec tmux
+#end
 
 
 
@@ -54,3 +60,4 @@ thefuck --alias  | source
 
 # Load fishmarks (http://github.com/techwizrd/fishmarks)
 . $HOME/.fishmarks/marks.fish
+clear

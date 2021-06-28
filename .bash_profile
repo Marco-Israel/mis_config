@@ -47,7 +47,7 @@ fi
    INFOPATH="${HOME}/info:${INFOPATH}"
  fi
 
- #Start a tmux session
-if [ -z "$TMUX" ]; then
-      tmux attach -t default || tmux new -s default
-fi
+# #Start a tmux session
+#if [ -z "$TMUX" ]; then
+#      tmux attach -t default || tmux new -s default
+#fi

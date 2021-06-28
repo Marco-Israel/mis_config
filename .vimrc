@@ -1,6 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set backup
-set undofile
+set modeline modelines=1 "enable to parse the modline
 set nocompatible "Disable backward compatibility to vi. Enable vim only settings.
 set backupdir=~/.vim/backup
 set undodir=~/.vim/undo
