@@ -2,7 +2,7 @@
 	name = Marco-Israel
 	email = Marco-Israel@gmx.de
 [credential]
-	helper = store
+	helper = wincred
 [push]
 	default = simple
 [commit]
