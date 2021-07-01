@@ -41,3 +41,5 @@
 
 #Find a deleted string
 # git grep <regexp> $(git rev-list --all -- lib/util) -- lib/util
+[init]
+	defaultBranch = master
