@@ -71,5 +71,4 @@ Documents/
 .fishmarks/
 go/
 *.list
-
-
+.cups/
