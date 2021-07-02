@@ -155,7 +155,7 @@ function dmark
     commandline -f repaint
 end
 
-set -q FZF_MARKS_JUMP; or set FZF_MARKS_JUMP \cg
+set -q FZF_MARKS_JUMP; or set FZF_MARKS_JUMP \cd
 bind -M insert $FZF_MARKS_JUMP fzm
 bind $FZF_MARKS_JUMP fzm
 
