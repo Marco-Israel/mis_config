@@ -68,7 +68,6 @@ Documents/
 ./.config/configstore
 .tmux/plugins/tpm/
 .git-credentials
-.fishmarks/
 go/
 *.list
 .cups/

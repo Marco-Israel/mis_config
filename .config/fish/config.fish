@@ -74,5 +74,8 @@ set -gx EDITOR vim
 thefuck --alias  | source
 
 # Load fishmarks (http://github.com/techwizrd/fishmarks)
-. $HOME/.fishmarks/marks.fish
+source $HOME/.fishmarks/marks.fish
+
 clear
+
+
