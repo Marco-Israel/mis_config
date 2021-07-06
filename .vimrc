@@ -3,7 +3,7 @@ set backup
 set modeline modelines=1 "enable to parse the modline
 set nocompatible "Disable backward compatibility to vi. Enable vim only settings.
 set backupdir=~/.vim/backup
-set undodir=~/.vim/undo
+set undofile undodir=~/.vim/undo
 set directory=~/.vim/swp,/tmp,/var/tmp,.
 set writebackup
 autocmd BufWritePre  * let &bex='@' . strftime("%F.%H")
@@ -97,24 +97,23 @@ set completeopt=menu,menuone,longest,preview,noinsert
 "set previewpopup=height:10,width:60 "Overwrite use of preview to popup
 
 """ Foldable code blocks """"""""""""""""""""""""""""""""""""""""""""""""""""""
-set foldenable
-set foldlevelstart=3
-set foldlevel=5
-set foldnestmax=5
-set foldminlines=3
-set foldmethod=indent
-set foldopen=all
-"set foldtext=
-autocmd InsertEnter,WinLeave * setlocal foldmethod=manual
+set nofoldenable
+"set foldenable
+"set foldlevelstart=3
+"set foldlevel=5
+"set foldnestmax=5
+"set foldminlines=3
+"set foldmethod=indent
+"set foldopen=all
+""set foldtext=
+"autocmd InsertEnter,WinLeave * setlocal foldmethod=manual
+"autocmd FileType c      setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^\\s*//'
+"autocmd FileType python setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^\\s*#'
+"
 
-""" List special chars  for filetypes
+"""" List special chars  for filetypes
 autocmd BufNewFile,BufRead *.make,mk            setlocal list
 autocmd BufNewFile,BufRead *.make,mk            setlocal noexpandtab
-
-
-""" Fold """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType c      setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^\\s*//'
-autocmd FileType python setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^\\s*#'
 
 
 """ Open Quickfix entry in Vertical split """""""""""""""""""""""""""""""""""""
@@ -430,6 +429,8 @@ map <F3> <C-V>}<S-I>
 map <C-F9> :r!date +\%Y-\%m-\%d<CR>
 "map <F11> //####################ETWAS########################<ESC>?ETWAS<CR>cw
 
+"Copy the file name
+nmap <leader>fn :let @" = expand("%:t")<cr>
 
 
 
@@ -513,4 +514,3 @@ nnoremap ,erroh :-1read $PROJECT_HOME/TOOLS/thirdparty/mi_ooc/productive/mi_ooc_
 nnoremap ,errohh :-1read $PROJECT_HOME/TOOLS/thirdparty/mi_ooc/productive/mi_ooc_errorHandler.h<CR>/____TODO______<CR>
 nnoremap ,umlc :-1read $PROJECT_HOME/TOOLS/templates/plantumlNote.txt<CR>/____TODO______<CR>
 nnoremap ,sempty :-1read $PROJECT_HOME/TOOLS/templates/shortDocinfo.txt<CR>/____TODO______<CR>
-

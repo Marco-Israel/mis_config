@@ -154,6 +154,8 @@ alias gx='gitx --all'
 alias got='git '
 alias get='git '
 
+alias mockify="python3 /home/mis/Documents/projects/bhs/iShuttle5_0/ESX_4CS_GW/tool/mockify/cpputest_mockify.py"
+
 
 
 mmnt()
