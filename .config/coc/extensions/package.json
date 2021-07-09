@@ -3,6 +3,7 @@
     "coc-ccls": ">=0.0.5",
     "coc-clangd": ">=0.7.0",
     "coc-cspell-dicts": ">=1.0.1",
+    "coc-diagnostic": ">=0.20.0",
     "coc-git": ">=2.2.0",
     "coc-highlight": ">=1.2.7",
     "coc-html": ">=1.4.1",

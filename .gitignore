@@ -72,3 +72,4 @@ go/
 .bundle
 *.list
 .cups/
+-lldb/
