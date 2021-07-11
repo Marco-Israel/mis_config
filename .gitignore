@@ -69,5 +69,7 @@ Documents/
 .tmux/plugins/tpm/
 .git-credentials
 go/
+.bundle
 *.list
 .cups/
+-lldb/

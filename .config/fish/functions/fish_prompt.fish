@@ -25,7 +25,7 @@
 function fish_mode_prompt; end
 
 function fish_prompt
-
+  set -g fish_prompt_pwd_dir_length 1
   set -l last_status $status
 
   set -g __fish_git_prompt_showdirtystate "yes"
@@ -64,6 +64,8 @@ function fish_prompt
   set -g __fish_git_prompt_char_conflictedstate "x"
   set -g __fish_git_prompt_char_cleanstate "#"
 
- echo -ns (set_color brblack) $PWD (__fish_git_prompt) ' '
+  #echo -ns (set_color brblack) (prompt_pwd) (__fish_git_prompt) ' '
+  echo -ns (set_color brblack) (basename $PWD) (__fish_git_prompt) ' '
+
 
 end
