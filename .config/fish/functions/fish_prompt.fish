@@ -45,7 +45,7 @@ function fish_prompt
   set -g __fish_git_prompt_color_dirtystate brmagenta
   set -g __fish_git_prompt_color_stagedstate yellow
   set -g __fish_git_prompt_color_invalidstate brred
-  set -g __fish_git_prompt_color_untrackedfiles brmagenta
+  set -g __fish_git_prompt_color_untrackedfiles brcyan
   set -g __fish_git_prompt_color_cleanstate brmagenta
   set -g __fish_git_prompt_color brblack
 
